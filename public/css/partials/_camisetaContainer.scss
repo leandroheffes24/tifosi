@@ -1,0 +1,40 @@
+.camisetaContainer{
+    width: 48%;
+    position: relative;
+}
+
+.camiestaLink{
+    text-decoration: none;
+    color: $textColor;
+}
+
+.camisetaImage{
+    width: 100%;
+}
+
+.camisetaInformationContainer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.camisetaTitle{
+    font-size: .9rem;
+}
+
+.camisetaPrice{
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.camisetaDiscount{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $camisetaDiscountBackground;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: .8rem;
+    font-weight: 500;
+}

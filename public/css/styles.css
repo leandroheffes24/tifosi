@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: rgb(25, 25, 25);
+  color: rgb(240, 240, 240);
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(25, 25, 25);
+  padding: 5px 15px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.headerOpenNavbarButton {
+  background: none;
+  border: none;
+}
+
+.headerOpenNavbarIcon {
+  width: 30px;
+  color: rgb(240, 240, 240);
+}
+
+.headerLogo {
+  width: 40px;
+}
+
+.headerAccountIcon, .headerShoppingCartIcon {
+  width: 25px;
+  color: rgb(240, 240, 240);
+}
+
+.headerNavbar {
+  background-color: rgb(25, 25, 25);
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 70vw;
+  z-index: 15;
+  box-shadow: 0px 0px 0px 300px rgba(0, 0, 0, 0.5);
+}
+
+.headerCloseNavbarButtonContainer {
+  text-align: right;
+  padding: 5px;
+}
+
+.headerCloseNavbarButton {
+  background: none;
+  border: none;
+}
+
+.headerCloseNavbarIcon {
+  width: 23px;
+  color: rgb(240, 240, 240);
+}
+
+.headerNavbarLinksContainer {
+  padding: 0 20px;
+}
+
+.headerNavbarLinksList {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.headerNavbarItemList {
+  list-style: none;
+  font-size: 1rem;
+}
+
+footer {
+  border-top: 2px solid green;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.footerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.footerSectionTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.footerSectionLink {
+  text-decoration: none;
+  color: rgb(200, 200, 200);
+  font-size: 0.9rem;
+}
+
+.footerCopyrightAndDevelopedBySection {
+  text-align: center;
+  color: rgb(200, 200, 200);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-top: 1px solid rgb(82, 82, 82);
+  padding-top: 25px;
+}
+
+.footerCopyrightText {
+  font-size: 0.8rem;
+}
+
+.footerDevelopedByText {
+  font-size: 0.8rem;
+}
+
+.footerDevelopedByLink {
+  text-decoration: none;
+  color: rgb(240, 240, 240);
+  font-weight: 500;
+}
+
+.indexBannerSection {
+  background-image: url("/images/exampleBanner.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 35vh;
+}
+
+.indexTextSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  gap: 12px;
+  padding: 0 10px;
+  margin: 30px 0 40px;
+}
+
+.indexShipmentContainerText, .indexWhatsappContainerText, .indexSafePurchaseContainerText, .indexInstagramContainerText {
+  width: 48%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexShipmentIcon, .indexWhatsappIcon, .indexSafePurchaseIcon, .indexInstagramIcon {
+  width: 25%;
+}
+
+.indexShipmentText {
+  font-size: 0.8rem;
+  font-weight: 500;
+  width: 75%;
+}
+
+.indexWhatsappInformationContainer {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  gap: 5px;
+}
+
+.indexWhatsappText {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgb(200, 200, 200);
+}
+
+.indexSafePurchaseInformationContainer {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.indexSafePurchaseTitle {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.indexSafePurchaseText {
+  font-size: 0.7rem;
+  color: rgb(200, 200, 200);
+}
+
+.indexInstagramInformationContainer {
+  width: 75%;
+}
+
+.indexInstagramText {
+  font-size: 0.8rem;
+  color: rgb(200, 200, 200);
+}
+
+.indexCamisetasSection {
+  padding: 0 10px 30px;
+}
+
+.indexCamisetasTitle {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.3rem;
+}
+
+.indexCamisetasContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 13px;
+}
+
+.camisetaContainer {
+  width: 48%;
+  position: relative;
+}
+
+.camiestaLink {
+  text-decoration: none;
+  color: rgb(240, 240, 240);
+}
+
+.camisetaImage {
+  width: 100%;
+}
+
+.camisetaInformationContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.camisetaTitle {
+  font-size: 0.9rem;
+}
+
+.camisetaPrice {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.camisetaDiscount {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 192, 0);
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}/*# sourceMappingURL=styles.css.map */
