@@ -1,5 +1,6 @@
 const express = require("express")
 const mainRouter = require("./src/routers/mainRouter")
+const usersRouter = require("./src/routers/usersRouter")
 const app = express()
 const session = require("express-session")
 
@@ -13,6 +14,7 @@ app.use(
     })
 );
 app.use(mainRouter)
+app.use(usersRouter)
 
 app.set("view engine", "ejs")
 app.set("views", __dirname + "/src/views")
