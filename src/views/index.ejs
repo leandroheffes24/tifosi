@@ -69,47 +69,21 @@
             <h2 class="indexCamisetasTitle">NUESTRAS CAMISETAS</h2>
 
             <div class="indexCamisetasContainer">
-                <div class="camisetaContainer">
-                    <a class="camiestaLink" href="#">
-                        <div class="camisetaImageContainer">
-                            <img class="camisetaImage" src="/images/riverSuplente.png" alt="">
-                        </div>
-    
-                        <div class="camisetaInformationContainer">
-                            <span class="camisetaTitle">CAMISETA RIVER SUPLENTE</span>
-                            <span class="camisetaPrice">$59.000</span>
-                            <span class="camisetaDiscount">30% OFF</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="camisetaContainer">
-                    <a class="camiestaLink" href="#">
-                        <div class="camisetaImageContainer">
-                            <img class="camisetaImage" src="/images/riverSuplente2.png" alt="">
-                        </div>
-    
-                        <div class="camisetaInformationContainer">
-                            <span class="camisetaTitle">CAMISETA RIVER SUPLENTE</span>
-                            <span class="camisetaPrice">$59.000</span>
-                            <span class="camisetaDiscount">20% OFF</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="camisetaContainer">
-                    <a class="camiestaLink" href="#">
-                        <div class="camisetaImageContainer">
-                            <img class="camisetaImage" src="/images/bocaTitular.png" alt="">
-                        </div>
-    
-                        <div class="camisetaInformationContainer">
-                            <span class="camisetaTitle">CAMISETA BOCA TITULAR</span>
-                            <span class="camisetaPrice">$59.000</span>
-                            <span class="camisetaDiscount">15% OFF</span>
-                        </div>
-                    </a>
-                </div>
+                <% products.forEach(product => { %>
+                    <div class="camisetaContainer">
+                        <a class="camiestaLink" href="/products/<%= product.id %>">
+                            <div class="camisetaImageContainer">
+                                <img class="camisetaImage" src="/images/products/<%= product.image %>" alt="<%= product.product_name %>">
+                            </div>
+        
+                            <div class="camisetaInformationContainer">
+                                <span class="camisetaTitle"><%= product.product_name %></span>
+                                <span class="camisetaPrice">$<%= product.price %></span>
+                                <span class="camisetaDiscount"><%= product.discount %>% OFF</span>
+                            </div>
+                        </a>
+                    </div>
+                <% }) %>
             </div>
         </section>
     </main>

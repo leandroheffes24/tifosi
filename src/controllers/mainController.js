@@ -1,5 +1,7 @@
+const productsServices = require("../services/productsServices")
+
 module.exports = {
     index: (req, res) => {
-        return res.render("index")
+        return productsServices.getAllProducts().then(products => res.render("index", {products}))
     }
 }
