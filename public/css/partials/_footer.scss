@@ -46,3 +46,105 @@ footer{
     color: $textColor;
     font-weight: 500;
 }
+
+@media (width >= 768px) {
+    footer{
+        padding: 40px 50px;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 60px;
+    }
+    
+    .footerSection{
+        gap: 10px;
+    }
+
+    .footerSectionTitle{
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    
+    .footerSectionLink{
+        font-size: 1rem;
+    }
+    
+    .footerCopyrightAndDevelopedBySection{
+        width: 100%;
+        gap: 30px;
+        padding-top: 35px;
+    }
+    
+    .footerCopyrightText{
+        font-size: 1rem;
+    }
+    
+    .footerDevelopedByText{
+        font-size: 1rem;
+    }
+}
+
+@media (width >= 992px) {
+    footer{
+        padding: 30px 40px;
+        gap: 50px;
+    }
+    
+    .footerSection{
+        gap: 10px;
+    }
+
+    .footerSectionTitle{
+        font-size: .8rem;
+        margin-bottom: 5px;
+    }
+    
+    .footerSectionLink{
+        font-size: .8rem;
+    }
+    
+    .footerCopyrightAndDevelopedBySection{
+        gap: 20px;
+        padding-top: 25px;
+    }
+    
+    .footerCopyrightText{
+        font-size: .8rem;
+    }
+    
+    .footerDevelopedByText{
+        font-size: .8rem;
+    }
+}
+
+@media (width >= 1200px) {
+    footer{
+        padding: 30px 40px;
+        gap: 60px;
+    }
+    
+    .footerSection{
+        gap: 8px;
+    }
+
+    .footerSectionTitle{
+        font-size: .9rem;
+    }
+    
+    .footerSectionLink{
+        font-size: .9rem;
+    }
+    
+    .footerCopyrightAndDevelopedBySection{
+        gap: 25px;
+        padding-top: 30px;
+    }
+    
+    .footerCopyrightText{
+        font-size: .9rem;
+    }
+    
+    .footerDevelopedByText{
+        font-size: .9rem;
+    }
+}

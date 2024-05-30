@@ -65,8 +65,24 @@
             </div>
         </section>
 
+        <section class="indexCategoriesSection">
+            <section class="splide" aria-labelledby="carousel-heading">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <% categories.forEach(category => { %>
+                            <li class="splide__slide">
+                                <a class="indexCategoriesSectionLink" href="/categories/<%= category.name.toLowerCase() %>">
+                                    <%= category.name %>
+                                </a>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </section>
+        </section>
+
         <section class="indexCamisetasSection">
-            <h2 class="indexCamisetasTitle">NUESTRAS CAMISETAS</h2>
+            <h2 class="indexCamisetasTitle">NUEVOS INGRESOS</h2>
 
             <div class="indexCamisetasContainer">
                 <% products.forEach(product => { %>
@@ -92,5 +108,19 @@
     <!-- ******************************** FOOTER ******************************** -->
     <%- include("partials/footer") %>
     <!-- ******************************** END FOOTER ******************************** -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function() {
+            var splide = new Splide( '.splide', {
+                autoWidth: true,
+                autoHeight: true,
+                gap: '2rem',
+                pagination: false,
+                arrows: false
+            } );
+            splide.mount();
+        } );
+    </script>
 </body>
 </html>

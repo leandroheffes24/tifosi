@@ -210,6 +210,87 @@ footer {
   font-weight: 500;
 }
 
+@media (width >= 768px) {
+  footer {
+    padding: 40px 50px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 60px;
+  }
+  .footerSection {
+    gap: 10px;
+  }
+  .footerSectionTitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .footerSectionLink {
+    font-size: 1rem;
+  }
+  .footerCopyrightAndDevelopedBySection {
+    width: 100%;
+    gap: 30px;
+    padding-top: 35px;
+  }
+  .footerCopyrightText {
+    font-size: 1rem;
+  }
+  .footerDevelopedByText {
+    font-size: 1rem;
+  }
+}
+@media (width >= 992px) {
+  footer {
+    padding: 30px 40px;
+    gap: 50px;
+  }
+  .footerSection {
+    gap: 10px;
+  }
+  .footerSectionTitle {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+  .footerSectionLink {
+    font-size: 0.8rem;
+  }
+  .footerCopyrightAndDevelopedBySection {
+    gap: 20px;
+    padding-top: 25px;
+  }
+  .footerCopyrightText {
+    font-size: 0.8rem;
+  }
+  .footerDevelopedByText {
+    font-size: 0.8rem;
+  }
+}
+@media (width >= 1200px) {
+  footer {
+    padding: 30px 40px;
+    gap: 60px;
+  }
+  .footerSection {
+    gap: 8px;
+  }
+  .footerSectionTitle {
+    font-size: 0.9rem;
+  }
+  .footerSectionLink {
+    font-size: 0.9rem;
+  }
+  .footerCopyrightAndDevelopedBySection {
+    gap: 25px;
+    padding-top: 30px;
+  }
+  .footerCopyrightText {
+    font-size: 0.9rem;
+  }
+  .footerDevelopedByText {
+    font-size: 0.9rem;
+  }
+}
 .indexBannerSection {
   background-image: url("/images/exampleBanner.webp");
   background-size: cover;
@@ -283,6 +364,10 @@ footer {
   color: rgb(200, 200, 200);
 }
 
+.indexCategoriesSection {
+  display: none;
+}
+
 .indexCamisetasSection {
   padding: 0 10px 30px;
 }
@@ -300,6 +385,141 @@ footer {
   gap: 13px;
 }
 
+@media (width >= 768px) {
+  .indexBannerSection {
+    height: 45vh;
+  }
+  .indexTextSection {
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+    margin: 60px 0 70px;
+  }
+  .indexShipmentContainerText, .indexWhatsappContainerText, .indexSafePurchaseContainerText, .indexInstagramContainerText {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .indexShipmentIcon, .indexWhatsappIcon, .indexSafePurchaseIcon, .indexInstagramIcon {
+    width: 20%;
+  }
+  .indexShipmentText {
+    font-size: 1rem;
+    font-weight: 500;
+    width: 80%;
+  }
+  .indexWhatsappInformationContainer {
+    width: 80%;
+    gap: 7px;
+  }
+  .indexWhatsappText {
+    font-size: 0.9rem;
+  }
+  .indexSafePurchaseInformationContainer {
+    width: 80%;
+    gap: 3px;
+  }
+  .indexSafePurchaseTitle {
+    font-size: 1rem;
+  }
+  .indexSafePurchaseText {
+    font-size: 0.9rem;
+  }
+  .indexInstagramInformationContainer {
+    width: 80%;
+  }
+  .indexInstagramText {
+    font-size: 1rem;
+  }
+  .indexCamisetasSection {
+    padding: 0 40px 60px;
+  }
+  .indexCamisetasTitle {
+    margin-bottom: 50px;
+    font-size: 1.6rem;
+  }
+  .indexCamisetasContainer {
+    gap: 30px;
+  }
+}
+@media (width >= 992px) {
+  .indexBannerSection {
+    height: 55vh;
+  }
+  .indexTextSection {
+    justify-content: space-between;
+    gap: 0;
+    padding: 0 100px;
+    margin: 30px 0 50px;
+  }
+  .indexShipmentContainerText, .indexWhatsappContainerText, .indexSafePurchaseContainerText, .indexInstagramContainerText {
+    width: 20%;
+  }
+  .indexShipmentText {
+    font-size: 0.9rem;
+  }
+  .indexWhatsappText {
+    font-size: 0.8rem;
+  }
+  .indexSafePurchaseTitle {
+    font-size: 0.9rem;
+  }
+  .indexSafePurchaseText {
+    font-size: 0.8rem;
+  }
+  .indexInstagramText {
+    font-size: 0.9rem;
+  }
+  .indexCategoriesSection {
+    display: block;
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+    margin: 0 40px 60px;
+    padding: 20px 0;
+  }
+  .indexCategoriesSectionLink {
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .indexCamisetasSection {
+    padding: 0 40px 60px;
+  }
+  .indexCamisetasTitle {
+    margin-bottom: 40px;
+    font-size: 1.3rem;
+  }
+  .indexCamisetasContainer {
+    gap: 40px;
+  }
+}
+@media (width >= 1200px) {
+  .indexTextSection {
+    padding: 0 190px;
+    margin: 40px 0 60px;
+  }
+  .indexCategoriesSection {
+    width: 85%;
+    margin: 0 auto 40px;
+    padding: 25px 0;
+  }
+  .indexCategoriesSectionLink {
+    font-size: 0.9rem;
+  }
+  .indexCamisetasSection {
+    width: 85%;
+    margin: auto;
+    padding: 0 0 60px;
+  }
+  .indexCamisetasTitle {
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+  }
+  .indexCamisetasContainer {
+    padding: 0;
+    gap: 60px;
+  }
+}
 .camisetaContainer {
   width: 48%;
   position: relative;
@@ -339,4 +559,59 @@ footer {
   border-radius: 3px;
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+@media (width >= 768px) {
+  .camisetaContainer {
+    width: 30%;
+  }
+  .camisetaInformationContainer {
+    gap: 10px;
+  }
+  .camisetaTitle {
+    font-size: 1.1rem;
+  }
+  .camisetaPrice {
+    font-size: 1.1rem;
+  }
+  .camisetaDiscount {
+    padding: 4px;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+}
+@media (width >= 992px) {
+  .camisetaContainer {
+    width: 20%;
+  }
+  .camisetaInformationContainer {
+    gap: 7px;
+  }
+  .camisetaTitle {
+    font-size: 0.9rem;
+  }
+  .camisetaPrice {
+    font-size: 0.9rem;
+  }
+  .camisetaDiscount {
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+  }
+}
+@media (width >= 1200px) {
+  .camisetaInformationContainer {
+    gap: 10px;
+  }
+  .camisetaTitle {
+    font-size: 1rem;
+  }
+  .camisetaPrice {
+    font-size: 1.1rem;
+  }
+  .camisetaDiscount {
+    padding: 4px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+  }
 }/*# sourceMappingURL=styles.css.map */

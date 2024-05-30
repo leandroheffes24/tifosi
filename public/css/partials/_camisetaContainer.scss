@@ -38,3 +38,71 @@
     font-size: .8rem;
     font-weight: 500;
 }
+
+@media (width >= 768px) {
+    .camisetaContainer{
+        width: 30%;
+    }
+    
+    .camisetaInformationContainer{
+        gap: 10px;
+    }
+    
+    .camisetaTitle{
+        font-size: 1.1rem;
+    }
+    
+    .camisetaPrice{
+        font-size: 1.1rem;
+    }
+    
+    .camisetaDiscount{
+        padding: 4px;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+}
+
+@media (width >= 992px) {
+    .camisetaContainer{
+        width: 20%;
+    }
+    
+    .camisetaInformationContainer{
+        gap: 7px;
+    }
+    
+    .camisetaTitle{
+        font-size: .9rem;
+    }
+    
+    .camisetaPrice{
+        font-size: .9rem;
+    }
+    
+    .camisetaDiscount{
+        padding: 3px;
+        border-radius: 3px;
+        font-size: .8rem;
+    }
+}
+
+@media (width >= 1200px) {    
+    .camisetaInformationContainer{
+        gap: 10px;
+    }
+    
+    .camisetaTitle{
+        font-size: 1rem;
+    }
+    
+    .camisetaPrice{
+        font-size: 1.1rem;
+    }
+    
+    .camisetaDiscount{
+        padding: 4px;
+        border-radius: 5px;
+        font-size: .9rem;
+    }
+}

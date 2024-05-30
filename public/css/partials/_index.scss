@@ -75,6 +75,10 @@
 
 //---------------------------------------------------------
 
+.indexCategoriesSection{
+    display: none;
+}
+
 .indexCamisetasSection{
     padding: 0 10px 30px;
 }
@@ -90,4 +94,185 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 13px;
+}
+
+@media (width >= 768px) {
+    .indexBannerSection{
+        height: 45vh;
+    }
+    
+    //---------------------------------------------------------
+    
+    .indexTextSection{
+        justify-content: center;
+        gap: 30px;
+        padding: 0 20px;
+        margin: 60px 0 70px;
+    }
+    
+    .indexShipmentContainerText, .indexWhatsappContainerText, .indexSafePurchaseContainerText, .indexInstagramContainerText{
+        width: 30%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .indexShipmentIcon, .indexWhatsappIcon, .indexSafePurchaseIcon, .indexInstagramIcon{
+        width: 20%;
+    }
+    
+    .indexShipmentText{
+        font-size: 1rem;
+        font-weight: 500;
+        width: 80%;
+    }
+    
+    .indexWhatsappInformationContainer{
+        width: 80%;
+        gap: 7px;
+    }
+    
+    .indexWhatsappText{
+        font-size: .9rem;
+    }
+    
+    .indexSafePurchaseInformationContainer{
+        width: 80%;
+        gap: 3px;
+    }
+    
+    .indexSafePurchaseTitle{
+        font-size: 1rem;
+    }
+    
+    .indexSafePurchaseText{
+        font-size: .9rem;
+    }
+    
+    .indexInstagramInformationContainer{
+        width: 80%;
+    }
+    
+    .indexInstagramText{
+        font-size: 1rem;
+    }
+    
+    //---------------------------------------------------------
+    
+    .indexCamisetasSection{
+        padding: 0 40px 60px;
+    }
+    
+    .indexCamisetasTitle{
+        margin-bottom: 50px;
+        font-size: 1.6rem;
+    }
+    
+    .indexCamisetasContainer{
+        gap: 30px;
+    }
+}
+
+@media (width >= 992px) {
+    .indexBannerSection{
+        height: 55vh;
+    }
+    
+    //---------------------------------------------------------
+    
+    .indexTextSection{
+        justify-content: space-between;
+        gap: 0;
+        padding: 0 100px;
+        margin: 30px 0 50px;
+    }
+    
+    .indexShipmentContainerText, .indexWhatsappContainerText, .indexSafePurchaseContainerText, .indexInstagramContainerText{
+        width: 20%;
+    }
+    
+    .indexShipmentText{
+        font-size: .9rem;
+    }
+    
+    .indexWhatsappText{
+        font-size: .8rem;
+    }
+    
+    .indexSafePurchaseTitle{
+        font-size: .9rem;
+    }
+    
+    .indexSafePurchaseText{
+        font-size: .8rem;
+    }
+    
+    .indexInstagramText{
+        font-size: .9rem;
+    }
+    
+    //---------------------------------------------------------
+
+    .indexCategoriesSection{
+        display: block;
+        border-top: 1px solid green;
+        border-bottom: 1px solid green;
+        margin: 0 40px 60px;
+        padding: 20px 0;
+    }
+    
+    .indexCategoriesSectionLink{
+        color: $secondaryTextColor;
+        text-decoration: none;
+        font-size: .9rem;
+    }
+    
+    .indexCamisetasSection{
+        padding: 0 40px 60px;
+    }
+    
+    .indexCamisetasTitle{
+        margin-bottom: 40px;
+        font-size: 1.3rem;
+    }
+    
+    .indexCamisetasContainer{
+        gap: 40px;
+    }
+}
+
+@media (width >= 1200px) {    
+    //---------------------------------------------------------
+    
+    .indexTextSection{
+        padding: 0 190px;
+        margin: 40px 0 60px;
+    }
+    
+    //---------------------------------------------------------
+
+    .indexCategoriesSection{
+        width: 85%;
+        margin: 0 auto 40px;
+        padding: 25px 0;
+    }
+    
+    .indexCategoriesSectionLink{
+        font-size: .9rem;
+    }
+    
+    .indexCamisetasSection{
+        width: 85%;
+        margin: auto;
+        padding: 0 0 60px;
+    }
+    
+    .indexCamisetasTitle{
+        margin-bottom: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .indexCamisetasContainer{
+        padding: 0;
+        gap: 60px;
+    }
 }
