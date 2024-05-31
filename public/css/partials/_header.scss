@@ -10,7 +10,14 @@ header{
     z-index: 10;
 }
 
-.headerOpenNavbarButton{
+.headerOpenNavbarButtonAndSearchButtonContainer{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.headerOpenNavbarButton, .headerSearchButton{
     background: none;
     border: none;
 }
@@ -20,37 +27,48 @@ header{
     color: $textColor;
 }
 
+.headerLogoContainer{
+    width: 50%;
+    text-align: center;
+}
+
 .headerLogo{
     width: 40px;
 }
 
-.headerAccountIcon, .headerShoppingCartIcon{
+.headerIconsContainer{
+    width: 25%;
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+}
+
+.headerAccountIcon, .headerShoppingCartIcon, .headerSearchIcon{
     width: 25px;
     color: $textColor;
 }
 
 .headerNavbar{
-    background-color: $backgroundColor;
     display: none;
-    flex-direction: column;
-    gap: 20px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 70vw;
     z-index: 15;
+    background-color: $backgroundColor;
     box-shadow: 0px 0px 0px 300px rgba(0, 0, 0, 0.5);
 }
 
 .headerCloseNavbarButtonContainer{
     text-align: right;
-    padding: 5px;
+    margin-bottom: 10px;
 }
 
 .headerCloseNavbarButton{
     background: none;
     border: none;
+    padding: 10px;
 }
 
 .headerCloseNavbarIcon{
@@ -70,40 +88,49 @@ header{
 
 .headerNavbarItemList{
     list-style: none;
-    font-size: 1rem;
+    font-size: .9rem;
 }
 
-@media (width >= 768px) {
+.headerNavbarItemLink{
+    color: $textColor;
+    text-decoration: none;
+}
+
+@media(width >= 768px){
     header{
-        padding: 10px 35px;
+        padding: 7px 35px;
+    }
+    
+    .headerOpenNavbarButtonAndSearchButtonContainer{
+        gap: 40px;
     }
     
     .headerOpenNavbarIcon{
-        width: 38px;
+        width: 40px;
     }
     
     .headerLogo{
-        width: 50px;
-    }
-
-    .headerIconsContainer{
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
+        width: 55px;
     }
     
-    .headerAccountIcon, .headerShoppingCartIcon{
-        width: 35px;
+    .headerIconsContainer{
+        gap: 40px;
+    }
+    
+    .headerAccountIcon, .headerShoppingCartIcon, .headerSearchIcon{
+        width: 32px;
     }
     
     .headerNavbar{
-        gap: 20px;
         width: 60vw;
-        z-index: 15;
         box-shadow: 0px 0px 0px 600px rgba(0, 0, 0, 0.5);
     }
     
     .headerCloseNavbarButtonContainer{
+        margin-bottom: 10px;
+    }
+    
+    .headerCloseNavbarButton{
         padding: 15px;
     }
     
@@ -112,7 +139,7 @@ header{
     }
     
     .headerNavbarLinksContainer{
-        padding: 0 40px;
+        padding: 0 30px;
     }
     
     .headerNavbarLinksList{
@@ -120,50 +147,96 @@ header{
     }
     
     .headerNavbarItemList{
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 }
 
-@media (width >= 992px) {
+@media(width >= 992px){
     header{
         padding: 5px 35px;
     }
     
-    .headerOpenNavbarButtonContainer{
+    .headerOpenNavbarButtonAndSearchButtonContainer{
         display: none;
+    }
+
+    .headerSearchInputContainer{
+        width: 25%;
+    }
+
+    .headerSearchForm{
+        background-color: rgb(45, 45, 45);
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px;
+        border-radius: 3px;
+        width: 85%;
+    }
+
+    .headerSearchLabel{
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        border-right: 1px solid $secondaryTextColor;
+    }
+
+    .headerSearchLabelIcon{
+        width: 20px;
+        color: $secondaryTextColor;
+        padding-right: 5px;
+    }
+
+    .headerSearchInput{
+        width: 85%;
+        background: none;
+        border: none;
+        outline: none;
+        padding-left: 10px;
+        color: $secondaryTextColor;
     }
     
     .headerLogo{
-        width: 35px;
+        width: 40px;
     }
-
+    
     .headerIconsContainer{
-        gap: 30px;
+        gap: 35px;
     }
     
-    .headerAccountIcon, .headerShoppingCartIcon{
-        width: 25px;
-    }
-    
-    .headerNavbar{
-        display: none;
+    .headerAccountIcon, .headerShoppingCartIcon, .headerSearchIcon{
+        width: 23px;
     }
 }
 
-@media (width >= 1200px) {
+@media(width >= 1200px){
     header{
         padding: 5px 55px;
+    }
+
+    .headerSearchForm{
+        padding: 7px;
+        border-radius: 8px;
+        width: 75%;
+    }
+
+    .headerSearchLabelIcon{
+        width: 25px;
+        padding-right: 7px;
+    }
+
+    .headerSearchInput{
+        padding-left: 14px;
     }
     
     .headerLogo{
         width: 45px;
     }
-
+    
     .headerIconsContainer{
-        gap: 30px;
+        gap: 40px;
     }
     
-    .headerAccountIcon, .headerShoppingCartIcon{
-        width: 27px;
+    .headerAccountIcon, .headerShoppingCartIcon, .headerSearchIcon{
+        width: 28px;
     }
 }

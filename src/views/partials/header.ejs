@@ -1,5 +1,5 @@
 <header id="header">
-    <div class="headerOpenNavbarButtonContainer">
+    <div class="headerOpenNavbarButtonAndSearchButtonContainer">
         <button class="headerOpenNavbarButton">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="headerOpenNavbarIcon">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -8,6 +8,23 @@
                 <path d="M4 18l16 0" />
             </svg>
         </button>
+
+        <button class="headerSearchButton">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="headerSearchIcon">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                <path d="M21 21l-6 -6" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="headerSearchInputContainer">
+        <form class="headerSearchForm" action="">
+            <label class="headerSearchLabel" for="">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="headerSearchLabelIcon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+            </label>
+            <input class="headerSearchInput" type="text" maxlength="50">
+        </form>
     </div>
 
     <div class="headerLogoContainer">
@@ -50,7 +67,11 @@
         <div class="headerNavbarLinksContainer">
             <ul class="headerNavbarLinksList">
                 <% categories.forEach(category => { %>
-                    <li class="headerNavbarItemList"><%= category.name %></li>
+                    <li class="headerNavbarItemList">
+                        <a class="headerNavbarItemLink" href="/categories/<%= category.name.toLowerCase() %>">
+                            <%= category.name %>
+                        </a>
+                    </li>
                 <% }) %>
             </ul>
         </div>

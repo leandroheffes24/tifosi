@@ -3,7 +3,7 @@ const headerOpenNavbarButton = document.querySelector(".headerOpenNavbarButton")
 const headerCloseNavbarButton = document.querySelector(".headerCloseNavbarButton")
 
 headerOpenNavbarButton.addEventListener("click", () => {
-    headerNavbar.style.display = "flex"
+    headerNavbar.style.display = "block"
 })
 
 headerCloseNavbarButton.addEventListener("click", () => {
