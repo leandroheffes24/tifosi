@@ -1,8 +1,10 @@
 const {Router} = require("express")
 const usersController = require("../controllers/usersController")
 const router = Router()
+const registerValidations = require("../middlewares/registerValidations")
 
 router.get("/registro", usersController.registro)
+router.post("/registro", registerValidations, usersController.registroProcess)
 router.get("/ingresar", usersController.ingresar)
 
 module.exports = router

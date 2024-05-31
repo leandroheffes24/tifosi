@@ -1,0 +1,303 @@
+.registerFormSection{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 80%;
+}
+
+.registroImageContainer{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.registroLogo{
+    width: 70px;
+}
+
+.registroTextContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.registroCreateAccountText{
+    font-size: .8rem;
+}
+
+.registroLoginText{
+    font-size: .8rem;
+    color: $thirdTextColor;
+}
+
+.registroLoginLink{
+    text-decoration: none;
+    color: rgb(9, 116, 9);
+    font-weight: 500;
+}
+
+.registroForm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.registroFormLabelAndInputContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.registroLabel{
+    font-size: .8rem;
+    font-weight: 500;
+    color: $secondaryTextColor;
+    margin-left: 2px;
+}
+
+.registroInput{
+    color: $secondaryTextColor;
+    background-color: rgb(45, 45, 45);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.registerButton{
+    margin-top: 15px;
+    background-color: rgb(35, 35, 35);
+    border: none;
+    color: $secondaryTextColor;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: .7rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.frontendRegistroError, .backendRegistroError{
+    color: rgb(192, 0, 0);
+    font-size: .7rem;
+}
+
+.registerImageSection{
+    display: none;
+}
+
+@media(width>=768px){
+    .registerFormSection{
+        width: 65%;
+    }
+    
+    .registroImageContainer{
+        margin-bottom: 25px;
+    }
+    
+    .registroLogo{
+        width: 100px;
+    }
+    
+    .registroTextContainer{
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+    
+    .registroCreateAccountText{
+        font-size: 1rem;
+    }
+    
+    .registroLoginText{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    
+    .registroLoginLink{
+        font-weight: 600;
+    }
+    
+    .registroForm{
+        gap: 20px;
+    }
+    
+    .registroFormLabelAndInputContainer{
+        gap: 6px;
+    }
+    
+    .registroLabel{
+        font-size: .95rem;
+    }
+    
+    .registroInput{
+        font-size: 1.2rem;
+        padding: 7px 13px;
+    }
+    
+    .registerButton{
+        padding: 15px;
+        font-size: .9rem;
+    }
+    
+    .frontendRegistroError, .backendRegistroError{
+        font-size: .8rem;
+    }
+}
+
+@media(width>=992px){
+    .registroMain{
+        display: flex;
+        height: 100vh;
+    }
+
+    .registerFormSection{
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 50%;
+        padding: 30px 0 0 50px;
+    }
+    
+    .registroImageContainer{
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    
+    .registroLogo{
+        width: 60px;
+    }
+    
+    .registroTextContainer{
+        gap: 5px;
+        margin-bottom: 25px;
+    }
+    
+    .registroCreateAccountText{
+        font-size: .8rem;
+    }
+    
+    .registroLoginText{
+        font-size: .8rem;
+    }
+    
+    .registroForm{
+        gap: 10px;
+        width: 80%;
+    }
+    
+    .registroFormLabelAndInputContainer{
+        gap: 3px;
+    }
+    
+    .registroLabel{
+        font-size: .7rem;
+    }
+    
+    .registroInput{
+        font-size: .9rem;
+        padding: 5px 7px;
+    }
+    
+    .registerButton{
+        padding: 8px;
+        font-size: .7rem;
+    }
+    
+    .frontendRegistroError, .backendRegistroError{
+        font-size: .7rem;
+    }
+
+    .registerImageSection{
+        display: block;
+        width: 50%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/registroBackground.webp");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .registerImageSectionTextContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: right;
+        position: absolute;
+        bottom: 15%;
+        right: 10px;
+    }
+
+    .registerImageSectionPrimaryText{
+        font-size: 2rem;
+        font-weight: 900;
+    }
+
+    .registerImageSectionSecondaryText{
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+}
+
+@media(width>=1200px){
+    .registerFormSection{
+        padding: 30px 0 0 50px;
+    }
+    
+    .registroImageContainer{
+        margin-bottom: 18px;
+    }
+    
+    .registroLogo{
+        width: 70px;
+    }
+    
+    .registroTextContainer{
+        gap: 7px;
+        margin-bottom: 30px;
+    }
+    
+    .registroCreateAccountText{
+        font-size: .9rem;
+    }
+    
+    .registroLoginText{
+        font-size: .9rem;
+    }
+    
+    .registroForm{
+        gap: 15px;
+        width: 70%;
+    }
+    
+    .registroFormLabelAndInputContainer{
+        gap: 5px;
+    }
+    
+    .registroLabel{
+        font-size: .8rem;
+    }
+    
+    .registroInput{
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+    
+    .registerButton{
+        padding: 10px;
+        font-size: .8rem;
+    }
+
+    .registerImageSectionTextContainer{
+        bottom: 10%;
+        right: 20px;
+        gap: 15px;
+    }
+
+    .registerImageSectionPrimaryText{
+        font-size: 2.3rem;
+    }
+
+    .registerImageSectionSecondaryText{
+        font-size: 1.7rem;
+    }
+}

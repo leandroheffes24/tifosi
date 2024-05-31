@@ -27,6 +27,10 @@ header{
     color: $textColor;
 }
 
+.headerSearchInputContainer{
+    display: none;
+}
+
 .headerLogoContainer{
     width: 50%;
     text-align: center;
@@ -161,6 +165,7 @@ header{
     }
 
     .headerSearchInputContainer{
+        display: block;
         width: 25%;
     }
 

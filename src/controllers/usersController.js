@@ -1,3 +1,8 @@
+const {validationResult} = require("express-validator")
+const {v4: uuidv4} = require("uuid")
+const bcrypt = require("bcryptjs")
+const usersServices = require("../services/usersServices")
+
 module.exports = {
     registro: (req, res) => {
         return res.render("registro")
@@ -5,5 +10,31 @@ module.exports = {
 
     ingresar: (req, res) => {
         return res.render("ingresar")
+    },
+
+    registroProcess: async (req, res) => {
+        let errors = validationResult(req)
+
+        if(errors.errors.length > 0){
+            return res.render("registro", {errors: errors.mapped(), oldData: req.body})
+        }
+
+        let userInDB = await usersServices.findUserEmail(req.body.email)
+
+        if(userInDB){
+            return res.render("registro", {errors: {email: {msg: "El mail ingresado ya está en uso"}}, oldData: req.body})
+        }
+
+        let newUser = {
+            id: uuidv4(),
+            name: req.body.name,
+            last_name: req.body.lastName,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+            rank: "user"
+        }
+
+        usersServices.createUser(newUser)
+        return res.redirect("/ingresar")
     }
 }
