@@ -13,55 +13,128 @@
     <main>
         <section class="indexBannerSection"></section>
 
-        <section class="indexTextSection">
-            <div class="indexShipmentContainerText">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="indexShipmentIcon">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                    <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                    <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
-                </svg>
+        <section id="image-carousel" class="splide indexTextSectionSplide" aria-label="Beautiful Images">
+            <div class="splide__track">
+                  <ul class="splide__list">
+                      <li class="splide__slide">
+                        <div class="indexShipmentContainerText">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="indexShipmentIcon">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+                            </svg>
 
-                <p class="indexShipmentText">Envios a todo el país</p>
+                            <div class="indexShipmentInformationContainer">
+                                <p class="indexShipmentText">ENVIOS A TODO EL PAIS</p>
+                            </div>
+                        </div>
+                      </li>
+
+                      <li class="splide__slide">
+                        <div class="indexWhatsappContainerText">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="indexWhatsappIcon">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                            </svg>
+            
+                            <div class="indexWhatsappInformationContainer">
+                                <p class="indexWhatsappText">+54 9 1123456789</p>
+                                <p class="indexWhatsappText">+54 9 1123456789</p>
+                            </div>
+                        </div>
+                      </li>
+
+                      <li class="splide__slide">
+                        <div class="indexSafePurchaseContainerText">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"  class="indexSafePurchaseIcon">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z" />
+                                <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+                                <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
+                            </svg>
+            
+                            <div class="indexSafePurchaseInformationContainer">
+                                <p class="indexSafePurchaseText">COMPRAS PROTEGIDAS</p>
+                            </div>
+                        </div>
+                      </li>
+
+                      <li class="splide__slide">
+                        <div class="indexInstagramContainerText">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="indexInstagramIcon">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+                                <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                                <path d="M16.5 7.5l0 .01" />
+                            </svg>
+
+                            <div class="indexInstagramInformationContainer">
+                                <p class="indexInstagramText">@futbolecommerce</p>
+                            </div>
+                        </div>
+                      </li>
+                  </ul>
             </div>
 
-            <div class="indexWhatsappContainerText">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="indexWhatsappIcon">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-                    <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
-                </svg>
+            <div class="indexTextSectionDesktop">
+                <div class="indexShipmentContainerText">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="indexShipmentIcon">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+                    </svg>
 
-                <div class="indexWhatsappInformationContainer">
-                    <p class="indexWhatsappText">+54 9 1123456789</p>
-                    <p class="indexWhatsappText">+54 9 1123456789</p>
+                    <div class="indexShipmentInformationContainer">
+                        <p class="indexShipmentText">ENVIOS A TODO EL PAIS</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="indexSafePurchaseContainerText">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"  class="indexSafePurchaseIcon">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z" />
-                    <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
-                    <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
-                </svg>
+                <div class="indexTextSectionSeparator"></div>
 
-                <div class="indexSafePurchaseInformationContainer">
-                    <p class="indexSafePurchaseTitle">Compras seguras</p>
-                    <p class="indexSafePurchaseText">Compras seguras</p>
+                <div class="indexWhatsappContainerText">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="indexWhatsappIcon">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                        <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                    </svg>
+    
+                    <div class="indexWhatsappInformationContainer">
+                        <p class="indexWhatsappText">+54 9 1123456789</p>
+                        <p class="indexWhatsappText">+54 9 1123456789</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="indexInstagramContainerText">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="indexInstagramIcon">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
-                    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
-                    <path d="M16.5 7.5l0 .01" />
-                </svg>
+                <div class="indexTextSectionSeparator"></div>
 
-                <div class="indexInstagramInformationContainer">
-                    <p class="indexInstagramText">@futbolecommerce</p>
+                <div class="indexSafePurchaseContainerText">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"  class="indexSafePurchaseIcon">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z" />
+                        <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+                        <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
+                    </svg>
+    
+                    <div class="indexSafePurchaseInformationContainer">
+                        <p class="indexSafePurchaseText">COMPRAS PROTEGIDAS</p>
+                    </div>
+                </div>
+
+                <div class="indexTextSectionSeparator"></div>
+
+                <div class="indexInstagramContainerText">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="indexInstagramIcon">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+                        <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                        <path d="M16.5 7.5l0 .01" />
+                    </svg>
+
+                    <div class="indexInstagramInformationContainer">
+                        <p class="indexInstagramText">@futbolecommerce</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -114,10 +187,7 @@
     <script>
         document.addEventListener( 'DOMContentLoaded', function() {
             var splide = new Splide( '.splide', {
-                autoWidth: true,
-                autoHeight: true,
-                gap: '2rem',
-                pagination: false,
+                pagination: true,
                 arrows: false
             } );
             splide.mount();

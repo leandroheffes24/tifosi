@@ -367,70 +367,37 @@ footer {
   height: 35vh;
 }
 
-.indexTextSection {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  text-align: center;
-  gap: 12px;
-  padding: 0 10px;
-  margin: 30px 0 40px;
+.indexTextSectionDesktop {
+  display: none;
+  color: rgb(200, 200, 200);
 }
 
-.indexShipmentContainerText, .indexWhatsappContainerText, .indexSafePurchaseContainerText, .indexInstagramContainerText {
-  width: 48%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+.indexTextSectionSplide {
+  margin: 25px 0 40px;
+  color: rgb(200, 200, 200);
 }
 
 .indexShipmentIcon, .indexWhatsappIcon, .indexSafePurchaseIcon, .indexInstagramIcon {
-  width: 25%;
+  width: 50px;
 }
 
-.indexShipmentText {
-  font-size: 0.8rem;
+.indexShipmentContainerText, .indexWhatsappContainerText, .indexSafePurchaseContainerText, .indexInstagramContainerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.indexShipmentText, .indexWhatsappText, .indexSafePurchaseText, .indexInstagramText {
+  font-size: 0.9rem;
   font-weight: 500;
-  width: 75%;
 }
 
 .indexWhatsappInformationContainer {
   display: flex;
   flex-direction: column;
-  width: 75%;
-  gap: 5px;
-}
-
-.indexWhatsappText {
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: rgb(200, 200, 200);
-}
-
-.indexSafePurchaseInformationContainer {
-  display: flex;
-  flex-direction: column;
-  width: 75%;
-}
-
-.indexSafePurchaseTitle {
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.indexSafePurchaseText {
-  font-size: 0.7rem;
-  color: rgb(200, 200, 200);
-}
-
-.indexInstagramInformationContainer {
-  width: 75%;
-}
-
-.indexInstagramText {
-  font-size: 0.8rem;
-  color: rgb(200, 200, 200);
+  gap: 7px;
 }
 
 .indexCategoriesSection {
@@ -458,47 +425,21 @@ footer {
   .indexBannerSection {
     height: 45vh;
   }
-  .indexTextSection {
-    justify-content: center;
-    gap: 30px;
-    padding: 0 20px;
-    margin: 60px 0 70px;
-  }
-  .indexShipmentContainerText, .indexWhatsappContainerText, .indexSafePurchaseContainerText, .indexInstagramContainerText {
-    width: 30%;
-    display: flex;
-    flex-wrap: wrap;
+  .indexTextSectionSplide {
+    margin: 35px 0 60px;
   }
   .indexShipmentIcon, .indexWhatsappIcon, .indexSafePurchaseIcon, .indexInstagramIcon {
-    width: 20%;
+    width: 80px;
   }
-  .indexShipmentText {
-    font-size: 1rem;
-    font-weight: 500;
-    width: 80%;
+  .indexShipmentContainerText, .indexWhatsappContainerText, .indexSafePurchaseContainerText, .indexInstagramContainerText {
+    gap: 30px;
+    margin-bottom: 45px;
+  }
+  .indexShipmentText, .indexWhatsappText, .indexSafePurchaseText, .indexInstagramText {
+    font-size: 1.3rem;
   }
   .indexWhatsappInformationContainer {
-    width: 80%;
-    gap: 7px;
-  }
-  .indexWhatsappText {
-    font-size: 0.9rem;
-  }
-  .indexSafePurchaseInformationContainer {
-    width: 80%;
-    gap: 3px;
-  }
-  .indexSafePurchaseTitle {
-    font-size: 1rem;
-  }
-  .indexSafePurchaseText {
-    font-size: 0.9rem;
-  }
-  .indexInstagramInformationContainer {
-    width: 80%;
-  }
-  .indexInstagramText {
-    font-size: 1rem;
+    gap: 10px;
   }
   .indexCamisetasSection {
     padding: 0 40px 60px;
@@ -515,29 +456,35 @@ footer {
   .indexBannerSection {
     height: 55vh;
   }
-  .indexTextSection {
+  .splide__track {
+    display: none;
+  }
+  .indexTextSectionDesktop {
+    display: flex;
     justify-content: space-between;
-    gap: 0;
-    padding: 0 100px;
-    margin: 30px 0 50px;
+    width: 85%;
+    margin: auto;
+  }
+  .indexTextSectionSplide {
+    margin: 45px 0 60px;
+  }
+  .indexShipmentIcon, .indexWhatsappIcon, .indexSafePurchaseIcon, .indexInstagramIcon {
+    width: 35px;
   }
   .indexShipmentContainerText, .indexWhatsappContainerText, .indexSafePurchaseContainerText, .indexInstagramContainerText {
-    width: 20%;
+    gap: 10px;
+    margin-bottom: 0;
   }
-  .indexShipmentText {
-    font-size: 0.9rem;
-  }
-  .indexWhatsappText {
+  .indexShipmentText, .indexWhatsappText, .indexSafePurchaseText, .indexInstagramText {
     font-size: 0.8rem;
   }
-  .indexSafePurchaseTitle {
-    font-size: 0.9rem;
+  .indexWhatsappInformationContainer {
+    gap: 5px;
   }
-  .indexSafePurchaseText {
-    font-size: 0.8rem;
-  }
-  .indexInstagramText {
-    font-size: 0.9rem;
+  .indexTextSectionSeparator {
+    width: 1px;
+    height: 35px;
+    background-color: white;
   }
   .indexCategoriesSection {
     display: block;
@@ -563,9 +510,17 @@ footer {
   }
 }
 @media (width >= 1200px) {
-  .indexTextSection {
-    padding: 0 190px;
-    margin: 40px 0 60px;
+  .indexTextSectionDesktop {
+    width: 75%;
+  }
+  .indexShipmentIcon, .indexWhatsappIcon, .indexSafePurchaseIcon, .indexInstagramIcon {
+    width: 38px;
+  }
+  .indexShipmentContainerText, .indexWhatsappContainerText, .indexSafePurchaseContainerText, .indexInstagramContainerText {
+    gap: 15px;
+  }
+  .indexTextSectionSeparator {
+    height: 42px;
   }
   .indexCategoriesSection {
     width: 85%;
