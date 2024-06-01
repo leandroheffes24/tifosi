@@ -7,72 +7,70 @@
 <body>
     <main class="registroMain">
         <section class="registerFormSection">
-            <div class="registroImageContainer">
-                <a href="/">
-                    <img class="registroLogo" src="/images/exampleLogo.png" alt="">
-                </a>
-            </div>
+            <div class="registerContainer">
+                <div class="registroImageContainer">
+                    <a href="/">
+                        <img class="registroLogo" src="/images/exampleLogo.png" alt="">
+                    </a>
+                </div>
+        
+                <div class="registroTextContainer">
+                    <span class="registroCreateAccountText">Crea una cuenta si eres nuevo.</span>
+                    <span class="registroLoginText"><a class="registroLoginLink" href="/ingresar">Inicia sesión</a> si ya tienes una.</span>
+                </div>
+        
+                <form class="registroForm" id="registroForm" method="post" action="/registro" enctype="application/x-www-form-urlencoded">
+                    <div class="registroFormLabelAndInputContainer">
+                        <label class="registroLabel" for="name">Nombre</label>
+                        <input class="registroInput" type="text" id="name" name="name" value="<%= locals.oldData && oldData.name ? oldData.name : "" %>">
+                        <span class="frontendRegistroError" id="nameError"></span>
+                        <% if (locals.errors && errors.name) { %>
+                            <span class="backendRegistroError"><%= errors.name.msg %></span>
+                        <% } %>
+                    </div>
     
-            <div class="registroTextContainer">
-                <span class="registroCreateAccountText">Crea una cuenta si eres nuevo.</span>
-                <span class="registroLoginText"><a class="registroLoginLink" href="/ingresar">Inicia sesión</a> si ya tienes una.</span>
-            </div>
+                    <div class="registroFormLabelAndInputContainer">
+                        <label class="registroLabel" for="lastName">Apellido</label>
+                        <input class="registroInput" type="text" id="lastName" name="lastName" value="<%= locals.oldData && oldData.lastName ? oldData.lastName : "" %>">
+                        <span class="frontendRegistroError" id="lastNameError"></span>
+                        <% if (locals.errors && errors.lastName) { %>
+                            <span class="backendRegistroError"><%= errors.lastName.msg %></span>
+                        <% } %>
+                    </div>
     
-            <form class="registroForm" id="registroForm" method="post" action="/registro" enctype="application/x-www-form-urlencoded">
-                <div class="registroFormLabelAndInputContainer">
-                    <label class="registroLabel" for="name">Nombre</label>
-                    <input class="registroInput" type="text" id="name" name="name" value="<%= locals.oldData && oldData.name ? oldData.name : "" %>">
-                    <span class="frontendRegistroError" id="nameError"></span>
-                    <% if (locals.errors && errors.name) { %>
-                        <span class="backendRegistroError"><%= errors.name.msg %></span>
-                    <% } %>
-                </div>
-
-                <div class="registroFormLabelAndInputContainer">
-                    <label class="registroLabel" for="lastName">Apellido</label>
-                    <input class="registroInput" type="text" id="lastName" name="lastName" value="<%= locals.oldData && oldData.lastName ? oldData.lastName : "" %>">
-                    <span class="frontendRegistroError" id="lastNameError"></span>
-                    <% if (locals.errors && errors.lastName) { %>
-                        <span class="backendRegistroError"><%= errors.lastName.msg %></span>
-                    <% } %>
-                </div>
-
-                <div class="registroFormLabelAndInputContainer">
-                    <label class="registroLabel" for="email">E-mail</label>
-                    <input class="registroInput" type="email" id="email" name="email" value="<%= locals.oldData && oldData.email ? oldData.email : "" %>">
-                    <span class="frontendRegistroError" id="emailError"></span>
-                    <% if (locals.errors && errors.email) { %>
-                        <span class="backendRegistroError"><%= errors.email.msg %></span>
-                    <% } %>
-                </div>
-
-                <div class="registroFormLabelAndInputContainer">
-                    <label class="registroLabel" for="password">Contraseña</label>
-                    <input class="registroInput" type="password" id="password" name="password">
-                    <span class="frontendRegistroError" id="passwordError"></span>
-                    <% if (locals.errors && errors.password) { %>
-                        <span class="backendRegistroError"><%= errors.password.msg %></span>
-                    <% } %>
-                </div>
-
-                <div class="registroFormLabelAndInputContainer">
-                    <label class="registroLabel" for="passwordConfirmation">Confirmar contraseña</label>
-                    <input class="registroInput" type="password" id="passwordConfirmation" name="passwordConfirmation">
-                    <span class="frontendRegistroError" id="passwordConfirmationError"></span>
-                    <% if (locals.errors && errors.passwordConfirmation) { %>
-                        <span class="backendRegistroError"><%= errors.passwordConfirmation.msg %></span>
-                    <% } %>
-                </div>
-
-                <button class="registerButton" type="submit">CREAR CUENTA</button>
-            </form>
+                    <div class="registroFormLabelAndInputContainer">
+                        <label class="registroLabel" for="email">E-mail</label>
+                        <input class="registroInput" type="email" id="email" name="email" value="<%= locals.oldData && oldData.email ? oldData.email : "" %>">
+                        <span class="frontendRegistroError" id="emailError"></span>
+                        <% if (locals.errors && errors.email) { %>
+                            <span class="backendRegistroError"><%= errors.email.msg %></span>
+                        <% } %>
+                    </div>
+    
+                    <div class="registroFormLabelAndInputContainer">
+                        <label class="registroLabel" for="password">Contraseña</label>
+                        <input class="registroInput" type="password" id="password" name="password">
+                        <span class="frontendRegistroError" id="passwordError"></span>
+                        <% if (locals.errors && errors.password) { %>
+                            <span class="backendRegistroError"><%= errors.password.msg %></span>
+                        <% } %>
+                    </div>
+    
+                    <div class="registroFormLabelAndInputContainer">
+                        <label class="registroLabel" for="passwordConfirmation">Confirmar contraseña</label>
+                        <input class="registroInput" type="password" id="passwordConfirmation" name="passwordConfirmation">
+                        <span class="frontendRegistroError" id="passwordConfirmationError"></span>
+                        <% if (locals.errors && errors.passwordConfirmation) { %>
+                            <span class="backendRegistroError"><%= errors.passwordConfirmation.msg %></span>
+                        <% } %>
+                    </div>
+    
+                    <button class="registerButton" type="submit">CREAR CUENTA</button>
+                </form>
+            </div>
         </section>
 
         <section class="registerImageSection">
-            <div class="registerImageSectionTextContainer">
-                <p class="registerImageSectionPrimaryText">CREA TU CUENTA</p>
-                <p class="registerImageSectionSecondaryText">COMPRÁ EN TU LUGAR FAVORITO</p>
-            </div>
         </section>
     </main>
 </body>

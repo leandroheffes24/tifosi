@@ -36,5 +36,20 @@ module.exports = {
 
         usersServices.createUser(newUser)
         return res.redirect("/ingresar")
+    },
+
+    ingresarProcess: async (req, res) => {
+        const userInDB = await usersServices.findUserEmail(req.body.email)
+
+        if(!userInDB){
+            return res.render("ingresar", {errors: {email: {msg: "Mail no registrado"}}})
+        }
+
+        if(!bcrypt.compareSync(req.body.password, userInDB.password)){
+            return res.render("ingresar", {errors: {password: {msg: "Contraseña incorrecta"}}, oldData: req.body})
+        } else {
+            req.session.userLoggedIn = userInDB
+            return res.redirect("/")
+        }
     }
 }

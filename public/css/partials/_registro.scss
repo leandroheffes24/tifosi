@@ -157,7 +157,13 @@
         left: auto;
         transform: none;
         width: 50%;
-        padding: 30px 0 0 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .registerContainer{
+        width: 70%;
     }
     
     .registroImageContainer{
@@ -184,7 +190,6 @@
     
     .registroForm{
         gap: 10px;
-        width: 80%;
     }
     
     .registroFormLabelAndInputContainer{
@@ -212,35 +217,15 @@
     .registerImageSection{
         display: block;
         width: 50%;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/registroBackground.webp");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/3.png");
         background-size: cover;
         background-position: center;
-    }
-
-    .registerImageSectionTextContainer{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        text-align: right;
-        position: absolute;
-        bottom: 15%;
-        right: 10px;
-    }
-
-    .registerImageSectionPrimaryText{
-        font-size: 2rem;
-        font-weight: 900;
-    }
-
-    .registerImageSectionSecondaryText{
-        font-size: 1.5rem;
-        font-weight: 900;
     }
 }
 
 @media(width>=1200px){
-    .registerFormSection{
-        padding: 30px 0 0 50px;
+    .registerContainer{
+        width: 60%;
     }
     
     .registroImageContainer{
@@ -266,7 +251,6 @@
     
     .registroForm{
         gap: 15px;
-        width: 70%;
     }
     
     .registroFormLabelAndInputContainer{
