@@ -47,13 +47,35 @@
 }
 
 .indexCamisetasSection{
-    padding: 0 10px 30px;
+    width: 91%;
+    margin: 0 auto 40px;
+}
+
+.indexCamisetasTitleAndFilterButtonContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 42px;
 }
 
 .indexCamisetasTitle{
-    text-align: center;
-    margin-bottom: 30px;
     font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.indexCamisetasTitleUnderline{
+    width: 100px;
+    height: 4px;
+    background-color: green;
+}
+
+.indexCamisetasFilterButton{
+    background: none;
+    border: none;
+}
+
+.indexCamisetasFilterIcon{
+    width: 25px;
+    color: $textColor;
 }
 
 .indexCamisetasContainer{
@@ -94,12 +116,26 @@
     //---------------------------------------------------------
     
     .indexCamisetasSection{
-        padding: 0 40px 60px;
+        width: 85%;
+        margin: 0 auto 60px;
+    }
+    
+    .indexCamisetasTitleAndFilterButtonContainer{
+        margin-bottom: 60px;
     }
     
     .indexCamisetasTitle{
-        margin-bottom: 50px;
-        font-size: 1.6rem;
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+    
+    .indexCamisetasTitleUnderline{
+        width: 170px;
+        height: 6px;
+    }
+    
+    .indexCamisetasFilterIcon{
+        width: 40px;
     }
     
     .indexCamisetasContainer{
@@ -159,7 +195,7 @@
         border-bottom: 2px solid green;
         display: block;
         font-size: .9rem;
-        margin: 0 40px 90px;
+        margin: 0 40px 60px;
         padding: 20px 0;
     }
 
@@ -186,12 +222,20 @@
     }
     
     .indexCamisetasSection{
-        padding: 0 40px 60px;
+        width: 90%;
+    }
+    
+    .indexCamisetasTitleAndFilterButtonContainer{
+        width: 95%;
+        margin: 0 auto 60px;
     }
     
     .indexCamisetasTitle{
-        margin-bottom: 40px;
-        font-size: 1.3rem;
+        font-size: 1.7rem;
+    }
+    
+    .indexCamisetasFilterIcon{
+        width: 30px;
     }
     
     .indexCamisetasContainer{
@@ -232,13 +276,19 @@
     
     .indexCamisetasSection{
         width: 85%;
-        margin: auto;
-        padding: 0 0 60px;
+    }
+    
+    .indexCamisetasTitleAndFilterButtonContainer{
+        width: 95%;
+        margin: 0 auto 65px;
     }
     
     .indexCamisetasTitle{
-        margin-bottom: 50px;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+    }
+    
+    .indexCamisetasFilterIcon{
+        width: 35px;
     }
     
     .indexCamisetasContainer{
