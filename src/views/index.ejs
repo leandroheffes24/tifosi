@@ -140,19 +140,15 @@
         </section>
 
         <section class="indexCategoriesSection">
-            <section class="splide" aria-labelledby="carousel-heading">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <% categories.forEach(category => { %>
-                            <li class="splide__slide">
-                                <a class="indexCategoriesSectionLink" href="/categories/<%= category.name.toLowerCase() %>">
-                                    <%= category.name %>
-                                </a>
-                            </li>
-                        <% }) %>
-                    </ul>
-                </div>
-            </section>
+            <ul class="indexCategoriesList">
+                <% categories.forEach(category => { %>
+                    <li class="indexCategoryItemList">
+                        <a class="indexCategoryItemLink" href="/categories/<%= category.name.toLowerCase().replace(" ", "-") %>">
+                            <%= category.name %>
+                        </a>
+                    </li>
+                <% }) %>
+            </ul>
         </section>
 
         <section class="indexCamisetasSection">

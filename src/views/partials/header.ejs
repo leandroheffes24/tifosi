@@ -70,7 +70,7 @@
             <ul class="headerNavbarLinksList">
                 <% categories.forEach(category => { %>
                     <li class="headerNavbarItemList">
-                        <a class="headerNavbarItemLink" href="/categories/<%= category.name.toLowerCase() %>">
+                        <a class="headerNavbarItemLink" href="/categories/<%= category.name.toLowerCase().replace(" ", "-") %>">
                             <%= category.name %>
                         </a>
                     </li>

@@ -75,6 +75,7 @@ header {
   z-index: 15;
   background-color: rgb(25, 25, 25);
   box-shadow: 0px 0px 0px 300px rgba(0, 0, 0, 0.5);
+  overflow-y: scroll;
 }
 
 .headerCloseNavbarButtonContainer {
@@ -101,6 +102,8 @@ header {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .headerNavbarItemList {
@@ -487,16 +490,30 @@ footer {
     background-color: white;
   }
   .indexCategoriesSection {
+    border-top: 2px solid green;
+    border-bottom: 2px solid green;
     display: block;
-    border-top: 1px solid green;
-    border-bottom: 1px solid green;
-    margin: 0 40px 60px;
+    font-size: 0.9rem;
+    margin: 0 40px 90px;
     padding: 20px 0;
   }
-  .indexCategoriesSectionLink {
-    color: rgb(200, 200, 200);
+  .indexCategoriesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .indexCategoryItemList {
+    list-style: none;
+  }
+  .indexCategoryItemLink {
     text-decoration: none;
-    font-size: 0.9rem;
+    color: rgb(240, 240, 240);
+    transition: 0.3s all;
+  }
+  .indexCategoryItemLink:hover {
+    color: rgb(7, 190, 7);
+    transition: 0.3s all;
   }
   .indexCamisetasSection {
     padding: 0 40px 60px;
@@ -524,11 +541,11 @@ footer {
   }
   .indexCategoriesSection {
     width: 85%;
-    margin: 0 auto 40px;
-    padding: 25px 0;
+    margin: 0 auto 90px;
+    padding: 30px 0;
   }
-  .indexCategoriesSectionLink {
-    font-size: 0.9rem;
+  .indexCategoriesList {
+    gap: 25px;
   }
   .indexCamisetasSection {
     width: 85%;

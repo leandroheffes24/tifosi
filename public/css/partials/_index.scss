@@ -155,17 +155,34 @@
     //---------------------------------------------------------
 
     .indexCategoriesSection{
+        border-top: 2px solid green;
+        border-bottom: 2px solid green;
         display: block;
-        border-top: 1px solid green;
-        border-bottom: 1px solid green;
-        margin: 0 40px 60px;
+        font-size: .9rem;
+        margin: 0 40px 90px;
         padding: 20px 0;
     }
-    
-    .indexCategoriesSectionLink{
-        color: $secondaryTextColor;
+
+    .indexCategoriesList{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .indexCategoryItemList{
+        list-style: none;
+    }
+
+    .indexCategoryItemLink{
         text-decoration: none;
-        font-size: .9rem;
+        color: $textColor;
+        transition: .3s all;
+    }
+
+    .indexCategoryItemLink:hover{
+        color: rgb(7, 190, 7);
+        transition: .3s all;
     }
     
     .indexCamisetasSection{
@@ -205,12 +222,12 @@
 
     .indexCategoriesSection{
         width: 85%;
-        margin: 0 auto 40px;
-        padding: 25px 0;
+        margin: 0 auto 90px;
+        padding: 30px 0;
     }
-    
-    .indexCategoriesSectionLink{
-        font-size: .9rem;
+
+    .indexCategoriesList{
+        gap: 25px;
     }
     
     .indexCamisetasSection{
