@@ -34,6 +34,18 @@
     </div>
 
     <div class="headerIconsContainer">
+        <% if(locals.userLoggedIn.rank == "admin"){ %>
+            <a class="headerAccountIconLink" href="/crear">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="headerCreateIcon">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+                    <path d="M13.5 6.5l4 4" />
+                    <path d="M16 19h6" />
+                    <path d="M19 16v6" />
+                </svg>
+            </a>
+        <% } %>
+
         <a class="headerAccountIconLink" href="/registro">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="headerAccountIcon">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
