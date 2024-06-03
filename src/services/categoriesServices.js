@@ -13,6 +13,16 @@ const categoriesServices = {
         } else {
             return categorySelected[0].dataValues.id
         }
+    },
+
+    getCreateProductCategoryId: async (categoryName) => {
+        const categories = await Categories.findAll()
+        const categorySelected = categories.filter(category => category.name == categoryName)
+        if(categorySelected[0] === undefined){
+            return undefined
+        } else {
+            return categorySelected[0].dataValues.id
+        }
     }
 }
 

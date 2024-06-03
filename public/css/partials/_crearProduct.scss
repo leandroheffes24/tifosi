@@ -1,0 +1,139 @@
+.crearProductForm{
+    width: 90%;
+    margin: 40px auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: rgb(35, 35, 35);
+    border: 2px solid rgb(55, 55, 55);
+}
+
+.crearProductTitle{
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.createProductLabelAndInputContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.createProductLabel{
+    font-size: .8rem;
+    font-weight: 500;
+    color: $secondaryTextColor;
+}
+
+.createProductInput{
+    background-color: rgb(45, 45, 45);
+    border: none;
+    outline: none;
+    color: $textColor;
+    font-size: .9rem;
+    padding: 5px 8px;
+    border-radius: 2px;
+}
+
+.crearProductoButton{
+    background-color: rgb(35, 35, 35);
+    border: 2px solid rgb(55, 55, 55);
+    color: $secondaryTextColor;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (width >= 768px) {
+    .crearProductForm{
+        width: 75%;
+        margin: 80px auto;
+        padding: 20px;
+        gap: 30px;
+    }
+    
+    .crearProductTitle{
+        font-size: 1.7rem;
+    }
+    
+    .createProductLabelAndInputContainer{
+        gap: 4px;
+    }
+    
+    .createProductLabel{
+        font-size: .9rem;
+    }
+    
+    .createProductInput{
+        font-size: 1rem;
+        padding: 7px 10px;
+    }
+    
+    .crearProductoButton{
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 15px;
+    }
+}
+
+@media (width >= 992px) {
+    .crearProductForm{
+        width: 60%;
+        margin: 40px auto;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .crearProductTitle{
+        font-size: 1rem;
+    }
+    
+    .createProductLabelAndInputContainer{
+        gap: 2px;
+    }
+    
+    .createProductLabel{
+        font-size: .7rem;
+    }
+    
+    .createProductInput{
+        font-size: .8rem;
+        padding: 5px 7px;
+    }
+    
+    .crearProductoButton{
+        font-size: .8rem;
+        padding: 8px;
+    }
+}
+
+@media (width >= 1200px) {
+    .crearProductForm{
+        width: 50%;
+        gap: 20px;
+    }
+    
+    .crearProductTitle{
+        font-size: 1.2rem;
+    }
+    
+    .createProductLabelAndInputContainer{
+        gap: 3px;
+    }
+    
+    .createProductLabel{
+        font-size: .8rem;
+    }
+    
+    .createProductInput{
+        font-size: .9rem;
+        padding: 7px 10px;
+    }
+    
+    .crearProductoButton{
+        font-size: .9rem;
+        padding: 10px;
+    }
+}
