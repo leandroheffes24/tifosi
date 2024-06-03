@@ -1,5 +1,5 @@
 .camisetaContainer{
-    width: 48%;
+    width: 46%;
     position: relative;
 }
 
@@ -17,10 +17,19 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    border-top: 1px solid rgb(45, 45, 45);
+    padding-top: 10px;
 }
 
 .camisetaTitle{
     font-size: .9rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2; /* Ajusta la altura de la línea según tu necesidad */
+    max-height: 3em;  /* line-height * number of lines */
 }
 
 .camisetaPrice{
@@ -34,18 +43,19 @@
     left: 0;
     background-color: $camisetaDiscountBackground;
     padding: 3px;
-    border-radius: 3px;
+    border-radius: 2px;
     font-size: .8rem;
     font-weight: 500;
 }
 
 @media (width >= 768px) {
     .camisetaContainer{
-        width: 30%;
+        width: 28%;
     }
     
     .camisetaInformationContainer{
         gap: 10px;
+        padding-top: 13px;
     }
     
     .camisetaTitle{
@@ -58,18 +68,18 @@
     
     .camisetaDiscount{
         padding: 4px;
-        border-radius: 5px;
         font-size: 1rem;
     }
 }
 
 @media (width >= 992px) {
     .camisetaContainer{
-        width: 20%;
+        width: 23%;
     }
     
     .camisetaInformationContainer{
         gap: 7px;
+        padding-top: 15px;
     }
     
     .camisetaTitle{
@@ -82,12 +92,11 @@
     
     .camisetaDiscount{
         padding: 3px;
-        border-radius: 3px;
         font-size: .8rem;
     }
 }
 
-@media (width >= 1200px) {    
+@media (width >= 1200px) {
     .camisetaInformationContainer{
         gap: 10px;
     }
@@ -102,7 +111,6 @@
     
     .camisetaDiscount{
         padding: 4px;
-        border-radius: 5px;
         font-size: .9rem;
     }
 }

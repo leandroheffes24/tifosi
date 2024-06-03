@@ -1,0 +1,57 @@
+.categoryMain{
+    width: 91%;
+    margin: 20px auto 40px;
+}
+
+.categoryFilterSection{
+    display: none;
+}
+
+@media (width >= 768px) {
+    .categoryMain{
+        width: 85%;
+        margin: 40px auto 60px;
+    }
+}
+
+@media (width >= 992px) {
+    .categoryMain{
+        width: 90%;
+        display: flex;
+    }
+
+    .categoryFilterSection{
+        border: 1px solid red;
+        display: block;
+        width: 20%;
+    }
+
+    .categoryFiltrosUnderline{
+        width: 80px;
+    }
+
+
+
+    .categoryProductsSection{
+        width: 80%;
+        padding-left: 30px;
+    }
+
+    .categoryCamisetasTitleAndFilterButtonContainer{
+        margin-bottom: 40px;
+    }
+
+    .categoryCamisetasFilterButtonContainer{
+        display: none;
+    }
+
+    .categoryCamisetaContainer{
+        width: 22% !important;
+    }
+}
+
+@media (width >= 1200px) {
+    .categoryMain{
+        width: 85%;
+    }
+}

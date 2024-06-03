@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head", {title: "Futbol e-commerce"}) %>
+</head>
+<body>
+    <!-- ******************************** HEADER ******************************** -->
+    <%- include("partials/header") %>
+    <!-- ******************************** END HEADER ******************************** -->
+
+    <!-- ******************************** MAIN ******************************** -->
+    <main class="categoryMain">
+        <section class="categoryFilterSection">
+            <div class="filterTitleContainer">
+                <h2 class="indexCamisetasTitle">FILTROS</h2>
+                <div class="indexCamisetasTitleUnderline categoryFiltrosUnderline"></div>
+            </div>
+
+            <form class="filtrosForm" action="">
+                
+            </form>
+        </section>
+
+        <section class="categoryProductsSection">
+            <div class="indexCamisetasTitleAndFilterButtonContainer categoryCamisetasTitleAndFilterButtonContainer">
+                <div class="indexCamisetasTitleContainer">
+                    <h2 class="indexCamisetasTitle categoryCamisetasTitle"><%= categoryName.toUpperCase().replace("-", " ") %></h2>
+                    <div class="indexCamisetasTitleUnderline"></div>
+                </div>
+
+                <div class="indexCamisetasFilterButtonContainer categoryCamisetasFilterButtonContainer">
+                    <button class="indexCamisetasFilterButton">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="indexCamisetasFilterIcon">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M4 4h16v2.172a2 2 0 0 1 -.586 1.414l-4.414 4.414v7l-6 2v-8.5l-4.48 -4.928a2 2 0 0 1 -.52 -1.345v-2.227z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="indexCamisetasContainer">
+                <% categoryProducts.forEach(product => { %>
+                    <div class="camisetaContainer categoryCamisetaContainer">
+                        <a class="camiestaLink" href="/products/<%= product.id %>">
+                            <div class="camisetaImageContainer">
+                                <img class="camisetaImage" src="/images/products/<%= product.image %>" alt="<%= product.product_name %>">
+                            </div>
+        
+                            <div class="camisetaInformationContainer">
+                                <span class="camisetaTitle"><%= product.product_name %></span>
+                                <span class="camisetaPrice">$<%= product.price %></span>
+                                <span class="camisetaDiscount"><%= product.discount %>% OFF</span>
+                            </div>
+                        </a>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+    </main>
+    <!-- ******************************** END MAIN ******************************** -->
+
+    <!-- ******************************** FOOTER ******************************** -->
+    <%- include("partials/footer") %>
+    <!-- ******************************** END FOOTER ******************************** -->
+</body>
+</html>
