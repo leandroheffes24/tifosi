@@ -20,6 +20,12 @@ const categoriesServices = {
         }
     },
 
+    getLastCategoryId: async () => {
+        return Categories.findOne({
+            order: [["created_at", "DESC"]]
+        })
+    },
+
     getCreateProductCategoryId: async (categoryName) => {
         const categories = await Categories.findAll()
         const categorySelected = categories.filter(category => category.name == categoryName)
@@ -38,6 +44,13 @@ const categoriesServices = {
         } else {
             return subcategorySelected[0].dataValues.id
         }
+    },
+
+    createCategory: (newCategory, newCategoryId) => {
+        return Categories.create({
+            id: newCategoryId,
+            name: newCategory
+        })
     }
 }
 
