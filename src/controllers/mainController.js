@@ -1,5 +1,6 @@
 const productsServices = require("../services/productsServices")
 const categoriesServices = require("../services/categoriesServices")
+const tallesServices = require("../services/tallesServices")
 const {validationResult} = require("express-validator")
 
 module.exports = {
@@ -29,6 +30,11 @@ module.exports = {
     crearCategoria: async (req, res) => {
         const categories = await categoriesServices.getAllCategories()
         return res.render("categoryCreate", {categories})
+    },
+
+    crearTalle: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        return res.render("talleCreate", {categories})
     },
 
     crearProductoProcess: async (req, res) => {
@@ -66,9 +72,17 @@ module.exports = {
 
     crearCategoriaProcess: async (req, res) => {
         const newCategory = req.body.newCategory
-        const lastCategory = await categoriesServices.getLastCategoryId
+        const lastCategory = await categoriesServices.getLastCategory()
         const newCategoryId = lastCategory.id + 1
         categoriesServices.createCategory(newCategory, newCategoryId)
+        return res.redirect("/")
+    },
+
+    crearTalleProcess: async (req, res) => {
+        const newTalle = req.body.newTalle
+        const lastTalle = await tallesServices.getLastTalle()
+        const newTalleId = lastTalle.id + 1
+        tallesServices.createTalle(newTalle, newTalleId)
         return res.redirect("/")
     }
 }

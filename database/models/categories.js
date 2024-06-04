@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         {
             tableName: "categories",
-            timestamps: false
+            createdAt: "created_at",
+            updatedAt: "updated_at"
         }
     )
 

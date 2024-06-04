@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         {
             tableName: "shopping_cart",
-            timestamps: false
+            createdAt: "created_at",
+            updatedAt: "updated_at"
         }
     )
 

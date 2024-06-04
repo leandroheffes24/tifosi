@@ -12,5 +12,7 @@ router.put("/crear/producto-subcategoria/:productId", mainController.crearProduc
 router.post("/crear/producto", multerUpload.single("image"), crearProductsValidations, mainController.crearProductoProcess)
 router.get("/crear/categoria", mainController.crearCategoria)
 router.post("/crear/categoria", mainController.crearCategoriaProcess)
+router.get("/crear/talle", mainController.crearTalle)
+router.post("/crear/talle", mainController.crearTalleProcess)
 
 module.exports = router

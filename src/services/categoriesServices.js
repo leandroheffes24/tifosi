@@ -20,7 +20,7 @@ const categoriesServices = {
         }
     },
 
-    getLastCategoryId: async () => {
+    getLastCategory: async () => {
         return Categories.findOne({
             order: [["created_at", "DESC"]]
         })
