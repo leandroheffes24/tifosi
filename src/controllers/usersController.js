@@ -2,6 +2,7 @@ const {validationResult} = require("express-validator")
 const {v4: uuidv4} = require("uuid")
 const bcrypt = require("bcryptjs")
 const usersServices = require("../services/usersServices")
+const categoriesServices = require("../services/categoriesServices")
 
 module.exports = {
     registro: (req, res) => {
@@ -10,6 +11,11 @@ module.exports = {
 
     ingresar: (req, res) => {
         return res.render("ingresar")
+    },
+
+    carrito: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        return res.render("carrito", {categories})
     },
 
     registroProcess: async (req, res) => {

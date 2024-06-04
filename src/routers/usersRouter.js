@@ -7,5 +7,6 @@ router.get("/registro", usersController.registro)
 router.post("/registro", registerValidations, usersController.registroProcess)
 router.get("/ingresar", usersController.ingresar)
 router.post("/ingresar", usersController.ingresarProcess)
+router.get("/carrito", usersController.carrito)
 
 module.exports = router

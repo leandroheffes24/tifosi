@@ -1,4 +1,5 @@
 const {body} = require("express-validator")
+const path = require("path")
 
 module.exports = [
     body("product_name").notEmpty().withMessage("Debes ingresar el nombre del producto"),
@@ -19,6 +20,5 @@ module.exports = [
         }
 
         return true
-    }),
-    body("category").notEmpty("Selecciona una categoría")
+    })
 ]

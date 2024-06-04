@@ -1,9 +1,10 @@
 const express = require("express")
+const app = express()
 const mainRouter = require("./src/routers/mainRouter")
 const usersRouter = require("./src/routers/usersRouter")
 const categoriesRouter = require("./src/routers/categoriesRouter")
-const app = express()
 const session = require("express-session")
+const methodOverride = require("method-override");
 const userLoggedInMiddleware = require("./src/middlewares/userLoggedInMiddleware")
 
 app.use(express.static(__dirname + "/public"))
@@ -16,6 +17,7 @@ app.use(
     })
 );
 app.use(userLoggedInMiddleware)
+app.use(methodOverride("_method"))
 app.use(mainRouter)
 app.use(usersRouter)
 app.use(categoriesRouter)

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head", {title: "Futbol e-commerce"}) %>
+</head>
+<body>
+    <!-- ******************************** HEADER ******************************** -->
+    <%- include("partials/header") %>
+    <!-- ******************************** END HEADER ******************************** -->
+
+    <main class="crearProductMain">
+        <form class="crearProductForm" id="crearProductSubcategoryForm" action="/crear/producto-subcategoria/<%= productId %>?_method=put" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="createProductLabelAndInputContainer">
+                <label class="createProductLabel" for="subcategory">Subcategoría</label>
+                <select class="createProductInput" name="subcategory" id="subcategory">
+                    <% subcategories.forEach(subcategory => { %>
+                        <option value="<%= subcategory.name %>"><%= subcategory.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <button class="crearProductoButton" type="submit">CREAR PRODUCTO</button>
+        </form>
+    </main>
+
+    <!-- ******************************** FOOTER ******************************** -->
+    <%- include("partials/footer") %>
+    <!-- ******************************** END FOOTER ******************************** -->
+</body>
+</html>

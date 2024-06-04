@@ -16,18 +16,30 @@ const productsServices = {
 
     getLastProduct: () => {
         return Products.findOne({
-            order: [["creater_at", "DESC"]]
+            order: [["created_at", "DESC"]]
         })
+    },
+
+    getProductById: (productId) => {
+        return Products.findByPk(productId)
     },
 
     createProduct: (newProduct) => {
         return Products.create({
             id: newProduct.id,
             price: newProduct.price,
-            discount: newProduct.dicount,
+            discount: newProduct.discount,
             product_name: newProduct.product_name,
             image: newProduct.image,
-            category_id: newProduct.categoryId
+            category_id: newProduct.category_id
+        })
+    },
+
+    createProductSubcategory: (subcategory, productId) => {
+        return Products.update({
+            subcategory_id: subcategory
+        }, {
+            where: {id: productId}
         })
     }
 }
