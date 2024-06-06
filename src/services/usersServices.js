@@ -1,6 +1,6 @@
 const {Users} = require("../../database/models")
 
-const productsServices = {
+const usersServices = {
     findUserEmail: (email) => {
         return Users.findOne({
             where: {email: email}
@@ -19,4 +19,4 @@ const productsServices = {
     }
 }
 
-module.exports = productsServices
+module.exports = usersServices

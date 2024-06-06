@@ -3,6 +3,7 @@
 <head>
     <%- include("partials/head", {title: "Futbol e-commerce"}) %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="/js/carritoScript.js" defer></script>
 </head>
 <body>
     <!-- ******************************** HEADER ******************************** -->
@@ -182,6 +183,10 @@
                                 <span class="camisetaDiscount"><%= product.discount %>% OFF</span>
                             </div>
                         </a>
+
+                        <form class="camisetaForm" action="/carrito/<%= product.id %>" method="post">
+                            <button class="camisetaAddToCartButton">AGREGAR AL CARRITO</button>
+                        </form>
                     </div>
                 <% }) %>
             </div>

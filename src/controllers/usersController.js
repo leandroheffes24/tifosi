@@ -13,11 +13,6 @@ module.exports = {
         return res.render("ingresar")
     },
 
-    carrito: async (req, res) => {
-        const categories = await categoriesServices.getAllCategories()
-        return res.render("carrito", {categories})
-    },
-
     registroProcess: async (req, res) => {
         let errors = validationResult(req)
 

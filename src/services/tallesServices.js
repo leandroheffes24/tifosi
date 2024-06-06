@@ -1,6 +1,6 @@
 const {Talles} = require("../../database/models")
 
-const productsServices = {
+const tallesServices = {
     getAllTalles: () => {
         return Talles.findAll()
     },
@@ -37,4 +37,4 @@ const productsServices = {
     }
 }
 
-module.exports = productsServices
+module.exports = tallesServices

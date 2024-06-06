@@ -9,7 +9,84 @@
     <!-- ******************************** END HEADER ******************************** -->
 
     <!-- ******************************** MAIN ******************************** -->
-    carrito
+    <main class="shoppingCartMain">
+        <section class="shoppingCartProductsSection">
+            <% if(finalProducts.length > 0){ %>
+                <div class="shoppingCartProductsContainer">
+                    <% finalProducts.forEach(product => { %>
+                        <div class="shoppingCartProductContainer">
+                            <div class="shoppingCartProductImageContainer">
+                                <img class="shoppingCartProductImage" src="/images/products/<%= product.image %>" alt="<%= product.product_name %>">
+                            </div>
+    
+                            <div class="shoppingCartProductNameAndDeleteButtonContainer">
+                                <h4 class="shoppingCartProductName"><%= product.product_name %></h4>
+                                <form class="shoppingCartDeleteButtonForm" action="/carrito/borrar/<%= product.id %>?_method=delete" method="post">
+                                    <button class="shoppingCartDeleteProductButton" type="submit">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="shoppingCartDeleteProductIcon">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M4 7l16 0" />
+                                            <path d="M10 11l0 6" />
+                                            <path d="M14 11l0 6" />
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                        </svg>
+                                    </button>
+                                </form>
+
+                                <div class="shoppingCartProductPriceAndDiscountContainer">
+                                    <p class="shoppingCartProductPrice">$<%= product.price %></p>
+                                    <p class="shoppingCartProductDiscount"><%= product.discount %>%OFF</p>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } else { %>
+                <div class="shoppingCartEmptyContainer">
+                    <div class="shoppingCartEmptyIconContainer">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="shoppingCartEmptyIcon">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z" />
+                            <path d="M9 11v-5a3 3 0 0 1 6 0v5" />
+                        </svg>
+                    </div>
+    
+                    <div class="shoppingCartEmptyTextContainer">
+                        <p class="shoppingCartEmptyPrimaryText">Comenzá a llenar tu carrito!</p>
+                        <p class="shoppingCartEmptySecondaryText">No te quedes sin las mejores camisetas de futbol</p>
+                    </div>
+    
+                    <div class="shoppingCarsEmptyExploreProductsLinkContainer">
+                        <a class="shoppingCarsEmptyExploreProductsLink" href="/">Explore products</a>
+                    </div>
+                </div>
+            <% } %>
+        </section>
+
+        <% if(finalProducts.length > 0){ %>
+            <section class="shoppingCartTotalSection">
+                <div class="shoppingCartProductsPriceContainer">
+                    <span class="shoppingCartTotalProductsText">Products:</span>
+                    <span class="shoppingCartTotalProductsPrice">total</span>
+                </div>
+    
+                <div class="shoppingCartShipmentPriceContainer">
+                    <span class="shoppingCartTotalShipmentText">Shipment:</span>
+                    <span class="shoppingCartTotalShipmentPrice">total</span>
+                </div>
+    
+                <div class="shoppingCartTotalPriceContainer">
+                    <span class="shoppingCartTotalText">Total:</span>
+                    <span class="shoppingCartTotalPrice">total</span>
+                </div>
+    
+                <div class="shoppingCartBuyButtonContainer">
+                    <button class="shoppingCartBuyButton">Buy</button>
+                </div>
+            </section>
+        <% } %>
+    </main>
     <!-- ******************************** END MAIN ******************************** -->
 
     <!-- ******************************** FOOTER ******************************** -->

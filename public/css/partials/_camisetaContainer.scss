@@ -28,7 +28,7 @@
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 1.2; /* Ajusta la altura de la línea según tu necesidad */
+    line-height: 1.2;
     max-height: 3em;  /* line-height * number of lines */
 }
 
@@ -46,6 +46,21 @@
     border-radius: 2px;
     font-size: .8rem;
     font-weight: 500;
+}
+
+.camisetaForm{
+    margin-top: 7px;
+}
+
+.camisetaAddToCartButton{
+    background: none;
+    border: 1px solid $camisetaDiscountBackground;
+    color: $camisetaDiscountBackground;
+    padding: 7px;
+    font-size: .7rem;
+    font-weight: 500;
+    width: 100%;
+    cursor: pointer;
 }
 
 @media (width >= 768px) {
@@ -69,6 +84,15 @@
     .camisetaDiscount{
         padding: 4px;
         font-size: 1rem;
+    }
+
+    .camisetaForm{
+        margin-top: 15px;
+    }
+    
+    .camisetaAddToCartButton{
+        padding: 7px;
+        font-size: .8rem;
     }
 }
 
@@ -94,6 +118,15 @@
         padding: 3px;
         font-size: .8rem;
     }
+
+    .camisetaForm{
+        margin-top: 15px;
+    }
+    
+    .camisetaAddToCartButton{
+        padding: 5px;
+        font-size: .7rem;
+    }
 }
 
 @media (width >= 1200px) {
@@ -112,5 +145,13 @@
     .camisetaDiscount{
         padding: 4px;
         font-size: .9rem;
+    }
+
+    .camisetaForm{
+        margin-top: 10px;
+    }
+    
+    .camisetaAddToCartButton{
+        padding: 7px;
     }
 }

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 * {
   margin: 0;
@@ -1142,6 +1141,257 @@ footer {
     width: 25px;
   }
 }
+.shoppingCartMain {
+  padding: 20px;
+}
+
+.shoppingCartProductsContainer {
+  background-color: rgb(35, 35, 35);
+  border: 2px solid rgb(55, 55, 55);
+  border-radius: 10px;
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shoppingCartProductContainer {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid rgb(55, 55, 55);
+  border-bottom: 1px solid rgb(55, 55, 55);
+  padding: 10px 0;
+}
+
+.shoppingCartProductImageContainer {
+  width: 30%;
+}
+
+.shoppingCartProductImage {
+  width: 100%;
+  max-height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.shoppingCartProductNameAndDeleteButtonContainer {
+  width: 70%;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shoppingCartProductName {
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.shoppingCartDeleteButtonForm {
+  width: 20%;
+  text-align: left;
+}
+
+.shoppingCartDeleteProductButton {
+  background: none;
+  border: none;
+}
+
+.shoppingCartDeleteProductIcon {
+  width: 24px;
+  color: gray;
+}
+
+.shoppingCartProductPriceAndDiscountContainer {
+  width: 80%;
+  text-align: right;
+}
+
+.shoppingCartProductPrice {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.shoppingCartProductDiscount {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgb(47, 179, 47);
+}
+
+.shoppingCartEmptyContainer {
+  background-color: rgb(35, 35, 35);
+  border: 2px solid rgb(55, 55, 55);
+  border-radius: 10px;
+  padding: 60px 30px 40px;
+}
+
+.shoppingCartEmptyIconContainer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.shoppingCartEmptyIcon {
+  width: 100px;
+  color: gray;
+}
+
+.shoppingCartEmptyTextContainer {
+  text-align: center;
+}
+
+.shoppingCartEmptyPrimaryText {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.shoppingCartEmptySecondaryText {
+  font-size: 1rem;
+  color: gray;
+}
+
+.shoppingCarsEmptyExploreProductsLinkContainer {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.shoppingCarsEmptyExploreProductsLink {
+  width: 100%;
+  background-color: green;
+  color: rgb(240, 240, 240);
+  text-decoration: none;
+  padding: 8px 30px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.shoppingCartTotalSection {
+  margin-top: 20px;
+  position: sticky;
+  bottom: 0;
+  background-color: rgb(35, 35, 35);
+  border: 2px solid rgb(55, 55, 55);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shoppingCartProductsPriceContainer, .shoppingCartShipmentPriceContainer, .shoppingCartTotalPriceContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice {
+  font-size: 0.9rem;
+}
+
+.shoppingCartTotalText, .shoppingCartTotalPrice {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.shoppingCartBuyButtonContainer {
+  margin-top: 10px;
+}
+
+.shoppingCartBuyButton {
+  width: 100%;
+  background-color: green;
+  color: rgb(240, 240, 240);
+  border: none;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+@media (width >= 768px) {
+  .shoppingCartMain {
+    margin-top: 75px;
+    padding: 40px;
+  }
+  .shoppingCartProductsContainer {
+    padding: 0px 20px;
+  }
+  .shoppingCartProductImageContainer {
+    width: 30%;
+  }
+  .shoppingCartProductImage {
+    max-height: 120px;
+  }
+  .shoppingCartProductNameAndDeleteButtonContainer {
+    width: 50%;
+    padding-left: 20px;
+  }
+  .shoppingCartProductName {
+    font-size: 1.1rem;
+  }
+  .shoppingCartDeleteButtonForm {
+    margin-top: 15px;
+    text-align: left;
+    padding-right: 0px;
+  }
+  .shoppingCartDeleteProductIcon {
+    width: 30px;
+  }
+  .shoppingCartProductPriceAndDiscountContainer {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  .shoppingCartProductPrice {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .shoppingCartProductDiscount {
+    font-size: 1rem;
+  }
+  .shoppingCartEmptyContainer {
+    padding: 100px 30px 70px;
+  }
+  .shoppingCartEmptyIconContainer {
+    margin-bottom: 40px;
+  }
+  .shoppingCartEmptyIcon {
+    width: 150px;
+  }
+  .shoppingCartEmptyPrimaryText {
+    font-size: 1.5rem;
+  }
+  .shoppingCartEmptySecondaryText {
+    font-size: 1.3rem;
+  }
+  .shoppingCarsEmptyExploreProductsLinkContainer {
+    margin-top: 60px;
+  }
+  .shoppingCarsEmptyExploreProductsLink {
+    padding: 10px 50px;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .shoppingCartTotalSection {
+    margin-top: 30px;
+    padding: 30px;
+    gap: 20px;
+  }
+  .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice {
+    font-size: 1.2rem;
+  }
+  .shoppingCartTotalText, .shoppingCartTotalPrice {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .shoppingCartBuyButtonContainer {
+    margin-top: 15px;
+  }
+  .shoppingCartBuyButton {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
 .camisetaContainer {
   width: 46%;
   position: relative;
@@ -1172,7 +1422,7 @@ footer {
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1.2; /* Ajusta la altura de la línea según tu necesidad */
+  line-height: 1.2;
   max-height: 3em; /* line-height * number of lines */
 }
 
@@ -1190,6 +1440,21 @@ footer {
   border-radius: 2px;
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+.camisetaForm {
+  margin-top: 7px;
+}
+
+.camisetaAddToCartButton {
+  background: none;
+  border: 1px solid rgb(0, 192, 0);
+  color: rgb(0, 192, 0);
+  padding: 7px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
 }
 
 @media (width >= 768px) {
@@ -1210,6 +1475,13 @@ footer {
     padding: 4px;
     font-size: 1rem;
   }
+  .camisetaForm {
+    margin-top: 15px;
+  }
+  .camisetaAddToCartButton {
+    padding: 7px;
+    font-size: 0.8rem;
+  }
 }
 @media (width >= 992px) {
   .camisetaContainer {
@@ -1229,6 +1501,13 @@ footer {
     padding: 3px;
     font-size: 0.8rem;
   }
+  .camisetaForm {
+    margin-top: 15px;
+  }
+  .camisetaAddToCartButton {
+    padding: 5px;
+    font-size: 0.7rem;
+  }
 }
 @media (width >= 1200px) {
   .camisetaInformationContainer {
@@ -1243,5 +1522,11 @@ footer {
   .camisetaDiscount {
     padding: 4px;
     font-size: 0.9rem;
+  }
+  .camisetaForm {
+    margin-top: 10px;
+  }
+  .camisetaAddToCartButton {
+    padding: 7px;
   }
 }/*# sourceMappingURL=styles.css.map */
