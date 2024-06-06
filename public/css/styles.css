@@ -182,7 +182,7 @@ header {
     width: 15%;
     display: flex;
     justify-content: center;
-    border-right: 1px solid rgb(200, 200, 200);
+    border-right: 1px solid rgb(150, 150, 150);
   }
   .headerSearchLabelIcon {
     width: 20px;
@@ -899,7 +899,7 @@ footer {
   }
 }
 .crearMain {
-  height: 70vh;
+  height: 100vh;
   position: relative;
 }
 
@@ -909,8 +909,9 @@ footer {
   top: 50%;
   left: 50%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   background-color: rgb(35, 35, 35);
   padding: 40px;
   width: 80%;
@@ -930,9 +931,6 @@ footer {
 }
 
 @media (width >= 768px) {
-  .crearMain {
-    height: 60vh;
-  }
   .crearContainer {
     gap: 40px;
     padding: 60px;
@@ -950,7 +948,7 @@ footer {
   .crearContainer {
     flex-direction: row;
     justify-content: space-between;
-    gap: 0;
+    gap: 20px;
     padding: 35px 60px;
     width: 85%;
   }
@@ -1080,6 +1078,68 @@ footer {
   .crearProductoButton {
     font-size: 0.9rem;
     padding: 10px;
+  }
+}
+.categoriesEditContainer {
+  width: 90%;
+  margin: 40px auto;
+  background-color: rgb(35, 35, 35);
+  border: 2px solid rgb(55, 55, 55);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.categoryEditContainer {
+  display: flex;
+  align-items: center;
+}
+
+.categoryEditTitle {
+  width: 80%;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.categoryEditLink {
+  width: 20%;
+  text-decoration: none;
+  color: rgb(240, 240, 240);
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.categoryEditIcon {
+  width: 20px;
+}
+
+@media (width >= 768px) {
+  .categoriesEditContainer {
+    width: 75%;
+    padding: 30px;
+    gap: 30px;
+  }
+  .categoryEditTitle {
+    font-size: 1.4rem;
+  }
+  .categoryEditIcon {
+    width: 30px;
+  }
+}
+@media (width >= 992px) {
+  .categoriesEditContainer {
+    width: 50%;
+    padding: 20px;
+    gap: 30px;
+  }
+  .categoryEditTitle {
+    font-size: 1rem;
+  }
+  .categoryEditIcon {
+    width: 25px;
   }
 }
 .camisetaContainer {

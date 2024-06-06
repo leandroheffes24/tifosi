@@ -51,6 +51,24 @@ const categoriesServices = {
             id: newCategoryId,
             name: newCategory
         })
+    },
+
+    getCategoryById: (categoryId) => {
+        return Categories.findByPk(categoryId)
+    },
+
+    editCategory: (categoryToEditId, newCategoryName) => {
+        return Categories.update({
+            name: newCategoryName
+        }, {
+            where: {id: categoryToEditId}
+        })
+    },
+
+    deleteCategory: (categoryToDeleteId) => {
+        return Categories.destroy({
+            where: {id: categoryToDeleteId}
+        })
     }
 }
 

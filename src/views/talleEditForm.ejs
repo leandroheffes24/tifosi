@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head", {title: "Futbol e-commerce"}) %>
+</head>
+<body>
+    <!-- ******************************** HEADER ******************************** -->
+    <%- include("partials/header") %>
+    <!-- ******************************** END HEADER ******************************** -->
+
+    <main class="crearProductMain">
+        <form class="crearProductForm" id="editCategoryForm" action="/editar/talle/<%= talleToEdit.id %>?_method=put" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="createProductLabelAndInputContainer">
+                <label class="createProductLabel" for="newTalleName">Editar talle</label>
+                <input class="createProductInput" type="text" name="newTalleName" id="newTalleName" value="<%= talleToEdit.name %>">
+            </div>
+
+            <button class="crearProductoButton" type="submit">EDITAR TALLE</button>
+        </form>
+    </main>
+
+    <!-- ******************************** FOOTER ******************************** -->
+    <%- include("partials/footer") %>
+    <!-- ******************************** END FOOTER ******************************** -->
+</body>
+</html>
