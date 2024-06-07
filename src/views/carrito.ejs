@@ -67,22 +67,29 @@
         <% if(finalProducts.length > 0){ %>
             <section class="shoppingCartTotalSection">
                 <div class="shoppingCartProductsPriceContainer">
-                    <span class="shoppingCartTotalProductsText">Products:</span>
-                    <span class="shoppingCartTotalProductsPrice">total</span>
-                </div>
-    
-                <div class="shoppingCartShipmentPriceContainer">
-                    <span class="shoppingCartTotalShipmentText">Shipment:</span>
-                    <span class="shoppingCartTotalShipmentPrice">total</span>
+                    <span class="shoppingCartTotalProductsText">Productos:</span>
+                    <span class="shoppingCartTotalProductsPrice"><%= totalProducts %></span>
                 </div>
     
                 <div class="shoppingCartTotalPriceContainer">
                     <span class="shoppingCartTotalText">Total:</span>
-                    <span class="shoppingCartTotalPrice">total</span>
+                    <span class="shoppingCartTotalPrice">$<%= totalPrice %></span>
                 </div>
     
                 <div class="shoppingCartBuyButtonContainer">
                     <button class="shoppingCartBuyButton">Comprar</button>
+                </div>
+            </section>
+        <% } else { %>
+            <section class="shoppingCartTotalSectionDesktop">
+                <div class="shoppingCartProductsPriceContainer">
+                    <span class="shoppingCartTotalProductsText">Productos:</span>
+                    <span class="shoppingCartTotalProductsPrice"><%= totalProducts %></span>
+                </div>
+    
+                <div class="shoppingCartTotalPriceContainer">
+                    <span class="shoppingCartTotalText">Total:</span>
+                    <span class="shoppingCartTotalPrice">$<%= totalPrice %></span>
                 </div>
             </section>
         <% } %>

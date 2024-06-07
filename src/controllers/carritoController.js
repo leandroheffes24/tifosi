@@ -8,6 +8,7 @@ module.exports = {
         const user = req.session.userLoggedIn
         const userId = user.id
         const carritoProducts = await carritoServices.getUserProducts(userId)
+        let totalPrice = 0
 
         const finalProducts = await Promise.all(
             carritoProducts.map(async product => {
@@ -15,7 +16,11 @@ module.exports = {
             })
         )
 
-        return await res.render("carrito", {finalProducts, categories})
+        finalProducts.map(product => {
+            return totalPrice = totalPrice + product.price
+        })
+
+        return await res.render("carrito", {finalProducts, categories, totalPrice, totalProducts: finalProducts.length})
     },
 
     carritoProcess: async (req, res) => {
@@ -32,6 +37,7 @@ module.exports = {
         const user = req.session.userLoggedIn
         const userId = user.id
         carritoServices.deleteProductCart(productIdToDelete, userId)
+        let totalPrice = 0
 
         const categories = await categoriesServices.getAllCategories()
         const carritoProducts = await carritoServices.getUserProducts(userId)
@@ -40,6 +46,11 @@ module.exports = {
                 return await productsServices.getProductById(product.id_product)
             })
         )
-        return res.render("carrito", {categories, finalProducts})
+
+        finalProducts.map(product => {
+            return totalPrice = totalPrice + product.price
+        })
+
+        return res.render("carrito", {categories, finalProducts, totalPrice, totalProducts: finalProducts.length})
     }
 }
