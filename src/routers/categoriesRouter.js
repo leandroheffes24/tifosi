@@ -12,5 +12,8 @@ router.get("/eliminar/categoria", categoriesController.eliminarCategoria)
 router.delete("/eliminar/categoria/:categoryId", categoriesController.eliminarCategoriaProcess)
 router.get("/crear/subcategoria", categoriesController.crearSubcategoria)
 router.post("/crear/subcategoria", categoriesController.crearSubcategoriaProcess)
+router.get("/editar/subcategoria", categoriesController.editarSubcategoria)
+router.get("/editar/subcategoria/:subcategoryId", categoriesController.editarSubcategoriaId)
+router.put("/editar/subcategoria/:subcategoryId", categoriesController.editarSubcategoriaProcess)
 
 module.exports = router

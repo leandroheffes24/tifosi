@@ -71,11 +71,23 @@ const categoriesServices = {
         return Categories.findByPk(categoryId)
     },
 
+    getSubcategoryById: (subcategoryId) => {
+        return Subcategories.findByPk(subcategoryId)
+    },
+
     editCategory: (categoryToEditId, newCategoryName) => {
         return Categories.update({
             name: newCategoryName
         }, {
             where: {id: categoryToEditId}
+        })
+    },
+
+    editSubcategory: (subcategoryToEditId, newSubcategoryName) => {
+        return Subcategories.update({
+            name: newSubcategoryName
+        }, {
+            where: {id: subcategoryToEditId}
         })
     },
 

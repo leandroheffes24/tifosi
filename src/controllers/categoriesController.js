@@ -25,6 +25,12 @@ module.exports = {
         return res.render("categoryEdit", {categories})
     },
 
+    editarSubcategoria: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        const subcategories = await categoriesServices.getAllSubcategories()
+        return res.render("subcategoryEdit", {categories, subcategories})
+    },
+
     eliminarCategoria: async (req, res) => {
         const categories = await categoriesServices.getAllCategories()
         return res.render("categoryDelete", {categories})
@@ -55,10 +61,24 @@ module.exports = {
         return res.render("categoryEditForm", {categories: categories, categoryToEdit: categoryToEdit})
     },
 
+    editarSubcategoriaId: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        const subcategoryToEditId = req.params.subcategoryId
+        const subcategoryToEdit = await categoriesServices.getSubcategoryById(subcategoryToEditId)
+        return res.render("subcategoryEditForm", {categories, subcategoryToEdit})
+    },
+
     editarCategoriaProcess: (req, res) => {
         const categoryToEditId = req.params.categoryId
         const newCategoryName = req.body.newCategoryName
         categoriesServices.editCategory(categoryToEditId, newCategoryName)
+        return res.redirect("/")
+    },
+
+    editarSubcategoriaProcess: (req, res) => {
+        const subcategoryToEditId = req.params.subcategoryId
+        const newSubcategoryName = req.body.newSubcategoryName
+        categoriesServices.editSubcategory(subcategoryToEditId, newSubcategoryName)
         return res.redirect("/")
     },
 
