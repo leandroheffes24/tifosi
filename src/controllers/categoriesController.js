@@ -15,6 +15,11 @@ module.exports = {
         return res.render("categoryCreate", {categories})
     },
 
+    crearSubcategoria: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        return res.render("subcategoryCreate", {categories})
+    },
+
     editarCategoria: async (req, res) => {
         const categories = await categoriesServices.getAllCategories()
         return res.render("categoryEdit", {categories})
@@ -30,6 +35,16 @@ module.exports = {
         const lastCategory = await categoriesServices.getLastCategory()
         const newCategoryId = lastCategory.id + 1
         categoriesServices.createCategory(newCategory, newCategoryId)
+        return res.redirect("/")
+    },
+
+    crearSubcategoriaProcess: async (req, res) => {
+        const newSubcategoryName = req.body.newSubcategory
+        const categoryForNewSubcategory = req.body.categoryForSubcategory
+        const categoryForNewSubcategoryId = await categoriesServices.getCreateProductCategoryId(categoryForNewSubcategory)
+        const lastSubcategory = await categoriesServices.getLastSubCategory()
+        const newSubcategoryId = lastSubcategory.id + 1
+        categoriesServices.createSubcategory(newSubcategoryId, newSubcategoryName, categoryForNewSubcategoryId)
         return res.redirect("/")
     },
 

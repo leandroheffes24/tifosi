@@ -20,8 +20,14 @@ const categoriesServices = {
         }
     },
 
-    getLastCategory: async () => {
+    getLastCategory: () => {
         return Categories.findOne({
+            order: [["created_at", "DESC"]]
+        })
+    },
+
+    getLastSubCategory: () => {
+        return Subcategories.findOne({
             order: [["created_at", "DESC"]]
         })
     },
@@ -50,6 +56,14 @@ const categoriesServices = {
         return Categories.create({
             id: newCategoryId,
             name: newCategory
+        })
+    },
+
+    createSubcategory: (newSubcategoryId, newSubcategoryName, categoryForNewSubcategoryId) => {
+        return Subcategories.create({
+            id: newSubcategoryId,
+            name: newSubcategoryName,
+            category_id: categoryForNewSubcategoryId
         })
     },
 

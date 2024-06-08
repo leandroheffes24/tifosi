@@ -897,16 +897,7 @@ footer {
     width: 85%;
   }
 }
-.crearMain {
-  height: 100vh;
-  position: relative;
-}
-
 .crearContainer {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -914,6 +905,7 @@ footer {
   background-color: rgb(35, 35, 35);
   padding: 40px;
   width: 80%;
+  margin: 40px auto;
   border: 2px solid rgb(55, 55, 55);
   border-radius: 5px;
 }
@@ -934,6 +926,7 @@ footer {
     gap: 40px;
     padding: 60px;
     width: 70%;
+    margin: 60px auto;
   }
   .crearLink {
     padding: 15px;
@@ -941,15 +934,13 @@ footer {
   }
 }
 @media (width >= 992px) {
-  .crearMain {
-    height: 50vh;
-  }
   .crearContainer {
     flex-direction: row;
     justify-content: space-between;
     gap: 20px;
     padding: 35px 60px;
     width: 85%;
+    margin: 80px auto;
   }
   .crearLink {
     width: 30%;
