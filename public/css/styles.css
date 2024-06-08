@@ -1555,6 +1555,9 @@ footer {
 
 .camisetaImage {
   width: 100%;
+  max-height: 151px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .camisetaInformationContainer {
@@ -1612,6 +1615,9 @@ footer {
   .camisetaContainer {
     width: 28%;
   }
+  .camisetaImage {
+    max-height: 183px;
+  }
   .camisetaInformationContainer {
     gap: 10px;
     padding-top: 13px;
@@ -1638,6 +1644,9 @@ footer {
   .camisetaContainer {
     width: 23%;
   }
+  .camisetaImage {
+    max-height: 206px;
+  }
   .camisetaInformationContainer {
     gap: 7px;
     padding-top: 15px;
@@ -1661,6 +1670,9 @@ footer {
   }
 }
 @media (width >= 1200px) {
+  .camisetaImage {
+    max-height: 235px;
+  }
   .camisetaInformationContainer {
     gap: 10px;
   }

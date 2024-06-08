@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head", {title: "Futbol e-commerce"}) %>
+    <script src="/js/productDetailQuantityScript.js" defer></script>
+</head>
+<body>
+    <!-- ******************************** HEADER ******************************** -->
+    <%- include("partials/header") %>
+    <!-- ******************************** END HEADER ******************************** -->
+
+    <main>
+        <section class="productDetailSection">
+            <div class="productDetailImageContainer">
+                <img class="productDetailImage" src="/images/products/<%= product.image %>" alt="<%= product.product_name %>">
+            </div>
+
+            <div class="productDetailInformation">
+                <div class="productDetailNameCategoryAndSubcategory">
+                    <h2 class="productDetailName"><%= product.product_name %></h2>
+                    <p class="productDetailCategory"><%= categoryName %></p>
+                    <p class="productDetailSubcategory"><%= subcategoryName %></p>
+                </div>
+
+                <div class="productDetailPriceDiscountQuantityAndSizesContainer">
+                    <div class="productDetailPriceAndDiscountContainer">
+                        <p class="productDetailPrice">$<%= product.price %></p>
+                        <p class="productDetailDiscount"><%= product.discount %>% OFF</p>
+                    </div>
+                    
+                    <div class="productDetailQuantityContainer">
+                        <label class="productDetailQuantityLabel" for="productQuantity">Cantidad</label>
+                        <button class="productDetailQuantitySubtractButton" onclick="decrement()">-</button>
+                        <input class="productDetailQuantityInput" type="number" name="productQuantity" id="productQuantity" value="1" minlength="1">
+                        <button class="productDetailQuantityAddButton" onclick="increment()">+</button>
+                    </div>
+
+                    <div class="productDetailSizesContainer">
+                        <label for="productDetailSize">XXS</label>
+                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
+
+                        <label for="productDetailSize">XS</label>
+                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
+
+                        <label for="productDetailSize">S</label>
+                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
+
+                        <label for="productDetailSize">M</label>
+                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
+
+                        <label for="productDetailSize">L</label>
+                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
+
+                        <label for="productDetailSize">XL</label>
+                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
+
+                        <label for="productDetailSize">XXL</label>
+                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ******************************** FOOTER ******************************** -->
+    <%- include("partials/footer") %>
+    <!-- ******************************** END FOOTER ******************************** -->
+</body>
+</html>

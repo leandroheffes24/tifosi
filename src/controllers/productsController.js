@@ -15,6 +15,17 @@ module.exports = {
         return res.render("productCreateSubcategory", {subcategories: subcategories, categories: categories, productId: productId})
     },
 
+    productDetail: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        const productId = req.params.productId
+        const product = await productsServices.getProductById(productId)
+        const productCategoryId = product.category_id
+        const productSubcategoryId = product.subcategory_id
+        const categoryName = await categoriesServices.getCategoryNameById(productCategoryId)
+        const subcategoryName = await categoriesServices.getSubcategoryNameById(productSubcategoryId)
+        return res.render("productDetail", {categories, product, categoryName, subcategoryName})
+    },
+
     crearProductoSubcategoriaProcess: async (req, res) => {
         const productId = req.params.productId
         const subcategorySelected = req.body.subcategory

@@ -101,6 +101,16 @@ const categoriesServices = {
         return Subcategories.destroy({
             where: {id: subcategoryToDeleteId}
         })
+    },
+
+    getCategoryNameById: async (categoryId) => {
+        const category = await Categories.findByPk(categoryId)
+        return category.name
+    },
+
+    getSubcategoryNameById: async (subcategoryId) => {
+        const subcategory = await Subcategories.findByPk(subcategoryId)
+        return subcategory.name
     }
 }
 

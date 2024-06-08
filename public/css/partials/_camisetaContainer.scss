@@ -10,6 +10,8 @@
 
 .camisetaImage{
     width: 100%;
+    max-height: 151px;
+    object-fit: cover;
 }
 
 .camisetaInformationContainer{
@@ -67,6 +69,10 @@
     .camisetaContainer{
         width: 28%;
     }
+
+    .camisetaImage{
+        max-height: 183px;
+    }
     
     .camisetaInformationContainer{
         gap: 10px;
@@ -100,6 +106,10 @@
     .camisetaContainer{
         width: 23%;
     }
+
+    .camisetaImage{
+        max-height: 206px;
+    }
     
     .camisetaInformationContainer{
         gap: 7px;
@@ -130,6 +140,10 @@
 }
 
 @media (width >= 1200px) {
+    .camisetaImage{
+        max-height: 235px;
+    }
+
     .camisetaInformationContainer{
         gap: 10px;
     }
