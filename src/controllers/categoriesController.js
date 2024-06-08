@@ -36,6 +36,12 @@ module.exports = {
         return res.render("categoryDelete", {categories})
     },
 
+    eliminarSubcategoria: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        const subcategories = await categoriesServices.getAllSubcategories()
+        return res.render("subcategoryDelete", {categories, subcategories})
+    },
+
     crearCategoriaProcess: async (req, res) => {
         const newCategory = req.body.newCategory
         const lastCategory = await categoriesServices.getLastCategory()
@@ -85,6 +91,12 @@ module.exports = {
     eliminarCategoriaProcess: (req, res) => {
         const categoryToDeleteId = req.params.categoryId
         categoriesServices.deleteCategory(categoryToDeleteId)
+        return res.redirect("/")
+    },
+
+    eliminarSubcategoriaProcess: (req, res) => {
+        const subcategoryToDeleteId = req.params.subcategoryId
+        categoriesServices.deleteSubcategory(subcategoryToDeleteId)
         return res.redirect("/")
     }
 }

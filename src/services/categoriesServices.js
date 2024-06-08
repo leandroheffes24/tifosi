@@ -95,6 +95,12 @@ const categoriesServices = {
         return Categories.destroy({
             where: {id: categoryToDeleteId}
         })
+    },
+
+    deleteSubcategory: (subcategoryToDeleteId) => {
+        return Subcategories.destroy({
+            where: {id: subcategoryToDeleteId}
+        })
     }
 }
 
