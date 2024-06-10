@@ -1,0 +1,122 @@
+.productDetailSection{
+    margin: 10px 0 40px;
+}
+
+.productDetailImageContainer{
+    margin-bottom: 10px;
+}
+
+.productDetailImage{
+    width: 100%;
+}
+
+.productDetailInformation{
+    width: 90%;
+    margin: auto;
+}
+
+.productDetailNameCategoryAndSubcategory{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    margin-bottom: 20px;
+}
+
+.productDetailName{
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.productDetailCategory, .productDetailSubcategory{
+    font-size: .9rem;
+    color: $secondaryTextColor;
+}
+
+.productDetailPriceDiscountQuantityAndSizesContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.productDetailPriceAndDiscountContainer{
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.productDetailPrice{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.productDetailDiscount{
+    font-size: .9rem;
+    color: $camisetaDiscountBackground;
+}
+
+.productDetailQuantityContainer{
+    margin-bottom: 10px;
+}
+
+.productDetailQuantityLabel{
+    font-size: .9rem;
+    color: $secondaryTextColor;
+}
+
+.quantityContainer{
+    margin-top: 5px;
+    display: flex;
+}
+
+.productDetailQuantitySubtractButton, .productDetailQuantityAddButton{
+    font-size: 1.2rem;
+    width: 30px;
+    border: none;
+    background-color: rgb(192, 192, 192);
+}
+
+.productDetailQuantitySubtractButton{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.productDetailQuantityAddButton{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.productDetailQuantityInput{
+    border: none;
+    background-color: rgb(235, 235, 235);
+    width: 40px;
+    text-align: center;
+    font-size: 1rem;
+    padding: 7px 0;
+}
+
+.productDetailSizesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.productDetailSizeLabel{
+    color: $textColor;
+    background-color: rgb(50, 50, 50);
+    width: 50px;
+    padding: 7px 0;
+    border-radius: 3px;
+    text-align: center;
+    transition: .3s;
+}
+
+.productDetailSizeLabel:hover{
+    background-color: rgb(70,70,70);
+    transition: .3s;
+}
+
+.productDetailSizeRadio{
+    display: none;
+}
