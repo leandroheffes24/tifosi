@@ -4,6 +4,7 @@
     <%- include("partials/head", {title: "Futbol e-commerce"}) %>
     <script src="/js/productDetailQuantityScript.js" defer></script>
     <script src="/js/productDetailSizeSelectedScript.js" defer></script>
+    <script src="/js/productDetailDeleteProductButton.js" defer></script>
 </head>
 <body>
     <!-- ******************************** HEADER ******************************** -->
@@ -59,6 +60,32 @@
 
                         <label class="productDetailSizeLabel" for="productDetailSize">XXL</label>
                         <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
+                    </div>
+
+                    <div class="productDetailButtonsContainer">
+                        <form action="">
+                            <button type="submit" class="productDetailBuyButton">Comprar</button>
+                        </form>
+
+                        <form action="/carrito/<%= product.id %>" method="post">
+                            <button type="submit" class="productDetailAddToCartButton">Agregar al carrito</button>
+                        </form>
+
+                        <form action="/editar/producto/<%= product.id %>" method="get">
+                            <button type="submit" class="productDetailEditProduct">Ediar producto</button>
+                        </form>
+
+                        <button onclick="deleteProduct()" class="productDetailDeleteProduct">Borrar producto</button>
+                        <form class="deleteProductForm" id="deleteProductForm" action="/borrar/producto/<%= product.id %>" method="post">
+                            <div class="deleteProductTextContainer">
+                                <h4 class="deleteProductFormTitle">¿Estas seguro de eliminar el siguiente producto?</h4>
+                                <p class="deleteProductFormProductName"><%= product.product_name %></p>
+                            </div>
+                            <div class="deleteProductButtonsContainer">
+                                <button class="deleteProductButton" type="submit">Borrar</button>
+                                <button class="deleteProductCancelButton" onclick="cancelDeleteProduct()" type="button">Cancelar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
