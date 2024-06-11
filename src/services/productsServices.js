@@ -41,6 +41,22 @@ const productsServices = {
         }, {
             where: {id: productId}
         })
+    },
+
+    updateProduct: (productToEditId, newProduct) => {
+        return Products.update({
+            product_name: newProduct.product_name,
+            price: newProduct.price,
+            discount: newProduct.discount
+        }, {
+            where: {id: productToEditId}
+        })
+    },
+
+    deleteProduct: (productToDeleteId) => {
+        return Products.destroy({
+            where: {id: productToDeleteId}
+        })
     }
 }
 

@@ -125,24 +125,36 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .productDetailButtonsContainer{
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
+    gap: 15px;
+}
+
+.productDetailBuyButton, .productDetailAddToCartButton, .productDetailEditProduct, .productDetailDeleteProduct{
+    width: 100%;
+    font-size: 1.3rem;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    color: $textColor;
+    cursor: pointer;
 }
 
 .productDetailBuyButton{
-    width: 100%;
+    background-color: green;
 }
 
 .productDetailAddToCartButton{
-    width: 100%;
+    background-color: rgb(55, 55, 55);
 }
 
 .productDetailEditProduct{
-    width: 100%;
+    background-color: blue;
 }
 
 .productDetailDeleteProduct{
-    
+    background-color: rgb(192, 0, 0);
 }
 
 .deleteProductForm{
@@ -183,6 +195,7 @@ input[type=number]::-webkit-inner-spin-button {
     border: none;
     border-radius: 5px;
     color: $textColor;
+    cursor: pointer;
 }
 
 .deleteProductButton{
@@ -271,6 +284,37 @@ input[type=number]::-webkit-inner-spin-button {
         padding: 10px 0;
         font-size: 1.2rem;
     }
+
+    .productDetailButtonsContainer{
+        margin-top: 10px;
+        gap: 20px;
+    }
+    
+    .productDetailBuyButton, .productDetailAddToCartButton, .productDetailEditProduct, .productDetailDeleteProduct{
+        width: 90%;
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+    
+    .deleteProductForm{
+        gap: 50px;
+        width: 70%;
+        padding: 30px 25px;
+    }
+    
+    .deleteProductFormTitle{
+        margin-bottom: 30px;
+        font-size: 1.6rem;
+    }
+    
+    .deleteProductFormProductName{
+        font-size: 1.2rem;
+    }
+    
+    .deleteProductButton, .deleteProductCancelButton{
+        font-size: 1.5rem;
+        padding: 8px 0;
+    }
 }
 
 @media (width >= 992px) {
@@ -355,6 +399,35 @@ input[type=number]::-webkit-inner-spin-button {
         padding: 7px 0;
         font-size: .9rem;
     }
+
+    .productDetailButtonsContainer{
+        gap: 10px;
+    }
+    
+    .productDetailBuyButton, .productDetailAddToCartButton, .productDetailEditProduct, .productDetailDeleteProduct{
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 7px;
+    }
+    
+    .deleteProductForm{
+        gap: 30px;
+        width: 50%;
+    }
+    
+    .deleteProductFormTitle{
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+    }
+    
+    .deleteProductFormProductName{
+        font-size: 1rem;
+    }
+    
+    .deleteProductButton, .deleteProductCancelButton{
+        font-size: 1rem;
+        padding: 5px 0;
+    }
 }
 
 @media (width >= 1200px) {
@@ -419,5 +492,32 @@ input[type=number]::-webkit-inner-spin-button {
         width: 70px;
         padding: 8px 0;
         font-size: 1.1rem;
+    }
+
+    .productDetailButtonsContainer{
+        gap: 15px;
+    }
+    
+    .productDetailBuyButton, .productDetailAddToCartButton, .productDetailEditProduct, .productDetailDeleteProduct{
+        font-size: 1.3rem;
+        padding: 8px;
+    }
+    
+    .deleteProductForm{
+        gap: 50px;
+    }
+    
+    .deleteProductFormTitle{
+        margin-bottom: 25px;
+        font-size: 1.4rem;
+    }
+    
+    .deleteProductFormProductName{
+        font-size: 1.2rem;
+    }
+    
+    .deleteProductButton, .deleteProductCancelButton{
+        font-size: 1.1rem;
+        padding: 7px 0;
     }
 }

@@ -15,6 +15,13 @@ module.exports = {
         return res.render("productCreateSubcategory", {subcategories: subcategories, categories: categories, productId: productId})
     },
 
+    editarProducto: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        const productToEditId = req.params.productId
+        const product = await productsServices.getProductById(productToEditId)
+        return res.render("productEditForm", {product, categories})
+    },
+
     productDetail: async (req, res) => {
         const categories = await categoriesServices.getAllCategories()
         const productId = req.params.productId
@@ -57,5 +64,23 @@ module.exports = {
 
         productsServices.createProduct(newProduct)
         return res.redirect("/crear/producto-subcategoria/" + newProduct.id)
+    },
+
+    editarProductoProcess: (req, res) => {
+        const productToEditId = req.params.productId
+        const newProduct = {
+            product_name: req.body.product_name,
+            price: req.body.price,
+            discount: req.body.discount
+        }
+        console.log("nuevo producto => ", newProduct);
+        productsServices.updateProduct(productToEditId, newProduct)
+        return res.redirect("/")
+    },
+
+    borrarProducto: (req, res) => {
+        const productToDeleteId = req.params.productId
+        productsServices.deleteProduct(productToDeleteId)
+        return res.redirect("/")
     }
 }

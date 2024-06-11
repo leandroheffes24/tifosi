@@ -25,11 +25,15 @@ module.exports = {
 
     carritoProcess: async (req, res) => {
         const user = req.session.userLoggedIn
-        const userId = user.id
-        const productId = req.params.productId
-
-        carritoServices.addProductToCart(userId, productId)
-        return res.redirect("/")
+        if(user){
+            const userId = user.id
+            const productId = req.params.productId
+    
+            carritoServices.addProductToCart(userId, productId)
+            return res.redirect("/")   
+        } else {
+            return res.redirect("/ingresar")
+        }
     },
 
     carritoDeleteProduct: async (req, res) => {
