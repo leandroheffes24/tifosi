@@ -13,6 +13,11 @@ module.exports = {
         return res.render("ingresar")
     },
 
+    profile: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        return res.render("profile", {categories})
+    },
+
     registroProcess: async (req, res) => {
         let errors = validationResult(req)
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head", {title: "Futbol e-commerce"}) %>
+</head>
+<body>
+    <!-- ******************************** HEADER ******************************** -->
+    <%- include("partials/header") %>
+    <!-- ******************************** END HEADER ******************************** -->
+
+    <main>
+        <section class="profileSection">
+            <div class="indexCamisetasTitleContainer">
+                <h2 class="indexCamisetasTitle">PERFIL</h2>
+                <div class="indexCamisetasTitleUnderline"></div>
+            </div>
+
+            <div class="profilePersonalInformationContainer">
+                <h3 class="profilePersonalInformationTitle">INFORMACIÓN PERSONAL</h3>
+
+                <div class="profilePersonalInformationBox">
+                    <span class="profilePersonalInformationBoxTitle">Nombre</span>
+                    <span class="profilePersonalInformationBoxContent"><%= locals.userLoggedIn.name %></span>
+                </div>
+
+                <div class="profilePersonalInformationBox">
+                    <span class="profilePersonalInformationBoxTitle">Apellido</span>
+                    <span class="profilePersonalInformationBoxContent"><%= locals.userLoggedIn.last_name %></span>
+                </div>
+
+                <div class="profilePersonalInformationBox">
+                    <span class="profilePersonalInformationBoxTitle">Email</span>
+                    <span class="profilePersonalInformationBoxContent"><%= locals.userLoggedIn.email %></span>
+                </div>
+            </div>
+
+            <div class="profileShipmentInformationContainer">
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ******************************** FOOTER ******************************** -->
+    <%- include("partials/footer") %>
+    <!-- ******************************** END FOOTER ******************************** -->
+</body>
+</html>
