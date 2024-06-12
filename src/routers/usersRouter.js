@@ -2,6 +2,8 @@ const {Router} = require("express")
 const usersController = require("../controllers/usersController")
 const router = Router()
 const registerValidations = require("../validations/registerValidations")
+const editarPersonalinformationValidations = require("../validations/editarPersonalInformationValidations")
+const editarPasswordValidations = require("../validations/editarPasswordValidations")
 const authMiddleware = require("../middlewares/authMiddleware")
 const guestMiddleware = require("../middlewares/guestMiddleware")
 
@@ -10,5 +12,10 @@ router.post("/registro", guestMiddleware, registerValidations, usersController.r
 router.get("/ingresar", guestMiddleware, usersController.ingresar)
 router.post("/ingresar", guestMiddleware, usersController.ingresarProcess)
 router.get("/perfil", authMiddleware, usersController.profile)
+router.get("/perfil/editar-informacion-personal", authMiddleware, usersController.editProfilePersonalInformation)
+router.put("/perfil/editar-informacion-personal/:userId", authMiddleware, editarPersonalinformationValidations, usersController.editProfilePersonalInformationProcess)
+router.get("/perfil/editar-contrasena", authMiddleware, usersController.editPassword)
+router.put("/perfil/editar-contrasena/:userId", authMiddleware, editarPasswordValidations, usersController.editPasswordProcess)
+router.get("/logout", usersController.logout)
 
 module.exports = router

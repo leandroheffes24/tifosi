@@ -2008,6 +2008,342 @@ input[type=number]::-webkit-inner-spin-button {
     padding: 7px 0;
   }
 }
+.profileSection {
+  width: 95%;
+  margin: auto;
+}
+
+.indexCamisetasTitleContainer {
+  margin-bottom: 35px;
+}
+
+.profilePersonalInformationContainer, .profileShipmentInformationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.profilePersonalInformationTitle, .profileShipmentInformationTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.profilePersonalInformationBox, .profileShipmentInformationBox {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.profilePersonalInformationBoxTitle, .profileShipmentInformationBoxTitle {
+  font-size: 0.9rem;
+  color: rgb(200, 200, 200);
+}
+
+.profilePersonalInformationBoxContent, .profileShipmentInformationBoxContent {
+  font-size: 1.1rem;
+  border-bottom: 1px solid gray;
+}
+
+.profilePersonalInformationEditButtonContainer, .profileShipmentInformationEditButtonContainer {
+  margin: 10px auto 0;
+}
+
+.profilePersonalInformationEditButton, .profileShipmentInformationEditButton {
+  background-color: green;
+  color: rgb(240, 240, 240);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.profileLogoutButtonContainer {
+  text-align: center;
+  margin: 80px 0 40px;
+}
+
+.profileLogoutButton {
+  background-color: rgb(45, 45, 45);
+  padding: 5px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: rgb(200, 200, 200);
+}
+
+@media (width >= 768px) {
+  .profileSection {
+    margin-top: 10px;
+    width: 85%;
+  }
+  .indexCamisetasTitleContainer {
+    margin-bottom: 35px;
+  }
+  .profilePersonalInformationContainer, .profileShipmentInformationContainer {
+    gap: 35px;
+    margin-bottom: 80px;
+  }
+  .profilePersonalInformationTitle, .profileShipmentInformationTitle {
+    font-size: 1.6rem;
+  }
+  .profilePersonalInformationBox, .profileShipmentInformationBox {
+    gap: 3px;
+  }
+  .profilePersonalInformationBoxTitle, .profileShipmentInformationBoxTitle {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .profilePersonalInformationBoxContent, .profileShipmentInformationBoxContent {
+    font-size: 1.4rem;
+  }
+  .profilePersonalInformationEditButtonContainer, .profileShipmentInformationEditButtonContainer {
+    margin: 20px auto 0;
+  }
+  .profilePersonalInformationEditButton, .profileShipmentInformationEditButton {
+    font-size: 1.3rem;
+    padding: 13px 40px;
+  }
+  .profileLogoutButtonContainer {
+    margin: 100px 0 40px;
+  }
+  .profileLogoutButton {
+    padding: 10px 40px;
+    font-size: 1.3rem;
+  }
+}
+@media (width >= 992px) {
+  .profileSection {
+    margin-top: 20px;
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  .indexCamisetasTitleContainer {
+    width: 100%;
+    margin-bottom: 45px;
+  }
+  .profilePersonalInformationContainer, .profileShipmentInformationContainer {
+    width: 45%;
+    gap: 30px;
+    margin-bottom: 0;
+  }
+  .profilePersonalInformationTitle, .profileShipmentInformationTitle {
+    font-size: 1.1rem;
+  }
+  .profilePersonalInformationBox, .profileShipmentInformationBox {
+    gap: 5px;
+  }
+  .profilePersonalInformationBoxTitle, .profileShipmentInformationBoxTitle {
+    font-size: 0.8rem;
+  }
+  .profilePersonalInformationBoxContent, .profileShipmentInformationBoxContent {
+    font-size: 1.1rem;
+  }
+  .profilePersonalInformationEditButtonContainer, .profileShipmentInformationEditButtonContainer {
+    margin: 20px auto 0;
+  }
+  .profilePersonalInformationEditButton, .profileShipmentInformationEditButton {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+  .profileLogoutButtonContainer {
+    margin: 60px auto 0px;
+  }
+  .profileLogoutButton {
+    padding: 7px 20px;
+    font-size: 0.9rem;
+  }
+}
+@media (width >= 1200px) {
+  .profileSection {
+    margin-top: 30px;
+    width: 90%;
+    margin-bottom: 85px;
+  }
+  .indexCamisetasTitleContainer {
+    margin-bottom: 45px;
+  }
+  .profilePersonalInformationContainer, .profileShipmentInformationContainer {
+    gap: 35px;
+  }
+  .profilePersonalInformationTitle, .profileShipmentInformationTitle {
+    font-size: 1.2rem;
+  }
+  .profilePersonalInformationBox, .profileShipmentInformationBox {
+    gap: 7px;
+  }
+  .profilePersonalInformationBoxTitle, .profileShipmentInformationBoxTitle {
+    font-size: 0.9rem;
+  }
+  .profilePersonalInformationBoxContent, .profileShipmentInformationBoxContent {
+    font-size: 1.2rem;
+  }
+  .profilePersonalInformationEditButton, .profileShipmentInformationEditButton {
+    font-size: 1rem;
+  }
+  .profileLogoutButtonContainer {
+    margin: 80px auto 0px;
+  }
+  .profileLogoutButton {
+    padding: 7px 30px;
+    font-size: 1rem;
+  }
+}
+.editPersonalInformationMain {
+  width: 90%;
+  margin: 10px auto 20px;
+}
+
+.editProfileForm {
+  background-color: rgb(35, 35, 35);
+  border: 2px solid rgb(55, 55, 55);
+  padding: 20px 15px;
+  border-radius: 10px;
+}
+
+.editProfileTitle {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+}
+
+.editProfileContentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.editProfileLabelAndInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.editProfileLabel {
+  font-size: 0.8rem;
+  margin-left: 2px;
+  color: rgb(200, 200, 200);
+}
+
+.editProfileInput {
+  font-size: 1rem;
+  background-color: rgb(45, 45, 45);
+  color: rgb(200, 200, 200);
+  border: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+.changePasswordLink {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: green;
+}
+
+.editProfileConfirmButtonContainer {
+  margin: 10px auto 0;
+}
+
+.editProfileConfirmButton {
+  background-color: green;
+  color: rgb(240, 240, 240);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+@media (width >= 768px) {
+  .editPersonalInformationMain {
+    width: 75%;
+    margin: 20px auto 40px;
+  }
+  .editProfileForm {
+    padding: 30px 20px;
+  }
+  .editProfileTitle {
+    font-size: 1.8rem;
+    margin-bottom: 45px;
+  }
+  .editProfileContentContainer {
+    gap: 35px;
+  }
+  .editProfileLabelAndInputContainer {
+    gap: 7px;
+  }
+  .editProfileLabel {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .editProfileInput {
+    font-size: 1.3rem;
+    padding: 7px 10px;
+  }
+  .changePasswordLink {
+    font-size: 1.1rem;
+  }
+  .editProfileConfirmButton {
+    font-size: 1.4rem;
+    padding: 8px 40px;
+    border-radius: 10px;
+  }
+}
+@media (width >= 992px) {
+  .editPersonalInformationMain {
+    width: 65%;
+    margin: 30px auto 60px;
+  }
+  .editProfileForm {
+    padding: 30px 25px;
+  }
+  .editProfileTitle {
+    font-size: 1.4rem;
+    margin-bottom: 35px;
+  }
+  .editProfileContentContainer {
+    gap: 25px;
+  }
+  .editProfileLabelAndInputContainer {
+    gap: 6px;
+  }
+  .editProfileLabel {
+    font-size: 0.9rem;
+  }
+  .editProfileInput {
+    font-size: 1.1rem;
+    padding: 5px 7px;
+  }
+  .changePasswordLink {
+    font-size: 0.9rem;
+  }
+  .editProfileConfirmButton {
+    font-size: 1.1rem;
+    padding: 5px 70px;
+  }
+}
+@media (width >= 1200px) {
+  .editPersonalInformationMain {
+    width: 55%;
+    margin: 30px auto 80px;
+  }
+  .editProfileTitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  .editProfileContentContainer {
+    gap: 30px;
+  }
+  .editProfileInput {
+    padding: 5px 10px;
+  }
+  .editProfileConfirmButton {
+    padding: 8px 70px;
+  }
+}
 .camisetaContainer {
   width: 46%;
   position: relative;

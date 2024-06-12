@@ -18,6 +18,16 @@ module.exports = {
         return res.render("profile", {categories})
     },
 
+    editProfilePersonalInformation: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        return res.render("editProfilePersonalInformation", {categories})
+    },
+
+    editPassword: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        return res.render("editPassword", {categories})
+    },
+
     registroProcess: async (req, res) => {
         let errors = validationResult(req)
 
@@ -57,5 +67,46 @@ module.exports = {
             req.session.userLoggedIn = userInDB
             return res.redirect("/")
         }
+    },
+
+    editProfilePersonalInformationProcess: async (req, res) => {
+        let errors = validationResult(req)
+        const categories = await categoriesServices.getAllCategories()
+
+        if(errors.errors.length > 0){
+            return res.render("editProfilePersonalInformation", {errors: errors.mapped(), categories})
+        }
+
+        let userId = req.params.userId
+        let userEdited = {
+            name: req.body.name,
+            lastName: req.body.lastName,
+            email: req.body.email
+        }
+
+        usersServices.editProfilePersonalInformation(userId, userEdited)
+        req.session.userLoggedIn.name = userEdited.name;
+        req.session.userLoggedIn.last_name = userEdited.lastName;
+        req.session.userLoggedIn.email = userEdited.email;
+        return res.redirect("/perfil")
+    },
+
+    editPasswordProcess: async (req, res) => {
+        let errors = validationResult(req)
+        const categories = await categoriesServices.getAllCategories()
+
+        if(errors.errors.length > 0){
+            return res.render("editPassword", {errors: errors.mapped(), categories})
+        }
+
+        let userId = req.params.userId
+        let passwordEdited = bcrypt.hashSync(req.body.password, 10)
+        usersServices.editPassword(userId, passwordEdited)
+        return res.redirect("/perfil")
+    },
+
+    logout: (req, res) => {
+        req.session.destroy()
+        return res.redirect("/")
     }
 }

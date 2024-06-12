@@ -16,6 +16,24 @@ const usersServices = {
             password: newUser.password,
             rank: newUser.rank
         })
+    },
+
+    editProfilePersonalInformation: (userId, userEdited) => {
+        return Users.update({
+            name: userEdited.name,
+            last_name: userEdited.lastName,
+            email: userEdited.email
+        }, {
+            where: {id: userId}
+        })
+    },
+
+    editPassword: (userId, passwordEdited) => {
+        return Users.update({
+            password: passwordEdited
+        }, {
+            where: {id: userId}
+        })
     }
 }
 

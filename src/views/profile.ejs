@@ -32,10 +32,47 @@
                     <span class="profilePersonalInformationBoxTitle">Email</span>
                     <span class="profilePersonalInformationBoxContent"><%= locals.userLoggedIn.email %></span>
                 </div>
+
+                <div class="profilePersonalInformationEditButtonContainer">
+                    <a href="/perfil/editar-informacion-personal" class="profilePersonalInformationEditButton">Editar información personal</a>
+                </div>
             </div>
 
             <div class="profileShipmentInformationContainer">
+                <h3 class="profileShipmentInformationTitle">INFORMACIÓN DE ENVIO</h3>
 
+                <div class="profileShipmentInformationBox">
+                    <span class="profileShipmentInformationBoxTitle">País</span>
+                    <span class="profileShipmentInformationBoxContent"><%= locals.userLoggedIn.country === null ? "-" : locals.userLoggedIn.country %></span>
+                </div>
+
+                <div class="profileShipmentInformationBox">
+                    <span class="profileShipmentInformationBoxTitle">Provincia</span>
+                    <span class="profileShipmentInformationBoxContent"><%= locals.userLoggedIn.province === null ? "-" : locals.userLoggedIn.province %></span>
+                </div>
+
+                <div class="profileShipmentInformationBox">
+                    <span class="profileShipmentInformationBoxTitle">Ciudad</span>
+                    <span class="profileShipmentInformationBoxContent"><%= locals.userLoggedIn.city === null ? "-" : locals.userLoggedIn.city %></span>
+                </div>
+
+                <div class="profileShipmentInformationBox">
+                    <span class="profileShipmentInformationBoxTitle">Dirección</span>
+                    <span class="profileShipmentInformationBoxContent"><%= locals.userLoggedIn.address === null ? "-" : locals.userLoggedIn.address %></span>
+                </div>
+
+                <div class="profileShipmentInformationBox">
+                    <span class="profileShipmentInformationBoxTitle">Código postal</span>
+                    <span class="profileShipmentInformationBoxContent"><%= locals.userLoggedIn.cp === null ? "-" : locals.userLoggedIn.cp %></span>
+                </div>
+
+                <div class="profileShipmentInformationEditButtonContainer">
+                    <a href="/perfil/edital-informacion-de-envio" class="profileShipmentInformationEditButton">Editar información de envío</a>
+                </div>
+            </div>
+
+            <div class="profileLogoutButtonContainer">
+                <a class="profileLogoutButton" href="/logout">Cerrar sesión</a>
             </div>
         </section>
     </main>
