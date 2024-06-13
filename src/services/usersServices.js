@@ -1,4 +1,5 @@
 const {Users} = require("../../database/models")
+const { use } = require("../routers/usersRouter")
 
 const usersServices = {
     findUserEmail: (email) => {
@@ -31,6 +32,18 @@ const usersServices = {
     editPassword: (userId, passwordEdited) => {
         return Users.update({
             password: passwordEdited
+        }, {
+            where: {id: userId}
+        })
+    },
+
+    editProfileShipmentInformation: (userId, newShipmentInfo) => {
+        return Users.update({
+            country: newShipmentInfo.country,
+            province: newShipmentInfo.province,
+            city: newShipmentInfo.city,
+            address: newShipmentInfo.address,
+            cp: newShipmentInfo.cp
         }, {
             where: {id: userId}
         })

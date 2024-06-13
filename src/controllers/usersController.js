@@ -28,6 +28,11 @@ module.exports = {
         return res.render("editPassword", {categories})
     },
 
+    editShipment: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        return res.render("editProfileShipmentInformation", {categories})
+    },
+
     registroProcess: async (req, res) => {
         let errors = validationResult(req)
 
@@ -108,5 +113,30 @@ module.exports = {
     logout: (req, res) => {
         req.session.destroy()
         return res.redirect("/")
+    },
+
+    editShipmentProcess: async (req, res) => {
+        let errors = validationResult(req)
+        const categories = await categoriesServices.getAllCategories()
+
+        if(errors.errors.length > 0){
+            return res.render("editProfileShipmentInformation", {errors: errors.mapped(), categories})
+        }
+
+        let userId = req.params.userId
+        let newShipmentInfo = {
+            country: req.body.country,
+            province: req.body.province,
+            city: req.body.city,
+            address: req.body.address,
+            cp: req.body.cp
+        }
+        usersServices.editProfileShipmentInformation(userId, newShipmentInfo)
+        req.session.userLoggedIn.country = newShipmentInfo.country;
+        req.session.userLoggedIn.province = newShipmentInfo.province;
+        req.session.userLoggedIn.city = newShipmentInfo.city;
+        req.session.userLoggedIn.address = newShipmentInfo.address;
+        req.session.userLoggedIn.cp = newShipmentInfo.cp;
+        return res.redirect("/perfil")
     }
 }

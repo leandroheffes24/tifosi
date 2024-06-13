@@ -4,6 +4,7 @@ const router = Router()
 const registerValidations = require("../validations/registerValidations")
 const editarPersonalinformationValidations = require("../validations/editarPersonalInformationValidations")
 const editarPasswordValidations = require("../validations/editarPasswordValidations")
+const editarShipmentInformationValidations = require("../validations/editarShipmentInformationValidations")
 const authMiddleware = require("../middlewares/authMiddleware")
 const guestMiddleware = require("../middlewares/guestMiddleware")
 
@@ -16,6 +17,8 @@ router.get("/perfil/editar-informacion-personal", authMiddleware, usersControlle
 router.put("/perfil/editar-informacion-personal/:userId", authMiddleware, editarPersonalinformationValidations, usersController.editProfilePersonalInformationProcess)
 router.get("/perfil/editar-contrasena", authMiddleware, usersController.editPassword)
 router.put("/perfil/editar-contrasena/:userId", authMiddleware, editarPasswordValidations, usersController.editPasswordProcess)
+router.get("/perfil/edital-informacion-de-envio", authMiddleware, usersController.editShipment)
+router.put("/perfil/editar-informacion-de-envio/:userId", authMiddleware, editarShipmentInformationValidations, usersController.editShipmentProcess)
 router.get("/logout", usersController.logout)
 
 module.exports = router
