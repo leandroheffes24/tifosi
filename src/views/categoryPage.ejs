@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <%- include("partials/head", {title: "Futbol e-commerce"}) %>
+    <script src="/js/filtersScript.js" defer></script>
 </head>
 <body>
     <!-- ******************************** HEADER ******************************** -->
@@ -11,13 +12,37 @@
     <!-- ******************************** MAIN ******************************** -->
     <main class="categoryMain">
         <section class="categoryFilterSection">
-            <div class="filterTitleContainer">
-                <h2 class="indexCamisetasTitle">FILTROS</h2>
-                <div class="indexCamisetasTitleUnderline categoryFiltrosUnderline"></div>
+            <div class="categoryFilterTitleAndCloseButtonContainer">
+                <h3 class="categoryFilterTitle">FILTROS</h3>
+
+                <button class="categoryFilterCloseButton">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="categoryFilterCloseIcon">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
 
-            <form class="filtrosForm" action="">
-                
+            <form class="categoryFilterForm" action="">
+                <h5 class="categoryFilterSubtitle">Talles</h5>
+                <% talles.forEach(talle => { %>
+                    <label class="categoryFilterLabel" for="talle-<%= talle.name.toLowerCase() %>">
+                        <input class="categoryFilterCheckbox" type="checkbox" id="talle-<%= talle.name.toLowerCase() %>" name="talles[]" value="<%= talle.name.toLowerCase() %>">
+
+                        <span class="categoryFilterCheckboxName"><%= talle.name %></span>
+                    </label>
+                <% }) %>
+
+                <h5 class="categoryFilterSubtitle categoryFilterPriceTitle">Precio</h5>
+                <div class="categoryFilterPriceContainer">
+                    <input class="categoryFilterPriceInput" type="number" id="minPrice" name="minPrice" placeholder="Mínimo">
+                    <input class="categoryFilterPriceInput" type="number" id="maxPrice" name="maxPrice" placeholder="Máximo">
+                </div>
+
+                <div class="categoryFilterApplyButtonContainer">
+                    <button class="categoryFilterApplyButton" type="submit">APLICAR</button>
+                </div>
             </form>
         </section>
 

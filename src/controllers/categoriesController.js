@@ -1,5 +1,6 @@
 const productsServices = require("../services/productsServices")
 const categoriesServices = require("../services/categoriesServices")
+const tallesServices = require("../services/tallesServices")
 
 module.exports = {
     categoryProducts: async (req, res) => {
@@ -7,7 +8,8 @@ module.exports = {
         const categoryId = await categoriesServices.getCategoryId(categoryName)
         const categoryProducts = await productsServices.getCategoryProducts(categoryId)
         const categories = await categoriesServices.getAllCategories()
-        return res.render("categoryPage", {categoryProducts: categoryProducts, categoryName: categoryName, categories: categories})
+        const talles = await tallesServices.getAllTalles()
+        return res.render("categoryPage", {categoryProducts, categoryName, categories, talles})
     },
 
     crearCategoria: async (req, res) => {

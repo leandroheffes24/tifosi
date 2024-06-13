@@ -857,12 +857,164 @@ footer {
 
 .categoryFilterSection {
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(220, 220, 220);
+  z-index: 20;
+  padding: 20px 0;
+  box-shadow: 0px 0px 0px 600px rgba(0, 0, 0, 0.6);
+}
+
+.categoryFilterTitleAndCloseButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.categoryFilterTitle {
+  font-size: 1.6rem;
+  color: rgb(40, 40, 40);
+}
+
+.categoryFilterCloseButton {
+  background: none;
+  border: none;
+}
+
+.categoryFilterCloseIcon {
+  width: 24px;
+}
+
+.categoryFilterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  margin: auto;
+}
+
+.categoryFilterSubtitle {
+  font-size: 1rem;
+  color: rgb(60, 60, 60);
+}
+
+.categoryFilterLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.categoryFilterCheckbox {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  background-color: transparent;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgb(60, 60, 60);
+  transition: 0.2s;
+}
+
+.categoryFilterCheckbox:checked {
+  background-color: rgb(60, 60, 60);
+  transition: 0.2s;
+}
+
+.categoryFilterCheckboxName {
+  color: rgb(60, 60, 60);
+  font-weight: 600;
+}
+
+.categoryFilterPriceTitle {
+  margin-top: 20px;
+}
+
+.categoryFilterPriceContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.categoryFilterPriceInput {
+  width: 30%;
+  background-color: rgb(235, 235, 235);
+  border: none;
+  padding: 7px 10px;
+  color: rgb(60, 60, 60);
+  border-radius: 5px;
+}
+
+.categoryFilterApplyButtonContainer {
+  margin-top: 20px;
+}
+
+.categoryFilterApplyButton {
+  background-color: rgb(60, 60, 60);
+  color: rgb(240, 240, 240);
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
 @media (width >= 768px) {
   .categoryMain {
     width: 85%;
     margin: 40px auto 60px;
+  }
+  .categoryFilterSection {
+    padding: 50px 0;
+    box-shadow: 0px 0px 0px 800px rgba(0, 0, 0, 0.6);
+  }
+  .categoryFilterTitleAndCloseButtonContainer {
+    width: 80%;
+    margin-bottom: 40px;
+  }
+  .categoryFilterTitle {
+    font-size: 2rem;
+  }
+  .categoryFilterCloseIcon {
+    width: 30px;
+  }
+  .categoryFilterForm {
+    gap: 20px;
+    width: 80%;
+  }
+  .categoryFilterSubtitle {
+    font-size: 1.3rem;
+  }
+  .categoryFilterLabel {
+    gap: 10px;
+  }
+  .categoryFilterCheckbox {
+    width: 25px;
+    height: 25px;
+    border: 3px solid rgb(60, 60, 60);
+  }
+  .categoryFilterCheckboxName {
+    font-size: 1.3rem;
+  }
+  .categoryFilterPriceTitle {
+    margin-top: 30px;
+  }
+  .categoryFilterPriceContainer {
+    gap: 20px;
+  }
+  .categoryFilterPriceInput {
+    font-size: 1.2rem;
+    padding: 7px 10px;
+  }
+  .categoryFilterApplyButtonContainer {
+    margin-top: 30px;
+  }
+  .categoryFilterApplyButton {
+    font-size: 1.2rem;
+    padding: 10px 50px;
   }
 }
 @media (width >= 992px) {
@@ -871,12 +1023,65 @@ footer {
     display: flex;
   }
   .categoryFilterSection {
-    border: 1px solid red;
     display: block;
     width: 20%;
+    box-shadow: none;
+    position: static;
+    padding: 0;
+    background: none;
   }
-  .categoryFiltrosUnderline {
-    width: 80px;
+  .categoryFilterTitleAndCloseButtonContainer {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .categoryFilterTitle {
+    font-size: 1.7rem;
+    color: rgb(240, 240, 240);
+  }
+  .categoryFilterCloseIcon {
+    display: none;
+  }
+  .categoryFilterForm {
+    gap: 20px;
+    width: 100%;
+  }
+  .categoryFilterSubtitle {
+    font-size: 1rem;
+    color: rgb(200, 200, 200);
+  }
+  .categoryFilterLabel {
+    gap: 8px;
+  }
+  .categoryFilterCheckbox {
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgb(160, 160, 160);
+  }
+  .categoryFilterCheckbox:checked {
+    background-color: rgb(160, 160, 160);
+  }
+  .categoryFilterCheckboxName {
+    font-size: 0.9rem;
+    color: rgb(160, 160, 160);
+  }
+  .categoryFilterPriceTitle {
+    margin-top: 20px;
+  }
+  .categoryFilterPriceContainer {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .categoryFilterPriceInput {
+    width: 70%;
+    font-size: 0.9rem;
+    padding: 7px 10px;
+    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(35, 35, 35);
+    color: rgb(160, 160, 160);
+  }
+  .categoryFilterApplyButton {
+    font-size: 0.8rem;
+    padding: 8px 20px;
   }
   .categoryProductsSection {
     width: 80%;
@@ -895,6 +1100,12 @@ footer {
 @media (width >= 1200px) {
   .categoryMain {
     width: 85%;
+  }
+  .categoryFilterTitle {
+    font-size: 1.8rem;
+  }
+  .categoryFilterForm {
+    gap: 18px;
   }
 }
 .crearContainer {
