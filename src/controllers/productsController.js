@@ -1,11 +1,13 @@
 const categoriesServices = require("../services/categoriesServices")
 const productsServices = require("../services/productsServices")
+const tallesServices = require("../services/tallesServices")
 const {validationResult} = require("express-validator")
 
 module.exports = {
     crearProducto: async (req, res) => {
         const categories = await categoriesServices.getAllCategories()
-        return res.render("productCreate", {categories})
+        const talles = await tallesServices.getAllTalles()
+        return res.render("productCreate", {categories, talles})
     },
 
     crearProductoSubcategoria: async (req, res) => {
@@ -28,9 +30,16 @@ module.exports = {
         const product = await productsServices.getProductById(productId)
         const productCategoryId = product.category_id
         const productSubcategoryId = product.subcategory_id
+        const productTalles = await productsServices.getProductTalles(productId)
+        let tallesNames = []
+        await productTalles.forEach(async talle => {
+            let talleSearched = await tallesServices.getTalleById(talle.talle_id)
+            let talleName = talleSearched.name
+            return tallesNames.push(talleName)
+        })
         const categoryName = await categoriesServices.getCategoryNameById(productCategoryId)
         const subcategoryName = await categoriesServices.getSubcategoryNameById(productSubcategoryId)
-        return res.render("productDetail", {categories, product, categoryName, subcategoryName})
+        return res.render("productDetail", {categories, product, categoryName, subcategoryName, tallesNames})
     },
 
     crearProductoSubcategoriaProcess: async (req, res) => {
@@ -44,9 +53,10 @@ module.exports = {
     crearProductoProcess: async (req, res) => {
         let errors = validationResult(req)
         const categories = await categoriesServices.getAllCategories()
+        const talles = await tallesServices.getAllTalles()
 
         if(errors.errors.length > 0){
-            return res.render("productCreate", {errors: errors.mapped(), oldData: req.body, categories: categories})
+            return res.render("productCreate", {errors: errors.mapped(), oldData: req.body, categories, talles})
         }
 
         let lastProduct = await productsServices.getLastProduct()
@@ -58,11 +68,19 @@ module.exports = {
             product_name: req.body.product_name,
             price: req.body.price,
             discount: req.body.discount,
+            stock: req.body.stock,
             image: req.file.filename,
             category_id: categoryId
         }
 
+        let productsTalles = req.body.talles
+
         productsServices.createProduct(newProduct)
+        productsTalles.forEach(async talle => {
+            let talleId = await tallesServices.getTalleId(talle)
+            console.log("talle id => ", talleId);
+            await productsServices.crearProductosTalles(newProduct.id, talleId)
+        });
         return res.redirect("/crear/producto-subcategoria/" + newProduct.id)
     },
 

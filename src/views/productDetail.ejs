@@ -40,26 +40,10 @@
                     </div>
 
                     <div class="productDetailSizesContainer">
-                        <label class="productDetailSizeLabel" for="productDetailSize">XXS</label>
-                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
-
-                        <label class="productDetailSizeLabel" for="productDetailSize">XS</label>
-                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
-
-                        <label class="productDetailSizeLabel" for="productDetailSize">S</label>
-                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
-
-                        <label class="productDetailSizeLabel" for="productDetailSize">M</label>
-                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
-
-                        <label class="productDetailSizeLabel" for="productDetailSize">L</label>
-                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
-
-                        <label class="productDetailSizeLabel" for="productDetailSize">XL</label>
-                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
-
-                        <label class="productDetailSizeLabel" for="productDetailSize">XXL</label>
-                        <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize">
+                        <% tallesNames.forEach(talle => { %>
+                            <label class="productDetailSizeLabel" for="productDetailSize"><%= talle %></label>
+                            <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize" value="<%= talle %>">
+                        <% }) %>
                     </div>
 
                     <div class="productDetailButtonsContainer">

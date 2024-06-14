@@ -15,21 +15,52 @@
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="product_name">Nombre del producto</label>
                 <input class="createProductInput" type="text" id="product_name" name="product_name">
+                <% if (locals.errors && errors.product_name) { %>
+                    <span class="backendRegistroError"><%= errors.product_name.msg %></span>
+                <% } %>
             </div>
 
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="price">Precio (sin puntos)</label>
                 <input class="createProductInput" type="number" id="price" name="price">
+                <% if (locals.errors && errors.price) { %>
+                    <span class="backendRegistroError"><%= errors.price.msg %></span>
+                <% } %>
             </div>
 
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="discount">Descuento (solo el número)</label>
                 <input class="createProductInput" type="number" id="discount" name="discount">
+                <% if (locals.errors && errors.discount) { %>
+                    <span class="backendRegistroError"><%= errors.discount.msg %></span>
+                <% } %>
+            </div>
+
+            <div class="createProductLabelAndInputContainer">
+                <label class="createProductLabel" for="stock">Stock (solo el número)</label>
+                <input class="createProductInput" type="number" id="stock" name="stock">
+                <% if (locals.errors && errors.stock) { %>
+                    <span class="backendRegistroError"><%= errors.stock.msg %></span>
+                <% } %>
             </div>
 
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="image">Imagen producto</label>
                 <input class="createProductInput" type="file" id="image" name="image">
+                <% if (locals.errors && errors.image) { %>
+                    <span class="backendRegistroError"><%= errors.image.msg %></span>
+                <% } %>
+            </div>
+
+            <div class="createProductLabelAndInputContainer">
+                <p class="createProductLabel">Talles</p>
+                <% talles.forEach(talle => { %>
+                    <label class="categoryFilterLabel" for="talle-<%= talle.name.toLowerCase() %>">
+                        <input class="categoryFilterCheckbox" type="checkbox" id="talle-<%= talle.name.toLowerCase() %>" name="talles[]" value="<%= talle.name.toLowerCase() %>">
+    
+                        <span class="categoryFilterCheckboxName"><%= talle.name %></span>
+                    </label>
+                <% }) %>
             </div>
 
             <div class="createProductLabelAndInputContainer">

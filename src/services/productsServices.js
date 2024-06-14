@@ -1,4 +1,5 @@
 const {Products} = require("../../database/models")
+const {Products_talles} = require("../../database/models")
 
 const productsServices = {
     getAllProducts: () => {
@@ -56,6 +57,24 @@ const productsServices = {
     deleteProduct: (productToDeleteId) => {
         return Products.destroy({
             where: {id: productToDeleteId}
+        })
+    },
+
+    getFilterProducts: async (talles, minPrice, maxPrice, categoryId) => {
+        const categoryProducts = await this.getCategoryProducts(categoryId)
+        const filterPriceProducts = categoryProducts.filter(product => (product.price >= minPrice) && (product.price <= maxPrice))
+    },
+
+    crearProductosTalles: (productId, talleId) => {
+        return Products_talles.create({
+            product_id: productId,
+            talle_id: talleId
+        })
+    },
+
+    getProductTalles: (productId) => {
+        return Products_talles.findAll({
+            where: {product_id: productId}
         })
     }
 }

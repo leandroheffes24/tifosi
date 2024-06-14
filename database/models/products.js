@@ -31,6 +31,14 @@ module.exports = (sequelize, DataTypes) => {
             targetKey: "id",
             timestamps: false
         })
+
+        Model.belongsToMany(model.Talles, {
+            as: "talle",
+            through: "products_talles",
+            foreignKey: "product_id",
+            otherKey: "talle_id",
+            timestamps: false
+        });
     }
 
     return Model

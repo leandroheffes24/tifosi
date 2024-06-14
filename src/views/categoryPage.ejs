@@ -24,7 +24,7 @@
                 </button>
             </div>
 
-            <form class="categoryFilterForm" action="">
+            <form class="categoryFilterForm" action="/categories/<%= categoryName %>/filtrado" method="get">
                 <h5 class="categoryFilterSubtitle">Talles</h5>
                 <% talles.forEach(talle => { %>
                     <label class="categoryFilterLabel" for="talle-<%= talle.name.toLowerCase() %>">

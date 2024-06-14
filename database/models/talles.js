@@ -12,9 +12,15 @@ module.exports = (sequelize, DataTypes) => {
         }
     )
 
-    // Model.associate = (model) => {
-        
-    // }
+    Model.associate = (model) => {
+        Model.belongsToMany(model.Products, {
+            as: "product",
+            through: "products_talles",
+            foreignKey: "talle_id",
+            otherKey: "product_id",
+            timestamps: false
+        });
+    }
 
     return Model
 }

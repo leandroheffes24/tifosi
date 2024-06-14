@@ -100,5 +100,13 @@ module.exports = {
         const subcategoryToDeleteId = req.params.subcategoryId
         categoriesServices.deleteSubcategory(subcategoryToDeleteId)
         return res.redirect("/")
+    },
+
+    filtrado: async (req, res) => {
+        // const categories = await categoriesServices.getAllCategories()
+        const {talles, minPrice, maxPrice} = req.query
+        const categoryName = req.params.categoryName
+        const categoryId = await categoriesServices.getCategoryId(categoryName)
+        const filterProducts = productsServices.getFilterProducts(talles, minPrice, maxPrice, categoryId)
     }
 }
