@@ -1,5 +1,6 @@
 const {Products} = require("../../database/models")
 const {Products_talles} = require("../../database/models")
+const tallesServices = require("../services/tallesServices")
 
 const productsServices = {
     getAllProducts: () => {
@@ -61,8 +62,8 @@ const productsServices = {
     },
 
     getFilterProducts: async (talles, minPrice, maxPrice, categoryId) => {
-        const categoryProducts = await this.getCategoryProducts(categoryId)
-        const filterPriceProducts = categoryProducts.filter(product => (product.price >= minPrice) && (product.price <= maxPrice))
+        const categoryProducts = await productsServices.getCategoryProducts(categoryId)
+        const filterPriceProducts = categoryProducts.filter(product => product.price >= minPrice && product.price <= maxPrice)
     },
 
     crearProductosTalles: (productId, talleId) => {

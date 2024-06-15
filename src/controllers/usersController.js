@@ -70,6 +70,9 @@ module.exports = {
             return res.render("ingresar", {errors: {password: {msg: "Contraseña incorrecta"}}, oldData: req.body})
         } else {
             req.session.userLoggedIn = userInDB
+            if (userInDB.rank == "admin"){
+                req.session.admin = true
+            }
             return res.redirect("/")
         }
     },

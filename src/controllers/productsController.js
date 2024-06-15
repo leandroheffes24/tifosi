@@ -91,7 +91,6 @@ module.exports = {
             price: req.body.price,
             discount: req.body.discount
         }
-        console.log("nuevo producto => ", newProduct);
         productsServices.updateProduct(productToEditId, newProduct)
         return res.redirect("/")
     },

@@ -104,9 +104,11 @@ module.exports = {
 
     filtrado: async (req, res) => {
         // const categories = await categoriesServices.getAllCategories()
+        // const tallesTodos = await tallesServices.getAllTalles()
         const {talles, minPrice, maxPrice} = req.query
         const categoryName = req.params.categoryName
         const categoryId = await categoriesServices.getCategoryId(categoryName)
         const filterProducts = productsServices.getFilterProducts(talles, minPrice, maxPrice, categoryId)
+        return res.render("/")
     }
 }
