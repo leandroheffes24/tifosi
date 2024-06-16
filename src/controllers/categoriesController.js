@@ -10,8 +10,7 @@ module.exports = {
         const categories = await categoriesServices.getAllCategories()
         const talles = await tallesServices.getAllTalles()
         const categorySubcategories = await categoriesServices.getCategorySubcategories(categoryId)
-        console.log("estas son las subcategorias de la categoría => ", categorySubcategories);
-        return res.render("categoryPage", {categoryProducts, categoryName, categories, talles})
+        return res.render("categoryPage", {categoryProducts, categoryName, categories, talles, categorySubcategories})
     },
 
     crearCategoria: async (req, res) => {
@@ -100,5 +99,20 @@ module.exports = {
         const subcategoryToDeleteId = req.params.subcategoryId
         categoriesServices.deleteSubcategory(subcategoryToDeleteId)
         return res.redirect("/")
+    },
+
+    categoryFilterProducts: async (req, res) => {
+        const {subcategories, talles, minPrice, maxPrice} = req.query
+        const categoryName = req.params.categoryName
+        if(subcategories != undefined){
+            var productsFilteredBySubcategories = await productsServices.getSubcategoriesProducts(subcategories)
+        }
+
+        console.log("productos filtrados por subcategorias => ", productsFilteredBySubcategories);
+        console.log("subcategorias => ", subcategories);
+        console.log("talles => ", talles);
+        console.log("minPrice => ", minPrice);
+        console.log("maxPrice => ", maxPrice);
+        console.log("cateogry name => ", categoryName);
     }
 }

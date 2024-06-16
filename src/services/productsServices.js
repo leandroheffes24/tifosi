@@ -1,6 +1,6 @@
 const {Products} = require("../../database/models")
 const {Products_talles} = require("../../database/models")
-const tallesServices = require("../services/tallesServices")
+const { Op } = require('sequelize');
 
 const productsServices = {
     getAllProducts: () => {
@@ -76,6 +76,17 @@ const productsServices = {
     getProductTalles: (productId) => {
         return Products_talles.findAll({
             where: {product_id: productId}
+        })
+    },
+
+    getSubcategoriesProducts: async (subcategories) => {
+        console.log("subcategoria llegada => ", subcategories)
+        return Products.findAll({
+            where: {
+                subcategory_id: {
+                    [Op.in]: subcategories
+                }
+            }
         })
     }
 }
