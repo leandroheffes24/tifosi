@@ -5,7 +5,7 @@ module.exports = {
     index: async (req, res) => {
         const products = await productsServices.getAllProducts()
         const categories = await categoriesServices.getAllCategories()
-        return res.render("index", {products: products, categories: categories})
+        return res.render("index", {products, categories})
     },
 
     crear: async (req, res) => {

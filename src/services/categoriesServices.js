@@ -26,12 +26,6 @@ const categoriesServices = {
         })
     },
 
-    getLastSubCategory: () => {
-        return Subcategories.findOne({
-            order: [["created_at", "DESC"]]
-        })
-    },
-
     getCreateProductCategoryId: async (categoryName) => {
         const categories = await Categories.findAll()
         const categorySelected = categories.filter(category => category.name == categoryName)
@@ -59,9 +53,8 @@ const categoriesServices = {
         })
     },
 
-    createSubcategory: (newSubcategoryId, newSubcategoryName, categoryForNewSubcategoryId) => {
+    createSubcategory: (newSubcategoryName, categoryForNewSubcategoryId) => {
         return Subcategories.create({
-            id: newSubcategoryId,
             name: newSubcategoryName,
             category_id: categoryForNewSubcategoryId
         })
@@ -111,6 +104,12 @@ const categoriesServices = {
     getSubcategoryNameById: async (subcategoryId) => {
         const subcategory = await Subcategories.findByPk(subcategoryId)
         return subcategory.name
+    },
+
+    getCategorySubcategories: async (categoryId) => {
+        return Subcategories.findAll({
+            where: {category_id: categoryId}
+        })
     }
 }
 

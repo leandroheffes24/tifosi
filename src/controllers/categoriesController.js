@@ -9,6 +9,8 @@ module.exports = {
         const categoryProducts = await productsServices.getCategoryProducts(categoryId)
         const categories = await categoriesServices.getAllCategories()
         const talles = await tallesServices.getAllTalles()
+        const categorySubcategories = await categoriesServices.getCategorySubcategories(categoryId)
+        console.log("estas son las subcategorias de la categoría => ", categorySubcategories);
         return res.render("categoryPage", {categoryProducts, categoryName, categories, talles})
     },
 
@@ -56,9 +58,7 @@ module.exports = {
         const newSubcategoryName = req.body.newSubcategory
         const categoryForNewSubcategory = req.body.categoryForSubcategory
         const categoryForNewSubcategoryId = await categoriesServices.getCreateProductCategoryId(categoryForNewSubcategory)
-        const lastSubcategory = await categoriesServices.getLastSubCategory()
-        const newSubcategoryId = lastSubcategory.id + 1
-        categoriesServices.createSubcategory(newSubcategoryId, newSubcategoryName, categoryForNewSubcategoryId)
+        categoriesServices.createSubcategory(newSubcategoryName, categoryForNewSubcategoryId)
         return res.redirect("/")
     },
 
@@ -100,15 +100,5 @@ module.exports = {
         const subcategoryToDeleteId = req.params.subcategoryId
         categoriesServices.deleteSubcategory(subcategoryToDeleteId)
         return res.redirect("/")
-    },
-
-    filtrado: async (req, res) => {
-        // const categories = await categoriesServices.getAllCategories()
-        // const tallesTodos = await tallesServices.getAllTalles()
-        const {talles, minPrice, maxPrice} = req.query
-        const categoryName = req.params.categoryName
-        const categoryId = await categoriesServices.getCategoryId(categoryName)
-        const filterProducts = productsServices.getFilterProducts(talles, minPrice, maxPrice, categoryId)
-        return res.render("/")
     }
 }
