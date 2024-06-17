@@ -64,9 +64,13 @@ input[type=number]::-webkit-inner-spin-button {
 
 .productDetailQuantityContainer{
     margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .productDetailQuantityLabel{
+    width: 100%;
     font-size: .9rem;
     color: $secondaryTextColor;
 }
@@ -101,6 +105,12 @@ input[type=number]::-webkit-inner-spin-button {
     text-align: center;
     font-size: 1rem;
     padding: 7px 0;
+}
+
+.productDetailStockDisponible{
+    font-size: 1rem;
+    color: gray;
+    margin-left: 10px;
 }
 
 .productDetailSizesContainer{
@@ -274,6 +284,11 @@ input[type=number]::-webkit-inner-spin-button {
         width: 60px;
         font-size: 1.3rem;
     }
+
+    .productDetailStockDisponible{
+        font-size: 1.1rem;
+        margin-left: 20px;
+    }
     
     .productDetailSizesContainer{
         gap: 15px;
@@ -389,6 +404,11 @@ input[type=number]::-webkit-inner-spin-button {
         font-size: 1rem;
         padding: 5px 0;
     }
+
+    .productDetailStockDisponible{
+        font-size: .9rem;
+        margin-left: 15px;
+    }
     
     .productDetailSizesContainer{
         gap: 10px;
@@ -482,6 +502,11 @@ input[type=number]::-webkit-inner-spin-button {
         width: 50px;
         font-size: 1.1rem;
         padding: 7px 0;
+    }
+
+    .productDetailStockDisponible{
+        font-size: 1rem;
+        margin-left: 20px;
     }
     
     .productDetailSizesContainer{

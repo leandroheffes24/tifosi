@@ -129,12 +129,5 @@ module.exports = {
         }
 
         return res.render("categoryPage", {categoryProducts: products, categoryName, categories, talles: allTalles, categorySubcategories})
-
-        // console.log("productos filtrados por subcategorias => ", productsFilteredBySubcategories);
-        // console.log("subcategorias => ", subcategories);
-        // console.log("talles => ", talles);
-        // console.log("minPrice => ", minPrice);
-        // console.log("maxPrice => ", maxPrice);
-        // console.log("cateogry name => ", categoryName);
     }
 }

@@ -19,9 +19,10 @@ module.exports = {
 
     editarProducto: async (req, res) => {
         const categories = await categoriesServices.getAllCategories()
+        const talles = await tallesServices.getAllTalles()
         const productToEditId = req.params.productId
         const product = await productsServices.getProductById(productToEditId)
-        return res.render("productEditForm", {product, categories})
+        return res.render("productEditForm", {product, categories, talles})
     },
 
     productDetail: async (req, res) => {
@@ -59,12 +60,10 @@ module.exports = {
             return res.render("productCreate", {errors: errors.mapped(), oldData: req.body, categories, talles})
         }
 
-        let lastProduct = await productsServices.getLastProduct()
         let categoryName = req.body.category
         let categoryId = await categoriesServices.getCreateProductCategoryId(categoryName)
 
         let newProduct = {
-            id: (lastProduct.id) + 1,
             product_name: req.body.product_name,
             price: req.body.price,
             discount: req.body.discount,
@@ -75,28 +74,32 @@ module.exports = {
 
         let productsTalles = req.body.talles
 
-        productsServices.createProduct(newProduct)
-        productsTalles.forEach(async talle => {
+        await productsServices.createProduct(newProduct)
+        let lastProduct = await productsServices.getLastProduct()
+        await productsTalles.forEach(async talle => {
             let talleId = await tallesServices.getTalleId(talle)
-            console.log("talle id => ", talleId);
-            await productsServices.crearProductosTalles(newProduct.id, talleId)
+            await productsServices.crearProductosTalles(lastProduct.id, talleId)
         });
-        return res.redirect("/crear/producto-subcategoria/" + newProduct.id)
+        return res.redirect("/crear/producto-subcategoria/" + lastProduct.id)
     },
 
-    editarProductoProcess: (req, res) => {
+    editarProductoProcess: async (req, res) => {
         const productToEditId = req.params.productId
+
         const newProduct = {
             product_name: req.body.product_name,
             price: req.body.price,
-            discount: req.body.discount
+            discount: req.body.discount,
+            stock: req.body.stock
         }
-        productsServices.updateProduct(productToEditId, newProduct)
+
+        await productsServices.updateProduct(productToEditId, newProduct)
         return res.redirect("/")
     },
 
-    borrarProducto: (req, res) => {
+    borrarProducto: async (req, res) => {
         const productToDeleteId = req.params.productId
+        productsServices.deleteProductSizes(productToDeleteId)
         productsServices.deleteProduct(productToDeleteId)
         return res.redirect("/")
     }

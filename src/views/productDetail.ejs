@@ -33,10 +33,11 @@
                     <div class="productDetailQuantityContainer">
                         <label class="productDetailQuantityLabel" for="productQuantity">Cantidad</label>
                         <div class="quantityContainer">
-                            <button class="productDetailQuantitySubtractButton" onclick="decrement()">-</button>
-                            <input class="productDetailQuantityInput" type="number" name="productQuantity" id="productQuantity" value="1" min="1" required>
-                            <button class="productDetailQuantityAddButton" onclick="increment()">+</button>
+                            <button class="productDetailQuantitySubtractButton">-</button>
+                            <input class="productDetailQuantityInput" type="number" name="productQuantity" id="productQuantity" value="1" min="1" max="<%= product.stock %>" required>
+                            <button class="productDetailQuantityAddButton">+</button>
                         </div>
+                        <span class="productDetailStockDisponible">(<%= product.stock %> disponibles)</span>
                     </div>
 
                     <div class="productDetailSizesContainer">

@@ -8,7 +8,7 @@ module.exports = [
     body("stock").notEmpty().withMessage("Debes ingresar el stock"),
     body("image").custom((value, {req}) => {
         let file = req.file
-        let extencionesAceptadas = [".png", ".jpg", "webp"]
+        let extencionesAceptadas = [".png", ".jpg", ".webp"]
 
         if(!file){
             throw new Error("Tienes que subir una imagen")

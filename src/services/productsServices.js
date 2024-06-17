@@ -28,9 +28,9 @@ const productsServices = {
 
     createProduct: (newProduct) => {
         return Products.create({
-            id: newProduct.id,
             price: newProduct.price,
             discount: newProduct.discount,
+            stock: newProduct.stock,
             product_name: newProduct.product_name,
             image: newProduct.image,
             category_id: newProduct.category_id
@@ -49,7 +49,8 @@ const productsServices = {
         return Products.update({
             product_name: newProduct.product_name,
             price: newProduct.price,
-            discount: newProduct.discount
+            discount: newProduct.discount,
+            stock: newProduct.stock
         }, {
             where: {id: productToEditId}
         })
@@ -58,6 +59,12 @@ const productsServices = {
     deleteProduct: (productToDeleteId) => {
         return Products.destroy({
             where: {id: productToDeleteId}
+        })
+    },
+
+    deleteProductSizes: (productToDeleteId) => {
+        return Products_talles.destroy({
+            where: {product_id: productToDeleteId}
         })
     },
 
