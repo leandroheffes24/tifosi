@@ -1,5 +1,6 @@
 const {Talles} = require("../../database/models")
 const {Products_talles} = require("../../database/models")
+const {Products} = require("../../database/models")
 
 const tallesServices = {
     getAllTalles: () => {
@@ -50,7 +51,7 @@ const tallesServices = {
                     talle_id: talles
                 },
                 include: [{
-                    model: db.products,
+                    model: Products,
                     as: 'product'
                 }]
             });

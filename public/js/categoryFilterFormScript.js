@@ -3,7 +3,9 @@ document.getElementById('categoryFilterForm').addEventListener('submit', functio
     var isChecked = Array.from(subcategoryCheckboxes).some(checkbox => checkbox.checked);
 
     if (!isChecked) {
+        var subcategoriesFilterError = document.querySelector(".subcategoriesFilterError")
         event.preventDefault();
-        alert('Por favor, selecciona al menos una subcategoría.');
+        subcategoriesFilterError.innerText = "Por favor, selecciona al menos una subcategoría."
+        // subcategoriesFilterError.classList.add("display-block");
     }
 });
