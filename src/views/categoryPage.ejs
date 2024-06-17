@@ -3,6 +3,7 @@
 <head>
     <%- include("partials/head", {title: "Futbol e-commerce"}) %>
     <script src="/js/filtersScript.js" defer></script>
+    <script src="/js/categoryFilterFormScript.js" defer></script>
 </head>
 <body>
     <!-- ******************************** HEADER ******************************** -->
@@ -24,7 +25,7 @@
                 </button>
             </div>
 
-            <form class="categoryFilterForm" action="/categories/<%= categoryName %>/filtrado" method="get">
+            <form class="categoryFilterForm" id="categoryFilterForm" action="/categories/<%= categoryName %>/filtrado" method="get">
                 <h5 class="categoryFilterSubtitle">Subcategorías</h5>
                 <% categorySubcategories.forEach(subcategory => { %>
                     <label class="categoryFilterLabel" for="subcategory-<%= subcategory.name.toLowerCase().replace(" ", "-") %>">

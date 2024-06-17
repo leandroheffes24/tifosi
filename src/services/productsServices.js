@@ -80,7 +80,6 @@ const productsServices = {
     },
 
     getSubcategoriesProducts: async (subcategories) => {
-        console.log("subcategoria llegada => ", subcategories)
         return Products.findAll({
             where: {
                 subcategory_id: {

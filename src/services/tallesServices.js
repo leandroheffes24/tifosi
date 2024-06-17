@@ -1,4 +1,5 @@
 const {Talles} = require("../../database/models")
+const {Products_talles} = require("../../database/models")
 
 const tallesServices = {
     getAllTalles: () => {
@@ -40,6 +41,24 @@ const tallesServices = {
         let talles = await Talles.findAll()
         let talleSelected = talles.filter(talle => (talle.name.toLowerCase()) == talleName)
         return talleSelected[0].id
+    },
+
+    getProductsFilteredByTalle: async (talles) => {
+        try {
+            const products = await Products_talles.findAll({
+                where: {
+                    talle_id: talles
+                },
+                include: [{
+                    model: db.products,
+                    as: 'product'
+                }]
+            });
+            return products.map(productTalle => productTalle.product);
+        } catch (error) {
+            console.error("Error fetching products by talles: ", error);
+            throw error;
+        }
     }
 }
 

@@ -102,17 +102,38 @@ module.exports = {
     },
 
     categoryFilterProducts: async (req, res) => {
-        const {subcategories, talles, minPrice, maxPrice} = req.query
-        const categoryName = req.params.categoryName
-        if(subcategories != undefined){
-            var productsFilteredBySubcategories = await productsServices.getSubcategoriesProducts(subcategories)
+        const { subcategories, talles, minPrice, maxPrice } = req.query;
+        const categoryName = req.params.categoryName;
+        
+        let products = [];
+
+        if (subcategories != undefined) {
+            products = await productsServices.getSubcategoriesProducts(subcategories);
         }
 
-        console.log("productos filtrados por subcategorias => ", productsFilteredBySubcategories);
-        console.log("subcategorias => ", subcategories);
-        console.log("talles => ", talles);
-        console.log("minPrice => ", minPrice);
-        console.log("maxPrice => ", maxPrice);
-        console.log("cateogry name => ", categoryName);
+        if (talles != undefined) {
+            const productsByTalles = await tallesServices.getProductsFilteredByTalle(talles);
+
+            products = products.filter(product => productsByTalles.some(talleProduct => talleProduct.id === product.id));
+        }
+
+        if (minPrice != "") {
+            products = products.filter(product => product.price >= minPrice);
+        }
+
+        if (maxPrice != "") {
+            products = products.filter(product => product.price <= maxPrice);
+        }
+
+        res.json({
+            products: products
+        });
+
+        // console.log("productos filtrados por subcategorias => ", productsFilteredBySubcategories);
+        // console.log("subcategorias => ", subcategories);
+        // console.log("talles => ", talles);
+        // console.log("minPrice => ", minPrice);
+        // console.log("maxPrice => ", maxPrice);
+        // console.log("cateogry name => ", categoryName);
     }
 }
