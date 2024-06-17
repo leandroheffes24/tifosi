@@ -13,8 +13,9 @@ module.exports = {
     crearProductoSubcategoria: async (req, res) => {
         const productId = req.params.productId
         const categories = await categoriesServices.getAllCategories()
-        const subcategories = await categoriesServices.getAllSubcategories()
-        return res.render("productCreateSubcategory", {subcategories: subcategories, categories: categories, productId: productId})
+        const product = await productsServices.getProductById(productId)
+        const subcategories = await categoriesServices.getCategorySubcategories(product.category_id)
+        return res.render("productCreateSubcategory", {subcategories, categories, productId})
     },
 
     editarProducto: async (req, res) => {

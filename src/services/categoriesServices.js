@@ -110,6 +110,10 @@ const categoriesServices = {
         return Subcategories.findAll({
             where: {category_id: categoryId}
         })
+    },
+
+    getProductCategory: () => {
+        return 
     }
 }
 
