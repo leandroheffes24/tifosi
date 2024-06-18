@@ -7,10 +7,12 @@ const carritoServices = {
         })
     },
 
-    addProductToCart: (userId, productId) => {
+    addProductToCart: (userId, productId, quantity, talle) => {
         return Shopping_cart.create({
             id_user: userId,
-            id_product: productId
+            id_product: productId,
+            quantity: quantity,
+            talle: talle
         })
     },
 

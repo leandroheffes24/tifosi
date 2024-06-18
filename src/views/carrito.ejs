@@ -19,8 +19,9 @@
                                 <img class="shoppingCartProductImage" src="/images/products/<%= product.image %>" alt="<%= product.product_name %>">
                             </div>
     
-                            <div class="shoppingCartProductNameAndDeleteButtonContainer">
+                            <div class="shoppingCartProductInformationContainer">
                                 <h4 class="shoppingCartProductName"><%= product.product_name %></h4>
+
                                 <form class="shoppingCartDeleteButtonForm" action="/carrito/borrar/<%= product.id %>?_method=delete" method="post">
                                     <button class="shoppingCartDeleteProductButton" type="submit">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="shoppingCartDeleteProductIcon">
@@ -33,6 +34,11 @@
                                         </svg>
                                     </button>
                                 </form>
+
+                                <div class="shoppingCartQuiantityAndTalleContainer">
+                                    <p class="shoppingCartProductQuantity"><%= product.quantity %></p>
+                                    <p class="shoppingCartProductTalle"><%= product.talle %></p>
+                                </div>
 
                                 <div class="shoppingCartProductPriceAndDiscountContainer">
                                     <p class="shoppingCartProductPrice">$<%= product.price %></p>

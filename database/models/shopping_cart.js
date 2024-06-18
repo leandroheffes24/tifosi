@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
         {
             id: {type: DataTypes.INTEGER, primaryKey: true},
             id_user: DataTypes.STRING,
-            id_product: DataTypes.INTEGER
+            id_product: DataTypes.INTEGER,
+            quantity: DataTypes.INTEGER,
+            talle: DataTypes.STRING
         },
         {
             tableName: "shopping_cart",

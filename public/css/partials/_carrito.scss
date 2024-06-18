@@ -14,7 +14,6 @@
 
 .shoppingCartProductContainer{
     display: flex;
-    flex-wrap: wrap;
     border-top: 1px solid rgb(55, 55, 55);
     border-bottom: 1px solid rgb(55, 55, 55);
     padding: 10px 0;
@@ -30,50 +29,31 @@
     object-fit: cover;
 }
 
-.shoppingCartProductNameAndDeleteButtonContainer{
-    width: 70%;
-    padding-left: 10px;
-    display: flex;
-    flex-wrap: wrap;
+.shoppingCartProductInformationContainer{
+
 }
 
-.shoppingCartProductName{
-    width: 100%;
-    font-size: .8rem;
-    font-weight: 500;
+.shoppingCartProductName {
+}
+.shoppingCartDeleteButtonForm {
+}
+.shoppingCartDeleteProductButton {
+}
+.shoppingCartDeleteProductIcon {
+}
+.shoppingCartQuiantityAndTalleContainer {
+}
+.shoppingCartProductQuantity {
+}
+.shoppingCartProductTalle {
+}
+.shoppingCartProductPriceAndDiscountContainer {
+}
+.shoppingCartProductPrice {
+}
+.shoppingCartProductDiscount {
 }
 
-.shoppingCartDeleteButtonForm{
-    width: 20%;
-    text-align: left;
-}
-
-.shoppingCartDeleteProductButton{
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.shoppingCartDeleteProductIcon{
-    width: 24px;
-    color: gray;
-}
-
-.shoppingCartProductPriceAndDiscountContainer{
-    width: 80%;
-    text-align: right;
-}
-
-.shoppingCartProductPrice{
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.shoppingCartProductDiscount{
-    font-size: .7rem;
-    font-weight: 500;
-    color: rgb(47, 179, 47);
-}
 
 // ----------------------------------- EMPTY CART -----------------------------------
 
