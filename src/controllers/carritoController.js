@@ -25,6 +25,8 @@ module.exports = {
 
     carritoProcess: async (req, res) => {
         const user = req.session.userLoggedIn
+        console.log("cantidad => ", req.body.productQuantity);
+        console.log("talle => ", req.body.productDetailSize);
         if(user){
             const userId = user.id
             const productId = req.params.productId

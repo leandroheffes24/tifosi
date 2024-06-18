@@ -5,6 +5,8 @@
     <script src="/js/productDetailQuantityScript.js" defer></script>
     <script src="/js/productDetailSizeSelectedScript.js" defer></script>
     <script src="/js/productDetailDeleteProductButton.js" defer></script>
+    <script src="/js/productDetailFormScript.js" defer></script>
+    <script src="/js/productDetailTalleRequiredScript.js" defer></script>
 </head>
 <body>
     <!-- ******************************** HEADER ******************************** -->
@@ -29,50 +31,52 @@
                         <p class="productDetailPrice">$<%= product.price %></p>
                         <p class="productDetailDiscount"><%= product.discount %>% OFF</p>
                     </div>
-                    
-                    <div class="productDetailQuantityContainer">
-                        <label class="productDetailQuantityLabel" for="productQuantity">Cantidad</label>
-                        <div class="quantityContainer">
-                            <button class="productDetailQuantitySubtractButton">-</button>
-                            <input class="productDetailQuantityInput" type="number" name="productQuantity" id="productQuantity" value="1" min="1" max="<%= product.stock %>" required>
-                            <button class="productDetailQuantityAddButton">+</button>
+
+                    <form class="productDetailForm" id="productDetailForm" action="" method="">
+                        <div class="productDetailQuantityContainer">
+                            <label class="productDetailQuantityLabel" for="productQuantity">Cantidad</label>
+                            <div class="quantityContainer">
+                                <button type="button" class="productDetailQuantitySubtractButton">-</button>
+                                <input class="productDetailQuantityInput" type="number" name="productQuantity" id="productQuantity" value="1" min="1" max="<%= product.stock %>" required>
+                                <button type="button" class="productDetailQuantityAddButton">+</button>
+                            </div>
+                            <span class="productDetailStockDisponible">(<%= product.stock %> disponibles)</span>
                         </div>
-                        <span class="productDetailStockDisponible">(<%= product.stock %> disponibles)</span>
-                    </div>
-
-                    <div class="productDetailSizesContainer">
-                        <% tallesNames.forEach(talle => { %>
-                            <label class="productDetailSizeLabel" for="productDetailSize"><%= talle %></label>
-                            <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize" value="<%= talle %>">
-                        <% }) %>
-                    </div>
-
-                    <div class="productDetailButtonsContainer">
-                        <form action="">
-                            <button type="submit" class="productDetailBuyButton">Comprar</button>
-                        </form>
-
-                        <form action="/carrito/<%= product.id %>" method="post">
-                            <button type="submit" class="productDetailAddToCartButton">Agregar al carrito</button>
-                        </form>
-
-                        <% if(locals.userLoggedIn.rank == "admin"){ %>
-                            <form action="/editar/producto/<%= product.id %>" method="get">
-                                <button type="submit" class="productDetailEditProduct">Ediar producto</button>
-                            </form>
     
-                            <button onclick="deleteProduct()" class="productDetailDeleteProduct">Borrar producto</button>
-                            <form class="deleteProductForm" id="deleteProductForm" action="/borrar/producto/<%= product.id %>?_method=delete" method="post">
-                                <div class="deleteProductTextContainer">
-                                    <h4 class="deleteProductFormTitle">¿Estas seguro de eliminar el siguiente producto?</h4>
-                                    <p class="deleteProductFormProductName"><%= product.product_name %></p>
-                                </div>
-                                <div class="deleteProductButtonsContainer">
-                                    <button class="deleteProductButton" type="submit">Borrar</button>
-                                    <button class="deleteProductCancelButton" onclick="cancelDeleteProduct()" type="button">Cancelar</button>
-                                </div>
-                            </form>
-                        <% } %>
+                        <div class="productDetailSizesContainer" id="productDetailSizesContainer">
+                            <% tallesNames.forEach(talle => { %>
+                                <label class="productDetailSizeLabel" for="productDetailSize"><%= talle %></label>
+                                <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize" value="<%= talle %>">
+                            <% }) %>
+
+                            <span class="tallesNotSelectedError" id="tallesNotSelectedError"></span>
+                        </div>
+    
+                        <div class="productDetailButtonsContainer">
+                            <button type="button" class="productDetailBuyButton" onclick="submitForm('', '')">Comprar</button>
+    
+                            <button type="button" class="productDetailAddToCartButton" onclick="validateAndSubmit('/carrito/<%= product.id %>', 'post')">Agregar al carrito</button>
+    
+                            <% if(locals.userLoggedIn.rank == "admin"){ %>
+                                <button type="submit" class="productDetailEditProduct" onclick="submitForm('/editar/producto/<%= product.id %>', 'get')">Ediar producto</button>
+
+                                <button type="button" onclick="deleteProduct()" class="productDetailDeleteProduct">Borrar producto</button>
+                            <% } %>
+                        </div>
+                    </form>
+
+                    <div class="deleteProductFormContainer" id="deleteProductFormContainer">
+                        <form class="deleteProductForm" id="deleteProductForm" action="" method="">
+                            <div class="deleteProductTextContainer">
+                                <h4 class="deleteProductFormTitle">¿Estas seguro de eliminar el siguiente producto?</h4>
+                                <p class="deleteProductFormProductName"><%= product.product_name %></p>
+                            </div>
+
+                            <div class="deleteProductButtonsContainer">
+                                <button class="deleteProductButton" type="button" onclick="deleteProductProcess('/borrar/producto/<%= product.id %>?_method=delete', 'post')">Borrar</button>
+                                <button class="deleteProductCancelButton" onclick="cancelDeleteProduct()" type="button">Cancelar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

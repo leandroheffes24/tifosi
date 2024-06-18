@@ -1,9 +1,16 @@
+const deleteProductFormContainer = document.getElementById("deleteProductFormContainer")
 const deleteProductForm = document.getElementById("deleteProductForm")
 
 function deleteProduct() {
-    deleteProductForm.style.display = "flex"
+    deleteProductFormContainer.style.display = "block"
+}
+
+function deleteProductProcess(action, method){
+    deleteProductForm.action = action
+    deleteProductForm.method = method
+    deleteProductForm.submit()
 }
 
 function cancelDeleteProduct() {
-    deleteProductForm.style.display = "none"
+    deleteProductFormContainer.style.display = "none"
 }

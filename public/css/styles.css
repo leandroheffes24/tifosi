@@ -1847,6 +1847,12 @@ input[type=number]::-webkit-inner-spin-button {
   color: rgb(0, 192, 0);
 }
 
+.productDetailForm {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 .productDetailQuantityContainer {
   margin-bottom: 10px;
   display: flex;
@@ -1952,21 +1958,25 @@ input[type=number]::-webkit-inner-spin-button {
   background-color: rgb(192, 0, 0);
 }
 
-.deleteProductForm {
+.deleteProductFormContainer {
   display: none;
-  flex-wrap: wrap;
-  flex-direction: column;
-  gap: 40px;
-  width: 80%;
-  padding: 30px 15px;
-  margin: auto;
-  background-color: rgb(35, 35, 35);
-  border: 2px solid rgb(55, 55, 55);
   position: fixed;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+  background-color: rgb(35, 35, 35);
+  border: 2px solid rgb(55, 55, 55);
+  width: 80%;
+  margin: auto;
+  padding: 30px 15px;
   box-shadow: 0px 0px 0px 500px rgba(0, 0, 0, 0.7);
+}
+
+.deleteProductForm {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .deleteProductFormTitle {
@@ -2040,6 +2050,9 @@ input[type=number]::-webkit-inner-spin-button {
   .productDetailDiscount {
     font-size: 1.1rem;
   }
+  .productDetailForm {
+    gap: 60px;
+  }
   .productDetailQuantityContainer {
     margin-bottom: 0px;
   }
@@ -2080,7 +2093,6 @@ input[type=number]::-webkit-inner-spin-button {
   }
   .deleteProductForm {
     gap: 50px;
-    width: 70%;
     padding: 30px 25px;
   }
   .deleteProductFormTitle {
@@ -2138,6 +2150,9 @@ input[type=number]::-webkit-inner-spin-button {
   .productDetailDiscount {
     font-size: 0.9rem;
   }
+  .productDetailForm {
+    gap: 40px;
+  }
   .productDetailQuantityContainer {
     margin-bottom: 10px;
   }
@@ -2178,7 +2193,6 @@ input[type=number]::-webkit-inner-spin-button {
   }
   .deleteProductForm {
     gap: 30px;
-    width: 50%;
   }
   .deleteProductFormTitle {
     margin-bottom: 15px;
