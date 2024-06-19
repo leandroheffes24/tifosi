@@ -11,18 +11,18 @@
     <!-- ******************************** MAIN ******************************** -->
     <main class="shoppingCartMain">
         <section class="shoppingCartProductsSection">
-            <% if(finalProducts.length > 0){ %>
+            <% if(carritoProducts.length > 0){ %>
                 <div class="shoppingCartProductsContainer">
-                    <% finalProducts.forEach(product => { %>
+                    <% carritoProducts.forEach(product => { %>
                         <div class="shoppingCartProductContainer">
                             <div class="shoppingCartProductImageContainer">
-                                <img class="shoppingCartProductImage" src="/images/products/<%= product.image %>" alt="<%= product.product_name %>">
+                                <img class="shoppingCartProductImage" src="/images/products/<%= product.product_image %>" alt="<%= product.product_name %>">
                             </div>
     
                             <div class="shoppingCartProductInformationContainer">
                                 <h4 class="shoppingCartProductName"><%= product.product_name %></h4>
 
-                                <form class="shoppingCartDeleteButtonForm" action="/carrito/borrar/<%= product.id %>?_method=delete" method="post">
+                                <form class="shoppingCartDeleteButtonForm" action="/carrito/borrar/<%= product.id_product %>/<%= product.talle %>?_method=delete" method="post">
                                     <button class="shoppingCartDeleteProductButton" type="submit">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="shoppingCartDeleteProductIcon">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -36,13 +36,13 @@
                                 </form>
 
                                 <div class="shoppingCartQuiantityAndTalleContainer">
-                                    <p class="shoppingCartProductQuantity"><%= product.quantity %></p>
-                                    <p class="shoppingCartProductTalle"><%= product.talle %></p>
+                                    <p class="shoppingCartProductQuantity">Cantidad: <%= product.quantity %></p>
+                                    <p class="shoppingCartProductTalle">Talle: <%= product.talle %></p>
                                 </div>
 
                                 <div class="shoppingCartProductPriceAndDiscountContainer">
-                                    <p class="shoppingCartProductPrice">$<%= product.price %></p>
-                                    <p class="shoppingCartProductDiscount"><%= product.discount %>%OFF</p>
+                                    <p class="shoppingCartProductPrice">$<%= product.products_total_price %></p>
+                                    <p class="shoppingCartProductDiscount"><%= product.product_discount %>%OFF</p>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
             <% } %>
         </section>
 
-        <% if(finalProducts.length > 0){ %>
+        <% if(carritoProducts.length > 0){ %>
             <section class="shoppingCartTotalSection">
                 <div class="shoppingCartProductsPriceContainer">
                     <span class="shoppingCartTotalProductsText">Productos:</span>

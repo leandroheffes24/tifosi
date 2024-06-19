@@ -13,17 +13,20 @@ const carritoServices = {
             id_product: productId,
             product_name: productToCart.product_name,
             product_price: productToCart.price,
+            products_total_price: productToCart.price * quantity,
             product_discount: productToCart.discount,
+            product_image: productToCart.image,
             quantity: quantity,
             talle: talle
         })
     },
 
-    deleteProductCart: (productIdToDelete, userId) => {
+    deleteProductCart: (productIdToDelete, userId, talle) => {
         return Shopping_cart.destroy({
             where: {
                 id_user: userId,
-                id_product: productIdToDelete
+                id_product: productIdToDelete,
+                talle: talle
             }
         })
     }

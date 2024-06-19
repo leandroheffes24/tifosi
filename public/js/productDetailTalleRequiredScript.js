@@ -2,7 +2,6 @@ function validateAndSubmit(action, method) {
     const sizeContainer = document.getElementById('productDetailSizesContainer');
     const errorSpan = document.getElementById('tallesNotSelectedError');
     const selectedSize = sizeContainer.querySelector('input[name="productDetailSize"]:checked');
-    console.log("talle seleccionado script => ", selectedSize);
 
     if (!selectedSize) {
         errorSpan.textContent = 'Por favor, seleccione un talle.';

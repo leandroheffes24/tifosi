@@ -15,7 +15,6 @@
 .shoppingCartProductContainer{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     border-top: 1px solid rgb(55, 55, 55);
     border-bottom: 1px solid rgb(55, 55, 55);
     padding: 10px 0;
@@ -35,17 +34,19 @@
     width: 65%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    height: fit-content;
 }
 
 .shoppingCartProductName{
     width: 100%;
     font-size: .9rem;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .shoppingCartDeleteButtonForm{
-    border: 1px solid red;
-    width: 20%;
+    width: 15%;
     display: flex;
     align-items: center;
 }
@@ -53,6 +54,7 @@
 .shoppingCartDeleteProductButton{
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 .shoppingCartDeleteProductIcon{
@@ -61,29 +63,23 @@
 }
 
 .shoppingCartQuiantityAndTalleContainer{
-
-}
-
-.shoppingCartProductQuantity{
-
-}
-
-.shoppingCartProductTalle{
-
-}
-
-.shoppingCartProductPriceAndDiscountContainer{
-
+    font-size: .8rem;
+    color: $secondaryTextColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .shoppingCartProductPrice{
-
+    font-weight: 500;
 }
 
 .shoppingCartProductDiscount{
-
+    color: $camisetaDiscountBackground;
+    font-size: .9rem;
+    font-weight: 500;
+    text-align: right;
 }
-
 
 // ----------------------------------- EMPTY CART -----------------------------------
 
@@ -192,37 +188,38 @@
         gap: 20px;
     }
     
-    .shoppingCartProductContainer{
-        padding: 10px 0;
-    }
-    
     .shoppingCartProductImageContainer{
-        width: 30%;
+        width: 40%;
     }
     
     .shoppingCartProductImage{
-        max-height: 130px;
+        max-height: 180px;
     }
     
-    .shoppingCartProductNameAndDeleteButtonContainer{
-        width: 70%;
-        padding-left: 30px;
+    .shoppingCartProductInformationContainer{
+        width: 58%;
     }
     
     .shoppingCartProductName{
-        font-size: 1.1rem;
+        font-size: 1.4rem;
+        margin-bottom: 20px;
     }
     
     .shoppingCartDeleteProductIcon{
         width: 35px;
     }
     
+    .shoppingCartQuiantityAndTalleContainer{
+        font-size: 1rem;
+    }
+    
     .shoppingCartProductPrice{
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        font-weight: 600;
     }
     
     .shoppingCartProductDiscount{
-        font-size: .9rem;
+        font-size: 1.2rem;
     }
     
     // ----------------------------------- EMPTY CART -----------------------------------
@@ -305,28 +302,33 @@
     }
     
     .shoppingCartProductImage{
-        max-height: 100px;
+        max-height: 130px;
     }
     
-    .shoppingCartProductNameAndDeleteButtonContainer{
-        width: 80%;
-        padding-left: 20px;
+    .shoppingCartProductInformationContainer{
+        width: 75%;
     }
     
     .shoppingCartProductName{
         font-size: 1rem;
+        margin-bottom: 25px;
     }
     
     .shoppingCartDeleteProductIcon{
         width: 25px;
     }
     
+    .shoppingCartQuiantityAndTalleContainer{
+        font-size: .9rem;
+    }
+    
     .shoppingCartProductPrice{
         font-size: 1.1rem;
+        font-weight: 600;
     }
     
     .shoppingCartProductDiscount{
-        font-size: .8rem;
+        font-size: .9rem;
     }
     
     // ----------------------------------- EMPTY CART -----------------------------------
@@ -415,27 +417,28 @@
     }
     
     .shoppingCartProductImage{
-        max-height: 120px;
-    }
-    
-    .shoppingCartProductNameAndDeleteButtonContainer{
-        padding-left: 30px;
+        max-height: 140px;
     }
     
     .shoppingCartProductName{
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        margin-bottom: 30px;
     }
     
     .shoppingCartDeleteProductIcon{
-        width: 29px;
+        width: 30px;
+    }
+    
+    .shoppingCartQuiantityAndTalleContainer{
+        font-size: 1rem;
     }
     
     .shoppingCartProductPrice{
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     
     .shoppingCartProductDiscount{
-        font-size: .85rem;
+        font-size: 1rem;
     }
     
     // ----------------------------------- EMPTY CART -----------------------------------

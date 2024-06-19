@@ -8,24 +8,18 @@ module.exports = {
         const user = req.session.userLoggedIn
         const userId = user.id
         const carritoProducts = await carritoServices.getUserProducts(userId)
-        console.log("productos del usuario => ", carritoProducts);
         let totalPrice = 0
+        let totalProducts = 0
 
-        const finalProducts = await Promise.all(
-            carritoProducts.map(async product => {
-                return await productsServices.getProductById(product.id_product)
-            })
-        )
-
-        finalProducts.map(product => {
-            return totalPrice = totalPrice + product.price
+        carritoProducts.map(product => {
+            totalPrice = totalPrice + product.products_total_price
+            totalProducts = totalProducts + product.quantity
         })
 
-        return await res.render("carrito", {finalProducts, categories, totalPrice, totalProducts: finalProducts.length})
+        return await res.render("carrito", {carritoProducts, categories, totalPrice, totalProducts})
     },
 
     carritoProcess: async (req, res) => {
-        console.log("body => ", req.body);
         const user = req.session.userLoggedIn
         if(user){
             const userId = user.id
@@ -41,23 +35,26 @@ module.exports = {
 
     carritoDeleteProduct: async (req, res) => {
         const productIdToDelete = req.params.productId
+        const productTalle = req.params.productTalle
         const user = req.session.userLoggedIn
         const userId = user.id
-        carritoServices.deleteProductCart(productIdToDelete, userId)
+        await carritoServices.deleteProductCart(productIdToDelete, userId, productTalle)
         let totalPrice = 0
+        let totalProducts = 0
 
         const categories = await categoriesServices.getAllCategories()
         const carritoProducts = await carritoServices.getUserProducts(userId)
-        const finalProducts = await Promise.all(
-            carritoProducts.map(async product => {
-                return await productsServices.getProductById(product.id_product)
+
+        if(carritoProducts.length > 0){
+            await carritoProducts.map(product => {
+                totalPrice = totalPrice + product.products_total_price
+                totalProducts = totalProducts + product.quantity
             })
-        )
+        } else {
+            totalPrice = totalPrice
+            totalProducts = totalProducts
+        }
 
-        finalProducts.map(product => {
-            return totalPrice = totalPrice + product.price
-        })
-
-        return res.render("carrito", {categories, finalProducts, totalPrice, totalProducts: finalProducts.length})
+        return res.render("carrito", {categories, carritoProducts, totalPrice, totalProducts})
     }
 }

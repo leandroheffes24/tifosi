@@ -6,6 +6,6 @@ const adminMiddleware = require("../middlewares/adminMiddleware")
 
 router.get("/carrito", authMiddleware, carritoController.carrito)
 router.post("/carrito/:productId", authMiddleware, carritoController.carritoProcess)
-router.delete("/carrito/borrar/:productId", authMiddleware,  adminMiddleware, carritoController.carritoDeleteProduct)
+router.delete("/carrito/borrar/:productId/:productTalle", authMiddleware, carritoController.carritoDeleteProduct)
 
 module.exports = router
