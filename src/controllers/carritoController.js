@@ -8,6 +8,7 @@ module.exports = {
         const user = req.session.userLoggedIn
         const userId = user.id
         const carritoProducts = await carritoServices.getUserProducts(userId)
+        console.log("productos del usuario => ", carritoProducts);
         let totalPrice = 0
 
         const finalProducts = await Promise.all(
@@ -24,12 +25,14 @@ module.exports = {
     },
 
     carritoProcess: async (req, res) => {
+        console.log("body => ", req.body);
         const user = req.session.userLoggedIn
         if(user){
             const userId = user.id
             const productId = req.params.productId
+            const productToCart = await productsServices.getProductById(productId)
     
-            carritoServices.addProductToCart(userId, productId, req.body.productQuantity, req.body.productDetailSize)
+            carritoServices.addProductToCart(userId, productId, productToCart, req.body.productQuantity, req.body.productDetailSize)
             return res.redirect("/")   
         } else {
             return res.redirect("/ingresar")

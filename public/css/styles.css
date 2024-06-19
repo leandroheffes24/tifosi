@@ -1386,6 +1386,8 @@ footer {
 
 .shoppingCartProductContainer {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-top: 1px solid rgb(55, 55, 55);
   border-bottom: 1px solid rgb(55, 55, 55);
   padding: 10px 0;
@@ -1400,6 +1402,35 @@ footer {
   max-height: 80px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.shoppingCartProductInformationContainer {
+  width: 65%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shoppingCartProductName {
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.shoppingCartDeleteButtonForm {
+  border: 1px solid red;
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.shoppingCartDeleteProductButton {
+  background: none;
+  border: none;
+}
+
+.shoppingCartDeleteProductIcon {
+  width: 25px;
+  color: rgb(240, 240, 240);
 }
 
 .shoppingCartEmptyContainer {

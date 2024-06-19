@@ -45,8 +45,8 @@
     
                         <div class="productDetailSizesContainer" id="productDetailSizesContainer">
                             <% tallesNames.forEach(talle => { %>
-                                <label class="productDetailSizeLabel" for="productDetailSize"><%= talle %></label>
-                                <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize" value="<%= talle %>">
+                                <label class="productDetailSizeLabel" for="productDetailSize-<%= talle %>"><%= talle %></label>
+                                <input class="productDetailSizeRadio" type="radio" name="productDetailSize" id="productDetailSize-<%= talle %>" value="<%= talle %>">
                             <% }) %>
 
                             <span class="tallesNotSelectedError" id="tallesNotSelectedError"></span>
