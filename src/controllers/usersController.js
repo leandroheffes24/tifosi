@@ -67,7 +67,9 @@ module.exports = {
         }
 
         if(req.body.remember != undefined) {
-            res.cookie("remember", req.body.email, {maxAge: (1000 * 60) * 2})
+            res.cookie("remember", req.body.email, {maxAge: 1000 * 60 * 10})
+        } else {
+            res.clearCookie("remember")
         }
 
         if(!bcrypt.compareSync(req.body.password, userInDB.password)){
@@ -119,6 +121,11 @@ module.exports = {
 
     logout: (req, res) => {
         req.session.destroy()
+
+        if(req.cookies.remember){
+            res.clearCookie("remember")
+        }
+
         return res.redirect("/")
     },
 

@@ -10,7 +10,7 @@ const session = require("express-session")
 const methodOverride = require("method-override");
 const userLoggedInMiddleware = require("./src/middlewares/userLoggedInMiddleware")
 const rememberMiddleware = require("./src/middlewares/rememberMiddleware")
-const cookies = require("cookie-parser");
+const cookieParser = require("cookie-parser");
 
 app.use(express.static(__dirname + "/public"))
 app.use(express.urlencoded({extended: false}))
@@ -22,9 +22,9 @@ app.use(
     })
 );
 app.use(methodOverride("_method"))
-app.use(cookies())
-app.use(userLoggedInMiddleware)
+app.use(cookieParser())
 app.use(rememberMiddleware)
+app.use(userLoggedInMiddleware)
 app.use(mainRouter)
 app.use(usersRouter)
 app.use(categoriesRouter)

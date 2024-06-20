@@ -1,23 +1,31 @@
-const {Users} = require ("../../database/models");
+const usersServices = require("../services/usersServices")
 
-let rememberMiddleware = async (req, res, next) => {
-    // res.locals.userLoggedIn = false
+const rememberCookie = async (req, res, next) => {
+    if(req.session.userLoggedIn){
+        return next()
+    }
 
-    if (req.cookies.remember){
-        let userFromCookie = await Users.findOne({
-            where : {email: req.cookies.remember}
-        })
-        req.session.userLoggedIn = userFromCookie
-        if(userFromCookie.rank === "admin"){
-            req.session.admin = true
+    const rememberCookie = req.cookies.remember
+
+    if(!rememberCookie){
+        return next()
+    }
+
+    try {
+        const userInDB = await usersServices.findUserEmail(rememberCookie)
+
+        if(userInDB){
+            req.session.userLoggedIn = userInDB
+
+            if(userInDB.rank === "admin"){
+                req.session.admin = true
+            }
         }
+    } catch (error) {
+        console.log("Error al verificar la cookie remember: ", error);
     }
 
-    if (req.session.userLoggedIn) {
-        res.locals.userLoggedIn = req.session.userLogged
-    }
-
-    return next ()
+    next()
 }
 
-module.exports = rememberMiddleware
+module.exports = rememberCookie
