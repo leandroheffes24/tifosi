@@ -1,0 +1,54 @@
+.rememberLoginLabelAndInputContainer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.rememberLoginLabel{
+    color: $thirdTextColor;
+}
+
+.rememberLoginInput{
+    appearance: none;
+    cursor: pointer;
+    background-color: transparent;
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgb(60, 60, 60);
+    transition: .2s;
+}
+
+.rememberLoginInput:checked{
+    background-color: rgb(60, 60, 60);
+    transition: .2s;
+}
+
+@media (width >= 768px){
+    .rememberLoginInput{
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (width >= 992px){
+    .rememberLoginLabel{
+        font-size: .8rem;
+    }
+
+    .rememberLoginInput{
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (width >= 1200px){
+    .rememberLoginLabelAndInputContainer{
+        margin-top: 5px;
+    }
+
+    .rememberLoginInput{
+        width: 12px;
+        height: 12px;
+    }
+}

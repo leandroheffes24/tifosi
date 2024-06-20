@@ -9,6 +9,8 @@ const carritoRouter = require("./src/routers/carritoRouter")
 const session = require("express-session")
 const methodOverride = require("method-override");
 const userLoggedInMiddleware = require("./src/middlewares/userLoggedInMiddleware")
+const rememberMiddleware = require("./src/middlewares/rememberMiddleware")
+const cookies = require("cookie-parser");
 
 app.use(express.static(__dirname + "/public"))
 app.use(express.urlencoded({extended: false}))
@@ -19,8 +21,10 @@ app.use(
         saveUninitialized:false,
     })
 );
-app.use(userLoggedInMiddleware)
 app.use(methodOverride("_method"))
+app.use(cookies())
+app.use(userLoggedInMiddleware)
+app.use(rememberMiddleware)
 app.use(mainRouter)
 app.use(usersRouter)
 app.use(categoriesRouter)

@@ -17,9 +17,8 @@ const tallesServices = {
         return Talles.findByPk(talleId)
     },
 
-    createTalle: (newTalle, newTalleId) => {
+    createTalle: (newTalle) => {
         return Talles.create({
-            id: newTalleId,
             name: newTalle
         })
     },

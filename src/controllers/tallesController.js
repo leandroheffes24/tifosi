@@ -28,9 +28,7 @@ module.exports = {
 
     crearTalleProcess: async (req, res) => {
         const newTalle = req.body.newTalle
-        const lastTalle = await tallesServices.getLastTalle()
-        const newTalleId = lastTalle.id + 1
-        tallesServices.createTalle(newTalle, newTalleId)
+        tallesServices.createTalle(newTalle)
         return res.redirect("/")
     },
 

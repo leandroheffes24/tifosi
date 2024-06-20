@@ -46,9 +46,8 @@ const categoriesServices = {
         }
     },
 
-    createCategory: (newCategory, newCategoryId) => {
+    createCategory: (newCategory) => {
         return Categories.create({
-            id: newCategoryId,
             name: newCategory
         })
     },

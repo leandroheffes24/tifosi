@@ -66,6 +66,10 @@ module.exports = {
             return res.render("ingresar", {errors: {email: {msg: "Mail no registrado"}}})
         }
 
+        if(req.body.remember != undefined) {
+            res.cookie("remember", req.body.email, {maxAge: (1000 * 60) * 2})
+        }
+
         if(!bcrypt.compareSync(req.body.password, userInDB.password)){
             return res.render("ingresar", {errors: {password: {msg: "Contraseña incorrecta"}}, oldData: req.body})
         } else {

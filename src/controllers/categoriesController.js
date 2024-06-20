@@ -47,9 +47,7 @@ module.exports = {
 
     crearCategoriaProcess: async (req, res) => {
         const newCategory = req.body.newCategory
-        const lastCategory = await categoriesServices.getLastCategory()
-        const newCategoryId = lastCategory.id + 1
-        categoriesServices.createCategory(newCategory, newCategoryId)
+        categoriesServices.createCategory(newCategory)
         return res.redirect("/")
     },
 
