@@ -10,6 +10,7 @@ const session = require("express-session")
 const methodOverride = require("method-override");
 const userLoggedInMiddleware = require("./src/middlewares/userLoggedInMiddleware")
 const rememberMiddleware = require("./src/middlewares/rememberMiddleware")
+const error404Middleware = require("./src/middlewares/error404Middleware")
 const cookieParser = require("cookie-parser");
 
 app.use(express.static(__dirname + "/public"))
@@ -31,6 +32,7 @@ app.use(categoriesRouter)
 app.use(tallesRouter)
 app.use(productsRouter)
 app.use(carritoRouter)
+app.use(error404Middleware)
 
 app.set("view engine", "ejs")
 app.set("views", __dirname + "/src/views")

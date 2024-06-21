@@ -2684,6 +2684,28 @@ input[type=number]::-webkit-inner-spin-button {
     padding: 8px 70px;
   }
 }
+.error404Container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(35, 35, 35);
+  border: 2px solid rgb(55, 55, 55);
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.error404Title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.error404Text {
+  font-size: 1.1rem;
+  color: rgb(200, 200, 200);
+}
+
 .camisetaContainer {
   width: 46%;
   position: relative;
