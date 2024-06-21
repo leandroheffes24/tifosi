@@ -13,5 +13,6 @@ router.get("/productos/:productId", productsController.productDetail)
 router.get("/editar/producto/:productId", adminMiddleware, productsController.editarProducto)
 router.put("/editar/producto/:productId", adminMiddleware, productsController.editarProductoProcess)
 router.delete("/borrar/producto/:productId", adminMiddleware, productsController.borrarProducto)
+router.get("/productos/buscar", productsController.searchProductsProcess)
 
 module.exports = router

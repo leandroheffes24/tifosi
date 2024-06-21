@@ -103,5 +103,11 @@ module.exports = {
         productsServices.deleteProductSizes(productToDeleteId)
         productsServices.deleteProduct(productToDeleteId)
         return res.redirect("/")
+    },
+
+    searchProductsProcess: async (req, res) => {
+        const search = req.body.busqueda
+        console.log("esta es la busqueda");
+        return res.redirect("/")
     }
 }

@@ -19,15 +19,15 @@
     </div>
 
     <div class="headerSearchInputContainer">
-        <form class="headerSearchForm" action="">
-            <label class="headerSearchLabel" for="">
+        <form class="headerSearchForm" action="/productos/buscar" method="get">
+            <label class="headerSearchLabel" for="busqueda">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="headerSearchLabelIcon">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
                     <path d="M21 21l-6 -6" />
                 </svg>
             </label>
-            <input class="headerSearchInput" type="text" maxlength="50" placeholder="Buscar">
+            <input class="headerSearchInput" type="text" maxlength="50" placeholder="Buscar" name="busqueda" id="busqueda">
         </form>
     </div>
 
@@ -102,4 +102,20 @@
             </ul>
         </div>
     </nav>
+
+    <div class="headerSearchMobileContainer">
+        <button class="headerCloseButtonHeader">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="headerCloseIconMobile"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+        </button>
+        <form class="headerSearchMobileForm" action="/productos/buscar" method="get">
+            <input class="headerSearchMobileInput" type="text" name="busqueda" id="busqueda" maxlength="50" placeholder="Buscar">
+            <button class="headerSearchMobileButton" type="submit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="headerSearchIconMobile">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                    <path d="M21 21l-6 -6" />
+                </svg>
+            </button>
+        </form>
+    </div>
 </header>

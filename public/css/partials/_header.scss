@@ -11,6 +11,7 @@ header{
 }
 
 .headerOpenNavbarButtonAndSearchButtonContainer{
+    border: 1px solid red;
     width: 25%;
     display: flex;
     align-items: center;
@@ -101,6 +102,59 @@ header{
 .headerNavbarItemLink{
     color: $textColor;
     text-decoration: none;
+}
+
+.headerSearchMobileContainer{
+    // display: none;
+    background-color: $secondaryBackgroundColor;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px 0px 0px 600px rgba(0, 0, 0, 0.6);
+    padding: 50px 30px 30px;
+}
+
+.headerCloseButtonHeader{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.headerCloseIconMobile{
+    width: 10px;
+}
+
+.headerSearchMobileForm{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerSearchMobileInput{
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-size: 1rem;
+    padding: 10px 10px;
+    width: 85%;
+    border-radius: 5px;
+    color: $secondaryTextColor;
+}
+
+.headerSearchMobileButton{
+    border: none;
+    border-radius: 5px;
+    width: 13%;
+    padding: 9px 0;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerSearchIconMobile{
+    width: 20px;
+    color: $secondaryTextColor;
 }
 
 @media(width >= 768px){
