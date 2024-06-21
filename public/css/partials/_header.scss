@@ -105,7 +105,7 @@ header{
 }
 
 .headerSearchMobileContainer{
-    // display: none;
+    display: none;
     background-color: $secondaryBackgroundColor;
     position: fixed;
     top: 0;
@@ -119,10 +119,13 @@ header{
     position: fixed;
     top: 10px;
     right: 10px;
+    background: none;
+    border: none;
 }
 
 .headerCloseIconMobile{
-    width: 10px;
+    width: 20px;
+    color: $secondaryTextColor;
 }
 
 .headerSearchMobileForm{

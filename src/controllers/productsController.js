@@ -106,8 +106,9 @@ module.exports = {
     },
 
     searchProductsProcess: async (req, res) => {
-        const search = req.body.busqueda
-        console.log("esta es la busqueda");
-        return res.redirect("/")
+        const categories = await categoriesServices.getAllCategories()
+        const search = await req.params.busqueda
+        console.log("esta es la busqueda => ", search);
+        return res.render("productsSearched", {categories})
     }
 }
