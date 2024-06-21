@@ -14,7 +14,7 @@
 
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="product_name">Nombre del producto</label>
-                <input class="createProductInput" type="text" id="product_name" name="product_name">
+                <input class="createProductInput" type="text" id="product_name" name="product_name" maxlength="70">
                 <% if (locals.errors && errors.product_name) { %>
                     <span class="backendRegistroError"><%= errors.product_name.msg %></span>
                 <% } %>
@@ -22,7 +22,7 @@
 
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="price">Precio (sin puntos)</label>
-                <input class="createProductInput" type="number" id="price" name="price">
+                <input class="createProductInput" type="number" id="price" name="price" max="9999999">
                 <% if (locals.errors && errors.price) { %>
                     <span class="backendRegistroError"><%= errors.price.msg %></span>
                 <% } %>
@@ -30,7 +30,7 @@
 
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="discount">Descuento (solo el número)</label>
-                <input class="createProductInput" type="number" id="discount" name="discount">
+                <input class="createProductInput" type="number" id="discount" name="discount" max="101">
                 <% if (locals.errors && errors.discount) { %>
                     <span class="backendRegistroError"><%= errors.discount.msg %></span>
                 <% } %>
@@ -38,7 +38,7 @@
 
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="stock">Stock (solo el número)</label>
-                <input class="createProductInput" type="number" id="stock" name="stock">
+                <input class="createProductInput" type="number" id="stock" name="stock" max="9999">
                 <% if (locals.errors && errors.stock) { %>
                     <span class="backendRegistroError"><%= errors.stock.msg %></span>
                 <% } %>

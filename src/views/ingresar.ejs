@@ -27,7 +27,7 @@
                 <form class="registroForm" id="registroForm" method="post" action="/ingresar" enctype="application/x-www-form-urlencoded">    
                     <div class="registroFormLabelAndInputContainer">
                         <label class="registroLabel" for="email">E-mail</label>
-                        <input class="registroInput" type="email" id="email" name="email" value="<%= locals.oldData && oldData.email ? oldData.email : "" %>">
+                        <input class="registroInput" maxlength="80" type="email" id="email" name="email" value="<%= locals.oldData && oldData.email ? oldData.email : "" %>">
                         <span class="frontendRegistroError" id="emailError"></span>
                         <% if (locals.errors && errors.email) { %>
                             <span class="backendRegistroError"><%= errors.email.msg %></span>
@@ -36,7 +36,7 @@
     
                     <div class="registroFormLabelAndInputContainer">
                         <label class="registroLabel" for="password">Contraseña</label>
-                        <input class="registroInput" type="password" id="password" name="password">
+                        <input class="registroInput" type="password" id="password" name="password" maxlength="40">
                         <span class="frontendRegistroError" id="passwordError"></span>
                         <% if (locals.errors && errors.password) { %>
                             <span class="backendRegistroError"><%= errors.password.msg %></span>

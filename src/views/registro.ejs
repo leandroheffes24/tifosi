@@ -22,7 +22,7 @@
                 <form class="registroForm" id="registroForm" method="post" action="/registro" enctype="application/x-www-form-urlencoded">
                     <div class="registroFormLabelAndInputContainer">
                         <label class="registroLabel" for="name">Nombre</label>
-                        <input class="registroInput" type="text" id="name" name="name" value="<%= locals.oldData && oldData.name ? oldData.name : "" %>">
+                        <input class="registroInput" maxlength="35" type="text" id="name" name="name" value="<%= locals.oldData && oldData.name ? oldData.name : "" %>">
                         <span class="frontendRegistroError" id="nameError"></span>
                         <% if (locals.errors && errors.name) { %>
                             <span class="backendRegistroError"><%= errors.name.msg %></span>
@@ -31,7 +31,7 @@
     
                     <div class="registroFormLabelAndInputContainer">
                         <label class="registroLabel" for="lastName">Apellido</label>
-                        <input class="registroInput" type="text" id="lastName" name="lastName" value="<%= locals.oldData && oldData.lastName ? oldData.lastName : "" %>">
+                        <input class="registroInput" maxlength="35" type="text" id="lastName" name="lastName" value="<%= locals.oldData && oldData.lastName ? oldData.lastName : "" %>">
                         <span class="frontendRegistroError" id="lastNameError"></span>
                         <% if (locals.errors && errors.lastName) { %>
                             <span class="backendRegistroError"><%= errors.lastName.msg %></span>
@@ -40,7 +40,7 @@
     
                     <div class="registroFormLabelAndInputContainer">
                         <label class="registroLabel" for="email">E-mail</label>
-                        <input class="registroInput" type="email" id="email" name="email" value="<%= locals.oldData && oldData.email ? oldData.email : "" %>">
+                        <input class="registroInput" maxlength="80" type="email" id="email" name="email" value="<%= locals.oldData && oldData.email ? oldData.email : "" %>">
                         <span class="frontendRegistroError" id="emailError"></span>
                         <% if (locals.errors && errors.email) { %>
                             <span class="backendRegistroError"><%= errors.email.msg %></span>
@@ -49,7 +49,7 @@
     
                     <div class="registroFormLabelAndInputContainer">
                         <label class="registroLabel" for="password">Contraseña</label>
-                        <input class="registroInput" type="password" id="password" name="password">
+                        <input class="registroInput" type="password" id="password" name="password" maxlength="40">
                         <span class="frontendRegistroError" id="passwordError"></span>
                         <% if (locals.errors && errors.password) { %>
                             <span class="backendRegistroError"><%= errors.password.msg %></span>
@@ -58,7 +58,7 @@
     
                     <div class="registroFormLabelAndInputContainer">
                         <label class="registroLabel" for="passwordConfirmation">Confirmar contraseña</label>
-                        <input class="registroInput" type="password" id="passwordConfirmation" name="passwordConfirmation">
+                        <input class="registroInput" type="password" id="passwordConfirmation" name="passwordConfirmation" maxlength="40">
                         <span class="frontendRegistroError" id="passwordConfirmationError"></span>
                         <% if (locals.errors && errors.passwordConfirmation) { %>
                             <span class="backendRegistroError"><%= errors.passwordConfirmation.msg %></span>

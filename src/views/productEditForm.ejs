@@ -14,22 +14,22 @@
 
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="product_name">Nombre del producto</label>
-                <input class="createProductInput" type="text" id="product_name" name="product_name" value="<%= product.product_name %>">
+                <input class="createProductInput" type="text" id="product_name" name="product_name" value="<%= product.product_name %>" maxlength="70">
             </div>
 
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="price">Precio (sin puntos)</label>
-                <input class="createProductInput" type="number" id="price" name="price" value="<%= product.price %>">
+                <input class="createProductInput" type="number" id="price" name="price" value="<%= product.price %>" max="9999999">
             </div>
 
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="discount">Descuento (solo el número)</label>
-                <input class="createProductInput" type="number" id="discount" name="discount" value="<%= product.discount %>">
+                <input class="createProductInput" type="number" id="discount" name="discount" value="<%= product.discount %>" maxlength="101">
             </div>
 
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="stock">Stock (solo el número)</label>
-                <input class="createProductInput" type="number" id="stock" name="stock" value="<%= product.stock %>">
+                <input class="createProductInput" type="number" id="stock" name="stock" value="<%= product.stock %>" max="9999">
             </div>
 
             <button class="crearProductoButton" type="submit">EDITAR PRODUCTO</button>

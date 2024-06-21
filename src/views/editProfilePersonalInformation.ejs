@@ -18,7 +18,7 @@
             <div class="editProfileContentContainer">
                 <div class="editProfileLabelAndInputContainer">
                     <label class="editProfileLabel" for="name">Nombre</label>
-                    <input class="editProfileInput" type="text" id="name" name="name" value="<%= locals.userLoggedIn.name %>">
+                    <input class="editProfileInput" type="text" id="name" name="name" value="<%= locals.userLoggedIn.name %>" maxlength="35">
                     <span class="frontendRegistroError" id="nameError"></span>
                     <% if (locals.errors && errors.name) { %>
                         <span class="backendRegistroError"><%= errors.name.msg %></span>
@@ -27,7 +27,7 @@
 
                 <div class="editProfileLabelAndInputContainer">
                     <label class="editProfileLabel" for="lastName">Apellido</label>
-                    <input class="editProfileInput" type="text" id="lastName" name="lastName" value="<%= locals.userLoggedIn.last_name %>">
+                    <input class="editProfileInput" type="text" id="lastName" name="lastName" value="<%= locals.userLoggedIn.last_name %>" maxlength="35">
                     <span class="frontendRegistroError" id="lastNameError"></span>
                     <% if (locals.errors && errors.lastName) { %>
                         <span class="backendRegistroError"><%= errors.lastName.msg %></span>
@@ -36,7 +36,7 @@
 
                 <div class="editProfileLabelAndInputContainer">
                     <label class="editProfileLabel" for="email">Email</label>
-                    <input class="editProfileInput" type="email" id="email" name="email" value="<%= locals.userLoggedIn.email %>">
+                    <input class="editProfileInput" type="email" id="email" name="email" value="<%= locals.userLoggedIn.email %>" maxlength="80">
                     <span class="frontendRegistroError" id="emailError"></span>
                     <% if (locals.errors && errors.email) { %>
                         <span class="backendRegistroError"><%= errors.email.msg %></span>

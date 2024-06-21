@@ -12,7 +12,7 @@
         <form class="crearProductForm" id="editCategoryForm" action="/editar/talle/<%= talleToEdit.id %>?_method=put" method="post" enctype="application/x-www-form-urlencoded">
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="newTalleName">Editar talle</label>
-                <input class="createProductInput" type="text" name="newTalleName" id="newTalleName" value="<%= talleToEdit.name %>">
+                <input class="createProductInput" type="text" name="newTalleName" id="newTalleName" value="<%= talleToEdit.name %>" maxlength="20">
             </div>
 
             <button class="crearProductoButton" type="submit">EDITAR TALLE</button>

@@ -12,7 +12,7 @@
         <form class="crearProductForm" id="editCategoryForm" action="/editar/categoria/<%= categoryToEdit.id %>?_method=put" method="post" enctype="application/x-www-form-urlencoded">
             <div class="createProductLabelAndInputContainer">
                 <label class="createProductLabel" for="newCategoryName">Editar categoría</label>
-                <input class="createProductInput" type="text" name="newCategoryName" id="newCategoryName" value="<%= categoryToEdit.name %>">
+                <input class="createProductInput" type="text" name="newCategoryName" id="newCategoryName" value="<%= categoryToEdit.name %>" maxlength="50">
             </div>
 
             <button class="crearProductoButton" type="submit">EDITAR CATEGORÍA</button>
