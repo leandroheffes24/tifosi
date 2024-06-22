@@ -24,7 +24,6 @@ header {
 }
 
 .headerOpenNavbarButtonAndSearchButtonContainer {
-  border: 1px solid red;
   width: 25%;
   display: flex;
   align-items: center;
@@ -472,7 +471,7 @@ footer {
 .indexCamisetasTitleAndFilterButtonContainer {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 42px;
+  margin-bottom: 20px;
 }
 
 .indexCamisetasTitle {
@@ -500,7 +499,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 25px;
+  row-gap: 30px;
 }
 
 @media (width >= 768px) {
@@ -528,7 +527,7 @@ footer {
     margin: 0 auto 60px;
   }
   .indexCamisetasTitleAndFilterButtonContainer {
-    margin-bottom: 60px;
+    margin-bottom: 35px;
   }
   .indexCamisetasTitle {
     font-size: 2rem;
@@ -542,7 +541,7 @@ footer {
     width: 40px;
   }
   .indexCamisetasContainer {
-    gap: 40px;
+    row-gap: 45px;
   }
 }
 @media (width >= 992px) {
@@ -610,7 +609,7 @@ footer {
   }
   .indexCamisetasTitleAndFilterButtonContainer {
     width: 95%;
-    margin: 0 auto 60px;
+    margin: 0 auto 20px;
   }
   .indexCamisetasTitle {
     font-size: 1.7rem;
@@ -619,7 +618,7 @@ footer {
     width: 30px;
   }
   .indexCamisetasContainer {
-    gap: 23px;
+    row-gap: 40px;
   }
 }
 @media (width >= 1200px) {
@@ -648,7 +647,7 @@ footer {
   }
   .indexCamisetasTitleAndFilterButtonContainer {
     width: 95%;
-    margin: 0 auto 65px;
+    margin: 0 auto 35px;
   }
   .indexCamisetasTitle {
     font-size: 1.8rem;
@@ -658,7 +657,7 @@ footer {
   }
   .indexCamisetasContainer {
     padding: 0;
-    gap: 25px;
+    row-gap: 55px;
   }
 }
 .registerFormSection {

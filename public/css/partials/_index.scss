@@ -54,7 +54,7 @@
 .indexCamisetasTitleAndFilterButtonContainer{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 42px;
+    margin-bottom: 20px;
 }
 
 .indexCamisetasTitle{
@@ -82,7 +82,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 25px;
+    row-gap: 30px;
 }
 
 @media (width >= 768px) {
@@ -121,7 +121,7 @@
     }
     
     .indexCamisetasTitleAndFilterButtonContainer{
-        margin-bottom: 60px;
+        margin-bottom: 35px;
     }
     
     .indexCamisetasTitle{
@@ -139,7 +139,7 @@
     }
     
     .indexCamisetasContainer{
-        gap: 40px;
+        row-gap: 45px;
     }
 }
 
@@ -227,7 +227,7 @@
     
     .indexCamisetasTitleAndFilterButtonContainer{
         width: 95%;
-        margin: 0 auto 60px;
+        margin: 0 auto 20px;
     }
     
     .indexCamisetasTitle{
@@ -239,7 +239,7 @@
     }
     
     .indexCamisetasContainer{
-        gap: 23px;
+        row-gap: 40px;
     }
 }
 
@@ -280,7 +280,7 @@
     
     .indexCamisetasTitleAndFilterButtonContainer{
         width: 95%;
-        margin: 0 auto 65px;
+        margin: 0 auto 35px;
     }
     
     .indexCamisetasTitle{
@@ -293,6 +293,6 @@
     
     .indexCamisetasContainer{
         padding: 0;
-        gap: 25px;
+        row-gap: 55px;
     }
 }

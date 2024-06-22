@@ -94,6 +94,12 @@ const productsServices = {
                 }
             }
         })
+    },
+
+    getProductsBySearch: (search) => {
+        return Products.findAll({
+            where: {product_name: {[Op.like]: `%${search}%`}}
+        });
     }
 }
 

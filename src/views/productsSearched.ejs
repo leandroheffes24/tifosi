@@ -8,7 +8,38 @@
     <%- include("partials/header") %>
     <!-- ******************************** END HEADER ******************************** -->
 
-    products searched
+    <main class="productsSearchedMain">
+        <section class="indexCamisetasSection">
+            <div class="indexCamisetasTitleAndFilterButtonContainer">
+                <div class="indexCamisetasTitleContainer">
+                    <h2 class="indexCamisetasTitle">PRODUCTOS BUSCADOS</h2>
+                    <div class="indexCamisetasTitleUnderline"></div>
+                </div>
+            </div>
+
+            <div class="indexCamisetasContainer">
+                <% productsSearched.forEach(product => { %>
+                    <div class="camisetaContainer">
+                        <a class="camiestaLink" href="/productos/<%= product.id %>">
+                            <div class="camisetaImageContainer">
+                                <img class="camisetaImage" src="/images/products/<%= product.image %>" alt="<%= product.product_name %>">
+                            </div>
+        
+                            <div class="camisetaInformationContainer">
+                                <span class="camisetaTitle"><%= product.product_name %></span>
+                                <span class="camisetaPrice">$<%= product.price %></span>
+                                <span class="camisetaDiscount"><%= product.discount %>% OFF</span>
+                            </div>
+                        </a>
+
+                        <form class="camisetaForm" action="/productos/<%= product.id %>" method="get">
+                            <button class="camisetaAddToCartButton">AGREGAR AL CARRITO</button>
+                        </form>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+    </main>
 
     <!-- ******************************** FOOTER ******************************** -->
     <%- include("partials/footer") %>
