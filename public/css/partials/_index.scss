@@ -1,3 +1,37 @@
+.cookiesAcceptRejectContainer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 30;
+    background-color: rgb(35, 35, 35);
+    border-top: 2px solid rgb(55, 55, 55);
+    padding: 30px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+}
+
+.cookiesText{
+    width: 100%;
+}
+
+.cookiesAcceptButton, .cookiesRejectButton{
+    width: 47%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    background-color: rgb(25, 25, 25);
+    border: 2px solid rgb(55, 55, 55);
+    padding: 7px 10px;
+    color: $secondaryTextColor;
+    border-radius: 5px;
+}
+
+.cookiesAcceptButton{
+    background-color: green;
+}
+
 .indexBannerSection{
     background-image: url("/images/exampleBanner.webp");
     background-size: cover;
@@ -86,6 +120,21 @@
 }
 
 @media (width >= 768px) {
+    .cookiesAcceptRejectContainer{
+        padding: 50px 35px;
+        row-gap: 50px;
+    }
+    
+    .cookiesText{
+        font-size: 1.3rem;
+    }
+    
+    .cookiesAcceptButton, .cookiesRejectButton{
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding: 20px 20px;
+    }
+
     .indexBannerSection{
         height: 45vh;
     }
@@ -144,6 +193,20 @@
 }
 
 @media (width >= 992px) {
+    .cookiesAcceptRejectContainer{
+        padding: 20px 150px;
+        row-gap: 20px;
+    }
+    
+    .cookiesText{
+        font-size: 1rem;
+    }
+    
+    .cookiesAcceptButton, .cookiesRejectButton{
+        font-size: 1rem;
+        padding: 7px 20px;
+    }
+
     .indexBannerSection{
         height: 55vh;
     }
@@ -243,7 +306,11 @@
     }
 }
 
-@media (width >= 1200px) {    
+@media (width >= 1200px) {
+    .cookiesAcceptRejectContainer{
+        padding: 20px 350px;
+        row-gap: 20px;
+    }
     //---------------------------------------------------------
 
     .indexTextSectionDesktop{

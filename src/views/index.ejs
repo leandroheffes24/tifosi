@@ -3,6 +3,7 @@
 <head>
     <%- include("partials/head", {title: "Futbol e-commerce"}) %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="/js/cookies.js" defer></script>
 </head>
 <body>
     <!-- ******************************** HEADER ******************************** -->
@@ -11,6 +12,12 @@
 
     <!-- ******************************** MAIN ******************************** -->
     <main>
+        <div class="cookiesAcceptRejectContainer">
+            <p class="cookiesText">Este sitio web utiliza cookies para mejorar la experiencia del usuario. ¿Aceptas el uso de cookies?</p>
+            <button class="cookiesAcceptButton">Aceptar todas</button>
+            <button class="cookiesRejectButton">Rechazar todas</button>
+        </div>
+
         <section class="indexBannerSection"></section>
 
         <section id="image-carousel" class="splide indexTextSectionSplide" aria-label="Beautiful Images">
