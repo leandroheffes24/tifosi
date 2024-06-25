@@ -1,17 +1,35 @@
 const {Products} = require("../../database/models")
 const {Products_talles} = require("../../database/models")
+const {Products_images} = require("../../database/models")
 const { Op } = require('sequelize');
 
 const productsServices = {
     getAllProducts: () => {
         return Products.findAll({
+            include: [{
+                model: Products_images,
+                as: 'images',
+                attributes: ['image'],
+                limit: 1
+            }],
             limit: 48,
             order: [["created_at", "DESC"]]
-        })
+        });
+        // return Products.findAll({
+        //     limit: 48,
+        //     order: [["created_at", "DESC"]]
+        // })
     },
 
     getCategoryProducts: async (categoryId) => {
-        const products = await Products.findAll()
+        const products = await Products.findAll({
+            include: [{
+                model: Products_images,
+                as: 'images',
+                attributes: ['image'],
+                limit: 1
+            }]
+        })
         const categoryProducts = await products.filter(product => product.category_id == categoryId)
         return categoryProducts
     },
@@ -23,7 +41,13 @@ const productsServices = {
     },
 
     getProductById: (productId) => {
-        return Products.findByPk(productId)
+        return Products.findByPk(productId, {
+            include: [{
+                model: Products_images,
+                as: 'images',
+                attributes: ['image']
+            }]
+        })
     },
 
     createProduct: (newProduct) => {
@@ -32,7 +56,6 @@ const productsServices = {
             discount: newProduct.discount,
             stock: newProduct.stock,
             product_name: newProduct.product_name,
-            image: newProduct.image,
             category_id: newProduct.category_id
         })
     },
@@ -98,8 +121,35 @@ const productsServices = {
 
     getProductsBySearch: (search) => {
         return Products.findAll({
-            where: {product_name: {[Op.like]: `%${search}%`}}
+            include: [{
+                model: Products_images,
+                as: 'images',
+                attributes: ['image'],
+                limit: 1
+            }],
+            where: {
+                product_name: {
+                    [Op.like]: `%${search}%`
+                }
+            }
         });
+    },
+
+    getAllProductsImages: () => {
+        return Products_images.findAll()
+    },
+
+    createImageProduct: (productImage, lastProductId) => {
+        return Products_images.create({
+            product_id: lastProductId,
+            image: productImage
+        })
+    },
+
+    deleteProductImages: (productToDeleteId) => {
+        return Products_images.destroy({
+            where: {product_id: productToDeleteId}
+        })
     }
 }
 

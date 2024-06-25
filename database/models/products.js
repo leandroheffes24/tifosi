@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
             price: DataTypes.INTEGER,
             discount: DataTypes.INTEGER,
             product_name: DataTypes.STRING,
-            image: DataTypes.STRING,
+            category_id: DataTypes.INTEGER,
+            subcategory_id: { type: DataTypes.INTEGER, allowNull: true },
             stock: DataTypes.INTEGER
         },
         {
@@ -17,22 +18,6 @@ module.exports = (sequelize, DataTypes) => {
     )
 
     Model.associate = (model) => {
-        Model.belongsTo(model.Categories, {
-            as: "category",
-            through: "products_categories",
-            foreignKey: "category_id",
-            targetKey: "id",
-            timestamps: false
-        })
-
-        Model.belongsTo(model.Subcategories, {
-            as: "subcategory",
-            through: "products_subcategories",
-            foreignKey: "subcategory_id",
-            targetKey: "id",
-            timestamps: false
-        })
-
         Model.belongsToMany(model.Talles, {
             as: "talle",
             through: "products_talles",
@@ -40,6 +25,11 @@ module.exports = (sequelize, DataTypes) => {
             otherKey: "talle_id",
             timestamps: false
         });
+
+        Model.hasMany(model.Products_images, {
+            as: 'images',
+            foreignKey: 'product_id'
+        })
     }
 
     return Model

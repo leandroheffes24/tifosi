@@ -69,19 +69,31 @@ module.exports = {
             price: req.body.price,
             discount: req.body.discount,
             stock: req.body.stock,
-            image: req.file.filename,
             category_id: categoryId
         }
 
         let productsTalles = req.body.talles
 
         await productsServices.createProduct(newProduct)
+
         let lastProduct = await productsServices.getLastProduct()
+        let lastProductId = lastProduct.id
+        
+        if (req.files['image1']) {
+            await productsServices.createImageProduct(req.files['image1'][0].filename, lastProductId)
+        }
+        if (req.files['image2']) {
+            await productsServices.createImageProduct(req.files['image2'][0].filename, lastProductId)
+        }
+        if (req.files['image3']) {
+            await productsServices.createImageProduct(req.files['image3'][0].filename, lastProductId)
+        }
+
         await productsTalles.forEach(async talle => {
             let talleId = await tallesServices.getTalleId(talle)
             await productsServices.crearProductosTalles(lastProduct.id, talleId)
         });
-        return res.redirect("/crear/producto-subcategoria/" + lastProduct.id)
+        return res.redirect("/crear/producto-subcategoria/" + lastProductId)
     },
 
     editarProductoProcess: async (req, res) => {
@@ -102,6 +114,7 @@ module.exports = {
         const productToDeleteId = req.params.productId
         productsServices.deleteProductSizes(productToDeleteId)
         productsServices.deleteProduct(productToDeleteId)
+        productsServices.deleteProductImages(productToDeleteId)
         return res.redirect("/")
     },
 

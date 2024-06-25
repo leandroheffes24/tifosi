@@ -7,6 +7,7 @@
     <script src="/js/productDetailDeleteProductButton.js" defer></script>
     <script src="/js/productDetailFormScript.js" defer></script>
     <script src="/js/productDetailTalleRequiredScript.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 </head>
 <body>
     <!-- ******************************** HEADER ******************************** -->
@@ -15,9 +16,33 @@
 
     <main>
         <section class="productDetailSection">
-            <div class="productDetailImageContainer">
-                <img class="productDetailImage" src="/images/products/<%= product.image %>" alt="<%= product.product_name %>">
-            </div>
+            <section id="image-carousel" class="splide productDetailSectionSplide" aria-label="Beautiful Images">
+                <div class="splide__track productDetailSplide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="productDetailImageContainer">
+                                <img class="productDetailImage" src="/images/products/<%= product.images[0].image %>" alt="<%= product.product_name %>">
+                            </div>
+                        </li>
+
+                        <% if(product.images[1]?.image){ %>
+                            <li class="splide__slide">
+                                <div class="productDetailImageContainer">
+                                    <img class="productDetailImage" src="/images/products/<%= product.images[1].image %>" alt="<%= product.product_name %>">
+                                </div>
+                            </li>
+                        <% } %>
+
+                        <% if(product.images[2]?.image){ %>
+                            <li class="splide__slide">
+                                <div class="productDetailImageContainer">
+                                    <img class="productDetailImage" src="/images/products/<%= product.images[2].image %>" alt="<%= product.product_name %>">
+                                </div>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </section>
 
             <div class="productDetailInformation">
                 <div class="productDetailNameCategoryAndSubcategory">
@@ -86,5 +111,16 @@
     <!-- ******************************** FOOTER ******************************** -->
     <%- include("partials/footer") %>
     <!-- ******************************** END FOOTER ******************************** -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function() {
+            var splide = new Splide( '.splide', {
+                pagination: true,
+                arrows: true
+            } );
+            splide.mount();
+        } );
+    </script>
 </body>
 </html>

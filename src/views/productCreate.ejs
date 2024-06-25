@@ -45,10 +45,26 @@
             </div>
 
             <div class="createProductLabelAndInputContainer">
-                <label class="createProductLabel" for="image">Imagen producto</label>
-                <input class="createProductInput" type="file" id="image" name="image">
-                <% if (locals.errors && errors.image) { %>
-                    <span class="backendRegistroError"><%= errors.image.msg %></span>
+                <label class="createProductLabel" for="image1">Imagen producto</label>
+                <input class="createProductInput" type="file" id="image1" name="image1">
+                <% if (locals.errors && errors.image1) { %>
+                    <span class="backendRegistroError"><%= errors.image1.msg %></span>
+                <% } %>
+            </div>
+
+            <div class="createProductLabelAndInputContainer">
+                <label class="createProductLabel" for="image2">Imagen producto</label>
+                <input class="createProductInput" type="file" id="image2" name="image2">
+                <% if (locals.errors && errors.image2) { %>
+                    <span class="backendRegistroError"><%= errors.image2.msg %></span>
+                <% } %>
+            </div>
+
+            <div class="createProductLabelAndInputContainer">
+                <label class="createProductLabel" for="image3">Imagen producto</label>
+                <input class="createProductInput" type="file" id="image3" name="image3">
+                <% if (locals.errors && errors.image3) { %>
+                    <span class="backendRegistroError"><%= errors.image3.msg %></span>
                 <% } %>
             </div>
 

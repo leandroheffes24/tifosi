@@ -6,14 +6,40 @@ module.exports = [
     body("price").notEmpty().withMessage("Debes ingresar el precio"),
     body("discount").notEmpty().withMessage("Debes ingresar un descuento"),
     body("stock").notEmpty().withMessage("Debes ingresar el stock"),
-    body("image").custom((value, {req}) => {
-        let file = req.file
+    body("image1").custom((value, {req}) => {
+        let file = req.files['image1'] ? req.files['image1'][0] : null
         let extencionesAceptadas = [".png", ".jpg", ".webp"]
 
         if(!file){
             throw new Error("Tienes que subir una imagen")
         } else {
             let extensionFile = path.extname(file.originalname)
+
+            if(!extencionesAceptadas.includes(extensionFile)){
+                throw new Error(`Las extensiones de archivo que se aceptan son: ${extencionesAceptadas.join(", ")}`)
+            }
+        }
+
+        return true
+    }),
+    body("image2").custom((value, {req}) => {
+        if(req.file){
+            let file = req.files['image2']
+            let extensionFile = path.extname(file.originalname)
+            let extencionesAceptadas = [".png", ".jpg", ".webp"]
+
+            if(!extencionesAceptadas.includes(extensionFile)){
+                throw new Error(`Las extensiones de archivo que se aceptan son: ${extencionesAceptadas.join(", ")}`)
+            }
+        }
+
+        return true
+    }),
+    body("image3").custom((value, {req}) => {
+        if(req.file){
+            let file = req.files['image3']
+            let extensionFile = path.extname(file.originalname)
+            let extencionesAceptadas = [".png", ".jpg", ".webp"]
 
             if(!extencionesAceptadas.includes(extensionFile)){
                 throw new Error(`Las extensiones de archivo que se aceptan son: ${extencionesAceptadas.join(", ")}`)
