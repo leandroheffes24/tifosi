@@ -21,7 +21,7 @@
                     <ul class="splide__list">
                         <li class="splide__slide">
                             <div class="productDetailImageContainer">
-                                <img class="productDetailImage" src="/images/products/<%= product.images[0].image %>" alt="<%= product.product_name %>">
+                                <img class="productDetailImage" src="/images/products/<%= product.images[0]?.image %>" alt="<%= product.product_name %>">
                             </div>
                         </li>
 
@@ -37,6 +37,62 @@
                             <li class="splide__slide">
                                 <div class="productDetailImageContainer">
                                     <img class="productDetailImage" src="/images/products/<%= product.images[2].image %>" alt="<%= product.product_name %>">
+                                </div>
+                            </li>
+                        <% } %>
+
+                        <% if(product.images[3]?.image){ %>
+                            <li class="splide__slide">
+                                <div class="productDetailImageContainer">
+                                    <img class="productDetailImage" src="/images/products/<%= product.images[3].image %>" alt="<%= product.product_name %>">
+                                </div>
+                            </li>
+                        <% } %>
+
+                        <% if(product.images[4]?.image){ %>
+                            <li class="splide__slide">
+                                <div class="productDetailImageContainer">
+                                    <img class="productDetailImage" src="/images/products/<%= product.images[4].image %>" alt="<%= product.product_name %>">
+                                </div>
+                            </li>
+                        <% } %>
+
+                        <% if(product.images[5]?.image){ %>
+                            <li class="splide__slide">
+                                <div class="productDetailImageContainer">
+                                    <img class="productDetailImage" src="/images/products/<%= product.images[5].image %>" alt="<%= product.product_name %>">
+                                </div>
+                            </li>
+                        <% } %>
+
+                        <% if(product.images[6]?.image){ %>
+                            <li class="splide__slide">
+                                <div class="productDetailImageContainer">
+                                    <img class="productDetailImage" src="/images/products/<%= product.images[6].image %>" alt="<%= product.product_name %>">
+                                </div>
+                            </li>
+                        <% } %>
+
+                        <% if(product.images[7]?.image){ %>
+                            <li class="splide__slide">
+                                <div class="productDetailImageContainer">
+                                    <img class="productDetailImage" src="/images/products/<%= product.images[7].image %>" alt="<%= product.product_name %>">
+                                </div>
+                            </li>
+                        <% } %>
+
+                        <% if(product.images[8]?.image){ %>
+                            <li class="splide__slide">
+                                <div class="productDetailImageContainer">
+                                    <img class="productDetailImage" src="/images/products/<%= product.images[8].image %>" alt="<%= product.product_name %>">
+                                </div>
+                            </li>
+                        <% } %>
+
+                        <% if(product.images[9]?.image){ %>
+                            <li class="splide__slide">
+                                <div class="productDetailImageContainer">
+                                    <img class="productDetailImage" src="/images/products/<%= product.images[9].image %>" alt="<%= product.product_name %>">
                                 </div>
                             </li>
                         <% } %>

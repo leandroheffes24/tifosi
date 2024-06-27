@@ -88,6 +88,27 @@ module.exports = {
         if (req.files['image3']) {
             await productsServices.createImageProduct(req.files['image3'][0].filename, lastProductId)
         }
+        if (req.files['image4']) {
+            await productsServices.createImageProduct(req.files['image4'][0].filename, lastProductId)
+        }
+        if (req.files['image5']) {
+            await productsServices.createImageProduct(req.files['image5'][0].filename, lastProductId)
+        }
+        if (req.files['image6']) {
+            await productsServices.createImageProduct(req.files['image6'][0].filename, lastProductId)
+        }
+        if (req.files['image7']) {
+            await productsServices.createImageProduct(req.files['image7'][0].filename, lastProductId)
+        }
+        if (req.files['image8']) {
+            await productsServices.createImageProduct(req.files['image8'][0].filename, lastProductId)
+        }
+        if (req.files['image9']) {
+            await productsServices.createImageProduct(req.files['image9'][0].filename, lastProductId)
+        }
+        if (req.files['image10']) {
+            await productsServices.createImageProduct(req.files['image10'][0].filename, lastProductId)
+        }
 
         await productsTalles.forEach(async talle => {
             let talleId = await tallesServices.getTalleId(talle)

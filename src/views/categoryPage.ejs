@@ -80,7 +80,7 @@
                     <div class="camisetaContainer categoryCamisetaContainer">
                         <a class="camiestaLink" href="/productos/<%= product.id %>">
                             <div class="camisetaImageContainer">
-                                <img class="camisetaImage" src="/images/products/<%= product.images[0].image %>" alt="<%= product.product_name %>">
+                                <img class="camisetaImage" src="/images/products/<%= product.images[0]?.image %>" alt="<%= product.product_name %>">
                             </div>
         
                             <div class="camisetaInformationContainer">
