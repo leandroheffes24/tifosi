@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.cookiesAcceptRejectContainer').style.display = 'none';
     });
 
-    // Hide the banner if cookies have already been accepted or rejected
     const cookiesAccepted = document.cookie.split('; ').find(row => row.startsWith('cookiesAccepted='));
     if (cookiesAccepted) {
         document.querySelector('.cookiesAcceptRejectContainer').style.display = 'none';
