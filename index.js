@@ -12,6 +12,7 @@ const userLoggedInMiddleware = require("./src/middlewares/userLoggedInMiddleware
 const rememberMiddleware = require("./src/middlewares/rememberMiddleware")
 const error404Middleware = require("./src/middlewares/error404Middleware")
 const cookieParser = require("cookie-parser");
+const cookieConsentMiddleware = require("./src/middlewares/cookieConsentMiddleware")
 
 app.use(express.static(__dirname + "/public"))
 app.use(express.urlencoded({extended: false}))
@@ -24,6 +25,7 @@ app.use(
 );
 app.use(methodOverride("_method"))
 app.use(cookieParser())
+app.use(cookieConsentMiddleware)
 app.use(rememberMiddleware)
 app.use(userLoggedInMiddleware)
 app.use(mainRouter)

@@ -60,26 +60,26 @@ module.exports = {
     },
 
     ingresarProcess: async (req, res) => {
-        const userInDB = await usersServices.findUserEmail(req.body.email)
+        const userInDB = await usersServices.findUserEmail(req.body.email);
 
-        if(!userInDB){
-            return res.render("ingresar", {errors: {email: {msg: "Mail no registrado"}}})
+        if (!userInDB) {
+            return res.render("ingresar", {errors: {email: {msg: "Mail no registrado"}}});
         }
 
-        if(req.body.remember != undefined) {
-            res.cookie("remember", req.body.email, {maxAge: 1000 * 60 * 10})
+        if (req.cookies.cookiesAccepted === "true" && req.body.remember != undefined) {
+            res.cookie("remember", req.body.email, {maxAge: 1000 * 60 * 10});
         } else {
-            res.clearCookie("remember")
+            res.clearCookie("remember");
         }
 
-        if(!bcrypt.compareSync(req.body.password, userInDB.password)){
-            return res.render("ingresar", {errors: {password: {msg: "Contraseña incorrecta"}}, oldData: req.body})
+        if (!bcrypt.compareSync(req.body.password, userInDB.password)) {
+            return res.render("ingresar", {errors: {password: {msg: "Contraseña incorrecta"}}, oldData: req.body});
         } else {
-            req.session.userLoggedIn = userInDB
-            if (userInDB.rank == "admin"){
-                req.session.admin = true
+            req.session.userLoggedIn = userInDB;
+            if (userInDB.rank == "admin") {
+                req.session.admin = true;
             }
-            return res.redirect("/")
+            return res.redirect("/");
         }
     },
 
@@ -120,13 +120,13 @@ module.exports = {
     },
 
     logout: (req, res) => {
-        req.session.destroy()
+        req.session.destroy();
 
-        if(req.cookies.remember){
-            res.clearCookie("remember")
+        if (req.cookies.cookiesAccepted === "true" && req.cookies.remember) {
+            res.clearCookie("remember");
         }
 
-        return res.redirect("/")
+        return res.redirect("/");
     },
 
     editShipmentProcess: async (req, res) => {
