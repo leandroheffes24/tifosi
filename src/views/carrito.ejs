@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <%- include("partials/head", {title: "Futbol e-commerce"}) %>
+    <script src="/js/cartBuyScript.js" defer></script>
 </head>
 <body>
     <!-- ******************************** HEADER ******************************** -->
@@ -46,6 +47,18 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="buyProductContainer" id="buyProductContainer">
+                            <div class="buyProductTextContainer">
+                                <h4 class="buyProductText">¿Cómo deseas abonar la compra?</h4>
+                            </div>
+                    
+                            <div class="buyProductButtonsContainer">
+                                <button class="buyProductTransferenciaButton" type="button" onclick="buyProductsTransferencia()">Transferencia</button>
+
+                                <button class="buyProductCloseButton" type="button" onclick="closeBuyProducts()">Cerrar</button>
+                            </div>
+                        </div>
                     <% }) %>
                 </div>
             <% } else { %>
@@ -83,7 +96,7 @@
                 </div>
     
                 <div class="shoppingCartBuyButtonContainer">
-                    <button class="shoppingCartBuyButton">Comprar</button>
+                    <button class="shoppingCartBuyButton" type="button" onclick="buyProducts()">Comprar</button>
                 </div>
             </section>
         <% } else { %>
@@ -99,7 +112,18 @@
                 </div>
             </section>
         <% } %>
+
+        <div class="buyProductsTransferenciaContainer">
+            <h4>Pasos para la compra por transferencia</h4>
+
+            <div class="buyProductsTransferenciaStepsContainer">
+                <p><span>Paso 1: </span>Realizar una transferencia al siguiente alias: <span>alias</span> con el monto total del carrito ($<%= totalPrice %>). Guardar el comprobante de la transferencia realizada.</p>
+
+                <p><span>Paso 2: </span>Enviar el comprobante de transferencia al siguiente <a href="">whatsapp</a>.</p>
+            </div>
+        </div>
     </main>
+    
     <!-- ******************************** END MAIN ******************************** -->
 
     <!-- ******************************** FOOTER ******************************** -->

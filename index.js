@@ -1,5 +1,4 @@
 require('dotenv').config();
-console.log("env => ", process.env);
 const express = require("express")
 const app = express()
 const mainRouter = require("./src/routers/mainRouter")

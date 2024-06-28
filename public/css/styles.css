@@ -1732,6 +1732,49 @@ footer {
   display: none;
 }
 
+.buyProductContainer {
+  display: none;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: rgb(35, 35, 35);
+  border: 2px solid rgb(55, 55, 55);
+  box-shadow: 0px 0px 0px 500px rgba(0, 0, 0, 0.7);
+  width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 30;
+}
+
+.buyProductText {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.buyProductButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.buyProductTransferenciaButton, .buyProductCloseButton {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 8px;
+  border: 2px solid rgb(55, 55, 55);
+  border-radius: 10px;
+  background-color: green;
+  color: rgb(240, 240, 240);
+  cursor: pointer;
+}
+
+.buyProductCloseButton {
+  background-color: rgb(50, 50, 50);
+}
+
 @media (width >= 768px) {
   .shoppingCartMain {
     padding: 30px 60px;
@@ -1806,6 +1849,22 @@ footer {
   .shoppingCartBuyButton {
     font-size: 1.3rem;
     font-weight: 600;
+    padding: 12px;
+  }
+  .buyProductContainer {
+    box-shadow: 0px 0px 0px 800px rgba(0, 0, 0, 0.7);
+    width: 60%;
+    padding: 40px;
+  }
+  .buyProductText {
+    font-size: 1.8rem;
+    margin-bottom: 60px;
+  }
+  .buyProductButtonsContainer {
+    gap: 25px;
+  }
+  .buyProductTransferenciaButton, .buyProductCloseButton {
+    font-size: 1.5rem;
     padding: 12px;
   }
 }
@@ -1906,6 +1965,23 @@ footer {
     flex-direction: column;
     gap: 10px;
   }
+  .buyProductContainer {
+    width: 50%;
+    padding: 20px;
+  }
+  .buyProductText {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  .buyProductButtonsContainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .buyProductTransferenciaButton, .buyProductCloseButton {
+    width: 47%;
+    font-size: 1rem;
+    padding: 8px;
+  }
 }
 @media (width >= 1200px) {
   .shoppingCartMain {
@@ -1976,6 +2052,18 @@ footer {
     padding: 25px;
     gap: 20px;
     gap: 15px;
+  }
+  .buyProductContainer {
+    width: 40%;
+    padding: 30px;
+  }
+  .buyProductText {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+  .buyProductTransferenciaButton, .buyProductCloseButton {
+    width: 48%;
+    font-size: 1.1rem;
   }
 }
 input[type=number]::-webkit-outer-spin-button,
@@ -2133,7 +2221,7 @@ input[type=number]::-webkit-inner-spin-button {
   gap: 15px;
 }
 
-.productDetailBuyButton, .productDetailAddToCartButton, .productDetailEditProduct, .productDetailDeleteProduct {
+.productDetailAddToCartButton, .productDetailEditProduct, .productDetailDeleteProduct {
   width: 100%;
   font-size: 1.3rem;
   border: none;
@@ -2141,10 +2229,6 @@ input[type=number]::-webkit-inner-spin-button {
   border-radius: 10px;
   color: rgb(240, 240, 240);
   cursor: pointer;
-}
-
-.productDetailBuyButton {
-  background-color: green;
 }
 
 .productDetailAddToCartButton {
@@ -2291,7 +2375,7 @@ input[type=number]::-webkit-inner-spin-button {
     margin-top: 10px;
     gap: 20px;
   }
-  .productDetailBuyButton, .productDetailAddToCartButton, .productDetailEditProduct, .productDetailDeleteProduct {
+  .productDetailAddToCartButton, .productDetailEditProduct, .productDetailDeleteProduct {
     width: 90%;
     font-size: 1.5rem;
     padding: 10px;
@@ -2394,7 +2478,7 @@ input[type=number]::-webkit-inner-spin-button {
   .productDetailButtonsContainer {
     gap: 10px;
   }
-  .productDetailBuyButton, .productDetailAddToCartButton, .productDetailEditProduct, .productDetailDeleteProduct {
+  .productDetailAddToCartButton, .productDetailEditProduct, .productDetailDeleteProduct {
     width: 100%;
     font-size: 1.1rem;
     padding: 7px;
@@ -2471,7 +2555,7 @@ input[type=number]::-webkit-inner-spin-button {
   .productDetailButtonsContainer {
     gap: 15px;
   }
-  .productDetailBuyButton, .productDetailAddToCartButton, .productDetailEditProduct, .productDetailDeleteProduct {
+  .productDetailAddToCartButton, .productDetailEditProduct, .productDetailDeleteProduct {
     font-size: 1.3rem;
     padding: 8px;
   }
@@ -2493,6 +2577,13 @@ input[type=number]::-webkit-inner-spin-button {
 .profileSection {
   width: 90%;
   margin: auto;
+}
+
+.profileWarningText {
+  color: red;
+  padding: 20px 0;
+  font-size: 0.7rem;
+  text-align: center;
 }
 
 .indexCamisetasTitleContainer {
@@ -2559,6 +2650,10 @@ input[type=number]::-webkit-inner-spin-button {
     margin-top: 10px;
     width: 85%;
   }
+  .profileWarningText {
+    padding: 30px 0;
+    font-size: 0.9rem;
+  }
   .indexCamisetasTitleContainer {
     margin-bottom: 35px;
   }
@@ -2602,6 +2697,11 @@ input[type=number]::-webkit-inner-spin-button {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 50px;
+  }
+  .profileWarningText {
+    padding: 0;
+    margin-bottom: 30px;
+    font-size: 0.7rem;
   }
   .indexCamisetasTitleContainer {
     width: 100%;

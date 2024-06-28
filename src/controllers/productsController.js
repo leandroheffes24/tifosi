@@ -79,35 +79,10 @@ module.exports = {
         let lastProduct = await productsServices.getLastProduct()
         let lastProductId = lastProduct.id
         
-        if (req.files['image1']) {
-            await productsServices.createImageProduct(req.files['image1'][0].filename, lastProductId)
-        }
-        if (req.files['image2']) {
-            await productsServices.createImageProduct(req.files['image2'][0].filename, lastProductId)
-        }
-        if (req.files['image3']) {
-            await productsServices.createImageProduct(req.files['image3'][0].filename, lastProductId)
-        }
-        if (req.files['image4']) {
-            await productsServices.createImageProduct(req.files['image4'][0].filename, lastProductId)
-        }
-        if (req.files['image5']) {
-            await productsServices.createImageProduct(req.files['image5'][0].filename, lastProductId)
-        }
-        if (req.files['image6']) {
-            await productsServices.createImageProduct(req.files['image6'][0].filename, lastProductId)
-        }
-        if (req.files['image7']) {
-            await productsServices.createImageProduct(req.files['image7'][0].filename, lastProductId)
-        }
-        if (req.files['image8']) {
-            await productsServices.createImageProduct(req.files['image8'][0].filename, lastProductId)
-        }
-        if (req.files['image9']) {
-            await productsServices.createImageProduct(req.files['image9'][0].filename, lastProductId)
-        }
-        if (req.files['image10']) {
-            await productsServices.createImageProduct(req.files['image10'][0].filename, lastProductId)
+        for (let i = 1; i < 11; i++) {
+            if (req.files[`image${i}`]) {
+                await productsServices.createImageProduct(req.files[`image${i}`][0].filename, lastProductId)
+            }
         }
 
         await productsTalles.forEach(async talle => {
@@ -144,5 +119,5 @@ module.exports = {
         const search = req.query.busqueda
         const productsSearched = await productsServices.getProductsBySearch(search)
         return res.render("productsSearched", {categories, productsSearched})
-    }
+    },
 }

@@ -15,10 +15,6 @@ const productsServices = {
             limit: 48,
             order: [["created_at", "DESC"]]
         });
-        // return Products.findAll({
-        //     limit: 48,
-        //     order: [["created_at", "DESC"]]
-        // })
     },
 
     getCategoryProducts: async (categoryId) => {

@@ -3,6 +3,13 @@
     margin: auto;
 }
 
+.profileWarningText{
+    color: red;
+    padding: 20px 0;
+    font-size: .7rem;
+    text-align: center;
+}
+
 .indexCamisetasTitleContainer{
     margin-bottom: 35px;
 }
@@ -67,6 +74,11 @@
         margin-top: 10px;
         width: 85%;
     }
+
+    .profileWarningText{
+        padding: 30px 0;
+        font-size: .9rem;
+    }
     
     .indexCamisetasTitleContainer{
         margin-bottom: 35px;
@@ -121,6 +133,12 @@
         flex-wrap: wrap;
         justify-content: space-between;
         margin-bottom: 50px;
+    }
+
+    .profileWarningText{
+        padding: 0;
+        margin-bottom: 30px;
+        font-size: .7rem;
     }
     
     .indexCamisetasTitleContainer{

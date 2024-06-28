@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="editProfileLabelAndInputContainer">
-                    <label class="editProfileLabel" for="address">Dirección</label>
+                    <label class="editProfileLabel" for="address">Dirección (piso y depto. y cualquier detalle necesario)</label>
                     <input class="editProfileInput" type="text" id="address" name="address" value="<%= locals.userLoggedIn.address %>" maxlength="50">
                     <span class="frontendRegistroError" id="addressError"></span>
                     <% if (locals.errors && errors.address) { %>
