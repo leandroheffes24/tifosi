@@ -60,7 +60,8 @@ module.exports = {
 
     carritoGenerateOrder: async (req, res) => {
         const userId = req.params.userId
-        carritoServices.createOrder(userId)
+        const totalPrice = req.params.totalPrice
+        carritoServices.createOrder(userId, totalPrice)
         return res.redirect("/ordenes")
     }
 }

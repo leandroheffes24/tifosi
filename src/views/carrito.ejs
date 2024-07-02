@@ -123,7 +123,7 @@
 
                 <p class="shoppingCartTransferenciaText">Una vez hechos los pasos, generá tu orden con el siguiente boton:</p>
 
-                <form class="shoppingCartTransferenciaForm" action="/carrito/compra/transferencia/<%= locals.userLoggedIn.id %>" method="post">
+                <form class="shoppingCartTransferenciaForm" action="/carrito/compra/transferencia/<%= locals.userLoggedIn.id %>/<%= totalPrice %>" method="post">
                     <button class="shoppingCartTransferenciaOrderButton" type="submit">Generar orden</button>
                     <button class="shoppingCartTransferenciaCloseButton" type="button" onclick="closeBuyProductsTransferencia()">Cerrar</button>
                 </form>

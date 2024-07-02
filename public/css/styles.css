@@ -3072,6 +3072,181 @@ input[type=number]::-webkit-inner-spin-button {
   color: rgb(200, 200, 200);
 }
 
+.ordersSection {
+  width: 90%;
+  margin: 20px auto 40px;
+}
+
+.ordersContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.orderContainer {
+  border: 2px solid rgb(55, 55, 55);
+  background-color: rgb(35, 35, 35);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+
+.orderNumberContainer {
+  width: 30%;
+  text-align: center;
+}
+
+.orderNumberText {
+  font-size: 0.9rem;
+  color: rgb(200, 200, 200);
+  margin-bottom: 10px;
+}
+
+.orderNumber {
+  font-size: 1.7rem;
+}
+
+.orderSeparator {
+  width: 2px;
+  background-color: rgb(55, 55, 55);
+}
+
+.orderDetails {
+  width: 70%;
+  padding: 0 15px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.orderPrice {
+  color: rgb(200, 200, 200);
+  font-size: 0.9rem;
+}
+
+.orderPendingStatus, .orderRejectedStatus {
+  font-size: 0.8rem;
+  color: rgb(196, 0, 0);
+}
+
+.orderAcceptedStatus {
+  font-size: 0.8rem;
+  color: green;
+}
+
+.orderEmptyContainer {
+  border: 2px solid rgb(55, 55, 55);
+  background-color: rgb(35, 35, 35);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.orderEmptyText {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (width >= 768px) {
+  .ordersSection {
+    width: 80%;
+    margin: 30px auto 70px;
+  }
+  .ordersContainer {
+    gap: 30px;
+  }
+  .orderContainer {
+    padding: 15px 0;
+  }
+  .orderNumberContainer {
+    width: 30%;
+  }
+  .orderNumberText {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  .orderNumber {
+    font-size: 2.2rem;
+  }
+  .orderSeparator {
+    width: 3px;
+  }
+  .orderDetails {
+    padding: 0 45px 0 50px;
+  }
+  .orderPrice {
+    font-size: 1.1rem;
+  }
+  .orderPendingStatus, .orderRejectedStatus {
+    font-size: 1rem;
+  }
+  .orderAcceptedStatus {
+    font-size: 1rem;
+  }
+  .orderEmptyContainer {
+    margin-top: 70px;
+    padding: 40px;
+  }
+  .orderEmptyText {
+    font-size: 1.8rem;
+  }
+}
+@media (width >= 992px) {
+  .ordersSection {
+    width: 50%;
+    margin: 20px auto 60px;
+  }
+  .ordersContainer {
+    gap: 20px;
+  }
+  .orderContainer {
+    padding: 10px 0;
+  }
+  .orderNumberText {
+    font-size: 0.9rem;
+  }
+  .orderNumber {
+    font-size: 1.7rem;
+  }
+  .orderDetails {
+    padding: 0 35px 0 40px;
+  }
+  .orderPrice {
+    font-size: 0.9rem;
+  }
+  .orderPendingStatus, .orderRejectedStatus {
+    font-size: 0.9rem;
+  }
+  .orderAcceptedStatus {
+    font-size: 0.9rem;
+  }
+  .orderEmptyContainer {
+    margin-top: 50px;
+    margin-bottom: 90px;
+    padding: 30px;
+  }
+  .orderEmptyText {
+    font-size: 1.3rem;
+  }
+}
+@media (width >= 1200px) {
+  .ordersSection {
+    width: 40%;
+    margin: 30px auto 80px;
+  }
+  .ordersContainer {
+    gap: 20px;
+  }
+  .orderContainer {
+    padding: 5px 0;
+  }
+  .orderEmptyContainer {
+    margin-bottom: 100px;
+    padding: 35px;
+  }
+}
 .camisetaContainer {
   width: 46%;
   position: relative;

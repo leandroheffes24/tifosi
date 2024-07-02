@@ -156,6 +156,9 @@ module.exports = {
 
     ordenes: async (req, res) => {
         const categories = await categoriesServices.getAllCategories()
-        return res.render("ordenes", {categories})
+        const user = req.session.userLoggedIn
+        const userId = user.id
+        const orders = await usersServices.getUserOrders(userId)
+        return res.render("ordenes", {categories, orders})
     }
 }

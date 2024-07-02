@@ -1,4 +1,5 @@
 const {Users} = require("../../database/models")
+const {Orders} = require("../../database/models")
 const { use } = require("../routers/usersRouter")
 
 const usersServices = {
@@ -46,6 +47,12 @@ const usersServices = {
             cp: newShipmentInfo.cp
         }, {
             where: {id: userId}
+        })
+    },
+
+    getUserOrders: (userId) => {
+        return Orders.findAll({
+            where: {user_id: userId}
         })
     }
 }
