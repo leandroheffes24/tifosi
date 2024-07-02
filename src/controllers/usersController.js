@@ -158,7 +158,9 @@ module.exports = {
         const categories = await categoriesServices.getAllCategories()
         const user = req.session.userLoggedIn
         const userId = user.id
-        const orders = await usersServices.getUserOrders(userId)
-        return res.render("ordenes", {categories, orders})
+        const orders = await usersServices.getOrders()
+        const userOrders = await usersServices.getUserOrders(userId)
+        console.log(orders);
+        return res.render("ordenes", {categories, userOrders, orders})
     }
 }

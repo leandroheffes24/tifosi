@@ -1,6 +1,7 @@
 const productsServices = require("../services/productsServices")
 const categoriesServices = require("../services/categoriesServices")
 const carritoServices = require("../services/carritoServices")
+const usersServices = require("../services/usersServices")
 
 module.exports = {
     carrito: async (req, res) => {
@@ -60,8 +61,9 @@ module.exports = {
 
     carritoGenerateOrder: async (req, res) => {
         const userId = req.params.userId
+        const user = await usersServices.getUserById(userId)
         const totalPrice = req.params.totalPrice
-        carritoServices.createOrder(userId, totalPrice)
+        carritoServices.createOrder(userId, totalPrice, user.name, user.last_name)
         return res.redirect("/ordenes")
     }
 }

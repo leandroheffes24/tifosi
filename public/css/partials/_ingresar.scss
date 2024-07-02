@@ -40,6 +40,12 @@
         width: 10px;
         height: 10px;
     }
+
+    .loginImageSection{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/5.png");
+        background-size: cover;
+        background-position: 80%;
+    }
 }
 
 @media (width >= 1200px){

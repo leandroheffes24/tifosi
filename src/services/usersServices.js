@@ -54,6 +54,14 @@ const usersServices = {
         return Orders.findAll({
             where: {user_id: userId}
         })
+    },
+
+    getOrders: () => {
+        return Orders.findAll()
+    },
+
+    getUserById: (userId) => {
+        return Users.findByPk(userId)
     }
 }
 

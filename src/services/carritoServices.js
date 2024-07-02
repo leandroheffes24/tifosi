@@ -31,11 +31,12 @@ const carritoServices = {
         })
     },
 
-    createOrder: (userId, totalPrice) => {
+    createOrder: (userId, totalPrice, userName, userLastName) => {
         return Orders.create({
             user_id: userId,
             total_price: totalPrice,
-            status: "pendiente"
+            status: "pendiente",
+            user_name: `${userName} ${userLastName}`
         })
     }
 }

@@ -914,9 +914,9 @@ footer {
   .registerImageSection {
     display: block;
     width: 50%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/4.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/3.png");
     background-size: cover;
-    background-position: 90%;
+    background-position: 52%;
   }
 }
 @media (width >= 1200px) {
@@ -1009,6 +1009,11 @@ footer {
   .rememberLoginInput {
     width: 10px;
     height: 10px;
+  }
+  .loginImageSection {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/5.png");
+    background-size: cover;
+    background-position: 80%;
   }
 }
 @media (width >= 1200px) {
@@ -3095,16 +3100,26 @@ input[type=number]::-webkit-inner-spin-button {
 .orderNumberContainer {
   width: 30%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .orderNumberText {
   font-size: 0.9rem;
   color: rgb(200, 200, 200);
-  margin-bottom: 10px;
 }
 
 .orderNumber {
   font-size: 1.7rem;
+}
+
+.orderUserId {
+  font-size: 0.7rem;
+}
+
+.orderUserName {
+  font-size: 0.9rem;
 }
 
 .orderSeparator {
@@ -3162,13 +3177,19 @@ input[type=number]::-webkit-inner-spin-button {
   }
   .orderNumberContainer {
     width: 30%;
+    gap: 10px;
   }
   .orderNumberText {
     font-size: 1.1rem;
-    margin-bottom: 10px;
   }
   .orderNumber {
     font-size: 2.2rem;
+  }
+  .orderUserId {
+    font-size: 0.8rem;
+  }
+  .orderUserName {
+    font-size: 1rem;
   }
   .orderSeparator {
     width: 3px;
@@ -3209,6 +3230,12 @@ input[type=number]::-webkit-inner-spin-button {
   }
   .orderNumber {
     font-size: 1.7rem;
+  }
+  .orderUserId {
+    font-size: 0.7rem;
+  }
+  .orderUserName {
+    font-size: 0.9rem;
   }
   .orderDetails {
     padding: 0 35px 0 40px;

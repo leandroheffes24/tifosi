@@ -21,16 +21,26 @@
 .orderNumberContainer{
     width: 30%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .orderNumberText{
     font-size: .9rem;
     color: $secondaryTextColor;
-    margin-bottom: 10px;
 }
 
 .orderNumber{
     font-size: 1.7rem;
+}
+
+.orderUserId{
+    font-size: .7rem;
+}
+
+.orderUserName{
+    font-size: .9rem;
 }
 
 .orderSeparator{
@@ -91,15 +101,23 @@
     
     .orderNumberContainer{
         width: 30%;
+        gap: 10px;
     }
     
     .orderNumberText{
         font-size: 1.1rem;
-        margin-bottom: 10px;
     }
     
     .orderNumber{
         font-size: 2.2rem;
+    }
+
+    .orderUserId{
+        font-size: .8rem;
+    }
+    
+    .orderUserName{
+        font-size: 1rem;
     }
     
     .orderSeparator{
@@ -152,6 +170,14 @@
     
     .orderNumber{
         font-size: 1.7rem;
+    }
+
+    .orderUserId{
+        font-size: .7rem;
+    }
+    
+    .orderUserName{
+        font-size: .9rem;
     }
     
     .orderDetails{

@@ -16,9 +16,10 @@
                 <div class="indexCamisetasTitleUnderline"></div>
             </div>
 
-                <% if(orders.length > 0){ %>
+            <% if(locals.userLoggedIn.rank == "user"){ %>
+                <% if(userOrders.length > 0){ %>
                     <div class="ordersContainer">
-                        <% orders.forEach(order => { %>
+                        <% userOrders.forEach(order => { %>
                             <div class="orderContainer">
                                 <div class="orderNumberContainer">
                                     <p class="orderNumberText">Orden N°</p>
@@ -43,6 +44,37 @@
                         <p class="orderEmptyText">Todavía no tienes ordenes</p>
                     </div>
                 <% } %>
+            <% } else { %>
+                <% if(orders.length > 0){ %>
+                    <div class="ordersContainer">
+                        <% orders.forEach(order => { %>
+                            <div class="orderContainer">
+                                <div class="orderNumberContainer">
+                                    <p class="orderNumberText">Orden N°</p>
+                                    <p class="orderNumber"><%= order.id %></p>
+                                    <p class="orderUserId"><%= order.user_id %></p>
+                                    <p class="orderUserName"><%= order.user_name %></p>
+                                </div>
+                                <div class="orderSeparator"></div>
+                                <div class="orderDetails">
+                                    <span class="orderPrice">Pago: $<%= order.total_price %></span>
+                                    <% if(order.status == "pendiente"){ %>
+                                        <span class="orderPendingStatus">Pendiente</span>
+                                    <% } else if(order.status == "aprobado") { %>
+                                        <span class="orderAcceptedStatus">Aprobado</span>
+                                    <% } else { %>
+                                        <span class="orderRejectedStatus">Rechazado</span>
+                                    <% } %>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                <% } else { %>
+                    <div class="orderEmptyContainer">
+                        <p class="orderEmptyText">Todavía no hay ordenes</p>
+                    </div>
+                <% } %>
+            <% } %>
         </section>
     </main>
     <!-- ******************************** END MAIN ******************************** -->

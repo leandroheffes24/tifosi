@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
             id: {type: DataTypes.INTEGER, primaryKey: true},
             user_id: DataTypes.STRING,
             status: DataTypes.STRING,
-            total_price: DataTypes.INTEGER
+            total_price: DataTypes.INTEGER,
+            user_name: DataTypes.STRING
         },
         {
             tableName: "orders",
