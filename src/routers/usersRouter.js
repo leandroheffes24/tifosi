@@ -20,5 +20,6 @@ router.put("/perfil/editar-contrasena/:userId", authMiddleware, editarPasswordVa
 router.get("/perfil/edital-informacion-de-envio", authMiddleware, usersController.editShipment)
 router.put("/perfil/editar-informacion-de-envio/:userId", authMiddleware, editarShipmentInformationValidations, usersController.editShipmentProcess)
 router.get("/logout", authMiddleware, usersController.logout)
+router.get("/ordenes", authMiddleware, usersController.ordenes)
 
 module.exports = router

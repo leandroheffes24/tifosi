@@ -113,13 +113,20 @@
             </section>
         <% } %>
 
-        <div class="buyProductsTransferenciaContainer">
-            <h4>Pasos para la compra por transferencia</h4>
+        <div class="buyProductsTransferenciaContainer" id="buyProductsTransferenciaContainer">
+            <h4 class="shoppingCartTransferenciaTitle">Pasos para la compra por transferencia</h4>
 
             <div class="buyProductsTransferenciaStepsContainer">
-                <p><span>Paso 1: </span>Realizar una transferencia al siguiente alias: <span>alias</span> con el monto total del carrito ($<%= totalPrice %>). Guardar el comprobante de la transferencia realizada.</p>
+                <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 1: </span>Realizar una transferencia al siguiente alias: <span class="shoppingCartTransferenciaSpan">alias</span> con el monto total del carrito ($<%= totalPrice %> ars). Guardar el comprobante de la transferencia realizada.</p>
 
-                <p><span>Paso 2: </span>Enviar el comprobante de transferencia al siguiente <a href="">whatsapp</a>.</p>
+                <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 2: </span>Enviar el comprobante de transferencia al siguiente <a class="shoppingCartTransferenciaLink" href="https://wa.link/1h3n9a">whatsapp</a> indicando tu nombre y apellido completos.</p>
+
+                <p class="shoppingCartTransferenciaText">Una vez hechos los pasos, generá tu orden con el siguiente boton:</p>
+
+                <form class="shoppingCartTransferenciaForm" action="/carrito/compra/transferencia/<%= locals.userLoggedIn.id %>" method="post">
+                    <button class="shoppingCartTransferenciaOrderButton" type="submit">Generar orden</button>
+                    <button class="shoppingCartTransferenciaCloseButton" type="button" onclick="closeBuyProductsTransferencia()">Cerrar</button>
+                </form>
             </div>
         </div>
     </main>

@@ -8,7 +8,6 @@ module.exports = {
         const user = req.session.userLoggedIn
         const userId = user.id
         const carritoProducts = await carritoServices.getUserProducts(userId)
-        console.log("carrito products => ", carritoProducts);
         let totalPrice = 0
         let totalProducts = 0
 
@@ -59,9 +58,9 @@ module.exports = {
         return res.render("carrito", {categories, carritoProducts, totalPrice, totalProducts})
     },
 
-    // buyProductTransferencia: async (req, res) => {
-    //     const categories = await categoriesServices.getAllCategories()
-    //     console.log("body => ", req.body.productQuantity, req.body.productDetailSize, req.params.productId);
-    //     return res.render("transferencia", {categories})
-    // }
+    carritoGenerateOrder: async (req, res) => {
+        const userId = req.params.userId
+        carritoServices.createOrder(userId)
+        return res.redirect("/ordenes")
+    }
 }

@@ -1,4 +1,5 @@
 const {Shopping_cart} = require("../../database/models")
+const {Orders} = require("../../database/models")
 
 const carritoServices = {
     getUserProducts: (userId) => {
@@ -15,7 +16,6 @@ const carritoServices = {
             product_price: productToCart.price,
             products_total_price: productToCart.price * quantity,
             product_discount: productToCart.discount,
-            product_image: productToCart.image,
             quantity: quantity,
             talle: talle
         })
@@ -28,6 +28,12 @@ const carritoServices = {
                 id_product: productIdToDelete,
                 talle: talle
             }
+        })
+    },
+
+    createOrder: (userId) => {
+        return Orders.create({
+            user_id: userId
         })
     }
 }

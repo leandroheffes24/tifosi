@@ -152,5 +152,10 @@ module.exports = {
         req.session.userLoggedIn.address = newShipmentInfo.address;
         req.session.userLoggedIn.cp = newShipmentInfo.cp;
         return res.redirect("/perfil")
+    },
+
+    ordenes: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        return res.render("ordenes", {categories})
     }
 }

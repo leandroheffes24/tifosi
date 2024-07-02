@@ -172,6 +172,7 @@
     padding: 10px;
     border-radius: 10px;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .shoppingCartTotalSectionDesktop{
@@ -219,6 +220,69 @@
 
 .buyProductCloseButton{
 background-color: rgb(50, 50, 50);
+}
+
+.buyProductsTransferenciaContainer{
+    display: none;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: 0px 0px 0px 3000px rgba(0, 0, 0, 0.7);
+    z-index: 50;
+    background-color: rgb(35, 35, 35);
+    border: 2px solid rgb(55, 55, 55);
+    width: 80%;
+    padding: 30px 20px;
+    border-radius: 10px;
+}
+
+.shoppingCartTransferenciaTitle{
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.buyProductsTransferenciaStepsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.shoppingCartTransferenciaText{
+    font-size: .9rem;
+    line-height: 1.3rem;
+    color: $secondaryTextColor;
+}
+
+.shoppingCartTransferenciaSpan{
+    color: $textColor;
+    font-weight: 600;
+}
+
+.shoppingCartTransferenciaLink{
+    color: green;
+    font-weight: 600;
+}
+
+.shoppingCartTransferenciaForm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.shoppingCartTransferenciaOrderButton, .shoppingCartTransferenciaCloseButton{
+    background-color: green;
+    border: none;
+    color: $textColor;
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.shoppingCartTransferenciaCloseButton{
+    background-color: rgb(55, 55, 55);
 }
 
 @media (width >= 768px) {
@@ -341,6 +405,33 @@ background-color: rgb(50, 50, 50);
     .buyProductTransferenciaButton, .buyProductCloseButton{
         font-size: 1.5rem;
         padding: 12px;
+    }
+
+    .buyProductsTransferenciaContainer{
+        width: 60%;
+        padding: 35px;
+    }
+    
+    .shoppingCartTransferenciaTitle{
+        font-size: 1.8rem;
+        margin-bottom: 50px;
+    }
+    
+    .buyProductsTransferenciaStepsContainer{
+        gap: 35px;
+    }
+    
+    .shoppingCartTransferenciaText{
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+
+    .shoppingCartTransferenciaForm{
+        gap: 20px;
+    }
+    
+    .shoppingCartTransferenciaOrderButton, .shoppingCartTransferenciaCloseButton{
+        font-size: 1.4rem;
     }
 }
 
@@ -487,6 +578,33 @@ background-color: rgb(50, 50, 50);
         font-size: 1rem;
         padding: 8px;
     }
+
+    .buyProductsTransferenciaContainer{
+        width: 50%;
+        padding: 20px;
+    }
+    
+    .shoppingCartTransferenciaTitle{
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .buyProductsTransferenciaStepsContainer{
+        gap: 25px;
+    }
+    
+    .shoppingCartTransferenciaText{
+        font-size: .9rem;
+        line-height: 1.4rem;
+    }
+
+    .shoppingCartTransferenciaForm{
+        gap: 15px;
+    }
+    
+    .shoppingCartTransferenciaOrderButton, .shoppingCartTransferenciaCloseButton{
+        font-size: 1rem;
+    }
 }
 
 @media (width >= 1200px) {
@@ -596,6 +714,29 @@ background-color: rgb(50, 50, 50);
     
     .buyProductTransferenciaButton, .buyProductCloseButton{
         width: 48%;
+        font-size: 1.1rem;
+    }
+
+    .buyProductsTransferenciaContainer{
+        width: 40%;
+        padding: 30px;
+    }
+    
+    .shoppingCartTransferenciaTitle{
+        font-size: 1.4rem;
+        margin-bottom: 40px;
+    }
+    
+    .buyProductsTransferenciaStepsContainer{
+        gap: 25px;
+    }
+    
+    .shoppingCartTransferenciaText{
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+    
+    .shoppingCartTransferenciaOrderButton, .shoppingCartTransferenciaCloseButton{
         font-size: 1.1rem;
     }
 }

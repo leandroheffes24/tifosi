@@ -1,4 +1,5 @@
 const buyProductContainer = document.getElementById("buyProductContainer")
+const buyProductsTransferenciaContainer = document.getElementById("buyProductsTransferenciaContainer")
 
 function buyProducts(){
     buyProductContainer.style.display = "block"
@@ -9,5 +10,9 @@ function closeBuyProducts(){
 }
 
 function buyProductsTransferencia(){
-    
+    buyProductsTransferenciaContainer.style.display = "block"
+}
+
+function closeBuyProductsTransferencia(){
+    buyProductsTransferenciaContainer.style.display = "none"
 }
