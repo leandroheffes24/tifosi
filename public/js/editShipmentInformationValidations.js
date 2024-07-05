@@ -24,6 +24,11 @@ const validations = [
         check: (input) => input.value.length > 0,
         message: "Debe contener al menos un caracter",
     },
+    {
+      field: "dni",
+      check: (input) => input.value.length > 0,
+      message: "Debe contener al menos un caracter",
+    }
   ]
           
   validations.forEach((validation) => {

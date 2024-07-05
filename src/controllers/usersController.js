@@ -143,7 +143,8 @@ module.exports = {
             province: req.body.province,
             city: req.body.city,
             address: req.body.address,
-            cp: req.body.cp
+            cp: req.body.cp,
+            dni: req.body.dni
         }
         usersServices.editProfileShipmentInformation(userId, newShipmentInfo)
         req.session.userLoggedIn.country = newShipmentInfo.country;
@@ -151,6 +152,7 @@ module.exports = {
         req.session.userLoggedIn.city = newShipmentInfo.city;
         req.session.userLoggedIn.address = newShipmentInfo.address;
         req.session.userLoggedIn.cp = newShipmentInfo.cp;
+        req.session.userLoggedIn.dni = newShipmentInfo.dni;
         return res.redirect("/perfil")
     },
 
