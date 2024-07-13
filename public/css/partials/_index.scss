@@ -34,8 +34,10 @@
 }
 
 .indexBannerSection{
-    background-image: url("/images/exampleBanner.webp");
-    background-size: cover;
+    background-image: url("/images/completeWhiteLogo.png");
+    background-size: contain;
+    background-position-y: center;
+    background-position-x: center;
     background-repeat: no-repeat;
     height: 35vh;
 }

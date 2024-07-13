@@ -476,8 +476,10 @@ footer {
 }
 
 .indexBannerSection {
-  background-image: url("/images/exampleBanner.webp");
-  background-size: cover;
+  background-image: url("/images/completeWhiteLogo.png");
+  background-size: contain;
+  background-position-y: center;
+  background-position-x: center;
   background-repeat: no-repeat;
   height: 35vh;
 }
@@ -3113,6 +3115,7 @@ input[type=number]::-webkit-inner-spin-button {
   border: 2px solid rgb(55, 55, 55);
   background-color: rgb(35, 35, 35);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 10px 0;
   border-radius: 10px;
@@ -3149,7 +3152,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .orderDetails {
-  width: 70%;
+  width: 69%;
   padding: 0 15px 0 20px;
   display: flex;
   align-items: center;
@@ -3169,6 +3172,25 @@ input[type=number]::-webkit-inner-spin-button {
 .orderAcceptedStatus {
   font-size: 0.8rem;
   color: green;
+}
+
+.editOrderButtonContainer {
+  width: 100%;
+  border-top: 2px solid rgb(55, 55, 55);
+  display: flex;
+  align-items: center;
+}
+
+.editOrderButton {
+  margin-top: 10px;
+  width: 100%;
+  border: none;
+  background-color: rgb(35, 35, 35);
+  color: rgb(200, 200, 200);
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .orderEmptyContainer {
@@ -3227,6 +3249,10 @@ input[type=number]::-webkit-inner-spin-button {
   .orderAcceptedStatus {
     font-size: 1rem;
   }
+  .editOrderButton {
+    margin: 15px 0px 0px;
+    font-size: 1.4rem;
+  }
   .orderEmptyContainer {
     margin-top: 70px;
     padding: 40px;
@@ -3269,6 +3295,10 @@ input[type=number]::-webkit-inner-spin-button {
   }
   .orderAcceptedStatus {
     font-size: 0.9rem;
+  }
+  .editOrderButton {
+    margin: 10px 0px 0px;
+    font-size: 1.1rem;
   }
   .orderEmptyContainer {
     margin-top: 50px;

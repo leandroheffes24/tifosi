@@ -13,6 +13,7 @@
     border: 2px solid rgb(55, 55, 55);
     background-color: rgb(35, 35, 35);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px 0;
     border-radius: 10px;
@@ -49,7 +50,7 @@
 }
 
 .orderDetails{
-    width: 70%;
+    width: 69%;
     padding: 0 15px 0 20px;
     display: flex;
     align-items: center;
@@ -69,6 +70,25 @@
 .orderAcceptedStatus{
     font-size: .8rem;
     color: green;
+}
+
+.editOrderButtonContainer{
+    width: 100%;
+    border-top: 2px solid rgb(55, 55, 55);
+    display: flex;
+    align-items: center;
+}
+
+.editOrderButton{
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    background-color: rgb(35, 35, 35);
+    color: $secondaryTextColor;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .orderEmptyContainer{
@@ -139,6 +159,11 @@
     .orderAcceptedStatus{
         font-size: 1rem;
     }
+
+    .editOrderButton{
+        margin: 15px 0px 0px;
+        font-size: 1.4rem;
+    }
     
     .orderEmptyContainer{
         margin-top: 70px;
@@ -194,6 +219,11 @@
     
     .orderAcceptedStatus{
         font-size: .9rem;
+    }
+
+    .editOrderButton{
+        margin: 10px 0px 0px;
+        font-size: 1.1rem;
     }
     
     .orderEmptyContainer{
