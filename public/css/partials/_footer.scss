@@ -3,7 +3,7 @@ footer{
     padding: 20px 30px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 35px;
 }
 
 .footerSection{
@@ -21,6 +21,10 @@ footer{
     text-decoration: none;
     color: $secondaryTextColor;
     font-size: .9rem;
+}
+
+.footerLogo{
+    width: 100%;
 }
 
 .footerCopyrightAndDevelopedBySection{
@@ -68,6 +72,11 @@ footer{
     .footerSectionLink{
         font-size: 1rem;
     }
+
+    .footerLogo{
+        margin: auto;
+        width: 70%;
+    }
     
     .footerCopyrightAndDevelopedBySection{
         width: 100%;
@@ -88,6 +97,7 @@ footer{
     footer{
         padding: 30px 40px;
         gap: 50px;
+        justify-content: space-between;
     }
     
     .footerSection{
@@ -101,6 +111,14 @@ footer{
     
     .footerSectionLink{
         font-size: .8rem;
+    }
+
+    .footerImageSection{
+        width: 40%;
+    }
+
+    .footerLogo{
+        width: 100%;
     }
     
     .footerCopyrightAndDevelopedBySection{
@@ -133,6 +151,14 @@ footer{
     
     .footerSectionLink{
         font-size: .9rem;
+    }
+
+    .footerImageSection{
+        width: 50%;
+    }
+
+    .footerLogo{
+        width: 70%;
     }
     
     .footerCopyrightAndDevelopedBySection{

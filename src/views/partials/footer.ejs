@@ -7,10 +7,13 @@
 
     <section class="footerSection">
         <h4 class="footerSectionTitle">DESCUBRI CAMISETAS</h4>
-        <a class="footerSectionLink" href="#">Liga argentina</a>
-        <a class="footerSectionLink" href="#">Premier League</a>
-        <a class="footerSectionLink" href="#">Retro</a>
-        <a class="footerSectionLink" href="#">Serie A</a>
+        <% categories.forEach(category => { %>
+            <a class="footerSectionLink" href="/categories/<%= category.name.toLowerCase().replace(" ", "-") %>"><%=category.name%></a>
+        <% }) %>
+    </section>
+
+    <section class="footerSection footerImageSection">
+        <img class="footerLogo" src="/images/completeLogo.png" alt="">
     </section>
 
     <section class="footerCopyrightAndDevelopedBySection">

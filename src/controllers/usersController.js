@@ -67,7 +67,7 @@ module.exports = {
         }
 
         if (req.cookies.cookiesAccepted === "true" && req.body.remember != undefined) {
-            res.cookie("remember", req.body.email, {maxAge: 1000 * 60 * 10});
+            res.cookie("remember", req.body.email, {maxAge: 60*60*24*365});
         } else {
             res.clearCookie("remember");
         }

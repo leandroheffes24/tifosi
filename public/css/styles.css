@@ -293,7 +293,7 @@ footer {
   padding: 20px 30px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 35px;
 }
 
 .footerSection {
@@ -312,6 +312,10 @@ footer {
   text-decoration: none;
   color: rgb(200, 200, 200);
   font-size: 0.9rem;
+}
+
+.footerLogo {
+  width: 100%;
 }
 
 .footerCopyrightAndDevelopedBySection {
@@ -356,6 +360,10 @@ footer {
   .footerSectionLink {
     font-size: 1rem;
   }
+  .footerLogo {
+    margin: auto;
+    width: 70%;
+  }
   .footerCopyrightAndDevelopedBySection {
     width: 100%;
     gap: 30px;
@@ -372,6 +380,7 @@ footer {
   footer {
     padding: 30px 40px;
     gap: 50px;
+    justify-content: space-between;
   }
   .footerSection {
     gap: 10px;
@@ -382,6 +391,12 @@ footer {
   }
   .footerSectionLink {
     font-size: 0.8rem;
+  }
+  .footerImageSection {
+    width: 40%;
+  }
+  .footerLogo {
+    width: 100%;
   }
   .footerCopyrightAndDevelopedBySection {
     gap: 20px;
@@ -407,6 +422,12 @@ footer {
   }
   .footerSectionLink {
     font-size: 0.9rem;
+  }
+  .footerImageSection {
+    width: 50%;
+  }
+  .footerLogo {
+    width: 70%;
   }
   .footerCopyrightAndDevelopedBySection {
     gap: 25px;
@@ -613,7 +634,7 @@ footer {
     display: flex;
     justify-content: space-between;
     width: 85%;
-    margin: auto;
+    margin: 80px auto 70px;
   }
   .indexTextSectionSplide {
     margin: 45px 0 60px;
