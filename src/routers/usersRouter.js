@@ -7,6 +7,7 @@ const editarPasswordValidations = require("../validations/editarPasswordValidati
 const editarShipmentInformationValidations = require("../validations/editarShipmentInformationValidations")
 const authMiddleware = require("../middlewares/authMiddleware")
 const guestMiddleware = require("../middlewares/guestMiddleware")
+const adminMiddleware = require("../middlewares/adminMiddleware")
 
 router.get("/registro", guestMiddleware, usersController.registro)
 router.post("/registro", guestMiddleware, registerValidations, usersController.registroProcess)
@@ -21,5 +22,6 @@ router.get("/perfil/edital-informacion-de-envio", authMiddleware, usersControlle
 router.put("/perfil/editar-informacion-de-envio/:userId", authMiddleware, editarShipmentInformationValidations, usersController.editShipmentProcess)
 router.get("/logout", authMiddleware, usersController.logout)
 router.get("/ordenes", authMiddleware, usersController.ordenes)
+router.post("/ordenes/editar-orden/:orderId/:newStatus", authMiddleware, adminMiddleware, usersController.editOrderStatus)
 
 module.exports = router

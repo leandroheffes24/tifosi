@@ -162,7 +162,15 @@ module.exports = {
         const userId = user.id
         const orders = await usersServices.getOrders()
         const userOrders = await usersServices.getUserOrders(userId)
-        console.log(orders);
         return res.render("ordenes", {categories, userOrders, orders})
+    },
+
+    editOrderStatus: async (req, res) => {
+        const orderId = req.params.orderId
+        const newStatus = req.params.newStatus
+        console.log(orderId);
+        console.log(newStatus);
+        usersServices.editOrderStatus(orderId, newStatus)
+        return res.redirect("/")
     }
 }

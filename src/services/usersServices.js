@@ -63,6 +63,14 @@ const usersServices = {
 
     getUserById: (userId) => {
         return Users.findByPk(userId)
+    },
+
+    editOrderStatus: (orderId, newStatus) => {
+        return Orders.update({
+            status: newStatus
+        }, {
+            where: {id: orderId}
+        })
     }
 }
 

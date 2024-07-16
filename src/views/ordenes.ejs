@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <%- include("partials/head", {title: "Futbol e-commerce"}) %>
+    <script src="/js/ordersScript.js" defer></script>
 </head>
 <body>
     <!-- ******************************** HEADER ******************************** -->
@@ -67,7 +68,11 @@
                                     <% } %>
                                 </div>
                                 <div class="editOrderButtonContainer">
-                                    <button class="editOrderButton">Editar orden</button>
+                                    <form class="orderActionsForm" id="orderActionsForm-<%= order.id %>" action="" method="">
+                                        <button onclick="editOrderStatus('/ordenes/editar-orden/<%= order.id %>/aprobado', 'post', '<%= order.id %>')" class="editOrderButton">Aprobado</button>
+                                        <button onclick="editOrderStatus('/ordenes/editar-orden/<%= order.id %>/pendiente', 'post', '<%= order.id %>')" class="editOrderButton">Pendiente</button>
+                                        <button onclick="editOrderStatus('/ordenes/editar-orden/<%= order.id %>/rechazado', 'post', '<%= order.id %>')" class="editOrderButton">Rechazado</button>
+                                    </form>
                                 </div>
                             </div>
                         <% }) %>
