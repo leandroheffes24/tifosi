@@ -3,8 +3,8 @@
     left: 0;
     bottom: 0;
     z-index: 30;
-    background-color: rgb(35, 35, 35);
-    border-top: 2px solid rgb(55, 55, 55);
+    background-color: $secondaryBackgroundColor;
+    border-top: 2px solid rgb(200, 200, 200);
     padding: 30px 15px;
     display: flex;
     flex-wrap: wrap;
@@ -21,8 +21,8 @@
     font-size: 1.2rem;
     font-weight: 600;
     border: none;
-    background-color: rgb(25, 25, 25);
-    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(220, 220, 220);
+    border: 2px solid rgb(200, 200, 200);
     padding: 7px 10px;
     color: $secondaryTextColor;
     border-radius: 5px;
@@ -30,11 +30,12 @@
 }
 
 .cookiesAcceptButton{
-    background-color: green;
+    background-color: $tifosiColor;
+    color: $secondaryBackgroundColor;
 }
 
 .indexBannerSection{
-    background-image: url("/images/completeWhiteLogo.png");
+    background-image: url("/images/completeBlueLogo.png");
     background-size: contain;
     background-position-y: center;
     background-position-x: center;
@@ -102,7 +103,7 @@
 .indexCamisetasTitleUnderline{
     width: 100px;
     height: 4px;
-    background-color: green;
+    background-color: $tifosiColor;
 }
 
 .indexCamisetasFilterButton{
@@ -251,14 +252,14 @@
     .indexTextSectionSeparator{
         width: 1px;
         height: 35px;
-        background-color: white;
+        background-color: rgb(220, 220, 220);
     }
     
     //---------------------------------------------------------
 
     .indexCategoriesSection{
-        border-top: 2px solid green;
-        border-bottom: 2px solid green;
+        border-top: 2px solid $tifosiColor;
+        border-bottom: 2px solid $tifosiColor;
         display: block;
         font-size: .9rem;
         margin: 0 40px 60px;
@@ -283,7 +284,7 @@
     }
 
     .indexCategoryItemLink:hover{
-        color: rgb(7, 190, 7);
+        color: rgb(44, 53, 136);
         transition: .3s all;
     }
     

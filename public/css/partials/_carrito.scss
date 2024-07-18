@@ -3,8 +3,8 @@
 }
 
 .shoppingCartProductsContainer{
-    background-color: rgb(35, 35, 35);
-    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(225, 225, 225);
     border-radius: 10px;
     padding: 0px 10px;
     display: flex;
@@ -15,8 +15,8 @@
 .shoppingCartProductContainer{
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid rgb(55, 55, 55);
-    border-bottom: 1px solid rgb(55, 55, 55);
+    border-top: 1px solid rgb(225, 225, 225);
+    border-bottom: 1px solid rgb(225, 225, 225);
     padding: 10px 0;
 }
 
@@ -84,8 +84,8 @@
 // ----------------------------------- EMPTY CART -----------------------------------
 
 .shoppingCartEmptyContainer{
-    background-color: rgb(35, 35, 35);
-    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(225, 225, 225);
     border-radius: 10px;
     padding: 60px 30px 40px;
 }
@@ -122,8 +122,8 @@
 
 .shoppingCarsEmptyExploreProductsLink{
     width: 100%;
-    background-color: green;
-    color: $textColor;
+    background-color: $tifosiColor;
+    color: $secondaryBackgroundColor;
     text-decoration: none;
     padding: 8px 30px;
     border-radius: 5px;
@@ -136,8 +136,8 @@
     margin-top: 20px;
     position: sticky;
     bottom: 0;
-    background-color: rgb(35, 35, 35);
-    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(225, 225, 225);
     border-radius: 10px;
     padding: 20px;
     display: flex;
@@ -165,8 +165,8 @@
 
 .shoppingCartBuyButton {
     width: 100%;
-    background-color: green;
-    color: $textColor;
+    background-color: $tifosiColor;
+    color: $secondaryBackgroundColor;
     border: none;
     font-size: 1rem;
     padding: 10px;
@@ -185,8 +185,8 @@
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    background-color: rgb(35, 35, 35);
-    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(225, 225, 225);
     box-shadow: 0px 0px 0px 500px rgba(0, 0, 0, 0.7);
     width: 80%;
     padding: 20px;
@@ -211,15 +211,16 @@
     font-size: 1.1rem;
     font-weight: 500;
     padding: 8px;
-    border: 2px solid rgb(55, 55, 55);
+    border: 2px solid rgb(225, 225, 225);
     border-radius: 10px;
-    background-color: green;
-    color: $textColor;
+    background-color: $tifosiColor;
+    color: $secondaryBackgroundColor;
     cursor: pointer;
 }
 
 .buyProductCloseButton{
-background-color: rgb(50, 50, 50);
+    background-color: rgb(220, 220, 220);
+    color: $textColor;
 }
 
 .buyProductsTransferenciaContainer{
@@ -228,10 +229,10 @@ background-color: rgb(50, 50, 50);
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    box-shadow: 0px 0px 0px 3000px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 0px 3000px rgba(0, 0, 0, 0.3);
     z-index: 50;
-    background-color: rgb(35, 35, 35);
-    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(225, 225, 225);
     width: 80%;
     padding: 30px 20px;
     border-radius: 10px;
@@ -260,7 +261,7 @@ background-color: rgb(50, 50, 50);
 }
 
 .shoppingCartTransferenciaLink{
-    color: green;
+    color: $tifosiColor;
     font-weight: 600;
 }
 
@@ -271,9 +272,9 @@ background-color: rgb(50, 50, 50);
 }
 
 .shoppingCartTransferenciaOrderButton, .shoppingCartTransferenciaCloseButton{
-    background-color: green;
+    background-color: $tifosiColor;
     border: none;
-    color: $textColor;
+    color: $secondaryBackgroundColor;
     width: 100%;
     font-size: 1rem;
     padding: 10px;
@@ -282,7 +283,8 @@ background-color: rgb(50, 50, 50);
 }
 
 .shoppingCartTransferenciaCloseButton{
-    background-color: rgb(55, 55, 55);
+    background-color: rgb(220, 220, 220);
+    color: $textColor;
 }
 
 @media (width >= 768px) {
@@ -550,8 +552,8 @@ background-color: rgb(50, 50, 50);
         padding: 20px;
         gap: 20px;
         height: fit-content;
-        background-color: rgb(35, 35, 35);
-        border: 2px solid rgb(55, 55, 55);
+        background-color: rgb(240, 240, 240);
+        border: 2px solid rgb(225, 225, 225);
         border-radius: 10px;
         display: flex;
         flex-direction: column;

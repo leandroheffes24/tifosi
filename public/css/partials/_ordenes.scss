@@ -10,8 +10,8 @@
 }
 
 .orderContainer{
-    border: 2px solid rgb(55, 55, 55);
-    background-color: rgb(35, 35, 35);
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(225, 225, 225);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -46,7 +46,7 @@
 
 .orderSeparator{
     width: 2px;
-    background-color:rgb(55, 55, 55);
+    background-color:rgb(190, 190, 190);
 }
 
 .orderDetails{
@@ -74,7 +74,7 @@
 
 .editOrderButtonContainer{
     width: 100%;
-    border-top: 2px solid rgb(55, 55, 55);
+    border-top: 2px solid rgb(190, 190, 190);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -90,7 +90,7 @@
     border: none;
     margin-top: 10px;
     width: 30%;
-    background-color: rgb(35, 35, 35);
+    background-color: rgb(240, 240, 240);
     color: $secondaryTextColor;
     border-radius: 5px;
     font-size: 1.1rem;
@@ -99,8 +99,8 @@
 }
 
 .orderEmptyContainer{
-    border: 2px solid rgb(55, 55, 55);
-    background-color: rgb(35, 35, 35);
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(225, 225, 225);
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 50px;

@@ -7,8 +7,8 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: rgb(25, 25, 25);
-  color: rgb(240, 240, 240);
+  background-color: rgb(255, 255, 255);
+  color: rgb(15, 15, 15);
 }
 
 header {
@@ -16,7 +16,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(25, 25, 25);
+  background-color: rgb(255, 255, 255);
   padding: 5px 15px;
   position: sticky;
   top: 0;
@@ -37,7 +37,7 @@ header {
 
 .headerOpenNavbarIcon {
   width: 30px;
-  color: rgb(240, 240, 240);
+  color: rgb(15, 15, 15);
 }
 
 .headerSearchInputContainer {
@@ -62,7 +62,7 @@ header {
 
 .headerAccountIcon, .headerShoppingCartIcon, .headerSearchIcon, .headerCreateIcon, .headerOrdersIcon {
   width: 25px;
-  color: rgb(240, 240, 240);
+  color: rgb(15, 15, 15);
 }
 
 .headerNavbar {
@@ -73,7 +73,7 @@ header {
   height: 100vh;
   width: 70vw;
   z-index: 15;
-  background-color: rgb(25, 25, 25);
+  background-color: rgb(255, 255, 255);
   box-shadow: 0px 0px 0px 300px rgba(0, 0, 0, 0.5);
   overflow-y: scroll;
 }
@@ -91,7 +91,7 @@ header {
 
 .headerCloseNavbarIcon {
   width: 23px;
-  color: rgb(240, 240, 240);
+  color: rgb(15, 15, 15);
 }
 
 .headerNavbarLinksContainer {
@@ -112,13 +112,13 @@ header {
 }
 
 .headerNavbarItemLink {
-  color: rgb(240, 240, 240);
+  color: rgb(15, 15, 15);
   text-decoration: none;
 }
 
 .headerSearchMobileContainer {
   display: none;
-  background-color: rgb(30, 30, 30);
+  background-color: rgb(245, 245, 245);
   position: fixed;
   top: 0;
   left: 0;
@@ -137,7 +137,7 @@ header {
 
 .headerCloseIconMobile {
   width: 20px;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 .headerSearchMobileForm {
@@ -147,13 +147,13 @@ header {
 }
 
 .headerSearchMobileInput {
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(220, 220, 220);
   border: none;
   font-size: 1rem;
   padding: 10px 10px;
   width: 85%;
   border-radius: 5px;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 .headerSearchMobileButton {
@@ -161,7 +161,7 @@ header {
   border-radius: 5px;
   width: 13%;
   padding: 9px 0;
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(220, 220, 220);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,7 +169,7 @@ header {
 
 .headerSearchIconMobile {
   width: 20px;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 @media (width >= 768px) {
@@ -226,7 +226,7 @@ header {
     width: 25%;
   }
   .headerSearchForm {
-    background-color: rgb(45, 45, 45);
+    background-color: rgb(230, 230, 230);
     display: flex;
     flex-wrap: wrap;
     padding: 5px;
@@ -241,7 +241,7 @@ header {
   }
   .headerSearchLabelIcon {
     width: 20px;
-    color: rgb(200, 200, 200);
+    color: rgb(55, 55, 55);
     padding-right: 5px;
   }
   .headerSearchInput {
@@ -250,7 +250,7 @@ header {
     border: none;
     outline: none;
     padding-left: 10px;
-    color: rgb(200, 200, 200);
+    color: rgb(55, 55, 55);
   }
   .headerLogo {
     width: 40px;
@@ -289,7 +289,7 @@ header {
   }
 }
 footer {
-  border-top: 2px solid green;
+  border-top: 2px solid rgb(33, 38, 84);
   padding: 20px 30px;
   display: flex;
   flex-direction: column;
@@ -310,7 +310,7 @@ footer {
 
 .footerSectionLink {
   text-decoration: none;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
   font-size: 0.9rem;
 }
 
@@ -320,11 +320,11 @@ footer {
 
 .footerCopyrightAndDevelopedBySection {
   text-align: center;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
   display: flex;
   flex-direction: column;
   gap: 20px;
-  border-top: 1px solid rgb(82, 82, 82);
+  border-top: 1px solid rgb(170, 170, 170);
   padding-top: 25px;
 }
 
@@ -338,7 +338,7 @@ footer {
 
 .footerDevelopedByLink {
   text-decoration: none;
-  color: rgb(240, 240, 240);
+  color: rgb(15, 15, 15);
   font-weight: 500;
 }
 
@@ -445,8 +445,8 @@ footer {
   left: 0;
   bottom: 0;
   z-index: 30;
-  background-color: rgb(35, 35, 35);
-  border-top: 2px solid rgb(55, 55, 55);
+  background-color: rgb(245, 245, 245);
+  border-top: 2px solid rgb(200, 200, 200);
   padding: 30px 15px;
   display: flex;
   flex-wrap: wrap;
@@ -463,20 +463,21 @@ footer {
   font-size: 1.2rem;
   font-weight: 600;
   border: none;
-  background-color: rgb(25, 25, 25);
-  border: 2px solid rgb(55, 55, 55);
+  background-color: rgb(220, 220, 220);
+  border: 2px solid rgb(200, 200, 200);
   padding: 7px 10px;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
   border-radius: 5px;
   cursor: pointer;
 }
 
 .cookiesAcceptButton {
-  background-color: green;
+  background-color: rgb(33, 38, 84);
+  color: rgb(245, 245, 245);
 }
 
 .indexBannerSection {
-  background-image: url("/images/completeWhiteLogo.png");
+  background-image: url("/images/completeBlueLogo.png");
   background-size: contain;
   background-position-y: center;
   background-position-x: center;
@@ -486,12 +487,12 @@ footer {
 
 .indexTextSectionDesktop {
   display: none;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 .indexTextSectionSplide {
   margin: 25px 0 40px;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 .indexShipmentIcon, .indexWhatsappIcon, .indexSafePurchaseIcon, .indexInstagramIcon {
@@ -540,7 +541,7 @@ footer {
 .indexCamisetasTitleUnderline {
   width: 100px;
   height: 4px;
-  background-color: green;
+  background-color: rgb(33, 38, 84);
 }
 
 .indexCamisetasFilterButton {
@@ -550,7 +551,7 @@ footer {
 
 .indexCamisetasFilterIcon {
   width: 25px;
-  color: rgb(240, 240, 240);
+  color: rgb(15, 15, 15);
 }
 
 .indexCamisetasContainer {
@@ -657,11 +658,11 @@ footer {
   .indexTextSectionSeparator {
     width: 1px;
     height: 35px;
-    background-color: white;
+    background-color: rgb(220, 220, 220);
   }
   .indexCategoriesSection {
-    border-top: 2px solid green;
-    border-bottom: 2px solid green;
+    border-top: 2px solid rgb(33, 38, 84);
+    border-bottom: 2px solid rgb(33, 38, 84);
     display: block;
     font-size: 0.9rem;
     margin: 0 40px 60px;
@@ -678,11 +679,11 @@ footer {
   }
   .indexCategoryItemLink {
     text-decoration: none;
-    color: rgb(240, 240, 240);
+    color: rgb(15, 15, 15);
     transition: 0.3s all;
   }
   .indexCategoryItemLink:hover {
-    color: rgb(7, 190, 7);
+    color: rgb(44, 53, 136);
     transition: 0.3s all;
   }
   .indexCamisetasSection {
@@ -775,12 +776,12 @@ footer {
 
 .registroLoginText {
   font-size: 0.8rem;
-  color: rgb(160, 160, 160);
+  color: rgb(95, 95, 95);
 }
 
 .registroLoginLink {
   text-decoration: none;
-  color: rgb(9, 116, 9);
+  color: rgb(33, 38, 84);
   font-weight: 500;
 }
 
@@ -799,13 +800,13 @@ footer {
 .registroLabel {
   font-size: 0.8rem;
   font-weight: 500;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
   margin-left: 2px;
 }
 
 .registroInput {
-  color: rgb(200, 200, 200);
-  background-color: rgb(45, 45, 45);
+  color: rgb(55, 55, 55);
+  background-color: rgb(225, 225, 225);
   border: none;
   outline: none;
   font-size: 1rem;
@@ -815,9 +816,9 @@ footer {
 
 .registerButton {
   margin-top: 15px;
-  background-color: rgb(35, 35, 35);
+  background-color: rgb(200, 200, 200);
   border: none;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
   padding: 10px;
   border-radius: 5px;
   font-size: 0.7rem;
@@ -937,7 +938,7 @@ footer {
   .registerImageSection {
     display: block;
     width: 50%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/3.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/3.png");
     background-size: cover;
     background-position: 52%;
   }
@@ -999,7 +1000,7 @@ footer {
 }
 
 .rememberLoginLabel {
-  color: rgb(160, 160, 160);
+  color: rgb(95, 95, 95);
 }
 
 .rememberLoginInput {
@@ -1010,12 +1011,12 @@ footer {
   background-color: transparent;
   width: 14px;
   height: 14px;
-  border: 1px solid rgb(60, 60, 60);
+  border: 1px solid rgb(175, 175, 175);
   transition: 0.2s;
 }
 
 .rememberLoginInput:checked {
-  background-color: rgb(60, 60, 60);
+  background-color: rgb(175, 175, 175);
   transition: 0.2s;
 }
 
@@ -1034,7 +1035,7 @@ footer {
     height: 10px;
   }
   .loginImageSection {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/5.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/5.png");
     background-size: cover;
     background-position: 80%;
   }
@@ -1060,7 +1061,7 @@ footer {
   left: 0;
   width: 100%;
   height: 70vh;
-  background-color: rgb(220, 220, 220);
+  background-color: rgb(235, 235, 235);
   z-index: 20;
   padding: 20px 0;
   box-shadow: 0px 0px 0px 600px rgba(0, 0, 0, 0.6);
@@ -1074,17 +1075,17 @@ footer {
 }
 
 .categoryFilterSection::-webkit-scrollbar-track {
-  background: rgb(35, 35, 35);
+  background: rgb(230, 230, 230);
   border-radius: 10px;
 }
 
 .categoryFilterSection::-webkit-scrollbar-thumb {
-  background: rgb(45, 45, 45);
+  background: rgb(200, 200, 200);
   border-radius: 10px;
 }
 
 .categoryFilterSection::-webkit-scrollbar-thumb:hover {
-  background: rgb(65, 65, 65);
+  background: rgb(170, 170, 170);
 }
 
 .categoryFilterTitleAndCloseButtonContainer {
@@ -1097,7 +1098,7 @@ footer {
 
 .categoryFilterTitle {
   font-size: 1.6rem;
-  color: rgb(40, 40, 40);
+  color: rgb(15, 15, 15);
 }
 
 .categoryFilterCloseButton {
@@ -1119,7 +1120,7 @@ footer {
 
 .categoryFilterSubtitle {
   font-size: 1rem;
-  color: rgb(60, 60, 60);
+  color: rgb(55, 55, 55);
 }
 
 .categoryFilterLabel {
@@ -1166,10 +1167,10 @@ footer {
 
 .categoryFilterPriceInput {
   width: 30%;
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(215, 215, 215);
   border: none;
   padding: 7px 10px;
-  color: rgb(60, 60, 60);
+  color: rgb(55, 55, 55);
   border-radius: 5px;
 }
 
@@ -1178,8 +1179,8 @@ footer {
 }
 
 .categoryFilterApplyButton {
-  background-color: rgb(60, 60, 60);
-  color: rgb(240, 240, 240);
+  background-color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
   border: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -1262,7 +1263,7 @@ footer {
   }
   .categoryFilterTitle {
     font-size: 1.7rem;
-    color: rgb(240, 240, 240);
+    color: rgb(15, 15, 15);
   }
   .categoryFilterCloseIcon {
     display: none;
@@ -1273,7 +1274,7 @@ footer {
   }
   .categoryFilterSubtitle {
     font-size: 1rem;
-    color: rgb(200, 200, 200);
+    color: rgb(55, 55, 55);
   }
   .categoryFilterLabel {
     gap: 8px;
@@ -1281,14 +1282,14 @@ footer {
   .categoryFilterCheckbox {
     width: 15px;
     height: 15px;
-    border: 2px solid rgb(160, 160, 160);
+    border: 2px solid rgb(95, 95, 95);
   }
   .categoryFilterCheckbox:checked {
-    background-color: rgb(160, 160, 160);
+    background-color: rgb(95, 95, 95);
   }
   .categoryFilterCheckboxName {
     font-size: 0.9rem;
-    color: rgb(160, 160, 160);
+    color: rgb(95, 95, 95);
   }
   .categoryFilterPriceTitle {
     margin-top: 20px;
@@ -1301,9 +1302,9 @@ footer {
     width: 70%;
     font-size: 0.9rem;
     padding: 7px 10px;
-    border: 2px solid rgb(55, 55, 55);
-    background-color: rgb(35, 35, 35);
-    color: rgb(160, 160, 160);
+    border: 2px solid rgb(200, 200, 200);
+    background-color: rgb(215, 215, 215);
+    color: rgb(95, 95, 95);
   }
   .categoryFilterApplyButton {
     font-size: 0.8rem;
@@ -1339,21 +1340,21 @@ footer {
   flex-wrap: wrap;
   flex-direction: column;
   gap: 20px;
-  background-color: rgb(35, 35, 35);
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(225, 225, 225);
   padding: 40px;
   width: 80%;
   margin: 40px auto;
-  border: 2px solid rgb(55, 55, 55);
   border-radius: 5px;
 }
 
 .crearLink {
   text-decoration: none;
   text-align: center;
-  color: rgb(200, 200, 200);
-  background-color: rgb(30, 30, 30);
+  color: rgb(55, 55, 55);
+  background-color: rgb(245, 245, 245);
   padding: 10px;
-  border: 2px solid rgb(200, 200, 200);
+  border: 2px solid rgb(210, 210, 210);
   border-radius: 2px;
   font-weight: 500;
 }
@@ -1392,8 +1393,8 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background-color: rgb(35, 35, 35);
-  border: 2px solid rgb(55, 55, 55);
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(225, 225, 225);
 }
 
 .crearProductTitle {
@@ -1410,23 +1411,23 @@ footer {
 .createProductLabel {
   font-size: 0.8rem;
   font-weight: 500;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 .createProductInput {
-  background-color: rgb(45, 45, 45);
+  background-color: rgb(210, 210, 210);
   border: none;
   outline: none;
-  color: rgb(240, 240, 240);
+  color: rgb(15, 15, 15);
   font-size: 0.9rem;
   padding: 5px 8px;
   border-radius: 2px;
 }
 
 .crearProductoButton {
-  background-color: rgb(35, 35, 35);
-  border: 2px solid rgb(55, 55, 55);
-  color: rgb(200, 200, 200);
+  background-color: rgb(220, 220, 220);
+  border: 2px solid rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
   padding: 10px;
   margin-top: 10px;
   border-radius: 5px;
@@ -1523,8 +1524,8 @@ footer {
 .categoriesEditContainer {
   width: 90%;
   margin: 40px auto;
-  background-color: rgb(35, 35, 35);
-  border: 2px solid rgb(55, 55, 55);
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(225, 225, 225);
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -1546,7 +1547,7 @@ footer {
 .categoryEditLink {
   width: 20%;
   text-decoration: none;
-  color: rgb(240, 240, 240);
+  color: rgb(15, 15, 15);
   display: flex;
   justify-content: right;
   align-items: center;
@@ -1587,8 +1588,8 @@ footer {
 }
 
 .shoppingCartProductsContainer {
-  background-color: rgb(35, 35, 35);
-  border: 2px solid rgb(55, 55, 55);
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(225, 225, 225);
   border-radius: 10px;
   padding: 0px 10px;
   display: flex;
@@ -1599,8 +1600,8 @@ footer {
 .shoppingCartProductContainer {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid rgb(55, 55, 55);
-  border-bottom: 1px solid rgb(55, 55, 55);
+  border-top: 1px solid rgb(225, 225, 225);
+  border-bottom: 1px solid rgb(225, 225, 225);
   padding: 10px 0;
 }
 
@@ -1645,12 +1646,12 @@ footer {
 
 .shoppingCartDeleteProductIcon {
   width: 25px;
-  color: rgb(240, 240, 240);
+  color: rgb(15, 15, 15);
 }
 
 .shoppingCartQuiantityAndTalleContainer {
   font-size: 0.8rem;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1668,8 +1669,8 @@ footer {
 }
 
 .shoppingCartEmptyContainer {
-  background-color: rgb(35, 35, 35);
-  border: 2px solid rgb(55, 55, 55);
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(225, 225, 225);
   border-radius: 10px;
   padding: 60px 30px 40px;
 }
@@ -1706,8 +1707,8 @@ footer {
 
 .shoppingCarsEmptyExploreProductsLink {
   width: 100%;
-  background-color: green;
-  color: rgb(240, 240, 240);
+  background-color: rgb(33, 38, 84);
+  color: rgb(245, 245, 245);
   text-decoration: none;
   padding: 8px 30px;
   border-radius: 5px;
@@ -1718,8 +1719,8 @@ footer {
   margin-top: 20px;
   position: sticky;
   bottom: 0;
-  background-color: rgb(35, 35, 35);
-  border: 2px solid rgb(55, 55, 55);
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(225, 225, 225);
   border-radius: 10px;
   padding: 20px;
   display: flex;
@@ -1747,8 +1748,8 @@ footer {
 
 .shoppingCartBuyButton {
   width: 100%;
-  background-color: green;
-  color: rgb(240, 240, 240);
+  background-color: rgb(33, 38, 84);
+  color: rgb(245, 245, 245);
   border: none;
   font-size: 1rem;
   padding: 10px;
@@ -1767,8 +1768,8 @@ footer {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  background-color: rgb(35, 35, 35);
-  border: 2px solid rgb(55, 55, 55);
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(225, 225, 225);
   box-shadow: 0px 0px 0px 500px rgba(0, 0, 0, 0.7);
   width: 80%;
   padding: 20px;
@@ -1793,15 +1794,16 @@ footer {
   font-size: 1.1rem;
   font-weight: 500;
   padding: 8px;
-  border: 2px solid rgb(55, 55, 55);
+  border: 2px solid rgb(225, 225, 225);
   border-radius: 10px;
-  background-color: green;
-  color: rgb(240, 240, 240);
+  background-color: rgb(33, 38, 84);
+  color: rgb(245, 245, 245);
   cursor: pointer;
 }
 
 .buyProductCloseButton {
-  background-color: rgb(50, 50, 50);
+  background-color: rgb(220, 220, 220);
+  color: rgb(15, 15, 15);
 }
 
 .buyProductsTransferenciaContainer {
@@ -1810,10 +1812,10 @@ footer {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  box-shadow: 0px 0px 0px 3000px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 0px 3000px rgba(0, 0, 0, 0.3);
   z-index: 50;
-  background-color: rgb(35, 35, 35);
-  border: 2px solid rgb(55, 55, 55);
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(225, 225, 225);
   width: 80%;
   padding: 30px 20px;
   border-radius: 10px;
@@ -1833,16 +1835,16 @@ footer {
 .shoppingCartTransferenciaText {
   font-size: 0.9rem;
   line-height: 1.3rem;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 .shoppingCartTransferenciaSpan {
-  color: rgb(240, 240, 240);
+  color: rgb(15, 15, 15);
   font-weight: 600;
 }
 
 .shoppingCartTransferenciaLink {
-  color: green;
+  color: rgb(33, 38, 84);
   font-weight: 600;
 }
 
@@ -1853,9 +1855,9 @@ footer {
 }
 
 .shoppingCartTransferenciaOrderButton, .shoppingCartTransferenciaCloseButton {
-  background-color: green;
+  background-color: rgb(33, 38, 84);
   border: none;
-  color: rgb(240, 240, 240);
+  color: rgb(245, 245, 245);
   width: 100%;
   font-size: 1rem;
   padding: 10px;
@@ -1864,7 +1866,8 @@ footer {
 }
 
 .shoppingCartTransferenciaCloseButton {
-  background-color: rgb(55, 55, 55);
+  background-color: rgb(220, 220, 220);
+  color: rgb(15, 15, 15);
 }
 
 @media (width >= 768px) {
@@ -2071,8 +2074,8 @@ footer {
     gap: 20px;
     height: -moz-fit-content;
     height: fit-content;
-    background-color: rgb(35, 35, 35);
-    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(225, 225, 225);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -2262,7 +2265,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .productDetailCategory, .productDetailSubcategory {
   font-size: 0.9rem;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 .productDetailPriceDiscountQuantityAndSizesContainer {
@@ -2304,7 +2307,7 @@ input[type=number]::-webkit-inner-spin-button {
 .productDetailQuantityLabel {
   width: 100%;
   font-size: 0.9rem;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 .quantityContainer {
@@ -2316,7 +2319,7 @@ input[type=number]::-webkit-inner-spin-button {
   font-size: 1.2rem;
   width: 30px;
   border: none;
-  background-color: rgb(192, 192, 192);
+  background-color: rgb(210, 210, 210);
   cursor: pointer;
 }
 
@@ -2352,8 +2355,8 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .productDetailSizeLabel {
-  color: rgb(240, 240, 240);
-  background-color: rgb(50, 50, 50);
+  color: rgb(15, 15, 15);
+  background-color: rgb(210, 210, 210);
   width: 50px;
   padding: 7px 0;
   border-radius: 3px;
@@ -2379,12 +2382,12 @@ input[type=number]::-webkit-inner-spin-button {
   border: none;
   padding: 8px;
   border-radius: 10px;
-  color: rgb(240, 240, 240);
+  color: rgb(15, 15, 15);
   cursor: pointer;
 }
 
 .productDetailAddToCartButton {
-  background-color: rgb(55, 55, 55);
+  background-color: rgb(210, 210, 210);
 }
 
 .productDetailEditProduct {
@@ -2401,8 +2404,8 @@ input[type=number]::-webkit-inner-spin-button {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  background-color: rgb(35, 35, 35);
-  border: 2px solid rgb(55, 55, 55);
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(225, 225, 225);
   width: 80%;
   margin: auto;
   padding: 30px 15px;
@@ -2437,7 +2440,7 @@ input[type=number]::-webkit-inner-spin-button {
   padding: 5px 0;
   border: none;
   border-radius: 5px;
-  color: rgb(240, 240, 240);
+  color: rgb(15, 15, 15);
   cursor: pointer;
 }
 
@@ -2446,7 +2449,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .deleteProductCancelButton {
-  background-color: rgb(50, 50, 50);
+  background-color: rgb(200, 200, 200);
 }
 
 @media (width >= 768px) {
@@ -2561,8 +2564,8 @@ input[type=number]::-webkit-inner-spin-button {
   }
   .productDetailInformation {
     width: 45%;
-    background-color: rgb(35, 35, 35);
-    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(225, 225, 225);
     border-radius: 10px;
     padding: 15px;
     height: -moz-fit-content;
@@ -2762,7 +2765,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .profilePersonalInformationBoxTitle, .profileShipmentInformationBoxTitle {
   font-size: 0.9rem;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 .profilePersonalInformationBoxContent, .profileShipmentInformationBoxContent {
@@ -2775,8 +2778,8 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .profilePersonalInformationEditButton, .profileShipmentInformationEditButton {
-  background-color: green;
-  color: rgb(240, 240, 240);
+  background-color: rgb(33, 38, 84);
+  color: rgb(245, 245, 245);
   text-decoration: none;
   font-size: 1rem;
   font-weight: 600;
@@ -2790,11 +2793,11 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .profileLogoutButton {
-  background-color: rgb(45, 45, 45);
+  background-color: rgb(210, 210, 210);
   padding: 5px 30px;
   border-radius: 10px;
   text-decoration: none;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 @media (width >= 768px) {
@@ -2932,8 +2935,8 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .editProfileForm {
-  background-color: rgb(35, 35, 35);
-  border: 2px solid rgb(55, 55, 55);
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(225, 225, 225);
   padding: 20px 15px;
   border-radius: 10px;
 }
@@ -2958,13 +2961,13 @@ input[type=number]::-webkit-inner-spin-button {
 .editProfileLabel {
   font-size: 0.8rem;
   margin-left: 2px;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 .editProfileInput {
   font-size: 1rem;
-  background-color: rgb(45, 45, 45);
-  color: rgb(200, 200, 200);
+  background-color: rgb(215, 215, 215);
+  color: rgb(55, 55, 55);
   border: none;
   padding: 5px 8px;
   border-radius: 5px;
@@ -2974,7 +2977,7 @@ input[type=number]::-webkit-inner-spin-button {
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
-  color: green;
+  color: rgb(33, 38, 84);
 }
 
 .editProfileConfirmButtonContainer {
@@ -2982,8 +2985,8 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .editProfileConfirmButton {
-  background-color: green;
-  color: rgb(240, 240, 240);
+  background-color: rgb(33, 38, 84);
+  color: rgb(245, 245, 245);
   border: none;
   border-radius: 5px;
   font-size: 1.1rem;
@@ -3083,8 +3086,8 @@ input[type=number]::-webkit-inner-spin-button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(35, 35, 35);
-  border: 2px solid rgb(55, 55, 55);
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(225, 225, 225);
   padding: 40px;
   border-radius: 5px;
 }
@@ -3097,7 +3100,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .error404Text {
   font-size: 1.1rem;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 .ordersSection {
@@ -3112,8 +3115,8 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .orderContainer {
-  border: 2px solid rgb(55, 55, 55);
-  background-color: rgb(35, 35, 35);
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(225, 225, 225);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -3131,7 +3134,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .orderNumberText {
   font-size: 0.9rem;
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
 }
 
 .orderNumber {
@@ -3148,7 +3151,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .orderSeparator {
   width: 2px;
-  background-color: rgb(55, 55, 55);
+  background-color: rgb(190, 190, 190);
 }
 
 .orderDetails {
@@ -3160,7 +3163,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .orderPrice {
-  color: rgb(200, 200, 200);
+  color: rgb(55, 55, 55);
   font-size: 0.9rem;
 }
 
@@ -3176,7 +3179,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .editOrderButtonContainer {
   width: 100%;
-  border-top: 2px solid rgb(55, 55, 55);
+  border-top: 2px solid rgb(190, 190, 190);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -3192,8 +3195,8 @@ input[type=number]::-webkit-inner-spin-button {
   border: none;
   margin-top: 10px;
   width: 30%;
-  background-color: rgb(35, 35, 35);
-  color: rgb(200, 200, 200);
+  background-color: rgb(240, 240, 240);
+  color: rgb(55, 55, 55);
   border-radius: 5px;
   font-size: 1.1rem;
   font-weight: 600;
@@ -3201,8 +3204,8 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .orderEmptyContainer {
-  border: 2px solid rgb(55, 55, 55);
-  background-color: rgb(35, 35, 35);
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(225, 225, 225);
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 50px;
@@ -3339,7 +3342,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .camiestaLink {
   text-decoration: none;
-  color: rgb(240, 240, 240);
+  color: rgb(15, 15, 15);
 }
 
 .camisetaImage {
@@ -3354,7 +3357,7 @@ input[type=number]::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  border-top: 1px solid rgb(45, 45, 45);
+  border-top: 1px solid rgb(210, 210, 210);
   padding-top: 10px;
 }
 
@@ -3391,11 +3394,11 @@ input[type=number]::-webkit-inner-spin-button {
 
 .camisetaAddToCartButton {
   background: none;
-  border: 1px solid rgb(0, 192, 0);
-  color: rgb(0, 192, 0);
+  border: 2px solid rgb(33, 38, 84);
+  color: rgb(33, 38, 84);
   padding: 7px;
   font-size: 0.7rem;
-  font-weight: 500;
+  font-weight: 600;
   width: 100%;
   cursor: pointer;
 }

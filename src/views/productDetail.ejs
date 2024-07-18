@@ -68,7 +68,7 @@
                             <button type="button" class="productDetailAddToCartButton" onclick="validateAndSubmit('/carrito/<%= product.id %>', 'post')">Agregar al carrito</button>
     
                             <% if(locals.userLoggedIn.rank == "admin"){ %>
-                                <button type="submit" class="productDetailEditProduct" onclick="submitForm('/editar/producto/<%= product.id %>', 'get')">Ediar producto</button>
+                                <button type="submit" class="productDetailEditProduct" onclick="submitForm('/editar/producto/<%= product.id %>', 'get')">Editar producto</button>
 
                                 <button type="button" onclick="deleteProduct()" class="productDetailDeleteProduct">Borrar producto</button>
                             <% } %>

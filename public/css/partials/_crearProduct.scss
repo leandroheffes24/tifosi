@@ -5,8 +5,8 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background-color: rgb(35, 35, 35);
-    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(225, 225, 225);
 }
 
 .crearProductTitle{
@@ -27,7 +27,7 @@
 }
 
 .createProductInput{
-    background-color: rgb(45, 45, 45);
+    background-color: rgb(210, 210, 210);
     border: none;
     outline: none;
     color: $textColor;
@@ -37,8 +37,8 @@
 }
 
 .crearProductoButton{
-    background-color: rgb(35, 35, 35);
-    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(220, 220, 220);
+    border: 2px solid rgb(200, 200, 200);
     color: $secondaryTextColor;
     padding: 10px;
     margin-top: 10px;

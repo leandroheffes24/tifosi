@@ -94,7 +94,7 @@ input[type=number]::-webkit-inner-spin-button {
     font-size: 1.2rem;
     width: 30px;
     border: none;
-    background-color: rgb(192, 192, 192);
+    background-color: rgb(210, 210, 210);
     cursor: pointer;
 }
 
@@ -131,7 +131,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .productDetailSizeLabel{
     color: $textColor;
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(210, 210, 210);
     width: 50px;
     padding: 7px 0;
     border-radius: 3px;
@@ -162,7 +162,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .productDetailAddToCartButton{
-    background-color: rgb(55, 55, 55);
+    background-color: rgb(210, 210, 210);
 }
 
 .productDetailEditProduct{
@@ -179,8 +179,8 @@ input[type=number]::-webkit-inner-spin-button {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    background-color: rgb(35, 35, 35);
-    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(225, 225, 225);
     width: 80%;
     margin: auto;
     padding: 30px 15px;
@@ -224,7 +224,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .deleteProductCancelButton{
-    background-color: rgb(50,50,50);
+    background-color: rgb(200,200,200);
 }
 
 @media (width >= 768px) {
@@ -366,8 +366,8 @@ input[type=number]::-webkit-inner-spin-button {
 
     .productDetailInformation{
         width: 45%;
-        background-color: rgb(35, 35, 35);
-        border: 2px solid rgb(55, 55, 55);
+        background-color: rgb(240, 240, 240);
+        border: 2px solid rgb(225, 225, 225);
         border-radius: 10px;
         padding: 15px;
         height: fit-content;

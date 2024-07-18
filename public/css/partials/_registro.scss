@@ -33,7 +33,7 @@
 
 .registroLoginLink{
     text-decoration: none;
-    color: rgb(9, 116, 9);
+    color: $tifosiColor;
     font-weight: 500;
 }
 
@@ -58,7 +58,7 @@
 
 .registroInput{
     color: $secondaryTextColor;
-    background-color: rgb(45, 45, 45);
+    background-color: rgb(225, 225, 225);
     border: none;
     outline: none;
     font-size: 1rem;
@@ -68,7 +68,7 @@
 
 .registerButton{
     margin-top: 15px;
-    background-color: rgb(35, 35, 35);
+    background-color: rgb(200, 200, 200);
     border: none;
     color: $secondaryTextColor;
     padding: 10px;
@@ -217,7 +217,7 @@
     .registerImageSection{
         display: block;
         width: 50%;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/3.png");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/3.png");
         background-size: cover;
         background-position: 52%;
     }

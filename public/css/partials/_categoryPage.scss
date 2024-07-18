@@ -10,7 +10,7 @@
     left: 0;
     width: 100%;
     height: 70vh;
-    background-color: rgb(220, 220, 220);
+    background-color: rgb(235, 235, 235);
     z-index: 20;
     padding: 20px 0;
     box-shadow: 0px 0px 0px 600px rgb(0, 0, 0, 0.6);
@@ -24,17 +24,17 @@
 }
 
 .categoryFilterSection::-webkit-scrollbar-track {
-    background: rgb(35, 35, 35);
+    background: rgb(230, 230, 230);
     border-radius: 10px;
 }
 
 .categoryFilterSection::-webkit-scrollbar-thumb {
-    background: rgb(45, 45, 45);
+    background: rgb(200, 200, 200);
     border-radius: 10px;
 }
 
 .categoryFilterSection::-webkit-scrollbar-thumb:hover {
-    background: rgb(65, 65, 65);
+    background: rgb(170, 170, 170);
 }
 
 .categoryFilterTitleAndCloseButtonContainer{
@@ -47,7 +47,7 @@
 
 .categoryFilterTitle{
     font-size: 1.6rem;
-    color: rgb(40, 40, 40);
+    color: $textColor;
 }
 
 .categoryFilterCloseButton{
@@ -69,7 +69,7 @@
 
 .categoryFilterSubtitle{
     font-size: 1rem;
-    color: rgb(60, 60, 60);
+    color: $secondaryTextColor;
 }
 
 .categoryFilterLabel{
@@ -114,10 +114,10 @@
 
 .categoryFilterPriceInput{
     width: 30%;
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(215, 215, 215);
     border: none;
     padding: 7px 10px;
-    color: rgb(60, 60, 60);
+    color: $secondaryTextColor;
     border-radius: 5px;
 }
 
@@ -126,8 +126,8 @@
 }
 
 .categoryFilterApplyButton{
-    background-color: rgb(60, 60, 60);
-    color: $textColor;
+    background-color: rgb(200, 200, 200);
+    color: $secondaryTextColor;
     border: none;
     font-size: .9rem;
     font-weight: 600;
@@ -277,8 +277,8 @@
         width: 70%;
         font-size: .9rem;
         padding: 7px 10px;
-        border: 2px solid rgb(55, 55, 55);
-        background-color: rgb(35, 35, 35);
+        border: 2px solid rgb(200, 200, 200);
+        background-color: rgb(215, 215, 215);
         color: $thirdTextColor;
     }
     

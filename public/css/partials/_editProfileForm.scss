@@ -4,8 +4,8 @@
 }
 
 .editProfileForm{
-    background-color: rgb(35, 35, 35);
-    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(225, 225, 225);
     padding: 20px 15px;
     border-radius: 10px;
 }
@@ -35,7 +35,7 @@
 
 .editProfileInput{
     font-size: 1rem;
-    background-color: rgb(45, 45, 45);
+    background-color: rgb(215, 215, 215);
     color: $secondaryTextColor;
     border: none;
     padding: 5px 8px;
@@ -46,7 +46,7 @@
     font-size: .9rem;
     font-weight: 600;
     text-decoration: none;
-    color: green;
+    color: $tifosiColor;
 }
 
 .editProfileConfirmButtonContainer{
@@ -54,8 +54,8 @@
 }
 
 .editProfileConfirmButton{
-    background-color: green;
-    color: $textColor;
+    background-color: $tifosiColor;
+    color: $secondaryBackgroundColor;
     border: none;
     border-radius: 5px;
     font-size: 1.1rem;
