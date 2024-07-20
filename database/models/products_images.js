@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
         Model.belongsTo(model.Products, {
             foreignKey: 'product_id'
         })
+
+        Model.belongsTo(model.Shopping_cart, {
+            foreignKey: 'product_id'
+        })
     }
 
     return Model

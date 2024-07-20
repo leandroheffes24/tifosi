@@ -1,9 +1,23 @@
 const {Shopping_cart} = require("../../database/models")
+const {Products_images} = require("../../database/models")
+const {Products} = require("../../database/models")
 const {Orders} = require("../../database/models")
 
 const carritoServices = {
     getUserProducts: (userId) => {
         return Shopping_cart.findAll({
+            include: [
+                {
+                    model: Products,
+                    as: 'product',
+                    include: [{
+                        model: Products_images,
+                        as: 'images',
+                        attributes: ['image'],
+                        limit: 1
+                    }]
+                }
+            ],
             where: {id_user: userId}
         })
     },

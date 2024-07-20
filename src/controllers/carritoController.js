@@ -9,6 +9,7 @@ module.exports = {
         const user = req.session.userLoggedIn
         const userId = user.id
         const carritoProducts = await carritoServices.getUserProducts(userId)
+        console.log("productos => ", carritoProducts);
         let totalPrice = 0
         let totalProducts = 0
 

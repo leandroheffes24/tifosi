@@ -17,7 +17,11 @@
                     <% carritoProducts.forEach(product => { %>
                         <div class="shoppingCartProductContainer">
                             <div class="shoppingCartProductImageContainer">
-                                <img class="shoppingCartProductImage" src="/images/products/<%= product.product_image %>" alt="<%= product.product_name %>">
+                                <% if (product.product && product.product.images && product.product.images.length > 0) { %>
+                                    <img class="shoppingCartProductImage" src="/images/products/<%= product.product.images[0].image %>" alt="<%= product.product.product_name %>">
+                                <% } %>
+
+                                
                             </div>
     
                             <div class="shoppingCartProductInformationContainer">
