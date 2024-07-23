@@ -9,7 +9,6 @@ module.exports = {
         const user = req.session.userLoggedIn
         const userId = user.id
         const carritoProducts = await carritoServices.getUserProducts(userId)
-        console.log("productos => ", carritoProducts);
         let totalPrice = 0
         let totalProducts = 0
 
@@ -27,8 +26,10 @@ module.exports = {
             const userId = user.id
             const productId = req.params.productId
             const productToCart = await productsServices.getProductById(productId)
+
+            console.log("print =>>>>>>> ", req.body.productPrint);
     
-            carritoServices.addProductToCart(userId, productId, productToCart, req.body.productQuantity, req.body.productDetailSize)
+            carritoServices.addProductToCart(userId, productId, productToCart, req.body.productQuantity, req.body.productDetailSize, req.body.productPrint)
             return res.redirect("/")   
         } else {
             return res.redirect("/ingresar")

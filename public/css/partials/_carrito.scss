@@ -70,6 +70,10 @@
     justify-content: center;
 }
 
+.shoppingCartProductPriceAndDiscountContainer{
+    margin-top: 10px;
+}
+
 .shoppingCartProductPrice{
     font-weight: 500;
 }
@@ -320,6 +324,10 @@
     
     .shoppingCartQuiantityAndTalleContainer{
         font-size: 1rem;
+    }
+
+    .shoppingCartProductPriceAndDiscountContainer{
+        margin-top: 0;
     }
     
     .shoppingCartProductPrice{

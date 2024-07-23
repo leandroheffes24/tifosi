@@ -1660,6 +1660,10 @@ footer {
   justify-content: center;
 }
 
+.shoppingCartProductPriceAndDiscountContainer {
+  margin-top: 10px;
+}
+
 .shoppingCartProductPrice {
   font-weight: 500;
 }
@@ -1899,6 +1903,9 @@ footer {
   }
   .shoppingCartQuiantityAndTalleContainer {
     font-size: 1rem;
+  }
+  .shoppingCartProductPriceAndDiscountContainer {
+    margin-top: 0;
   }
   .shoppingCartProductPrice {
     font-size: 1.5rem;
@@ -2345,6 +2352,26 @@ input[type=number]::-webkit-inner-spin-button {
   padding: 7px 0;
 }
 
+.productDetailPrintsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.productDetailPrintsLabel {
+  font-size: 0.9rem;
+  color: rgb(55, 55, 55);
+  margin-bottom: 5px;
+}
+
+.productDetailPrintsSelect {
+  width: 60%;
+  border: 1px solid rgb(55, 55, 55);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
 .productDetailStockDisponible {
   font-size: 1rem;
   color: gray;
@@ -2517,6 +2544,13 @@ input[type=number]::-webkit-inner-spin-button {
     width: 60px;
     font-size: 1.3rem;
   }
+  .productDetailPrintsLabel {
+    font-size: 1.1rem;
+  }
+  .productDetailPrintsSelect {
+    padding: 8px;
+    font-size: 1.1rem;
+  }
   .productDetailStockDisponible {
     font-size: 1.1rem;
     margin-left: 20px;
@@ -2621,6 +2655,16 @@ input[type=number]::-webkit-inner-spin-button {
     font-size: 1rem;
     padding: 5px 0;
   }
+  .productDetailPrintsContainer {
+    margin-bottom: 10px;
+  }
+  .productDetailPrintsLabel {
+    font-size: 0.9rem;
+  }
+  .productDetailPrintsSelect {
+    padding: 6px;
+    font-size: 0.9rem;
+  }
   .productDetailStockDisponible {
     font-size: 0.9rem;
     margin-left: 15px;
@@ -2697,6 +2741,16 @@ input[type=number]::-webkit-inner-spin-button {
     width: 50px;
     font-size: 1.1rem;
     padding: 7px 0;
+  }
+  .productDetailPrintsContainer {
+    margin-bottom: 20px;
+  }
+  .productDetailPrintsLabel {
+    font-size: 1rem;
+  }
+  .productDetailPrintsSelect {
+    padding: 5px;
+    font-size: 1rem;
   }
   .productDetailStockDisponible {
     font-size: 1rem;

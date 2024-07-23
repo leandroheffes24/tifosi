@@ -22,7 +22,7 @@ const carritoServices = {
         })
     },
 
-    addProductToCart: (userId, productId, productToCart, quantity, talle) => {
+    addProductToCart: (userId, productId, productToCart, quantity, talle, print) => {
         return Shopping_cart.create({
             id_user: userId,
             id_product: productId,
@@ -30,6 +30,7 @@ const carritoServices = {
             product_price: productToCart.price,
             products_total_price: productToCart.price * quantity,
             product_discount: productToCart.discount,
+            product_print: print,
             quantity: quantity,
             talle: talle
         })

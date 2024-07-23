@@ -1,6 +1,7 @@
 const {Products} = require("../../database/models")
 const {Products_talles} = require("../../database/models")
 const {Products_images} = require("../../database/models")
+const {Products_prints} = require("../../database/models")
 const { Op } = require('sequelize');
 
 const productsServices = {
@@ -38,11 +39,18 @@ const productsServices = {
 
     getProductById: (productId) => {
         return Products.findByPk(productId, {
-            include: [{
-                model: Products_images,
-                as: 'images',
-                attributes: ['image']
-            }]
+            include: [
+                {
+                    model: Products_images,
+                    as: 'images',
+                    attributes: ['image']
+                },
+                {
+                    model: Products_prints,
+                    as: 'prints',
+                    attributes: ['print']
+                }
+            ]
         })
     },
 
@@ -145,6 +153,13 @@ const productsServices = {
     deleteProductImages: (productToDeleteId) => {
         return Products_images.destroy({
             where: {product_id: productToDeleteId}
+        })
+    },
+
+    createProductPrint: (productPrint, lastProductId) => {
+        return Products_prints.create({
+            product_id: lastProductId,
+            print: productPrint
         })
     }
 }

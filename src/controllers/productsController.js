@@ -83,6 +83,10 @@ module.exports = {
             if (req.files[`image${i}`]) {
                 await productsServices.createImageProduct(req.files[`image${i}`][0].filename, lastProductId)
             }
+
+            if(req.body[`print${i}`] !== ""){
+                await productsServices.createProductPrint(req.body[`print${i}`], lastProductId)
+            }
         }
 
         await productsTalles.forEach(async talle => {

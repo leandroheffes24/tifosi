@@ -20,8 +20,6 @@
                                 <% if (product.product && product.product.images && product.product.images.length > 0) { %>
                                     <img class="shoppingCartProductImage" src="/images/products/<%= product.product.images[0].image %>" alt="<%= product.product.product_name %>">
                                 <% } %>
-
-                                
                             </div>
     
                             <div class="shoppingCartProductInformationContainer">
@@ -43,6 +41,7 @@
                                 <div class="shoppingCartQuiantityAndTalleContainer">
                                     <p class="shoppingCartProductQuantity">Cantidad: <%= product.quantity %></p>
                                     <p class="shoppingCartProductTalle">Talle: <%= product.talle %></p>
+                                    <p class="shoppingCartProductPrint">Estampado: <%= product.product_print.toUpperCase().replace("-", " ") %></p>
                                 </div>
 
                                 <div class="shoppingCartProductPriceAndDiscountContainer">

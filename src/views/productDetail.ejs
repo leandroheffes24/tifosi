@@ -54,6 +54,17 @@
                             </div>
                             <span class="productDetailStockDisponible">(<%= product.stock %> disponibles)</span>
                         </div>
+
+                        <% if(product.prints.length > 0) { %>
+                            <div class="productDetailPrintsContainer">
+                                <label class="productDetailPrintsLabel" for="productPrint">Estampado</label>
+                                <select class="productDetailPrintsSelect" name="productPrint" id="productPrint">
+                                    <% for (let i = 0; i < product.prints.length; i++){ %>
+                                        <option class="productDetailPrintsOption" value="<%=product.prints[i].print.toLowerCase().replace(" ", "-")%>"><%= product.prints[i].print %></option>
+                                    <% } %>
+                                </select>
+                            </div>
+                        <% } %>
     
                         <div class="productDetailSizesContainer" id="productDetailSizesContainer">
                             <% tallesNames.forEach(talle => { %>
