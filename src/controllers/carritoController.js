@@ -67,5 +67,9 @@ module.exports = {
         const totalPrice = req.params.totalPrice
         carritoServices.createOrder(userId, totalPrice, user.name, user.last_name)
         return res.redirect("/ordenes")
+    },
+
+    createOrder: async (req, res) => {
+        
     }
 }
