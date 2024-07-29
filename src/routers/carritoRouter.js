@@ -9,8 +9,10 @@ router.post("/carrito/:productId", authMiddleware, carritoController.carritoProc
 router.delete("/carrito/borrar/:productId/:productTalle", authMiddleware, carritoController.carritoDeleteProduct)
 router.post("/carrito/compra/transferencia/:userId/:totalPrice", authMiddleware, shipmentDataMiddleware, carritoController.carritoGenerateOrder)
 
-router.get("/create-order", (req, res) => res.send("creating order"))
+router.post("/create-order", carritoController.createOrder)
 router.get("/success", (req, res) => res.send("success"))
-router.get("/webhook", (req, res) => res.send("webhook"))
+router.get("/failure", (req, res) => res.send("failure"))
+router.get("/pending", (req, res) => res.send("pending"))
+router.post("/webhook", carritoController.reciveWebhook)
 
 module.exports = router

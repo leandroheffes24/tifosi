@@ -2,6 +2,8 @@ const productsServices = require("../services/productsServices")
 const categoriesServices = require("../services/categoriesServices")
 const carritoServices = require("../services/carritoServices")
 const usersServices = require("../services/usersServices")
+const mercadopago = require("mercadopago")
+require('dotenv').config();
 
 module.exports = {
     carrito: async (req, res) => {
@@ -70,6 +72,42 @@ module.exports = {
     },
 
     createOrder: async (req, res) => {
-        
+        mercadopago.configure({
+            access_token: process.env.MERCADOPAGO_TOKEN
+        })
+
+        const result = await mercadopago.preferences.create({
+            items: [
+                {
+                    title: "CAMISETA RIVER TITULAR 2023",
+                    unit_price: 85000,
+                    currency_id: "ARS",
+                    quantity: 1,
+                },
+            ],
+            back_urls: {
+                success: "https://localhost:3999/success",
+                failure: "https://localhost:3999/failure",
+                pending: "https://localhost:3999/pending"
+            },
+            notification_url: "https://0c1e-181-31-151-23.ngrok-free.app/webhook"
+        })
+
+        console.log(result);
+
+        res.send(result.body)
+    },
+
+    reciveWebhook: async (req, res) => {
+        console.log("ENTRÉ AL RECIVEWEBHOOK");
+        const payment = req.query
+        console.log("PAYMENT => ", payment);
+
+        if(payment.type == "payment"){
+            const data = await mercadopago.payment.findById(payment['data.id'])
+            console.log("ESTA ES LA DATA =>>", data);
+        } else {
+            console.log("ha ocurrido un error");
+        }
     }
 }
