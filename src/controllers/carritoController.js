@@ -99,13 +99,11 @@ module.exports = {
     },
 
     reciveWebhook: async (req, res) => {
-        console.log("ENTRÉ AL RECIVEWEBHOOK");
         const payment = req.query
-        console.log("PAYMENT => ", payment);
 
         if(payment.type == "payment"){
             const data = await mercadopago.payment.findById(payment['data.id'])
-            console.log("ESTA ES LA DATA =>>", data);
+            console.log(data);
         } else {
             console.log("ha ocurrido un error");
         }

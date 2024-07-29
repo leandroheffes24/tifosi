@@ -59,6 +59,8 @@
                             <div class="buyProductButtonsContainer">
                                 <button class="buyProductTransferenciaButton" type="button" onclick="buyProductsTransferencia()">Transferencia</button>
 
+                                <button class="buyProductTransferenciaButton" type="button" onclick="buyProductsCreditoDebito()">Tarjeta de crédito o débito</button>
+
                                 <button class="buyProductCloseButton" type="button" onclick="closeBuyProducts()">Cerrar</button>
                             </div>
                         </div>
@@ -125,6 +127,23 @@
                 <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 2: </span>Enviar el comprobante de transferencia al siguiente <a class="shoppingCartTransferenciaLink" href="https://wa.link/1h3n9a">whatsapp</a> indicando tu nombre y apellido completos.</p>
 
                 <p class="shoppingCartTransferenciaText">Una vez hechos los pasos, generá tu orden con el siguiente boton:</p>
+
+                <form class="shoppingCartTransferenciaForm" action="/carrito/compra/transferencia/<%= locals.userLoggedIn.id %>/<%= totalPrice %>" method="post">
+                    <button class="shoppingCartTransferenciaOrderButton" type="submit">Generar orden</button>
+                    <button class="shoppingCartTransferenciaCloseButton" type="button" onclick="closeBuyProductsTransferencia()">Cerrar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="buyProductsCreditoDebitoContainer" id="buyProductsCreditoDebitoContainer">
+            <h4 class="shoppingCartTransferenciaTitle">Pasos para la compra con tarjeta de crédito/débtio</h4>
+
+            <div class="buyProductsTransferenciaStepsContainer">
+                <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 1: </span>Esperar a ser redireccionado al link de Mercado Pago al presionar el botón de "Generar orden"</p>
+
+                <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 2: </span>Realizar el pago con tarjeta y al tener el comprobante de pago, enviarlo al siguente <a class="shoppingCartTransferenciaLink" href="https://wa.link/1h3n9a">whatsapp</a> indicando tu nombre y apellido completos.</p>
+
+                <p class="shoppingCartTransferenciaText">Una vez hechos los pasos, tu orden se va a generar automáticamente</p>
 
                 <form class="shoppingCartTransferenciaForm" action="/carrito/compra/transferencia/<%= locals.userLoggedIn.id %>/<%= totalPrice %>" method="post">
                     <button class="shoppingCartTransferenciaOrderButton" type="submit">Generar orden</button>

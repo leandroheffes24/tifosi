@@ -16,3 +16,7 @@ function buyProductsTransferencia(){
 function closeBuyProductsTransferencia(){
     buyProductsTransferenciaContainer.style.display = "none"
 }
+
+function buyProductsCreditoDebito(){
+    
+}
