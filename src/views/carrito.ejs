@@ -59,7 +59,7 @@
                             <div class="buyProductButtonsContainer">
                                 <button class="buyProductTransferenciaButton" type="button" onclick="buyProductsTransferencia()">Transferencia</button>
 
-                                <button class="buyProductTransferenciaButton" type="button" onclick="buyProductsCreditoDebito()">Tarjeta de crédito o débito</button>
+                                <button class="buyProductTransferenciaButton" type="button" onclick="buyProductsCreditoDebito()">Tarjeta de crédito o débito / efectivo</button>
 
                                 <button class="buyProductCloseButton" type="button" onclick="closeBuyProducts()">Cerrar</button>
                             </div>
@@ -141,13 +141,13 @@
             <div class="buyProductsTransferenciaStepsContainer">
                 <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 1: </span>Esperar a ser redireccionado al link de Mercado Pago al presionar el botón de "Generar orden"</p>
 
-                <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 2: </span>Realizar el pago con tarjeta y al tener el comprobante de pago, enviarlo al siguente <a class="shoppingCartTransferenciaLink" href="https://wa.link/1h3n9a">whatsapp</a> indicando tu nombre y apellido completos.</p>
+                <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 2: </span>Realizar el pago con tarjeta/efectivo y al tener el comprobante de pago, enviarlo al siguente <a class="shoppingCartTransferenciaLink" href="https://wa.link/1h3n9a">whatsapp</a> indicando tu nombre y apellido completos.</p>
 
                 <p class="shoppingCartTransferenciaText">Una vez hechos los pasos, tu orden se va a generar automáticamente</p>
 
-                <form class="shoppingCartTransferenciaForm" action="/carrito/compra/transferencia/<%= locals.userLoggedIn.id %>/<%= totalPrice %>" method="post">
+                <form class="shoppingCartTransferenciaForm" action="/carrito/compra/creditodebito/<%= locals.userLoggedIn.id %>/<%= totalPrice %>" method="post">
                     <button class="shoppingCartTransferenciaOrderButton" type="submit">Generar orden</button>
-                    <button class="shoppingCartTransferenciaCloseButton" type="button" onclick="closeBuyProductsTransferencia()">Cerrar</button>
+                    <button class="shoppingCartTransferenciaCloseButton" type="button" onclick="closeBuyProductsCreditoDebito()">Cerrar</button>
                 </form>
             </div>
         </div>

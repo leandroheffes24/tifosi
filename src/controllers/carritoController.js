@@ -72,6 +72,11 @@ module.exports = {
     },
 
     createOrder: async (req, res) => {
+        const userId = req.params.userId
+        const user = await usersServices.getUserById(userId)
+        const totalPrice = parseFloat(req.params.totalPrice)
+        await carritoServices.createOrder(userId, totalPrice, user.name, user.last_name)
+
         mercadopago.configure({
             access_token: process.env.MERCADOPAGO_TOKEN
         })
@@ -79,8 +84,8 @@ module.exports = {
         const result = await mercadopago.preferences.create({
             items: [
                 {
-                    title: "CAMISETA RIVER TITULAR 2023",
-                    unit_price: 85000,
+                    title: "COMPRA TIFOSI",
+                    unit_price: 300,
                     currency_id: "ARS",
                     quantity: 1,
                 },
@@ -93,9 +98,7 @@ module.exports = {
             notification_url: "https://0c1e-181-31-151-23.ngrok-free.app/webhook"
         })
 
-        console.log(result);
-
-        res.send(result.body)
+        res.redirect(result.body.init_point)
     },
 
     reciveWebhook: async (req, res) => {
