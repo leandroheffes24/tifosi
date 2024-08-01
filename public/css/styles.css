@@ -3206,6 +3206,10 @@ input[type=number]::-webkit-inner-spin-button {
   font-size: 0.9rem;
 }
 
+.orderShipmentInfo {
+  font-size: 0.7rem;
+}
+
 .orderSeparator {
   width: 2px;
   background-color: rgb(190, 190, 190);
@@ -3215,6 +3219,7 @@ input[type=number]::-webkit-inner-spin-button {
   width: 69%;
   padding: 0 15px 0 20px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -3232,6 +3237,14 @@ input[type=number]::-webkit-inner-spin-button {
 .orderAcceptedStatus {
   font-size: 0.8rem;
   color: green;
+}
+
+.orderProductsDetail {
+  width: 100%;
+}
+
+.orderProductsDetailText {
+  font-size: 0.7rem;
 }
 
 .editOrderButtonContainer {
@@ -3301,6 +3314,9 @@ input[type=number]::-webkit-inner-spin-button {
   .orderUserName {
     font-size: 1rem;
   }
+  .orderShipmentInfo {
+    font-size: 0.9rem;
+  }
   .orderSeparator {
     width: 3px;
   }
@@ -3315,6 +3331,9 @@ input[type=number]::-webkit-inner-spin-button {
   }
   .orderAcceptedStatus {
     font-size: 1rem;
+  }
+  .orderProductsDetailText {
+    font-size: 0.9rem;
   }
   .editOrderButton {
     margin: 15px 0px 0px;
@@ -3351,6 +3370,9 @@ input[type=number]::-webkit-inner-spin-button {
   .orderUserName {
     font-size: 0.9rem;
   }
+  .orderShipmentInfo {
+    font-size: 0.8rem;
+  }
   .orderDetails {
     padding: 0 35px 0 40px;
   }
@@ -3362,6 +3384,9 @@ input[type=number]::-webkit-inner-spin-button {
   }
   .orderAcceptedStatus {
     font-size: 0.9rem;
+  }
+  .orderProductsDetailText {
+    font-size: 0.7rem;
   }
   .editOrderButton {
     margin: 10px 0px 0px;

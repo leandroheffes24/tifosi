@@ -6,7 +6,14 @@ module.exports = (sequelize, DataTypes) => {
             user_id: DataTypes.STRING,
             status: DataTypes.STRING,
             total_price: DataTypes.INTEGER,
-            user_name: DataTypes.STRING
+            user_name: DataTypes.STRING,
+            detail: DataTypes.STRING,
+            country: DataTypes.STRING,
+            province: DataTypes.STRING,
+            city: DataTypes.STRING,
+            address: DataTypes.STRING,
+            cp: DataTypes.STRING,
+            dni: DataTypes.STRING,
         },
         {
             tableName: "orders",

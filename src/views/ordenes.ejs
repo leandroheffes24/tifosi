@@ -55,6 +55,12 @@
                                     <p class="orderNumber"><%= order.id %></p>
                                     <p class="orderUserId"><%= order.user_id %></p>
                                     <p class="orderUserName"><%= order.user_name %></p>
+                                    <p class="orderShipmentInfo"><%= order.country %></p>
+                                    <p class="orderShipmentInfo"><%= order.province %></p>
+                                    <p class="orderShipmentInfo"><%= order.city %></p>
+                                    <p class="orderShipmentInfo"><%= order.address %></p>
+                                    <p class="orderShipmentInfo"><%= order.cp %></p>
+                                    <p class="orderShipmentInfo"><%= order.dni %></p>
                                 </div>
                                 <div class="orderSeparator"></div>
                                 <div class="orderDetails">
@@ -66,6 +72,10 @@
                                     <% } else { %>
                                         <span class="orderRejectedStatus">Rechazado</span>
                                     <% } %>
+                                    
+                                    <div class="orderProductsDetail">
+                                        <p class="orderProductsDetailText"><%= order.detail %></p>
+                                    </div>
                                 </div>
                                 <div class="editOrderButtonContainer">
                                     <form class="orderActionsForm" id="orderActionsForm-<%= order.id %>" action="" method="">

@@ -8,7 +8,6 @@ const tallesRouter = require("./src/routers/tallesRouter")
 const productsRouter = require("./src/routers/productsRouter")
 const carritoRouter = require("./src/routers/carritoRouter")
 const session = require("express-session")
-const morgan = require("morgan")
 const methodOverride = require("method-override");
 const userLoggedInMiddleware = require("./src/middlewares/userLoggedInMiddleware")
 const rememberMiddleware = require("./src/middlewares/rememberMiddleware")
@@ -16,7 +15,6 @@ const error404Middleware = require("./src/middlewares/error404Middleware")
 const cookieParser = require("cookie-parser");
 const cookieConsentMiddleware = require("./src/middlewares/cookieConsentMiddleware")
 
-app.use(morgan("dev"))
 app.use(express.static(__dirname + "/public"))
 app.use(express.urlencoded({extended: false}))
 app.use(

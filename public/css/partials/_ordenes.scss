@@ -44,6 +44,10 @@
     font-size: .9rem;
 }
 
+.orderShipmentInfo{
+    font-size: .7rem;
+}
+
 .orderSeparator{
     width: 2px;
     background-color:rgb(190, 190, 190);
@@ -53,6 +57,7 @@
     width: 69%;
     padding: 0 15px 0 20px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -71,6 +76,14 @@
     font-size: .8rem;
     color: green;
 }
+
+.orderProductsDetail{
+    width: 100%;
+}
+
+.orderProductsDetailText{
+    font-size: .7rem;
+}    
 
 .editOrderButtonContainer{
     width: 100%;
@@ -146,6 +159,10 @@
     .orderUserName{
         font-size: 1rem;
     }
+
+    .orderShipmentInfo{
+        font-size: .9rem;
+    }
     
     .orderSeparator{
         width: 3px;
@@ -166,6 +183,10 @@
     .orderAcceptedStatus{
         font-size: 1rem;
     }
+
+    .orderProductsDetailText{
+        font-size: .9rem;
+    }    
 
     .editOrderButton{
         margin: 15px 0px 0px;
@@ -211,6 +232,10 @@
     .orderUserName{
         font-size: .9rem;
     }
+
+    .orderShipmentInfo{
+        font-size: .8rem;
+    }
     
     .orderDetails{
         padding: 0 35px 0 40px;
@@ -226,6 +251,10 @@
     
     .orderAcceptedStatus{
         font-size: .9rem;
+    }
+
+    .orderProductsDetailText{
+        font-size: .7rem;
     }
 
     .editOrderButton{

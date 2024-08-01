@@ -46,12 +46,19 @@ const carritoServices = {
         })
     },
 
-    createOrder: (userId, totalPrice, userName, userLastName) => {
+    createOrder: (userId, totalPrice, userName, userLastName, orderDetail, userCountry, userProvince, userCity, userAddress, userCp, userDni) => {
         return Orders.create({
             user_id: userId,
             total_price: totalPrice,
             status: "pendiente",
-            user_name: `${userName} ${userLastName}`
+            user_name: `${userName} ${userLastName}`,
+            detail: orderDetail,
+            country: userCountry,
+            province: userProvince,
+            city: userCity,
+            address: userAddress,
+            cp: userCp,
+            dni: userDni
         })
     }
 }

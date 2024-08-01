@@ -67,7 +67,16 @@ module.exports = {
         const userId = req.params.userId
         const user = await usersServices.getUserById(userId)
         const totalPrice = req.params.totalPrice
-        carritoServices.createOrder(userId, totalPrice, user.name, user.last_name)
+        const userProducts = await carritoServices.getUserProducts(userId)
+        let orderDetail = ""
+        await userProducts.map(product => {
+            orderDetail = orderDetail.concat(" / " + product.product_name)
+            orderDetail = orderDetail.concat(" - " + product.quantity)
+            orderDetail = orderDetail.concat(" - " + product.talle)
+            orderDetail = orderDetail.concat(" - " + product.product_print)
+        })
+
+        await carritoServices.createOrder(userId, totalPrice, user.name, user.last_name, orderDetail, user.country, user.province, user.city, user.address, user.cp, user.dni)
         return res.redirect("/ordenes")
     },
 
@@ -75,7 +84,15 @@ module.exports = {
         const userId = req.params.userId
         const user = await usersServices.getUserById(userId)
         const totalPrice = parseFloat(req.params.totalPrice)
-        await carritoServices.createOrder(userId, totalPrice, user.name, user.last_name)
+        const userProducts = await carritoServices.getUserProducts(userId)
+        let orderDetail = ""
+        await userProducts.map(product => {
+            orderDetail = orderDetail.concat(" / " + product.product_name)
+            orderDetail = orderDetail.concat(" - " + product.quantity)
+            orderDetail = orderDetail.concat(" - " + product.talle)
+            orderDetail = orderDetail.concat(" - " + product.product_print)
+        })
+        await carritoServices.createOrder(userId, totalPrice, user.name, user.last_name, orderDetail, user.country, user.province, user.city, user.address, user.cp, user.dni)
 
         mercadopago.configure({
             access_token: process.env.MERCADOPAGO_TOKEN
@@ -85,7 +102,7 @@ module.exports = {
             items: [
                 {
                     title: "COMPRA TIFOSI",
-                    unit_price: 300,
+                    unit_price: totalPrice,
                     currency_id: "ARS",
                     quantity: 1,
                 },
