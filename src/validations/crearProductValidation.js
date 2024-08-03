@@ -20,7 +20,6 @@ const validateImage = (fieldName) => {
 module.exports = [
     body("product_name").notEmpty().withMessage("Debes ingresar el nombre del producto"),
     body("price").notEmpty().withMessage("Debes ingresar el precio"),
-    body("discount").notEmpty().withMessage("Debes ingresar un descuento"),
     body("stock").notEmpty().withMessage("Debes ingresar el stock"),
     body("image1").custom((value, {req}) => {
         let file = req.files['image1'] ? req.files['image1'][0] : null

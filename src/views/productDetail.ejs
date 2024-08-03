@@ -40,8 +40,8 @@
 
                 <div class="productDetailPriceDiscountQuantityAndSizesContainer">
                     <div class="productDetailPriceAndDiscountContainer">
-                        <p class="productDetailPrice">$<%= product.price %></p>
-                        <p class="productDetailDiscount"><%= product.discount %>% OFF</p>
+                        <p class="productDetailPrice">$<%= product.price - (product.price * 0.10) %></p>
+                        <p class="productDetailPriceCard">$<%= product.price %> <span class="productDetailPriceCardText">con tarjeta <i class="fa-solid fa-credit-card"></i></span></p>
                     </div>
 
                     <form class="productDetailForm" id="productDetailForm" action="" method="">

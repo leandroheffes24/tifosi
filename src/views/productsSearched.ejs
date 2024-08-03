@@ -28,7 +28,7 @@
                             <div class="camisetaInformationContainer">
                                 <span class="camisetaTitle"><%= product.product_name %></span>
                                 <span class="camisetaPrice">$<%= product.price %></span>
-                                <span class="camisetaDiscount"><%= product.discount %>% OFF</span>
+                                <span class="camisetaDiscountText"><span class="camisetaDiscountTextPrice">$<%= product.price - (product.price * 0.10) %></span> con transferencia o efectivo</span>
                             </div>
                         </a>
 

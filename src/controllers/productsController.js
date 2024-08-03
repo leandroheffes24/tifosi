@@ -67,7 +67,6 @@ module.exports = {
         let newProduct = {
             product_name: req.body.product_name,
             price: req.body.price,
-            discount: req.body.discount,
             stock: req.body.stock,
             category_id: categoryId
         }
@@ -102,7 +101,6 @@ module.exports = {
         const newProduct = {
             product_name: req.body.product_name,
             price: req.body.price,
-            discount: req.body.discount,
             stock: req.body.stock
         }
 

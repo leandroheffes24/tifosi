@@ -2286,7 +2286,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .productDetailPriceAndDiscountContainer {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   -moz-column-gap: 8px;
        column-gap: 8px;
 }
@@ -2296,9 +2296,14 @@ input[type=number]::-webkit-inner-spin-button {
   font-weight: 500;
 }
 
-.productDetailDiscount {
+.productDetailPriceCard {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  color: rgb(95, 95, 95);
+}
+
+.productDetailPriceCardText {
   font-size: 0.9rem;
-  color: rgb(0, 192, 0);
 }
 
 .productDetailForm {
@@ -2521,7 +2526,11 @@ input[type=number]::-webkit-inner-spin-button {
     font-size: 2.1rem;
     font-weight: 600;
   }
-  .productDetailDiscount {
+  .productDetailPriceCard {
+    margin-top: 15px;
+    font-size: 1.5rem;
+  }
+  .productDetailPriceCardText {
     font-size: 1.1rem;
   }
   .productDetailForm {
@@ -2631,8 +2640,12 @@ input[type=number]::-webkit-inner-spin-button {
     font-size: 1.7rem;
     font-weight: 500;
   }
-  .productDetailDiscount {
-    font-size: 0.9rem;
+  .productDetailPriceCard {
+    margin-top: 15px;
+    font-size: 1.3rem;
+  }
+  .productDetailPriceCardText {
+    font-size: 0.85rem;
   }
   .productDetailForm {
     gap: 40px;
@@ -2724,8 +2737,12 @@ input[type=number]::-webkit-inner-spin-button {
   .productDetailPrice {
     font-size: 1.9rem;
   }
-  .productDetailDiscount {
-    font-size: 1rem;
+  .productDetailPriceCard {
+    margin-top: 15px;
+    font-size: 1.6rem;
+  }
+  .productDetailPriceCardText {
+    font-size: 0.9rem;
   }
   .productDetailQuantityLabel {
     font-size: 1rem;
@@ -3459,15 +3476,13 @@ input[type=number]::-webkit-inner-spin-button {
   font-weight: 600;
 }
 
-.camisetaDiscount {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgb(0, 192, 0);
-  padding: 3px;
-  border-radius: 2px;
-  font-size: 0.8rem;
-  font-weight: 500;
+.camisetaDiscountText {
+  font-size: 0.75rem;
+  color: green;
+}
+
+.camisetaDiscountTextPrice {
+  font-weight: 600;
 }
 
 .camisetaForm {
@@ -3502,9 +3517,9 @@ input[type=number]::-webkit-inner-spin-button {
   .camisetaPrice {
     font-size: 1.1rem;
   }
-  .camisetaDiscount {
-    padding: 4px;
-    font-size: 1rem;
+  .camisetaDiscountText {
+    margin-top: -5px;
+    font-size: 0.95rem;
   }
   .camisetaForm {
     margin-top: 15px;
@@ -3531,8 +3546,8 @@ input[type=number]::-webkit-inner-spin-button {
   .camisetaPrice {
     font-size: 0.9rem;
   }
-  .camisetaDiscount {
-    padding: 3px;
+  .camisetaDiscountText {
+    margin-top: 0;
     font-size: 0.8rem;
   }
   .camisetaForm {
@@ -3556,8 +3571,8 @@ input[type=number]::-webkit-inner-spin-button {
   .camisetaPrice {
     font-size: 1.1rem;
   }
-  .camisetaDiscount {
-    padding: 4px;
+  .camisetaDiscountText {
+    margin-top: -5px;
     font-size: 0.9rem;
   }
   .camisetaForm {

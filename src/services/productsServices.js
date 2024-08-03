@@ -57,7 +57,6 @@ const productsServices = {
     createProduct: (newProduct) => {
         return Products.create({
             price: newProduct.price,
-            discount: newProduct.discount,
             stock: newProduct.stock,
             product_name: newProduct.product_name,
             category_id: newProduct.category_id
@@ -76,7 +75,6 @@ const productsServices = {
         return Products.update({
             product_name: newProduct.product_name,
             price: newProduct.price,
-            discount: newProduct.discount,
             stock: newProduct.stock
         }, {
             where: {id: productToEditId}

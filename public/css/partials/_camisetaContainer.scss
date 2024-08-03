@@ -39,15 +39,13 @@
     font-weight: 600;
 }
 
-.camisetaDiscount{
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: $camisetaDiscountBackground;
-    padding: 3px;
-    border-radius: 2px;
-    font-size: .8rem;
-    font-weight: 500;
+.camisetaDiscountText{
+    font-size: .75rem;
+    color: green;
+}
+
+.camisetaDiscountTextPrice{
+    font-weight: 600;
 }
 
 .camisetaForm{
@@ -86,10 +84,10 @@
     .camisetaPrice{
         font-size: 1.1rem;
     }
-    
-    .camisetaDiscount{
-        padding: 4px;
-        font-size: 1rem;
+
+    .camisetaDiscountText{
+        margin-top: -5px;
+        font-size: .95rem;
     }
 
     .camisetaForm{
@@ -123,9 +121,9 @@
     .camisetaPrice{
         font-size: .9rem;
     }
-    
-    .camisetaDiscount{
-        padding: 3px;
+
+    .camisetaDiscountText{
+        margin-top: 0;
         font-size: .8rem;
     }
 
@@ -155,9 +153,9 @@
     .camisetaPrice{
         font-size: 1.1rem;
     }
-    
-    .camisetaDiscount{
-        padding: 4px;
+
+    .camisetaDiscountText{
+        margin-top: -5px;
         font-size: .9rem;
     }
 
