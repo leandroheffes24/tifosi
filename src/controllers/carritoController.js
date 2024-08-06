@@ -76,7 +76,7 @@ module.exports = {
             orderDetail = orderDetail.concat(" - " + product.product_print)
         })
 
-        await carritoServices.createOrder(userId, totalPrice, user.name, user.last_name, orderDetail, user.country, user.province, user.city, user.address, user.cp, user.dni)
+        await carritoServices.createOrder(userId, totalPrice, user.name, user.last_name, orderDetail, user.country, user.province, user.city, user.address, user.cp, user.dni, user.phone)
         return res.redirect("/ordenes")
     },
 
@@ -92,7 +92,7 @@ module.exports = {
             orderDetail = orderDetail.concat(" - " + product.talle)
             orderDetail = orderDetail.concat(" - " + product.product_print)
         })
-        await carritoServices.createOrder(userId, totalPrice, user.name, user.last_name, orderDetail, user.country, user.province, user.city, user.address, user.cp, user.dni)
+        await carritoServices.createOrder(userId, totalPrice, user.name, user.last_name, orderDetail, user.country, user.province, user.city, user.address, user.cp, user.dni, user.phone)
 
         mercadopago.configure({
             access_token: process.env.MERCADOPAGO_TOKEN

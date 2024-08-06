@@ -46,7 +46,7 @@ const carritoServices = {
         })
     },
 
-    createOrder: (userId, totalPrice, userName, userLastName, orderDetail, userCountry, userProvince, userCity, userAddress, userCp, userDni) => {
+    createOrder: (userId, totalPrice, userName, userLastName, orderDetail, userCountry, userProvince, userCity, userAddress, userCp, userDni, userPhone) => {
         return Orders.create({
             user_id: userId,
             total_price: totalPrice,
@@ -58,7 +58,8 @@ const carritoServices = {
             city: userCity,
             address: userAddress,
             cp: userCp,
-            dni: userDni
+            dni: userDni,
+            phone: userPhone
         })
     }
 }

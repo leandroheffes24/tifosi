@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
             address: DataTypes.STRING,
             cp: DataTypes.STRING,
             dni: DataTypes.STRING,
+            phone: DataTypes.STRING
         },
         {
             tableName: "orders",

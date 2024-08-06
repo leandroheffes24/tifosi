@@ -28,7 +28,12 @@ const validations = [
       field: "dni",
       check: (input) => input.value.length > 0,
       message: "Debe contener al menos un caracter",
-    }
+    },
+    {
+      field: "phone",
+      check: (input) => input.value.length > 0,
+      message: "Debe contener al menos un caracter",
+    },
   ]
           
   validations.forEach((validation) => {

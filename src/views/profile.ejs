@@ -73,6 +73,11 @@
                     <span class="profileShipmentInformationBoxContent"><%= locals.userLoggedIn.dni === null ? "-" : locals.userLoggedIn.dni %></span>
                 </div>
 
+                <div class="profileShipmentInformationBox">
+                    <span class="profileShipmentInformationBoxTitle">Número de contacto</span>
+                    <span class="profileShipmentInformationBoxContent"><%= locals.userLoggedIn.phone === null ? "-" : locals.userLoggedIn.phone %></span>
+                </div>
+
                 <div class="profileShipmentInformationEditButtonContainer">
                     <a href="/perfil/edital-informacion-de-envio" class="profileShipmentInformationEditButton">Editar información de envío</a>
                 </div>

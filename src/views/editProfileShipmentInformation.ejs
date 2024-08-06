@@ -70,6 +70,15 @@
                     <% } %>
                 </div>
 
+                <div class="editProfileLabelAndInputContainer">
+                    <label class="editProfileLabel" for="phone">Número de contacto</label>
+                    <input class="editProfileInput" type="text" id="phone" name="phone" value="<%= locals.userLoggedIn.phone %>" maxlength="40">
+                    <span class="frontendRegistroError" id="phoneError"></span>
+                    <% if (locals.errors && errors.phone) { %>
+                        <span class="backendRegistroError"><%= errors.phone.msg %></span>
+                    <% } %>
+                </div>
+
                 <div class="editProfileConfirmButtonContainer">
                     <button class="editProfileConfirmButton" type="submit">Editar perfil</button>
                 </div>

@@ -7,4 +7,5 @@ module.exports = [
     body("address").notEmpty().withMessage("Debes ingresar tu apellido"),
     body("cp").notEmpty().withMessage("Debes ingresar tu apellido"),
     body("dni").notEmpty().withMessage("Debes ingresar tu número de documento"),
+    body("phone").notEmpty().withMessage("Debes ingresar un número de contacto")
 ]

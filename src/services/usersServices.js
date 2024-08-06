@@ -45,7 +45,8 @@ const usersServices = {
             city: newShipmentInfo.city,
             address: newShipmentInfo.address,
             cp: newShipmentInfo.cp,
-            dni: newShipmentInfo.dni
+            dni: newShipmentInfo.dni,
+            phone: newShipmentInfo.phone
         }, {
             where: {id: userId}
         })
