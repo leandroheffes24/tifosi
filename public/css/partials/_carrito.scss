@@ -79,10 +79,14 @@
 }
 
 .shoppingCartProductDiscount{
+    margin-top: 5px;
     color: $camisetaDiscountBackground;
+    font-size: .8rem;
+}
+
+.shoppingCartProductDiscountPrice{
+    font-weight: 600;
     font-size: .9rem;
-    font-weight: 500;
-    text-align: right;
 }
 
 // ----------------------------------- EMPTY CART -----------------------------------
@@ -158,9 +162,28 @@
     font-size: .9rem;
 }
 
+.shoppingCartTotalPrices{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    text-align: right;
+}
+
 .shoppingCartTotalText, .shoppingCartTotalPrice {
     font-size: 1.1rem;
     font-weight: 500;
+}
+
+.shoppingCartTotalPriceDiscount{
+    margin-top: 3px;
+    color: $camisetaDiscountBackground;
+    font-size: .8rem;
+}
+
+.shoppingCartTotalPriceDiscountPrice{
+    display: block;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .shoppingCartBuyButtonContainer {
@@ -331,12 +354,17 @@
     }
     
     .shoppingCartProductPrice{
+        margin-top: 10px;
         font-size: 1.5rem;
         font-weight: 600;
     }
     
     .shoppingCartProductDiscount{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+    
+    .shoppingCartProductDiscountPrice{
+        font-size: 1.4rem;
     }
     
     // ----------------------------------- EMPTY CART -----------------------------------
@@ -382,9 +410,22 @@
     .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice{
         font-size: 1.2rem;
     }
+
+    .shoppingCartTotalPrices{
+        width: 30%;
+    }
     
     .shoppingCartTotalText, .shoppingCartTotalPrice {
         font-size: 1.5rem;
+    }
+
+    .shoppingCartTotalPriceDiscount{
+        margin-top: 5px;
+        font-size: 1rem;
+    }
+    
+    .shoppingCartTotalPriceDiscountPrice{
+        font-size: 1.4rem;
     }
     
     .shoppingCartBuyButtonContainer {
@@ -492,7 +533,11 @@
     }
     
     .shoppingCartProductDiscount{
-        font-size: .9rem;
+        font-size: .75rem;
+    }
+
+    .shoppingCartProductDiscountPrice{
+        font-size: 1rem;
     }
     
     // ----------------------------------- EMPTY CART -----------------------------------
@@ -541,13 +586,25 @@
     .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice{
         font-size: .9rem;
     }
+
+    .shoppingCartTotalPrices{
+        width: 60%;
+    }
     
     .shoppingCartTotalText, .shoppingCartTotalPrice {
         font-size: 1.1rem;
     }
+
+    .shoppingCartTotalPriceDiscount{
+        font-size: .75rem;
+    }
+    
+    .shoppingCartTotalPriceDiscountPrice{
+        font-size: .95rem;
+    }
     
     .shoppingCartBuyButtonContainer {
-        margin-top: 20px;
+        margin-top: 0;
     }
     
     .shoppingCartBuyButton {
@@ -650,7 +707,12 @@
     }
     
     .shoppingCartProductDiscount{
-        font-size: 1rem;
+        font-size: .8rem;
+    }
+    
+    .shoppingCartProductDiscountPrice{
+        display: block;
+        font-size: 1.1rem;
     }
     
     // ----------------------------------- EMPTY CART -----------------------------------
@@ -693,13 +755,21 @@
     .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice{
         font-size: 1rem;
     }
+
+    .shoppingCartTotalPrices{
+        width: 50%;
+    }
     
     .shoppingCartTotalText, .shoppingCartTotalPrice {
         font-size: 1.2rem;
     }
+
+    .shoppingCartTotalPriceDiscount{
+        font-size: .8rem;
+    }
     
-    .shoppingCartBuyButtonContainer {
-        margin-top: 30px;
+    .shoppingCartTotalPriceDiscountPrice{
+        font-size: 1.05rem;
     }
     
     .shoppingCartBuyButton {

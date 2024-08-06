@@ -46,7 +46,7 @@
 
                                 <div class="shoppingCartProductPriceAndDiscountContainer">
                                     <p class="shoppingCartProductPrice">$<%= product.products_total_price %></p>
-                                    <!-- <p class="shoppingCartProductDiscount"><%= product.product_discount %>%OFF</p> -->
+                                    <p class="shoppingCartProductDiscount"><span class="shoppingCartProductDiscountPrice">$<%= product.products_total_price - (product.products_total_price * 0.10) %></span> con efectivo o transferencia</p>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,10 @@
     
                 <div class="shoppingCartTotalPriceContainer">
                     <span class="shoppingCartTotalText">Total:</span>
-                    <span class="shoppingCartTotalPrice">$<%= totalPrice %></span>
+                    <div class="shoppingCartTotalPrices">
+                        <span class="shoppingCartTotalPrice">$<%= totalPrice %></span>
+                        <span class="shoppingCartTotalPriceDiscount"><span class="shoppingCartTotalPriceDiscountPrice">$<%= totalPrice - (totalPrice * 0.10) %></span> con efectivo o transferencia</span>
+                    </div>
                 </div>
     
                 <div class="shoppingCartBuyButtonContainer">

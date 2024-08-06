@@ -59,6 +59,7 @@
                             <div class="productDetailPrintsContainer">
                                 <label class="productDetailPrintsLabel" for="productPrint">Estampado</label>
                                 <select class="productDetailPrintsSelect" name="productPrint" id="productPrint">
+                                    <option class="productDetailPrintsOption" value="sin-estampado">Sin estampado</option>
                                     <% for (let i = 0; i < product.prints.length; i++){ %>
                                         <option class="productDetailPrintsOption" value="<%=product.prints[i].print.toLowerCase().replace(" ", "-")%>"><%= product.prints[i].print %></option>
                                     <% } %>
