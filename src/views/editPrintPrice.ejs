@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head", {title: "Futbol e-commerce"}) %>
+</head>
+<body>
+    <!-- ******************************** HEADER ******************************** -->
+    <%- include("partials/header") %>
+    <!-- ******************************** END HEADER ******************************** -->
+
+    <main class="crearProductMain">
+        <form class="crearProductForm" id="editSubcategoryForm" action="/editar/precio-estampado?_method=put" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="createProductLabelAndInputContainer">
+                <label class="createProductLabel" for="newPrintPrice">Editar precio de estampado</label>
+                <input class="createProductInput" type="number" name="newPrintPrice" id="newPrintPrice">
+            </div>
+
+            <button class="crearProductoButton" type="submit">EDITAR PRECIO DE ESTAMPADO</button>
+        </form>
+    </main>
+
+    <!-- ******************************** FOOTER ******************************** -->
+    <%- include("partials/footer") %>
+    <!-- ******************************** END FOOTER ******************************** -->
+</body>
+</html>

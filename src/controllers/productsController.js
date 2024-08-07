@@ -124,4 +124,15 @@ module.exports = {
         const productsSearched = await productsServices.getProductsBySearch(search)
         return res.render("productsSearched", {categories, productsSearched})
     },
+
+    editPrintPrice: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        return res.render("editPrintPrice", {categories})
+    },
+
+    editPrintPriceProcess: async (req, res) => {
+        const newPrintPrice = req.body.newPrintPrice
+        productsServices.editPrintPirce(newPrintPrice)
+        return res.redirect("/")
+    }
 }

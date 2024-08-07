@@ -164,6 +164,14 @@ const productsServices = {
 
     getPrintPrice: () => {
         return Print_price.findByPk(1)
+    },
+
+    editPrintPirce: (newPrintPrice) => {
+        return Print_price.update({
+            price: newPrintPrice
+        }, {
+            where: {id: 1}
+        })
     }
 }
 
