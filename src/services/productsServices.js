@@ -2,6 +2,7 @@ const {Products} = require("../../database/models")
 const {Products_talles} = require("../../database/models")
 const {Products_images} = require("../../database/models")
 const {Products_prints} = require("../../database/models")
+const {Print_price} = require("../../database/models")
 const { Op } = require('sequelize');
 
 const productsServices = {
@@ -159,6 +160,10 @@ const productsServices = {
             product_id: lastProductId,
             print: productPrint
         })
+    },
+
+    getPrintPrice: () => {
+        return Print_price.findByPk(1)
     }
 }
 

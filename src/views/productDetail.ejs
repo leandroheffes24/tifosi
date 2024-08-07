@@ -8,6 +8,7 @@
     <script src="/js/productDetailFormScript.js" defer></script>
     <script src="/js/productDetailTalleRequiredScript.js" defer></script>
     <script src="/js/productDetailBuyScript.js" defer></script>
+    <script src="/js/productDetailPrint.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 </head>
 <body>
@@ -63,7 +64,11 @@
                                     <% for (let i = 0; i < product.prints.length; i++){ %>
                                         <option class="productDetailPrintsOption" value="<%=product.prints[i].print.toLowerCase().replace(" ", "-")%>"><%= product.prints[i].print %></option>
                                     <% } %>
+                                    <option class="productDetailPrintsOption" value="estampado-personalizado">Personalizado</option>
                                 </select>
+                                <span class="productDetailPrintPrice">$<%= printPrice.price %></span>
+                                <span class="productDetailPrintCustom">por encargue</span>
+                                <!-- <input class="productDetailCustomPrint" type="text" name="customPrint" id="customPrint" placeholder="nombre y número de tu estampado" maxlength="40"> -->
                             </div>
                         <% } %>
     
@@ -103,6 +108,12 @@
                 </div>
             </div>
         </section>
+
+        <div class="customPrintMessageContainer">
+            <p class="customPrintMessageText">Si queres una camiseta con un estampado personalizado, se tiene que realizar un encargue de la misma. Comunicate al siguiente <a class="shoppingCartTransferenciaLink" href="https://wa.link/1h3n9a">whatsapp</a> y realiza tu pedido indicando el producto que queres, su talle, cantidad,  y el estampado que queres (nombre y número).</p>
+
+            <button class="customPrintMessageCloseButton" onclick="closeCustomPrintMessage()">CERRAR</button>
+        </div>
     </main>
 
     <!-- ******************************** FOOTER ******************************** -->

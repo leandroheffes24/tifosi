@@ -28,8 +28,6 @@ module.exports = {
             const userId = user.id
             const productId = req.params.productId
             const productToCart = await productsServices.getProductById(productId)
-
-            console.log("print =>>>>>>> ", req.body.productPrint);
     
             carritoServices.addProductToCart(userId, productId, productToCart, req.body.productQuantity, req.body.productDetailSize, req.body.productPrint)
             return res.redirect("/")   

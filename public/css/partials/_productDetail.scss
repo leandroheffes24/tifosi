@@ -124,11 +124,14 @@ input[type=number]::-webkit-inner-spin-button {
 
 .productDetailPrintsContainer{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 30px;
     margin-bottom: 20px;
 }
 
 .productDetailPrintsLabel{
+    width: 100%;
     font-size: .9rem;
     color: $secondaryTextColor;
     margin-bottom: 5px;
@@ -141,6 +144,25 @@ input[type=number]::-webkit-inner-spin-button {
     border-radius: 5px;
     font-size: .9rem;
 }
+
+.productDetailPrintPrice, .productDetailPrintCustom{
+    display: none;
+    color: $camisetaDiscountBackground;
+}
+
+.productDetailPrintCustom{
+    font-size: .85rem;
+}
+
+// .productDetailCustomPrint{
+//     display: none;
+//     width: 60%;
+//     margin-top: 10px;
+//     font-size: .9rem;
+//     padding: 5px;
+//     border-radius: 5px;
+//     border: 1px solid gray;
+// }
 
 .productDetailStockDisponible{
     font-size: 1rem;
@@ -252,6 +274,42 @@ input[type=number]::-webkit-inner-spin-button {
     background-color: rgb(200,200,200);
 }
 
+.customPrintMessageContainer{
+    display: none;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    z-index: 10;
+    background-color: rgb(240, 240, 240);
+    border: 2px solid $tifosiColor;
+    box-shadow: 0px 0px 0px 500px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.customPrintMessageText{
+    font-size: .9rem;
+    line-height: 1.3rem;
+}
+
+.shoppingCartTransferenciaLink{
+    color: $camisetaDiscountBackground;
+}
+
+.customPrintMessageCloseButton{
+    margin-top: 20px;
+    background-color: $tifosiColor;
+    color: $secondaryBackgroundColor;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 @media (width >= 768px) {
     .productDetailSection{
         margin: 20px 0 40px;
@@ -333,6 +391,10 @@ input[type=number]::-webkit-inner-spin-button {
         width: 60px;
         font-size: 1.3rem;
     }
+
+    .productDetailPrintsContainer{
+        column-gap: 20px;
+    }
     
     .productDetailPrintsLabel{
         font-size: 1.1rem;
@@ -342,6 +404,15 @@ input[type=number]::-webkit-inner-spin-button {
         padding: 8px;
         font-size: 1.1rem;
     }
+
+    .productDetailPrintPrice, .productDetailPrintCustom{
+        font-size: 1.1rem;
+    }
+
+    // .productDetailCustomPrint{
+    //     font-size: 1.1rem;
+    //     padding: 6px;
+    // }
 
     .productDetailStockDisponible{
         font-size: 1.1rem;
@@ -386,6 +457,22 @@ input[type=number]::-webkit-inner-spin-button {
     .deleteProductButton, .deleteProductCancelButton{
         font-size: 1.5rem;
         padding: 8px 0;
+    }
+
+    .customPrintMessageContainer{
+        width: 60%;
+        box-shadow: 0px 0px 0px 3000px rgba(0, 0, 0, 0.7);
+    }
+    
+    .customPrintMessageText{
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+    }
+
+    .customPrintMessageCloseButton{
+        margin-top: 30px;
+        padding: 15px;
+        font-size: 1rem;
     }
 }
 
@@ -474,10 +561,6 @@ input[type=number]::-webkit-inner-spin-button {
         font-size: 1rem;
         padding: 5px 0;
     }
-
-    .productDetailPrintsContainer{
-        margin-bottom: 10px;
-    }
     
     .productDetailPrintsLabel{
         font-size: .9rem;
@@ -487,6 +570,15 @@ input[type=number]::-webkit-inner-spin-button {
         padding: 6px;
         font-size: .9rem;
     }
+
+    .productDetailPrintPrice, .productDetailPrintCustom{
+        font-size: .9rem;
+    }
+
+    // .productDetailCustomPrint{
+    //     font-size: .85rem;
+    //     padding: 5px;
+    // }
 
     .productDetailStockDisponible{
         font-size: .9rem;
@@ -529,6 +621,22 @@ input[type=number]::-webkit-inner-spin-button {
     .deleteProductButton, .deleteProductCancelButton{
         font-size: 1rem;
         padding: 5px 0;
+    }
+
+    .customPrintMessageContainer{
+        width: 50%;
+        padding: 20px;
+    }
+    
+    .customPrintMessageText{
+        font-size: .9rem;
+        line-height: 1.3rem;
+    }
+
+    .customPrintMessageCloseButton{
+        margin-top: 20px;
+        padding: 10px;
+        font-size: .7rem;
     }
 }
 
@@ -590,10 +698,6 @@ input[type=number]::-webkit-inner-spin-button {
         font-size: 1.1rem;
         padding: 7px 0;
     }
-
-    .productDetailPrintsContainer{
-        margin-bottom: 20px;
-    }
     
     .productDetailPrintsLabel{
         font-size: 1rem;
@@ -603,6 +707,14 @@ input[type=number]::-webkit-inner-spin-button {
         padding: 5px;
         font-size: 1rem;
     }
+
+    .productDetailPrintPrice, .productDetailPrintCustom{
+        font-size: 1rem;
+    }
+
+    // .productDetailCustomPrint{
+    //     font-size: 1rem;
+    // }
 
     .productDetailStockDisponible{
         font-size: 1rem;
@@ -644,5 +756,19 @@ input[type=number]::-webkit-inner-spin-button {
     .deleteProductButton, .deleteProductCancelButton{
         font-size: 1.1rem;
         padding: 7px 0;
+    }
+
+    .customPrintMessageContainer{
+        width: 40%;
+        padding: 25px;
+    }
+    
+    .customPrintMessageText{
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .customPrintMessageCloseButton{
+        font-size: .8rem;
     }
 }

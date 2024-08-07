@@ -33,6 +33,8 @@ module.exports = {
         const productCategoryId = product.category_id
         const productSubcategoryId = product.subcategory_id
         const productTalles = await productsServices.getProductTalles(productId)
+        const printPrice = await productsServices.getPrintPrice()
+        
         let tallesNames = []
         await productTalles.forEach(async talle => {
             let talleSearched = await tallesServices.getTalleById(talle.talle_id)
@@ -41,7 +43,7 @@ module.exports = {
         })
         const categoryName = await categoriesServices.getCategoryNameById(productCategoryId)
         const subcategoryName = await categoriesServices.getSubcategoryNameById(productSubcategoryId)
-        return res.render("productDetail", {categories, product, categoryName, subcategoryName, tallesNames})
+        return res.render("productDetail", {categories, product, categoryName, subcategoryName, tallesNames, printPrice})
     },
 
     crearProductoSubcategoriaProcess: async (req, res) => {

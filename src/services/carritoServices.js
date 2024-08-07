@@ -2,6 +2,7 @@ const {Shopping_cart} = require("../../database/models")
 const {Products_images} = require("../../database/models")
 const {Products} = require("../../database/models")
 const {Orders} = require("../../database/models")
+const {Print_price} = require("../../database/models")
 
 const carritoServices = {
     getUserProducts: (userId) => {
@@ -22,13 +23,20 @@ const carritoServices = {
         })
     },
 
-    addProductToCart: (userId, productId, productToCart, quantity, talle, print) => {
+    addProductToCart: async (userId, productId, productToCart, quantity, talle, print) => {
+        let productPrice = 0
+        if(print != "sin-estampado"){
+            const printPrice = await Print_price.findByPk(1)
+            productPrice = productToCart.price + printPrice.price
+        } else {
+            productPrice = productToCart.price
+        }
         return Shopping_cart.create({
             id_user: userId,
             id_product: productId,
             product_name: productToCart.product_name,
-            product_price: productToCart.price,
-            products_total_price: productToCart.price * quantity,
+            product_price: productPrice,
+            products_total_price: productPrice * quantity,
             product_discount: productToCart.discount,
             product_print: print,
             quantity: quantity,
