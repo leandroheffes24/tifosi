@@ -5,11 +5,6 @@ const validations = [
       message: "Debe contener al menos un caracter",
     },
     {
-      field: "province",
-      check: (input) => input.value.length > 0,
-      message: "Debe contener al menos un caracter",
-    },
-    {
         field: "city",
         check: (input) => input.value.length > 0,
         message: "Debe contener al menos un caracter",

@@ -4,6 +4,21 @@ const bcrypt = require("bcryptjs")
 const usersServices = require("../services/usersServices")
 const categoriesServices = require("../services/categoriesServices")
 
+async function getProvinces() {
+    try {
+        const res = await fetch("https://apis.datos.gob.ar/georef/api/provincias")
+        if(res.ok){
+            const json = await res.json()
+            return json
+        } else {
+            throw new Error("Error al obtener las provincias")
+        }
+    } catch (error) {
+        console.error("Error en la solicitud", error);
+        return null
+    }
+}
+
 module.exports = {
     registro: (req, res) => {
         return res.render("registro")
@@ -30,7 +45,11 @@ module.exports = {
 
     editShipment: async (req, res) => {
         const categories = await categoriesServices.getAllCategories()
-        return res.render("editProfileShipmentInformation", {categories})
+
+        const provincias = await getProvinces()
+        const provinces = provincias.provincias
+        
+        return res.render("editProfileShipmentInformation", {categories, provinces})
     },
 
     registroProcess: async (req, res) => {
@@ -132,9 +151,11 @@ module.exports = {
     editShipmentProcess: async (req, res) => {
         let errors = validationResult(req)
         const categories = await categoriesServices.getAllCategories()
+        const provincias = await getProvinces()
+        const provinces = provincias.provincias
 
         if(errors.errors.length > 0){
-            return res.render("editProfileShipmentInformation", {errors: errors.mapped(), categories})
+            return res.render("editProfileShipmentInformation", {errors: errors.mapped(), categories, provinces})
         }
 
         let userId = req.params.userId

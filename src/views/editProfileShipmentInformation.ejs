@@ -18,7 +18,7 @@
             <div class="editProfileContentContainer">
                 <div class="editProfileLabelAndInputContainer">
                     <label class="editProfileLabel" for="country">País</label>
-                    <input class="editProfileInput" type="text" id="country" name="country" value="<%= locals.userLoggedIn.country %>" maxlength="30">
+                    <input class="editProfileInput" type="text" id="country" name="country" value="Argentina" maxlength="30">
                     <span class="frontendRegistroError" id="countryError"></span>
                     <% if (locals.errors && errors.country) { %>
                         <span class="backendRegistroError"><%= errors.country.msg %></span>
@@ -27,11 +27,16 @@
 
                 <div class="editProfileLabelAndInputContainer">
                     <label class="editProfileLabel" for="province">Provincia</label>
-                    <input class="editProfileInput" type="text" id="province" name="province" value="<%= locals.userLoggedIn.province %>" maxlength="40">
+                    <select class="editProfileInput" name="province" id="province">
+                        <% provinces.forEach(province => { %>
+                            <option value="<%= province.nombre %>"><%= province.nombre %></option>
+                        <% }) %>
+                    </select>
+                    <!-- <input class="editProfileInput" type="text" id="province" name="province" value="<%= locals.userLoggedIn.province %>" maxlength="40">
                     <span class="frontendRegistroError" id="provinceError"></span>
                     <% if (locals.errors && errors.province) { %>
                         <span class="backendRegistroError"><%= errors.province.msg %></span>
-                    <% } %>
+                    <% } %> -->
                 </div>
 
                 <div class="editProfileLabelAndInputContainer">
