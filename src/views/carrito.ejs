@@ -3,6 +3,7 @@
 <head>
     <%- include("partials/head", {title: "Futbol e-commerce"}) %>
     <script src="/js/cartBuyScript.js" defer></script>
+    <script src="/js/selectShipmentScript.js" defer></script>
 </head>
 <body>
     <!-- ******************************** HEADER ******************************** -->
@@ -162,6 +163,30 @@
             </div>
         </div>
     </main>
+
+    <div class="selectShipmentContainer">
+        <div class="shipmentContainer">
+            <span class="shipmentTitle">Envío a domicilio</span>
+            <span class="shipmentPrice">$10000</span>
+        </div>
+
+        <div class="shipmentContainer">
+            <span class="shipmentTitle">Envío a domicilio express</span>
+            <span class="shipmentPrice">$10000</span>
+        </div>
+
+        <div class="shipmentContainer">
+            <span class="shipmentTitle">Envío a sucursal</span>
+            <span class="shipmentPrice">$10000</span>
+        </div>
+
+        <div class="shipmentContainer">
+            <span class="shipmentTitle">Envío a sucursal express</span>
+            <span class="shipmentPrice">$10000</span>
+        </div>
+
+        <button class="selectShipmentCloseButton">CERRAR</button>
+    </div>
     
     <!-- ******************************** END MAIN ******************************** -->
 

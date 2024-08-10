@@ -329,6 +329,52 @@
     color: $textColor;
 }
 
+.selectShipmentContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    box-shadow: 0px 0px 0px 5000px rgba(0, 0, 0, 0.7);
+    background-color: $secondaryBackgroundColor;
+    border: 3px solid $tifosiColor;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 30;
+}
+
+.shipmentContainer{
+    width: 100%;
+    background-color: rgb(215, 215, 215);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 15px;
+}
+
+.shipmentTitle{
+    font-weight: 600;
+}
+
+.shipmentPrice{
+    font-size: 1.2rem;
+}
+
+.selectShipmentCloseButton{
+    background-color: $tifosiColor;
+    color: $backgroundColor;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    font-weight: 600;
+}
+
 @media (width >= 768px) {
     .shoppingCartMain{
         padding: 30px 60px;
