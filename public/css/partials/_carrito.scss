@@ -150,16 +150,31 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
 }
 
 .shoppingCartProductsPriceContainer, .shoppingCartTotalPriceContainer {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.shoppingCartTotalProductsContainer, .shoppingCartTotalShipmentContainer{
+    width: 100%;
+    display: flex;
     justify-content: space-between;
 }
 
-.shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice{
+.shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice{
     font-size: .9rem;
+}
+
+.shoppingCartTotalShipmentPrice{
+    text-decoration: underline;
+    color: $tifosiColor;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .shoppingCartTotalPrices{
@@ -404,11 +419,19 @@
     .shoppingCartTotalSection {
         margin-top: 30px;
         padding: 30px;
-        gap: 20px;
+        gap: 50px;
+    }
+
+    .shoppingCartProductsPriceContainer, .shoppingCartTotalPriceContainer {
+        gap: 25px;
     }
     
-    .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice{
+    .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice{
         font-size: 1.2rem;
+    }
+    
+    .shoppingCartTotalShipmentPrice{
+        font-weight: 700;
     }
 
     .shoppingCartTotalPrices{
@@ -579,12 +602,20 @@
         width: 25%;
         margin-top: 0;
         padding: 20px;
-        gap: 20px;
+        gap: 30px;
         height: fit-content;
     }
+
+    .shoppingCartProductsPriceContainer, .shoppingCartTotalPriceContainer {
+        gap: 15px;
+    }
     
-    .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice{
+    .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice{
         font-size: .9rem;
+    }
+    
+    .shoppingCartTotalShipmentPrice{
+        font-weight: 600;
     }
 
     .shoppingCartTotalPrices{
@@ -749,10 +780,14 @@
     
     .shoppingCartTotalSection {
         padding: 25px;
-        gap: 25px;
+        gap: 35px;
+    }
+
+    .shoppingCartProductsPriceContainer, .shoppingCartTotalPriceContainer {
+        gap: 20px;
     }
     
-    .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice{
+    .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice{
         font-size: 1rem;
     }
 
