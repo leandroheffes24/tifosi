@@ -330,7 +330,7 @@
 }
 
 .selectShipmentContainer{
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     gap: 20px;
     position: fixed;
@@ -355,6 +355,7 @@
     border-radius: 10px;
     padding: 10px;
     gap: 15px;
+    cursor: pointer;
 }
 
 .shipmentTitle{
@@ -373,6 +374,7 @@
     width: 100%;
     padding: 10px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 @media (width >= 768px) {
@@ -552,6 +554,29 @@
     
     .shoppingCartTransferenciaOrderButton, .shoppingCartTransferenciaCloseButton{
         font-size: 1.4rem;
+    }
+
+    .selectShipmentContainer{
+        gap: 25px;
+        width: 60%;
+        padding: 25px;
+    }
+
+    .shipmentContainer{
+        padding: 15px;
+    }
+
+    .shipmentTitle{
+        font-size: 1.3rem;
+    }
+    
+    .shipmentPrice{
+        font-size: 1.4rem;
+    }
+    
+    .selectShipmentCloseButton{
+        padding: 15px;
+        font-size: 1.1rem;
     }
 }
 
@@ -749,6 +774,33 @@
     .shoppingCartTransferenciaOrderButton, .shoppingCartTransferenciaCloseButton{
         font-size: 1rem;
     }
+
+    .selectShipmentContainer{
+        justify-content: space-between;
+        gap: 0;
+        row-gap: 23px;
+        width: 60%;
+        padding: 10px;
+    }
+
+    .shipmentContainer{
+        width: 22%;
+        padding: 7px;
+        justify-content: space-between;
+    }
+
+    .shipmentTitle{
+        font-size: .9rem;
+    }
+    
+    .shipmentPrice{
+        font-size: 1rem;
+    }
+    
+    .selectShipmentCloseButton{
+        padding: 7px;
+        font-size: .8rem;
+    }
 }
 
 @media (width >= 1200px) {
@@ -899,5 +951,20 @@
     
     .shoppingCartTransferenciaOrderButton, .shoppingCartTransferenciaCloseButton{
         font-size: 1.1rem;
+    }
+
+    .selectShipmentContainer{
+        row-gap: 25px;
+        width: 50%;
+        padding: 20px;
+    }
+
+    .shipmentContainer{
+        width: 23%;
+        padding: 10px;
+    }
+    
+    .selectShipmentCloseButton{
+        padding: 8px;
     }
 }
