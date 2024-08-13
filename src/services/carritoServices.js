@@ -4,6 +4,7 @@ const {Products} = require("../../database/models")
 const {Orders} = require("../../database/models")
 const {Print_price} = require("../../database/models")
 const {Provinces_shipment} = require("../../database/models")
+const {Moto_shipment} = require("../../database/models")
 
 const carritoServices = {
     getUserProducts: (userId) => {
@@ -88,6 +89,18 @@ const carritoServices = {
             branch_express_shipment: newShipmentInformation.branch_express_shipment
         }, {
             where: {id: envioId}
+        })
+    },
+
+    getMotoenvio: () => {
+        return Moto_shipment.findByPk(1)
+    },
+
+    updateMotoenvio: (motoenvioPrice) => {
+        return Moto_shipment.update({
+            price: motoenvioPrice
+        }, {
+            where: {id: 1}
         })
     }
 }

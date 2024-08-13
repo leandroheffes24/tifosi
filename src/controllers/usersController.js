@@ -98,9 +98,11 @@ module.exports = {
             if (userInDB.rank == "admin") {
                 req.session.admin = true;
             }
-            const shipmentInformation = await usersServices.findShipmentInformation(userInDB.province)
-            const shipmentPrices = [shipmentInformation.home_shipment, shipmentInformation.home_express_shipment, shipmentInformation.branch_shipment, shipmentInformation.branch_express_shipment]
-            req.session.shipmentPrices = shipmentPrices
+            if(userInDB.province != null){
+                const shipmentInformation = await usersServices.findShipmentInformation(userInDB.province)
+                const shipmentPrices = [shipmentInformation.home_shipment, shipmentInformation.home_express_shipment, shipmentInformation.branch_shipment, shipmentInformation.branch_express_shipment]
+                req.session.shipmentPrices = shipmentPrices
+            }
             return res.redirect("/");
         }
     },

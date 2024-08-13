@@ -15,6 +15,8 @@ router.post("/carrito/establecerPrecioEnvio/:precioEnvio", authMiddleware, shipm
 router.get("/editar/precios-envios", adminMiddleware, carritoController.editarPreciosEnvios)
 router.get("/editar/envio/:envioId", adminMiddleware, carritoController.editarPreciosEnvio)
 router.put("/editar/envio/:envioId", adminMiddleware, carritoController.editarPreciosEnviosProcess)
+router.get("/editar/precio-motoenvio", adminMiddleware, carritoController.editMotoenvio)
+router.put("/editar/motoenvio/:motoenvioId", adminMiddleware, carritoController.editMotoenvioProcess)
 
 router.get("/success", (req, res) => res.send("success"))
 router.get("/failure", (req, res) => res.send("failure"))

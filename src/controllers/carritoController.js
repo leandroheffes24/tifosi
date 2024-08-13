@@ -12,6 +12,7 @@ module.exports = {
         const userId = user.id
         const shipmentPrices = await req.session.shipmentPrices;
         const shipmentPriceSelected = req.session.shipmentPriceSelected || undefined
+        const motoenvio = await carritoServices.getMotoenvio()
         
         const carritoProducts = await carritoServices.getUserProducts(userId)
         let totalPrice = 0
@@ -23,7 +24,7 @@ module.exports = {
         })
 
         console.log("SHIPMENT PRICE SELECTED => ", req.session.shipmentPriceSelected);
-        return await res.render("carrito", {carritoProducts, categories, totalPrice, totalProducts, shipmentPrices, shipmentPriceSelected})
+        return await res.render("carrito", {carritoProducts, categories, totalPrice, totalProducts, shipmentPrices, shipmentPriceSelected, motoenvio})
     },
 
     carritoProcess: async (req, res) => {
@@ -50,6 +51,7 @@ module.exports = {
         const shipmentPriceSelected = undefined
         let totalPrice = 0
         let totalProducts = 0
+        const motoenvio = await carritoServices.getMotoenvio()
 
         const categories = await categoriesServices.getAllCategories()
         const carritoProducts = await carritoServices.getUserProducts(userId)
@@ -64,7 +66,7 @@ module.exports = {
             totalProducts = totalProducts
         }
 
-        return res.render("carrito", {categories, carritoProducts, totalPrice, totalProducts, shipmentPrices, shipmentPriceSelected})
+        return res.render("carrito", {categories, carritoProducts, totalPrice, totalProducts, shipmentPrices, shipmentPriceSelected, motoenvio})
     },
 
     carritoGenerateOrder: async (req, res) => {
@@ -139,6 +141,7 @@ module.exports = {
         const categories = await categoriesServices.getAllCategories()
         const user = req.session.userLoggedIn
         const userId = user.id
+        const motoenvio = await carritoServices.getMotoenvio()
         const shipmentPrices = await req.session.shipmentPrices;
         
         const carritoProducts = await carritoServices.getUserProducts(userId)
@@ -150,8 +153,7 @@ module.exports = {
             totalProducts = totalProducts + product.quantity
         })
 
-        console.log("SHIPMENT PRICE SELECTED => ", req.session.shipmentPriceSelected);
-        return await res.render("carrito", {carritoProducts, categories, totalPrice, totalProducts, shipmentPrices, shipmentPriceSelected})
+        return await res.render("carrito", {carritoProducts, categories, totalPrice, totalProducts, shipmentPrices, shipmentPriceSelected, motoenvio})
     },
 
     editarPreciosEnvios: async (req, res) => {
@@ -178,6 +180,18 @@ module.exports = {
             branch_express_shipment: req.body.branch_express_shipment
         }
         await carritoServices.updateShipmentInformation(newShipmentInformation, envioId)
+        return res.redirect("/")
+    },
+
+    editMotoenvio: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        const motoenvio = await carritoServices.getMotoenvio()
+        return res.render("editMotoenvio", {categories, motoenvio})
+    },
+
+    editMotoenvioProcess: async (req, res) => {
+        const motoenvioId = req.params.motoenvioId
+        await carritoServices.updateMotoenvio(req.body.newMotoenvioPrice)
         return res.redirect("/")
     }
 }

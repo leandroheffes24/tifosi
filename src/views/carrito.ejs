@@ -195,31 +195,40 @@
         </div>
     </main>
 
-    <div class="selectShipmentContainer">
-        <form class="selectShipmentContainerForm" id="selectShipmentContainerForm" action="" method="">
-            <button class="shipmentContainer" onclick="selectShipment('/carrito/establecerPrecioEnvio/<%= shipmentPrices[0] %>', 'post')">
-                <span class="shipmentTitle">Envío a domicilio</span>
-                <span class="shipmentPrice">$<%= shipmentPrices[0] %></span>
-            </button>
+    <% if(shipmentPrices != undefined){ %>
+        <div class="selectShipmentContainer">
+            <form class="selectShipmentContainerForm" id="selectShipmentContainerForm" action="" method="">
+                <% if(locals.userLoggedIn.province === "Ciudad Autónoma de Buenos Aires"){ %>
+                    <button class="shipmentContainer" onclick="selectShipment('/carrito/establecerPrecioEnvio/<%= motoenvio.price %>', 'post')">
+                        <span class="shipmentTitle">Moto envío (2 a 5 días)</span>
+                        <span class="shipmentPrice">$<%= motoenvio.price %></span>
+                    </button>
+                <% } %>
     
-            <button class="shipmentContainer" onclick="selectShipment('/carrito/establecerPrecioEnvio/<%= shipmentPrices[1] %>', 'post')">
-                <span class="shipmentTitle">Envío a domicilio express</span>
-                <span class="shipmentPrice">$<%= shipmentPrices[1] %></span>
-            </button>
+                <button class="shipmentContainer" onclick="selectShipment('/carrito/establecerPrecioEnvio/<%= shipmentPrices[0] %>', 'post')">
+                    <span class="shipmentTitle">Envío a domicilio (2 a 5 días)</span>
+                    <span class="shipmentPrice">$<%= shipmentPrices[0] %></span>
+                </button>
+        
+                <button class="shipmentContainer" onclick="selectShipment('/carrito/establecerPrecioEnvio/<%= shipmentPrices[1] %>', 'post')">
+                    <span class="shipmentTitle">Envío a domicilio express (1 a 3 días)</span>
+                    <span class="shipmentPrice">$<%= shipmentPrices[1] %></span>
+                </button>
+        
+                <button class="shipmentContainer" onclick="selectShipment('/carrito/establecerPrecioEnvio/<%= shipmentPrices[2] %>', 'post')">
+                    <span class="shipmentTitle">Envío a sucursal (2 a 5 días)</span>
+                    <span class="shipmentPrice">$<%= shipmentPrices[2] %></span>
+                </button>
+        
+                <button class="shipmentContainer" onclick="selectShipment('/carrito/establecerPrecioEnvio/<%= shipmentPrices[3] %>', 'post')">
+                    <span class="shipmentTitle">Envío a sucursal express (1 a 3 días)</span>
+                    <span class="shipmentPrice">$<%= shipmentPrices[3] %></span>
+                </button>
     
-            <button class="shipmentContainer" onclick="selectShipment('/carrito/establecerPrecioEnvio/<%= shipmentPrices[2] %>', 'post')">
-                <span class="shipmentTitle">Envío a sucursal</span>
-                <span class="shipmentPrice">$<%= shipmentPrices[2] %></span>
-            </button>
-    
-            <button class="shipmentContainer" onclick="selectShipment('/carrito/establecerPrecioEnvio/<%= shipmentPrices[3] %>', 'post')">
-                <span class="shipmentTitle">Envío a sucursal express</span>
-                <span class="shipmentPrice">$<%= shipmentPrices[3] %></span>
-            </button>
-
-            <button type="button" class="selectShipmentCloseButton">CERRAR</button>
-        </form>
-    </div>
+                <button type="button" class="selectShipmentCloseButton">CERRAR</button>
+            </form>
+        </div>
+    <% } %>
     
     <!-- ******************************** END MAIN ******************************** -->
 
