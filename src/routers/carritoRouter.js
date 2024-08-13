@@ -3,6 +3,7 @@ const router = Router()
 const carritoController = require("../controllers/carritoController")
 const authMiddleware = require("../middlewares/authMiddleware")
 const shipmentDataMiddleware = require("../middlewares/shipmentDataMiddleware")
+const adminMiddleware = require("../middlewares/adminMiddleware")
 const selectedShipmentMiddleware = require("../middlewares/selectedShipmentMiddleware")
 
 router.get("/carrito", authMiddleware, carritoController.carrito)
@@ -11,6 +12,9 @@ router.delete("/carrito/borrar/:productId/:productTalle", authMiddleware, carrit
 router.post("/carrito/compra/transferencia/:userId/:totalPrice", authMiddleware, shipmentDataMiddleware, selectedShipmentMiddleware, carritoController.carritoGenerateOrder)
 router.post("/carrito/compra/creditodebito/:userId/:totalPrice", authMiddleware, shipmentDataMiddleware, selectedShipmentMiddleware, carritoController.createOrder)
 router.post("/carrito/establecerPrecioEnvio/:precioEnvio", authMiddleware, shipmentDataMiddleware, carritoController.setShipmentPrice)
+router.get("/editar/precios-envios", adminMiddleware, carritoController.editarPreciosEnvios)
+router.get("/editar/envio/:envioId", adminMiddleware, carritoController.editarPreciosEnvio)
+router.put("/editar/envio/:envioId", adminMiddleware, carritoController.editarPreciosEnviosProcess)
 
 router.get("/success", (req, res) => res.send("success"))
 router.get("/failure", (req, res) => res.send("failure"))

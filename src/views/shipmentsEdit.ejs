@@ -10,10 +10,10 @@
 
     <main>
         <div class="categoriesEditContainer">
-            <% talles.forEach(talle => { %>
+            <% envios_provincias.forEach(shipment => { %>
                 <div class="categoryEditContainer">
-                    <h3 class="categoryEditTitle"><%= talle.name %></h3>
-                    <a class="categoryEditLink" href="/editar/talle/<%= talle.id %>">
+                    <h3 class="categoryEditTitle"><%= shipment.province %></h3>
+                    <a class="categoryEditLink" href="/editar/envio/<%= shipment.id %>">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="categoryEditIcon">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />

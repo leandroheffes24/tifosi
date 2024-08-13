@@ -3,6 +3,7 @@ const {Products_images} = require("../../database/models")
 const {Products} = require("../../database/models")
 const {Orders} = require("../../database/models")
 const {Print_price} = require("../../database/models")
+const {Provinces_shipment} = require("../../database/models")
 
 const carritoServices = {
     getUserProducts: (userId) => {
@@ -68,6 +69,25 @@ const carritoServices = {
             cp: userCp,
             dni: userDni,
             phone: userPhone
+        })
+    },
+
+    getShipmentInfo: () => {
+        return Provinces_shipment.findAll()
+    },
+
+    getShipmentById: (shipmentId) => {
+        return Provinces_shipment.findByPk(shipmentId)
+    },
+    
+    updateShipmentInformation: (newShipmentInformation, envioId) => {
+        return Provinces_shipment.update({
+            home_shipment: newShipmentInformation.home_shipment,
+            home_express_shipment: newShipmentInformation.home_express_shipment,
+            branch_shipment: newShipmentInformation.branch_shipment,
+            branch_express_shipment: newShipmentInformation.branch_express_shipment
+        }, {
+            where: {id: envioId}
         })
     }
 }

@@ -152,5 +152,32 @@ module.exports = {
 
         console.log("SHIPMENT PRICE SELECTED => ", req.session.shipmentPriceSelected);
         return await res.render("carrito", {carritoProducts, categories, totalPrice, totalProducts, shipmentPrices, shipmentPriceSelected})
+    },
+
+    editarPreciosEnvios: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        const envios_provincias = await carritoServices.getShipmentInfo()
+        
+        return res.render("shipmentsEdit", {categories, envios_provincias})
+    },
+
+    editarPreciosEnvio: async (req, res) => {
+        const categories = await categoriesServices.getAllCategories()
+        const shipmentId = req.params.envioId
+        const shipmentSelected = await carritoServices.getShipmentById(shipmentId)
+        console.log("ENVIO SELECCIONADO => ", shipmentSelected);
+        return res.render("shipmentEditForm", {categories, shipmentSelected})
+    },
+
+    editarPreciosEnviosProcess: async (req, res) => {
+        const envioId = req.params.envioId
+        newShipmentInformation = {
+            home_shipment: req.body.home_shipment,
+            home_express_shipment: req.body.home_express_shipment,
+            branch_shipment: req.body.branch_shipment,
+            branch_express_shipment: req.body.branch_express_shipment
+        }
+        await carritoServices.updateShipmentInformation(newShipmentInformation, envioId)
+        return res.redirect("/")
     }
 }

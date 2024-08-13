@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head", {title: "Tifosi"}) %>
+</head>
+<body>
+    <!-- ******************************** HEADER ******************************** -->
+    <%- include("partials/header") %>
+    <!-- ******************************** END HEADER ******************************** -->
+
+    <main class="crearProductMain">
+        <form class="crearProductForm" id="editCategoryForm" action="/editar/envio/<%= shipmentSelected.id %>?_method=put" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="createProductLabelAndInputContainer">
+                <label class="createProductLabel" for="home_shipment">Precio de envio a domicilio</label>
+                <input class="createProductInput" type="number" name="home_shipment" id="home_shipment" value="<%= shipmentSelected.home_shipment %>" maxlength="50">
+
+                <label class="createProductLabel" for="home_express_shipment">Precio de envio a domicilio express</label>
+                <input class="createProductInput" type="number" name="home_express_shipment" id="home_express_shipment" value="<%= shipmentSelected.home_express_shipment %>" maxlength="50">
+
+                <label class="createProductLabel" for="branch_shipment">Precio de envio a sucursal</label>
+                <input class="createProductInput" type="number" name="branch_shipment" id="branch_shipment" value="<%= shipmentSelected.branch_shipment %>" maxlength="50">
+
+                <label class="createProductLabel" for="branch_express_shipment">Precio de envio a sucursal express</label>
+                <input class="createProductInput" type="number" name="branch_express_shipment" id="branch_express_shipment" value="<%= shipmentSelected.branch_express_shipment %>" maxlength="50">
+            </div>
+
+            <button class="crearProductoButton" type="submit">EDITAR PRECIOS DE ENVIOS</button>
+        </form>
+    </main>
+
+    <!-- ******************************** FOOTER ******************************** -->
+    <%- include("partials/footer") %>
+    <!-- ******************************** END FOOTER ******************************** -->
+</body>
+</html>
