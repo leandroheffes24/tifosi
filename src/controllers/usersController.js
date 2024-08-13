@@ -98,6 +98,9 @@ module.exports = {
             if (userInDB.rank == "admin") {
                 req.session.admin = true;
             }
+            const shipmentInformation = await usersServices.findShipmentInformation(userInDB.province)
+            const shipmentPrices = [shipmentInformation.home_shipment, shipmentInformation.home_express_shipment, shipmentInformation.branch_shipment, shipmentInformation.branch_express_shipment]
+            req.session.shipmentPrices = shipmentPrices
             return res.redirect("/");
         }
     },
@@ -177,6 +180,10 @@ module.exports = {
         req.session.userLoggedIn.cp = newShipmentInfo.cp;
         req.session.userLoggedIn.dni = newShipmentInfo.dni;
         req.session.userLoggedIn.phone = newShipmentInfo.phone;
+        const shipmentInformation = await usersServices.findShipmentInformation(newShipmentInfo.province)
+        const shipmentPrices = [shipmentInformation.home_shipment, shipmentInformation.home_express_shipment, shipmentInformation.branch_shipment, shipmentInformation.branch_express_shipment]
+        req.session.shipmentPrices = shipmentPrices
+        
         return res.redirect("/perfil")
     },
 

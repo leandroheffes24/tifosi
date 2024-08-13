@@ -60,7 +60,9 @@
                             <div class="buyProductButtonsContainer">
                                 <button class="buyProductTransferenciaButton" type="button" onclick="buyProductsTransferencia()">Transferencia</button>
 
-                                <button class="buyProductTransferenciaButton" type="button" onclick="buyProductsCreditoDebito()">Tarjeta de crédito o débito / efectivo</button>
+                                <button class="buyProductTransferenciaButton" type="button" onclick="buyProductsCreditoDebito()">Tarjeta de crédito/débito</button>
+                                
+                                <button class="buyProductTransferenciaButton" type="button" onclick="buyProductsCreditoDebito()">Efectivo</button>
 
                                 <button class="buyProductCloseButton" type="button" onclick="closeBuyProducts()">Cerrar</button>
                             </div>
@@ -99,15 +101,27 @@
 
                     <div class="shoppingCartTotalShipmentContainer">
                         <span class="shoppingCartTotalShipmentText">Envío:</span>
-                        <span class="shoppingCartTotalShipmentPrice">elegir</span>
+                        <div class="shoppingCartTotalShipmentSelectContainer">
+                            <% if(shipmentPriceSelected != undefined){ %>
+                                <span class="shoppingCartTotalShipmentPrice">$<%= shipmentPriceSelected %></span>
+                            <% } else { %>
+                                <span class="shoppingCartTotalShipmentPrice"></span>
+                            <% } %>
+                            <span class="shoppingCartTotalShipmentChoose">elegir</span>
+                        </div>
                     </div>
                 </div>
     
                 <div class="shoppingCartTotalPriceContainer">
                     <span class="shoppingCartTotalText">Total:</span>
                     <div class="shoppingCartTotalPrices">
-                        <span class="shoppingCartTotalPrice">$<%= totalPrice %></span>
-                        <span class="shoppingCartTotalPriceDiscount"><span class="shoppingCartTotalPriceDiscountPrice">$<%= totalPrice - (totalPrice * 0.10) %></span> con efectivo o transferencia</span>
+                        <% if(shipmentPriceSelected != undefined){ %>
+                            <span class="shoppingCartTotalPrice">$<%= totalPrice + (shipmentPriceSelected) %></span>
+                            <span class="shoppingCartTotalPriceDiscount"><span class="shoppingCartTotalPriceDiscountPrice">$<%= (totalPrice - (totalPrice * 0.10)) + shipmentPriceSelected %></span> con efectivo o transferencia</span>
+                        <% } else { %>
+                            <span class="shoppingCartTotalPrice">$<%= totalPrice %></span>
+                            <span class="shoppingCartTotalPriceDiscount"><span class="shoppingCartTotalPriceDiscountPrice">$<%= totalPrice - (totalPrice * 0.10) %></span> con efectivo o transferencia</span>
+                        <% } %>
                     </div>
                 </div>
     
@@ -133,13 +147,13 @@
             <h4 class="shoppingCartTransferenciaTitle">Pasos para la compra por transferencia</h4>
 
             <div class="buyProductsTransferenciaStepsContainer">
-                <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 1: </span>Realizar una transferencia al siguiente alias: <span class="shoppingCartTransferenciaSpan">alias</span> con el monto total del carrito ($<%= totalPrice %> ars). Guardar el comprobante de la transferencia realizada.</p>
+                <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 1: </span>Realizar una transferencia al siguiente alias: <span class="shoppingCartTransferenciaSpan">camisetastifosi</span> con el monto total del carrito ($<%= shipmentPriceSelected != undefined ? (totalPrice - (totalPrice * 0.10)) + shipmentPriceSelected : totalPrice - (totalPrice * 0.10) %> ars). Guardar el comprobante de la transferencia realizada.</p>
 
                 <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 2: </span>Enviar el comprobante de transferencia al siguiente <a class="shoppingCartTransferenciaLink" href="https://wa.link/1h3n9a">whatsapp</a> indicando tu nombre y apellido completos.</p>
 
                 <p class="shoppingCartTransferenciaText">Una vez hechos los pasos, generá tu orden con el siguiente boton:</p>
 
-                <form class="shoppingCartTransferenciaForm" action="/carrito/compra/transferencia/<%= locals.userLoggedIn.id %>/<%= totalPrice %>" method="post">
+                <form class="shoppingCartTransferenciaForm" action="/carrito/compra/transferencia/<%= locals.userLoggedIn.id %>/<%= shipmentPriceSelected != undefined ? (totalPrice - (totalPrice * 0.10)) + shipmentPriceSelected : totalPrice - (totalPrice * 0.10) %>" method="post">
                     <button class="shoppingCartTransferenciaOrderButton" type="submit">Generar orden</button>
                     <button class="shoppingCartTransferenciaCloseButton" type="button" onclick="closeBuyProductsTransferencia()">Cerrar</button>
                 </form>
@@ -156,7 +170,7 @@
 
                 <p class="shoppingCartTransferenciaText">Una vez hechos los pasos, tu orden se va a generar automáticamente</p>
 
-                <form class="shoppingCartTransferenciaForm" action="/carrito/compra/creditodebito/<%= locals.userLoggedIn.id %>/<%= totalPrice %>" method="post">
+                <form class="shoppingCartTransferenciaForm" action="/carrito/compra/creditodebito/<%= locals.userLoggedIn.id %>/<%= shipmentPriceSelected != undefined ? totalPrice + shipmentPriceSelected : totalPrice %>" method="post">
                     <button class="shoppingCartTransferenciaOrderButton" type="submit">Generar orden</button>
                     <button class="shoppingCartTransferenciaCloseButton" type="button" onclick="closeBuyProductsCreditoDebito()">Cerrar</button>
                 </form>
@@ -165,27 +179,29 @@
     </main>
 
     <div class="selectShipmentContainer">
-        <div class="shipmentContainer">
-            <span class="shipmentTitle">Envío a domicilio</span>
-            <span class="shipmentPrice">$10000</span>
-        </div>
+        <form class="selectShipmentContainerForm" id="selectShipmentContainerForm" action="" method="">
+            <button class="shipmentContainer" onclick="selectShipment('/carrito/establecerPrecioEnvio/<%= shipmentPrices[0] %>', 'post')">
+                <span class="shipmentTitle">Envío a domicilio</span>
+                <span class="shipmentPrice">$<%= shipmentPrices[0] %></span>
+            </button>
+    
+            <button class="shipmentContainer" onclick="selectShipment('/carrito/establecerPrecioEnvio/<%= shipmentPrices[1] %>', 'post')">
+                <span class="shipmentTitle">Envío a domicilio express</span>
+                <span class="shipmentPrice">$<%= shipmentPrices[1] %></span>
+            </button>
+    
+            <button class="shipmentContainer" onclick="selectShipment('/carrito/establecerPrecioEnvio/<%= shipmentPrices[2] %>', 'post')">
+                <span class="shipmentTitle">Envío a sucursal</span>
+                <span class="shipmentPrice">$<%= shipmentPrices[2] %></span>
+            </button>
+    
+            <button class="shipmentContainer" onclick="selectShipment('/carrito/establecerPrecioEnvio/<%= shipmentPrices[3] %>', 'post')">
+                <span class="shipmentTitle">Envío a sucursal express</span>
+                <span class="shipmentPrice">$<%= shipmentPrices[3] %></span>
+            </button>
 
-        <div class="shipmentContainer">
-            <span class="shipmentTitle">Envío a domicilio express</span>
-            <span class="shipmentPrice">$10000</span>
-        </div>
-
-        <div class="shipmentContainer">
-            <span class="shipmentTitle">Envío a sucursal</span>
-            <span class="shipmentPrice">$10000</span>
-        </div>
-
-        <div class="shipmentContainer">
-            <span class="shipmentTitle">Envío a sucursal express</span>
-            <span class="shipmentPrice">$10000</span>
-        </div>
-
-        <button class="selectShipmentCloseButton">CERRAR</button>
+            <button type="button" class="selectShipmentCloseButton">CERRAR</button>
+        </form>
     </div>
     
     <!-- ******************************** END MAIN ******************************** -->

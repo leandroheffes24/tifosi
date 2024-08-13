@@ -1752,11 +1752,17 @@ footer {
   justify-content: space-between;
 }
 
-.shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice {
+.shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentChoose {
   font-size: 0.9rem;
 }
 
-.shoppingCartTotalShipmentPrice {
+.shoppingCartTotalShipmentSelectContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.shoppingCartTotalShipmentChoose {
   text-decoration: underline;
   color: rgb(33, 38, 84);
   font-weight: 600;
@@ -1917,8 +1923,6 @@ footer {
 
 .selectShipmentContainer {
   display: none;
-  flex-wrap: wrap;
-  gap: 20px;
   position: fixed;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -1932,12 +1936,19 @@ footer {
   z-index: 30;
 }
 
+.selectShipmentContainerForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .shipmentContainer {
   width: 100%;
   background-color: rgb(215, 215, 215);
-  text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  border: none;
   border-radius: 10px;
   padding: 10px;
   gap: 15px;
@@ -2035,10 +2046,10 @@ footer {
   .shoppingCartProductsPriceContainer, .shoppingCartTotalPriceContainer {
     gap: 25px;
   }
-  .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice {
+  .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentChoose {
     font-size: 1.2rem;
   }
-  .shoppingCartTotalShipmentPrice {
+  .shoppingCartTotalShipmentChoose {
     font-weight: 700;
   }
   .shoppingCartTotalPrices {
@@ -2100,9 +2111,11 @@ footer {
     font-size: 1.4rem;
   }
   .selectShipmentContainer {
-    gap: 25px;
     width: 60%;
     padding: 25px;
+  }
+  .selectShipmentContainerForm {
+    gap: 25px;
   }
   .shipmentContainer {
     padding: 15px;
@@ -2195,10 +2208,10 @@ footer {
   .shoppingCartProductsPriceContainer, .shoppingCartTotalPriceContainer {
     gap: 15px;
   }
-  .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice {
+  .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentChoose {
     font-size: 0.9rem;
   }
-  .shoppingCartTotalShipmentPrice {
+  .shoppingCartTotalShipmentChoose {
     font-weight: 600;
   }
   .shoppingCartTotalPrices {
@@ -2243,12 +2256,16 @@ footer {
   }
   .buyProductButtonsContainer {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
   .buyProductTransferenciaButton, .buyProductCloseButton {
-    width: 47%;
+    width: 29%;
     font-size: 1rem;
     padding: 8px;
+  }
+  .buyProductCloseButton {
+    width: 100%;
   }
   .buyProductsTransferenciaContainer {
     width: 50%;
@@ -2272,11 +2289,13 @@ footer {
     font-size: 1rem;
   }
   .selectShipmentContainer {
+    width: 60%;
+    padding: 10px;
+  }
+  .selectShipmentContainerForm {
     justify-content: space-between;
     gap: 0;
     row-gap: 23px;
-    width: 60%;
-    padding: 10px;
   }
   .shipmentContainer {
     width: 22%;
@@ -2354,7 +2373,7 @@ footer {
   .shoppingCartProductsPriceContainer, .shoppingCartTotalPriceContainer {
     gap: 20px;
   }
-  .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice {
+  .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentChoose {
     font-size: 1rem;
   }
   .shoppingCartTotalPrices {
@@ -2386,8 +2405,11 @@ footer {
     margin-bottom: 40px;
   }
   .buyProductTransferenciaButton, .buyProductCloseButton {
-    width: 48%;
+    width: 29%;
     font-size: 1.1rem;
+  }
+  .buyProductCloseButton {
+    width: 100%;
   }
   .buyProductsTransferenciaContainer {
     width: 40%;
@@ -2408,9 +2430,11 @@ footer {
     font-size: 1.1rem;
   }
   .selectShipmentContainer {
-    row-gap: 25px;
     width: 50%;
     padding: 20px;
+  }
+  .selectShipmentContainerForm {
+    row-gap: 25px;
   }
   .shipmentContainer {
     width: 23%;

@@ -1,5 +1,6 @@
 const {Users} = require("../../database/models")
 const {Orders} = require("../../database/models")
+const {Provinces_shipment} = require("../../database/models")
 const { use } = require("../routers/usersRouter")
 
 const usersServices = {
@@ -71,6 +72,12 @@ const usersServices = {
             status: newStatus
         }, {
             where: {id: orderId}
+        })
+    },
+
+    findShipmentInformation: (province) => {
+        return Provinces_shipment.findOne({
+            where: {province: province}
         })
     }
 }

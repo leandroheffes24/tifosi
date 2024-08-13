@@ -10,6 +10,9 @@ module.exports = {
         const categories = await categoriesServices.getAllCategories()
         const user = req.session.userLoggedIn
         const userId = user.id
+        const shipmentPrices = await req.session.shipmentPrices;
+        const shipmentPriceSelected = req.session.shipmentPriceSelected || undefined
+        
         const carritoProducts = await carritoServices.getUserProducts(userId)
         let totalPrice = 0
         let totalProducts = 0
@@ -19,7 +22,8 @@ module.exports = {
             totalProducts = totalProducts + product.quantity
         })
 
-        return await res.render("carrito", {carritoProducts, categories, totalPrice, totalProducts})
+        console.log("SHIPMENT PRICE SELECTED => ", req.session.shipmentPriceSelected);
+        return await res.render("carrito", {carritoProducts, categories, totalPrice, totalProducts, shipmentPrices, shipmentPriceSelected})
     },
 
     carritoProcess: async (req, res) => {
@@ -41,7 +45,9 @@ module.exports = {
         const productTalle = req.params.productTalle
         const user = req.session.userLoggedIn
         const userId = user.id
+        const shipmentPrices = await req.session.shipmentPrices;
         await carritoServices.deleteProductCart(productIdToDelete, userId, productTalle)
+        const shipmentPriceSelected = undefined
         let totalPrice = 0
         let totalProducts = 0
 
@@ -58,7 +64,7 @@ module.exports = {
             totalProducts = totalProducts
         }
 
-        return res.render("carrito", {categories, carritoProducts, totalPrice, totalProducts})
+        return res.render("carrito", {categories, carritoProducts, totalPrice, totalProducts, shipmentPrices, shipmentPriceSelected})
     },
 
     carritoGenerateOrder: async (req, res) => {
@@ -125,5 +131,26 @@ module.exports = {
         } else {
             console.log("ha ocurrido un error");
         }
+    },
+
+    setShipmentPrice: async (req, res) => {
+        const shipmentPriceSelected = parseFloat(req.params.precioEnvio)
+        req.session.shipmentPriceSelected = shipmentPriceSelected
+        const categories = await categoriesServices.getAllCategories()
+        const user = req.session.userLoggedIn
+        const userId = user.id
+        const shipmentPrices = await req.session.shipmentPrices;
+        
+        const carritoProducts = await carritoServices.getUserProducts(userId)
+        let totalPrice = 0
+        let totalProducts = 0
+
+        carritoProducts.map(product => {
+            totalPrice = totalPrice + product.products_total_price
+            totalProducts = totalProducts + product.quantity
+        })
+
+        console.log("SHIPMENT PRICE SELECTED => ", req.session.shipmentPriceSelected);
+        return await res.render("carrito", {carritoProducts, categories, totalPrice, totalProducts, shipmentPrices, shipmentPriceSelected})
     }
 }

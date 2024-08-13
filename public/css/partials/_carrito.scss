@@ -166,11 +166,17 @@
     justify-content: space-between;
 }
 
-.shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice{
+.shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentChoose{
     font-size: .9rem;
 }
 
-.shoppingCartTotalShipmentPrice{
+.shoppingCartTotalShipmentSelectContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.shoppingCartTotalShipmentChoose{
     text-decoration: underline;
     color: $tifosiColor;
     font-weight: 600;
@@ -331,8 +337,6 @@
 
 .selectShipmentContainer{
     display: none;
-    flex-wrap: wrap;
-    gap: 20px;
     position: fixed;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -346,12 +350,19 @@
     z-index: 30;
 }
 
+.selectShipmentContainerForm{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 .shipmentContainer{
     width: 100%;
     background-color: rgb(215, 215, 215);
-    text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    border: none;
     border-radius: 10px;
     padding: 10px;
     gap: 15px;
@@ -474,11 +485,11 @@
         gap: 25px;
     }
     
-    .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice{
+    .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentChoose{
         font-size: 1.2rem;
     }
     
-    .shoppingCartTotalShipmentPrice{
+    .shoppingCartTotalShipmentChoose{
         font-weight: 700;
     }
 
@@ -557,9 +568,12 @@
     }
 
     .selectShipmentContainer{
-        gap: 25px;
         width: 60%;
         padding: 25px;
+    }
+    
+    .selectShipmentContainerForm{
+        gap: 25px;
     }
 
     .shipmentContainer{
@@ -681,11 +695,11 @@
         gap: 15px;
     }
     
-    .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice{
+    .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentChoose{
         font-size: .9rem;
     }
     
-    .shoppingCartTotalShipmentPrice{
+    .shoppingCartTotalShipmentChoose{
         font-weight: 600;
     }
 
@@ -739,13 +753,18 @@
     
     .buyProductButtonsContainer{
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-between;
     }
     
     .buyProductTransferenciaButton, .buyProductCloseButton{
-        width: 47%;
+        width: 29%;
         font-size: 1rem;
         padding: 8px;
+    }
+
+    .buyProductCloseButton{
+        width: 100%;
     }
 
     .buyProductsTransferenciaContainer{
@@ -776,11 +795,14 @@
     }
 
     .selectShipmentContainer{
+        width: 60%;
+        padding: 10px;
+    }
+
+    .selectShipmentContainerForm{
         justify-content: space-between;
         gap: 0;
         row-gap: 23px;
-        width: 60%;
-        padding: 10px;
     }
 
     .shipmentContainer{
@@ -885,7 +907,7 @@
         gap: 20px;
     }
     
-    .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentPrice{
+    .shoppingCartTotalProductsText, .shoppingCartTotalProductsPrice, .shoppingCartTotalShipmentText, .shoppingCartTotalShipmentChoose{
         font-size: 1rem;
     }
 
@@ -926,8 +948,12 @@
     }
     
     .buyProductTransferenciaButton, .buyProductCloseButton{
-        width: 48%;
+        width: 29%;
         font-size: 1.1rem;
+    }
+    
+    .buyProductCloseButton{
+        width: 100%;
     }
 
     .buyProductsTransferenciaContainer{
@@ -954,9 +980,12 @@
     }
 
     .selectShipmentContainer{
-        row-gap: 25px;
         width: 50%;
         padding: 20px;
+    }
+    
+    .selectShipmentContainerForm{
+        row-gap: 25px;
     }
 
     .shipmentContainer{
