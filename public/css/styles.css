@@ -1841,7 +1841,7 @@ footer {
   gap: 15px;
 }
 
-.buyProductTransferenciaButton, .buyProductCloseButton {
+.buyProductTransferenciaButton, .buyProductCloseButton, .buyProductTransferenciaButton {
   font-size: 1.1rem;
   font-weight: 500;
   padding: 8px;
@@ -1857,7 +1857,7 @@ footer {
   color: rgb(15, 15, 15);
 }
 
-.buyProductsTransferenciaContainer, .buyProductsCreditoDebitoContainer {
+.buyProductsTransferenciaContainer, .buyProductsCreditoDebitoContainer, .buyProductsEfectivoContainer {
   display: none;
   position: fixed;
   transform: translate(-50%, -50%);

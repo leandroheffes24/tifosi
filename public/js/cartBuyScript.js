@@ -27,11 +27,10 @@ function closeBuyProductsCreditoDebito(){
     buyProductsCreditoDebitoContainer.style.display = "none"
 }
 
-// shoppingCartCreditoDebitoButton.addEventListener("click", async () => {
-//     const response = await fetch("/create-order", {
-//         method: "POST"
-//     })
+function buyProductsEfectivo(){
+    buyProductsEfectivoContainer.style.display = "block"
+}
 
-//     const data = await response.json()
-//     window.location.href = data.init_point
-// })
+function closeBuyProductsEfectivo(){
+    buyProductsEfectivoContainer.style.display = "none"
+}

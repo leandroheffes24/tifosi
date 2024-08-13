@@ -62,7 +62,7 @@
 
                                 <button class="buyProductTransferenciaButton" type="button" onclick="buyProductsCreditoDebito()">Tarjeta de crédito/débito</button>
                                 
-                                <button class="buyProductTransferenciaButton" type="button" onclick="buyProductsCreditoDebito()">Efectivo</button>
+                                <button class="buyProductTransferenciaButton" type="button" onclick="buyProductsEfectivo()">Efectivo</button>
 
                                 <button class="buyProductCloseButton" type="button" onclick="closeBuyProducts()">Cerrar</button>
                             </div>
@@ -166,7 +166,7 @@
             <div class="buyProductsTransferenciaStepsContainer">
                 <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 1: </span>Esperar a ser redireccionado al link de Mercado Pago al presionar el botón de "Generar orden"</p>
 
-                <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 2: </span>Realizar el pago con tarjeta/efectivo y al tener el comprobante de pago, enviarlo al siguente <a class="shoppingCartTransferenciaLink" href="https://wa.link/1h3n9a">whatsapp</a> indicando tu nombre y apellido completos.</p>
+                <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 2: </span>Realizar el pago con tarjeta y al tener el comprobante de pago, enviarlo al siguente <a class="shoppingCartTransferenciaLink" href="https://wa.link/1h3n9a">whatsapp</a> indicando tu nombre y apellido completos.</p>
 
                 <p class="shoppingCartTransferenciaText">Una vez hechos los pasos, tu orden se va a generar automáticamente</p>
 
@@ -175,6 +175,23 @@
                     <button class="shoppingCartTransferenciaCloseButton" type="button" onclick="closeBuyProductsCreditoDebito()">Cerrar</button>
                 </form>
             </div>
+        </div>
+
+        <div class="buyProductsEfectivoContainer" id="buyProductsEfectivoContainer">
+            <h4 class="shoppingCartTransferenciaTitle">Pasos para la compra por efectivo</h4>
+
+            <div class="buyProductsTransferenciaStepsContainer">
+                <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 1: </span>Esperar a ser redireccionado al link de Mercado Pago al presionar el botón de "Generar orden"</p>
+
+                <p class="shoppingCartTransferenciaText"><span class="shoppingCartTransferenciaSpan">Paso 2: </span>Realizar el pago con efectivo y al tener el comprobante de pago, enviarlo al siguente <a class="shoppingCartTransferenciaLink" href="https://wa.link/1h3n9a">whatsapp</a> indicando tu nombre y apellido completos.</p>
+
+                <p class="shoppingCartTransferenciaText">Una vez hechos los pasos, tu orden se va a generar automáticamente y será aprobada por nosotros</p>
+
+                <form class="shoppingCartTransferenciaForm" action="/carrito/compra/creditodebito/<%= locals.userLoggedIn.id %>/<%= shipmentPriceSelected != undefined ? (totalPrice - (totalPrice * 0.10)) + shipmentPriceSelected : totalPrice - (totalPrice * 0.10) %>" method="post">
+                    <button class="shoppingCartTransferenciaOrderButton" type="submit">Generar orden</button>
+                    <button class="shoppingCartTransferenciaCloseButton" type="button" onclick="closeBuyProductsEfectivo()">Cerrar</button>
+                </form>
+            </div>s
         </div>
     </main>
 
