@@ -1,21 +1,41 @@
-const mysql = require("mysql2")
+const config = {
+  development: {
+    username: "ufr4gavzrvxw8zof",
+    password: "q7GNZvKE3bSkXVYJh0U0",
+    database: "bn9jf2z15aw370ldurof",
+    host: "bn9jf2z15aw370ldurof-mysql.services.clever-cloud.com",
+    dialect: "mysql"
+  },
+  production: {
+    use_env_variable: "DATABASE_URL",
+    dialect: "mysql"
+  }
+};
 
-const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DBNAME,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0
-})
+module.exports = config;
 
-pool.getConnection((err, conn) => {
-  if(err) console.log(err)
-    console.log("Connected successfully")
-})
 
-module.exports = pool.promise()
+
+// const mysql = require("mysql2")
+
+// const pool = mysql.createPool({
+//   host: "bn9jf2z15aw370ldurof-mysql.services.clever-cloud.com"||process.env.DB_HOST,
+//   user: "ufr4gavzrvxw8zof"||process.env.DB_USERNAME,
+//   password: "q7GNZvKE3bSkXVYJh0U0"||process.env.DB_PASSWORD,
+//   database: "bn9jf2z15aw370ldurof"||process.env.DB_DBNAME,
+//   waitForConnections: true,
+//   connectionLimit: 10,
+//   queueLimit: 0
+// })
+
+// pool.getConnection((err, conn) => {
+//   if(err) console.log(err)
+//     console.log("Connected successfully")
+// })
+
+// module.exports = pool.promise()
+
+
 
 // require('dotenv').config();
 
