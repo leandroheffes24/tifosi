@@ -101,7 +101,7 @@ module.exports = {
         await carritoServices.createOrder(userId, totalPrice, user.name, user.last_name, orderDetail, user.country, user.province, user.city, user.address, user.cp, user.dni, user.phone)
 
         mercadopago.configure({
-            access_token: process.env.MERCADOPAGO_TOKEN
+            access_token: "APP_USR-2752794735591664-080314-9aaa02c581fab1d557155883ec5f4349-688404102"
         })
 
         const result = await mercadopago.preferences.create({
