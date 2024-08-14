@@ -1,9 +1,9 @@
 const config = {
   development: {
-    username: "ufr4gavzrvxw8zof",
-    password: "q7GNZvKE3bSkXVYJh0U0",
-    database: "bn9jf2z15aw370ldurof",
-    host: "bn9jf2z15aw370ldurof-mysql.services.clever-cloud.com",
+    username: "ufr4gavzrvxw8zof"||process.env.DB_USERNAME,
+    password: "q7GNZvKE3bSkXVYJh0U0"||process.env.DB_PASSWORD,
+    database: "bn9jf2z15aw370ldurof"||process.env.DB_DBNAME,
+    host: "bn9jf2z15aw370ldurof-mysql.services.clever-cloud.com"||process.env.DB_HOST,
     dialect: "mysql"
   },
   production: {
