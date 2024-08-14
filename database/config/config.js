@@ -7,7 +7,7 @@ const config = {
     dialect: "mysql"
   },
   production: {
-    use_env_variable: "mysql://ufr4gavzrvxw8zof:q7GNZvKE3bSkXVYJh0U0@bn9jf2z15aw370ldurof-mysql.services.clever-cloud.com:3306/bn9jf2z15aw370ldurof",
+    use_env_variable: "DATABASE_URL",
     dialect: "mysql"
   }
 };
