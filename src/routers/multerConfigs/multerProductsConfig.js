@@ -5,8 +5,8 @@ const s3 = require('../../configs/awsConfig');
 const upload = multer({
   storage: multerS3({
     s3: s3,
-    bucket: process.env.AWS_S3_BUCKET_NAME, // El nombre de tu bucket
-    acl: 'public-read', // Opcional: Puedes configurarlo para que sea privado si es necesario
+    bucket: "camisetastifosi"||process.env.AWS_S3_BUCKET_NAME,
+    acl: 'private',
     metadata: (req, file, cb) => {
       cb(null, { fieldName: file.fieldname });
     },
@@ -17,6 +17,8 @@ const upload = multer({
 });
 
 module.exports = upload;
+
+
 
 // const multer = require("multer")
 // const path = require("path")

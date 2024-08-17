@@ -1,39 +1,39 @@
 const {body} = require("express-validator")
 const path = require("path")
 
-const validateImage = (fieldName) => {
-    return body(fieldName).custom((value, {req}) => {
-        if(req.files && req.files[fieldName]) {
-            let file = req.files[fieldName][0];
-            let extensionFile = path.extname(file.originalname);
-            let extencionesAceptadas = [".png", ".jpg", ".webp"];
-
-            if(!extencionesAceptadas.includes(extensionFile)){
-                throw new Error(`Las extensiones de archivo que se aceptan son: ${extencionesAceptadas.join(", ")}`);
-            }
-        } else {
-            throw new Error(`Tienes que subir una imagen para el campo ${fieldName}`);
-        }
-
-        return true;
-    });
-}
-
 // const validateImage = (fieldName) => {
 //     return body(fieldName).custom((value, {req}) => {
-//         if(req.file){
-//             let file = req.files['image2']
-//             let extensionFile = path.extname(file.originalname)
-//             let extencionesAceptadas = [".png", ".jpg", ".webp"]
+//         if(req.files && req.files[fieldName]) {
+//             let file = req.files[fieldName][0];
+//             let extensionFile = path.extname(file.originalname);
+//             let extencionesAceptadas = [".png", ".jpg", ".webp"];
 
 //             if(!extencionesAceptadas.includes(extensionFile)){
-//                 throw new Error(`Las extensiones de archivo que se aceptan son: ${extencionesAceptadas.join(", ")}`)
+//                 throw new Error(`Las extensiones de archivo que se aceptan son: ${extencionesAceptadas.join(", ")}`);
 //             }
+//         } else {
+//             throw new Error(`Tienes que subir una imagen para el campo ${fieldName}`);
 //         }
 
-//         return true
-//     })
+//         return true;
+//     });
 // }
+
+const validateImage = (fieldName) => {
+    return body(fieldName).custom((value, {req}) => {
+        if(req.file){
+            let file = req.files['image2']
+            let extensionFile = path.extname(file.originalname)
+            let extencionesAceptadas = [".png", ".jpg", ".webp"]
+
+            if(!extencionesAceptadas.includes(extensionFile)){
+                throw new Error(`Las extensiones de archivo que se aceptan son: ${extencionesAceptadas.join(", ")}`)
+            }
+        }
+
+        return true
+    })
+}
 
 module.exports = [
     body("product_name").notEmpty().withMessage("Debes ingresar el nombre del producto"),

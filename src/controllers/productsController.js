@@ -55,47 +55,90 @@ module.exports = {
     },
 
     crearProductoProcess: async (req, res) => {
-        let errors = validationResult(req)
-        const categories = await categoriesServices.getAllCategories()
-        const talles = await tallesServices.getAllTalles()
+        let errors = validationResult(req);
+        const categories = await categoriesServices.getAllCategories();
+        const talles = await tallesServices.getAllTalles();
 
         if(errors.errors.length > 0){
-            return res.render("productCreate", {errors: errors.mapped(), oldData: req.body, categories, talles})
+            return res.render("productCreate", {errors: errors.mapped(), oldData: req.body, categories, talles});
         }
 
-        let categoryName = req.body.category
-        let categoryId = await categoriesServices.getCreateProductCategoryId(categoryName)
+        let categoryName = req.body.category;
+        let categoryId = await categoriesServices.getCreateProductCategoryId(categoryName);
 
         let newProduct = {
             product_name: req.body.product_name,
             price: req.body.price,
             stock: req.body.stock,
             category_id: categoryId
-        }
+        };
 
         let productsTalles = req.body.talles
 
-        await productsServices.createProduct(newProduct)
-
-        let lastProduct = await productsServices.getLastProduct()
-        let lastProductId = lastProduct.id
+        await productsServices.createProduct(newProduct);
+        let lastProduct = await productsServices.getLastProduct();
+        let lastProductId = lastProduct.id;
         
         for (let i = 1; i < 11; i++) {
             if (req.files[`image${i}`]) {
-                await productsServices.createImageProduct(req.files[`image${i}`][0].filename, lastProductId)
+                await productsServices.createImageProduct(req.files[`image${i}`][0].location, lastProductId);
             }
 
             if(req.body[`print${i}`] !== ""){
-                await productsServices.createProductPrint(req.body[`print${i}`], lastProductId)
+                await productsServices.createProductPrint(req.body[`print${i}`], lastProductId);
             }
         }
 
         await productsTalles.forEach(async talle => {
-            let talleId = await tallesServices.getTalleId(talle)
-            await productsServices.crearProductosTalles(lastProduct.id, talleId)
+            let talleId = await tallesServices.getTalleId(talle);
+            await productsServices.crearProductosTalles(lastProduct.id, talleId);
         });
-        return res.redirect("/crear/producto-subcategoria/" + lastProductId)
+
+        return res.redirect("/crear/producto-subcategoria/" + lastProductId);
     },
+
+    // crearProductoProcess: async (req, res) => {
+    //     let errors = validationResult(req)
+    //     const categories = await categoriesServices.getAllCategories()
+    //     const talles = await tallesServices.getAllTalles()
+
+    //     if(errors.errors.length > 0){
+    //         return res.render("productCreate", {errors: errors.mapped(), oldData: req.body, categories, talles})
+    //     }
+
+    //     let categoryName = req.body.category
+    //     let categoryId = await categoriesServices.getCreateProductCategoryId(categoryName)
+
+    //     let newProduct = {
+    //         product_name: req.body.product_name,
+    //         price: req.body.price,
+    //         stock: req.body.stock,
+    //         category_id: categoryId
+    //     }
+
+    //     let productsTalles = req.body.talles
+
+    //     await productsServices.createProduct(newProduct)
+
+    //     let lastProduct = await productsServices.getLastProduct()
+    //     let lastProductId = lastProduct.id
+        
+    //     for (let i = 1; i < 11; i++) {
+    //         if (req.files[`image${i}`]) {
+    //             await productsServices.createImageProduct(req.files[`image${i}`][0].filename, lastProductId)
+    //         }
+
+    //         if(req.body[`print${i}`] !== ""){
+    //             await productsServices.createProductPrint(req.body[`print${i}`], lastProductId)
+    //         }
+    //     }
+
+    //     await productsTalles.forEach(async talle => {
+    //         let talleId = await tallesServices.getTalleId(talle)
+    //         await productsServices.crearProductosTalles(lastProduct.id, talleId)
+    //     });
+    //     return res.redirect("/crear/producto-subcategoria/" + lastProductId)
+    // },
 
     editarProductoProcess: async (req, res) => {
         const productToEditId = req.params.productId
