@@ -16,9 +16,11 @@ const rememberCookie = async (req, res, next) => {
 
         if(userInDB){
             req.session.userLoggedIn = userInDB
-            const shipmentInformation = await usersServices.findShipmentInformation(userInDB.province)
-            const shipmentPrices = [shipmentInformation.home_shipment, shipmentInformation.home_express_shipment, shipmentInformation.branch_shipment, shipmentInformation.branch_express_shipment]
-            req.session.shipmentPrices = shipmentPrices
+            if(userInDB.province){
+                const shipmentInformation = await usersServices.findShipmentInformation(userInDB.province)
+                const shipmentPrices = [shipmentInformation.home_shipment, shipmentInformation.home_express_shipment, shipmentInformation.branch_shipment, shipmentInformation.branch_express_shipment]
+                req.session.shipmentPrices = shipmentPrices
+            }
 
             if(userInDB.rank === "admin"){
                 req.session.admin = true

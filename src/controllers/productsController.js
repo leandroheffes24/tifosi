@@ -2,6 +2,8 @@ const categoriesServices = require("../services/categoriesServices")
 const productsServices = require("../services/productsServices")
 const tallesServices = require("../services/tallesServices")
 const {validationResult} = require("express-validator")
+require("dotenv").config()
+const s3 = require("../configs/awsConfig")
 
 module.exports = {
     crearProducto: async (req, res) => {
@@ -30,6 +32,13 @@ module.exports = {
         const categories = await categoriesServices.getAllCategories()
         const productId = req.params.productId
         const product = await productsServices.getProductById(productId)
+        console.log("PRODUCTO => ", product.images[1].image);
+        const params = await {
+            Bucket: process.env.BUCKET_NAME,
+            Key: product.images[0].image,
+            Expires: 3600
+        };
+        product.imageUrl = await s3.getSignedUrl('getObject', params);
         const productCategoryId = product.category_id
         const productSubcategoryId = product.subcategory_id
         const productTalles = await productsServices.getProductTalles(productId)
@@ -80,8 +89,8 @@ module.exports = {
         let lastProductId = lastProduct.id;
         
         for (let i = 1; i < 11; i++) {
-            if (req.files[`image${i}`]) {
-                await productsServices.createImageProduct(req.files[`image${i}`][0].location, lastProductId);
+            if (req.files[`image${i}`]) {                
+                await productsServices.createImageProduct(req.files[`image${i}`][0].key, lastProductId);
             }
 
             if(req.body[`print${i}`] !== ""){

@@ -67,10 +67,7 @@ const db = {};
 
 let sequelize;
 
-console.log('Config:', config);  // Agrega esta línea para verificar la configuración
-
 if (config.use_env_variable && process.env[config.use_env_variable]) {
-  console.log('Database URL:', process.env[config.use_env_variable]);  // Agrega esta línea para verificar la URL de la base de datos
   sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);

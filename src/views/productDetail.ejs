@@ -24,7 +24,7 @@
                         <% for (let i = 0; i < product.images.length; i++) { %>
                             <li class="splide__slide">
                                 <div class="productDetailImageContainer">
-                                    <img class="productDetailImage" src="/images/products/<%= product.images[i]?.image %>" alt="<%= product.product_name %>">
+                                    <img class="productDetailImage" src="<%= product.imageUrl %>" alt="<%= product.product_name %>">
                                 </div>
                             </li>
                         <% } %>

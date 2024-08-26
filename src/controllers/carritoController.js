@@ -23,7 +23,6 @@ module.exports = {
             totalProducts = totalProducts + product.quantity
         })
 
-        console.log("SHIPMENT PRICE SELECTED => ", req.session.shipmentPriceSelected);
         return await res.render("carrito", {carritoProducts, categories, totalPrice, totalProducts, shipmentPrices, shipmentPriceSelected, motoenvio})
     },
 
@@ -167,7 +166,6 @@ module.exports = {
         const categories = await categoriesServices.getAllCategories()
         const shipmentId = req.params.envioId
         const shipmentSelected = await carritoServices.getShipmentById(shipmentId)
-        console.log("ENVIO SELECCIONADO => ", shipmentSelected);
         return res.render("shipmentEditForm", {categories, shipmentSelected})
     },
 
